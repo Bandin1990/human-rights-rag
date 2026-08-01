@@ -1,0 +1,51 @@
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import { Inter } from "next/font/google";
+import { Header } from "@/components/header";
+import "./globals.css";
+import "./knowledge.css";
+import "./case-management.css";
+import "./chat-workspace.css";
+
+const bai = localFont({
+  src: [
+    { path: "../../public/fonts/BaiJamjuree-Regular.ttf", weight: "400" },
+    { path: "../../public/fonts/BaiJamjuree-Medium.ttf", weight: "500" },
+    { path: "../../public/fonts/BaiJamjuree-SemiBold.ttf", weight: "600" },
+    { path: "../../public/fonts/BaiJamjuree-Bold.ttf", weight: "700" },
+  ],
+  variable: "--font-bai",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+export const metadata: Metadata = {
+  title: "ระบบงานสิทธิมนุษยชน | กสม.",
+  description: "คลังความรู้ ระบบจัดการเรื่องร้องเรียน และการจัดทำรายงานตรวจสอบที่เชื่อมโยง RAG",
+};
+
+import { A11yProvider } from "@/components/a11y-provider";
+import { A11yToggle } from "@/components/a11y-toggle";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="th" className={`${bai.variable} ${inter.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <A11yProvider>
+          <Header />
+          {children}
+          <footer>
+            <div className="container">
+              <b>Human Rights Knowledge & Case Workspace</b>
+              <span>AI ช่วยค้นและจัดทำร่างเท่านั้น · การวินิจฉัยและอนุมัติเป็นอำนาจของผู้รับผิดชอบ</span>
+            </div>
+          </footer>
+          <A11yToggle />
+        </A11yProvider>
+      </body>
+    </html>
+  );
+}

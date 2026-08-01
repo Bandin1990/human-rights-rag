@@ -1,0 +1,6 @@
+streamlit>=1.36
+PyMuPDF>=1.24
+chromadb>=0.5
+sentence-transformers>=3.0
+pytest>=8.0
+pythainlp>=4.0

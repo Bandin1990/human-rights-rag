@@ -1,0 +1,2 @@
+# Optional OCR support. Windows also needs Tesseract OCR with Thai language data.
+ocrmypdf>=16.0

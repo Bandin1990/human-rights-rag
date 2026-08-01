@@ -1,0 +1,4 @@
+import { NextRequest, NextResponse } from "next/server";
+import { searchKnowledge } from "@/lib/knowledge/repository";
+import { DocumentLanguage, DocumentType, RightsCategory, SourceSystem } from "@/types/document";
+export async function GET(req:NextRequest){const p=req.nextUrl.searchParams;try{return NextResponse.json(await searchKnowledge({query:p.get("q")||undefined,year:p.get("year")?Number(p.get("year")):undefined,type:(p.get("type")||undefined) as DocumentType|undefined,category:(p.get("category")||undefined) as RightsCategory|undefined,sourceSystem:(p.get("source")||undefined) as SourceSystem|undefined,language:(p.get("language")||undefined) as DocumentLanguage|undefined}));}catch(error){return NextResponse.json({error:error instanceof Error?error.message:"Search failed"},{status:500});}}

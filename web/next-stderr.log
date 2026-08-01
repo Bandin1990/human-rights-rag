@@ -1,0 +1,641 @@
+Ask AI failed Error [AI_RetryError]: Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+    at async answerKnowledge (src\lib\knowledge\repository.ts:71:18)
+    at async POST (src\app\api\ask\route.ts:16:30)
+  69 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+  70 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+> 71 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+     |                  ^
+  72 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+  73 |   }
+  74 |   return {answer:`พบข้อความที่เกี่ยวข้องจากเอกสารในคลังดังนี้\n\n${evidence}\n\nยังไม่ได้ตั้งค่าโมเดลภาษา ... {
+  cause: undefined,
+  reason: 'maxRetriesExceeded',
+  errors: [
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:71:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      69 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      70 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 71 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      72 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      73 |   }
+      74 |   return {answer:`พบข้อความที่เกี่ยวข้องจากเอกสารในคลังดังนี้\n\n${evidence}\n\nยังไม่ได้ตั้งค่าโมเดลภาษา ... {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    },
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:71:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      69 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      70 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 71 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      72 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      73 |   }
+      74 |   return {answer:`พบข้อความที่เกี่ยวข้องจากเอกสารในคลังดังนี้\n\n${evidence}\n\nยังไม่ได้ตั้งค่าโมเดลภาษา ... {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    },
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:71:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      69 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      70 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 71 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      72 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      73 |   }
+      74 |   return {answer:`พบข้อความที่เกี่ยวข้องจากเอกสารในคลังดังนี้\n\n${evidence}\n\nยังไม่ได้ตั้งค่าโมเดลภาษา ... {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    }
+  ],
+  lastError: Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+      at async answerKnowledge (src\lib\knowledge\repository.ts:71:18)
+      at async POST (src\app\api\ask\route.ts:16:30)
+    69 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+    70 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+  > 71 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+       |                  ^
+    72 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+    73 |   }
+    74 |   return {answer:`พบข้อความที่เกี่ยวข้องจากเอกสารในคลังดังนี้\n\n${evidence}\n\nยังไม่ได้ตั้งค่าโมเดลภาษา ... {
+    cause: undefined,
+    url: 'https://api.openai.com/v1/responses',
+    requestBodyValues: {
+      model: 'gpt-5.4',
+      input: [Array],
+      temperature: undefined,
+      top_p: undefined,
+      max_output_tokens: 1800,
+      conversation: undefined,
+      max_tool_calls: undefined,
+      metadata: undefined,
+      parallel_tool_calls: undefined,
+      previous_response_id: undefined,
+      store: undefined,
+      user: undefined,
+      instructions: undefined,
+      service_tier: undefined,
+      include: undefined,
+      prompt_cache_key: undefined,
+      prompt_cache_retention: undefined,
+      safety_identifier: undefined,
+      top_logprobs: undefined,
+      truncation: undefined,
+      tools: undefined,
+      tool_choice: undefined
+    },
+    statusCode: 429,
+    responseHeaders: {
+      'access-control-expose-headers': 'X-Request-ID, CF-Ray, CF-Ray',
+      'alt-svc': 'h3=":443"; ma=86400',
+      'cf-cache-status': 'DYNAMIC',
+      'cf-ray': 'a1a5bde37d1c692e-BKK',
+      connection: 'keep-alive',
+      'content-length': '316',
+      'content-type': 'application/json',
+      date: 'Mon, 13 Jul 2026 05:03:32 GMT',
+      'openai-organization': 'nhrc-epuno0',
+      'openai-processing-ms': '203',
+      'openai-project': 'proj_e3RcVVFf46HLMWqCT5L4Y65X',
+      'openai-version': '2020-10-01',
+      server: 'cloudflare',
+      'set-cookie': '__cf_bm=HSYOxzxAJ1_HWdABhyTHWI4zCj00ScCct1hx42ZQE5Y-1783919012.3925846-1.0.1.1-XK_xKuJ1uIeKQuWEG3e8JsLz9PbTTVeoxhi8Ba.KEaCy2VvpgkaVDWna.CqY3wByTyXjBy.Oj5s_pDE8psWsFidWo49bJAqKOiEw648U3.YjkD6_2v27L3oANaj8_efh; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.openai.com; Expires=Mon, 13 Jul 2026 05:33:32 GMT',
+      'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+      'x-content-type-options': 'nosniff',
+      'x-request-id': 'req_39f84c8ac9fc4921baecb38e15a778dc'
+    },
+    responseBody: '{\n' +
+      '  "error": {\n' +
+      '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+      '    "type": "insufficient_quota",\n' +
+      '    "param": null,\n' +
+      '    "code": "insufficient_quota"\n' +
+      '  }\n' +
+      '}',
+    isRetryable: true,
+    data: { error: [Object] }
+  }
+}
+Ask AI failed Error [AI_RetryError]: Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+    at async answerKnowledge (src\lib\knowledge\repository.ts:71:18)
+    at async POST (src\app\api\ask\route.ts:16:30)
+  69 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+  70 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+> 71 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+     |                  ^
+  72 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+  73 |   }
+  74 |   return {answer:`พบข้อความที่เกี่ยวข้องจากเอกสารในคลังดังนี้\n\n${evidence}\n\nยังไม่ได้ตั้งค่าโมเดลภาษา ... {
+  cause: undefined,
+  reason: 'maxRetriesExceeded',
+  errors: [
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:71:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      69 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      70 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 71 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      72 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      73 |   }
+      74 |   return {answer:`พบข้อความที่เกี่ยวข้องจากเอกสารในคลังดังนี้\n\n${evidence}\n\nยังไม่ได้ตั้งค่าโมเดลภาษา ... {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    },
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:71:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      69 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      70 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 71 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      72 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      73 |   }
+      74 |   return {answer:`พบข้อความที่เกี่ยวข้องจากเอกสารในคลังดังนี้\n\n${evidence}\n\nยังไม่ได้ตั้งค่าโมเดลภาษา ... {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    },
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:71:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      69 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      70 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 71 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      72 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      73 |   }
+      74 |   return {answer:`พบข้อความที่เกี่ยวข้องจากเอกสารในคลังดังนี้\n\n${evidence}\n\nยังไม่ได้ตั้งค่าโมเดลภาษา ... {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    }
+  ],
+  lastError: Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+      at async answerKnowledge (src\lib\knowledge\repository.ts:71:18)
+      at async POST (src\app\api\ask\route.ts:16:30)
+    69 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+    70 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+  > 71 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+       |                  ^
+    72 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+    73 |   }
+    74 |   return {answer:`พบข้อความที่เกี่ยวข้องจากเอกสารในคลังดังนี้\n\n${evidence}\n\nยังไม่ได้ตั้งค่าโมเดลภาษา ... {
+    cause: undefined,
+    url: 'https://api.openai.com/v1/responses',
+    requestBodyValues: {
+      model: 'gpt-5.4',
+      input: [Array],
+      temperature: undefined,
+      top_p: undefined,
+      max_output_tokens: 1800,
+      conversation: undefined,
+      max_tool_calls: undefined,
+      metadata: undefined,
+      parallel_tool_calls: undefined,
+      previous_response_id: undefined,
+      store: undefined,
+      user: undefined,
+      instructions: undefined,
+      service_tier: undefined,
+      include: undefined,
+      prompt_cache_key: undefined,
+      prompt_cache_retention: undefined,
+      safety_identifier: undefined,
+      top_logprobs: undefined,
+      truncation: undefined,
+      tools: undefined,
+      tool_choice: undefined
+    },
+    statusCode: 429,
+    responseHeaders: {
+      'access-control-expose-headers': 'X-Request-ID, CF-Ray, CF-Ray',
+      'alt-svc': 'h3=":443"; ma=86400',
+      'cf-cache-status': 'DYNAMIC',
+      'cf-ray': 'a1a5beb49a98b20f-BKK',
+      connection: 'keep-alive',
+      'content-length': '316',
+      'content-type': 'application/json',
+      date: 'Mon, 13 Jul 2026 05:04:06 GMT',
+      'openai-organization': 'nhrc-epuno0',
+      'openai-processing-ms': '417',
+      'openai-project': 'proj_e3RcVVFf46HLMWqCT5L4Y65X',
+      'openai-version': '2020-10-01',
+      server: 'cloudflare',
+      'set-cookie': '__cf_bm=8lc_91msGCr6nsTmRbLL7nrq0l1.CCxWlHhL8Z0cVeI-1783919045.8538613-1.0.1.1-32xzDQRxIin1pVFVRenpZswk06p8D41AGM4LbJF8CEN.sCaAi.lzL0aQlcj.bq3T03F4Bn_FOJLbLZEKbri_8hbxtkfl9yJfhIkvGBnnvZ56j74N.J9CFedb.sKV_i7l; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.openai.com; Expires=Mon, 13 Jul 2026 05:34:06 GMT',
+      'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+      'x-content-type-options': 'nosniff',
+      'x-request-id': 'req_17a0b5aad05b422983ebac08ef4f6a39'
+    },
+    responseBody: '{\n' +
+      '  "error": {\n' +
+      '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+      '    "type": "insufficient_quota",\n' +
+      '    "param": null,\n' +
+      '    "code": "insufficient_quota"\n' +
+      '  }\n' +
+      '}',
+    isRetryable: true,
+    data: { error: [Object] }
+  }
+}
+LLM answer generation failed; returning evidence mode Error [AI_RetryError]: Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+    at async answerKnowledge (src\lib\knowledge\repository.ts:72:18)
+    at async POST (src\app\api\ask\route.ts:16:30)
+  70 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+  71 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+> 72 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+     |                  ^
+  73 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+  74 |     } catch (error) {
+  75 |       // Keep the evidence-based answer available when the model provider is {
+  cause: undefined,
+  reason: 'maxRetriesExceeded',
+  errors: [
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:72:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      70 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      71 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 72 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      73 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      74 |     } catch (error) {
+      75 |       // Keep the evidence-based answer available when the model provider is {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    },
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:72:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      70 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      71 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 72 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      73 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      74 |     } catch (error) {
+      75 |       // Keep the evidence-based answer available when the model provider is {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    },
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:72:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      70 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      71 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 72 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      73 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      74 |     } catch (error) {
+      75 |       // Keep the evidence-based answer available when the model provider is {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    }
+  ],
+  lastError: Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+      at async answerKnowledge (src\lib\knowledge\repository.ts:72:18)
+      at async POST (src\app\api\ask\route.ts:16:30)
+    70 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+    71 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+  > 72 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+       |                  ^
+    73 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+    74 |     } catch (error) {
+    75 |       // Keep the evidence-based answer available when the model provider is {
+    cause: undefined,
+    url: 'https://api.openai.com/v1/responses',
+    requestBodyValues: {
+      model: 'gpt-5.4',
+      input: [Array],
+      temperature: undefined,
+      top_p: undefined,
+      max_output_tokens: 1800,
+      conversation: undefined,
+      max_tool_calls: undefined,
+      metadata: undefined,
+      parallel_tool_calls: undefined,
+      previous_response_id: undefined,
+      store: undefined,
+      user: undefined,
+      instructions: undefined,
+      service_tier: undefined,
+      include: undefined,
+      prompt_cache_key: undefined,
+      prompt_cache_retention: undefined,
+      safety_identifier: undefined,
+      top_logprobs: undefined,
+      truncation: undefined,
+      tools: undefined,
+      tool_choice: undefined
+    },
+    statusCode: 429,
+    responseHeaders: {
+      'access-control-expose-headers': 'X-Request-ID, CF-Ray, CF-Ray',
+      'alt-svc': 'h3=":443"; ma=86400',
+      'cf-cache-status': 'DYNAMIC',
+      'cf-ray': 'a1a5c22be835732e-BKK',
+      connection: 'keep-alive',
+      'content-length': '316',
+      'content-type': 'application/json',
+      date: 'Mon, 13 Jul 2026 05:06:28 GMT',
+      'openai-organization': 'nhrc-epuno0',
+      'openai-processing-ms': '208',
+      'openai-project': 'proj_e3RcVVFf46HLMWqCT5L4Y65X',
+      'openai-version': '2020-10-01',
+      server: 'cloudflare',
+      'set-cookie': '__cf_bm=NX.ByFU_N05DMMnfE4w2bExQrtphfQSwiNOCBxx.VDI-1783919187.8305619-1.0.1.1-_VjA97l.I8tiQHQGfp2w4j2ipZbz5E6vtyRkfWDkmofmua1sKFKm27ZodXb12tf3TJHmdgF67L8MgzEk05Bvv0N1eiYUaG5eNlSafjIGdPiM8CJUML7TzqRBiheIoAjD; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.openai.com; Expires=Mon, 13 Jul 2026 05:36:28 GMT',
+      'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+      'x-content-type-options': 'nosniff',
+      'x-request-id': 'req_2c350a8e3ca742d38a9385c4e3146791'
+    },
+    responseBody: '{\n' +
+      '  "error": {\n' +
+      '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+      '    "type": "insufficient_quota",\n' +
+      '    "param": null,\n' +
+      '    "code": "insufficient_quota"\n' +
+      '  }\n' +
+      '}',
+    isRetryable: true,
+    data: { error: [Object] }
+  }
+}
+LLM answer generation failed; returning evidence mode Error [AI_RetryError]: Failed after 3 attempts. Last error: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+    at async answerKnowledge (src\lib\knowledge\repository.ts:72:18)
+    at async POST (src\app\api\ask\route.ts:16:30)
+  70 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+  71 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+> 72 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+     |                  ^
+  73 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+  74 |     } catch (error) {
+  75 |       // Keep the evidence-based answer available when the model provider is {
+  cause: undefined,
+  reason: 'maxRetriesExceeded',
+  errors: [
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:72:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      70 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      71 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 72 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      73 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      74 |     } catch (error) {
+      75 |       // Keep the evidence-based answer available when the model provider is {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    },
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:72:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      70 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      71 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 72 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      73 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      74 |     } catch (error) {
+      75 |       // Keep the evidence-based answer available when the model provider is {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    },
+    Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+        at async answerKnowledge (src\lib\knowledge\repository.ts:72:18)
+        at async POST (src\app\api\ask\route.ts:16:30)
+      70 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+      71 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+    > 72 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+         |                  ^
+      73 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+      74 |     } catch (error) {
+      75 |       // Keep the evidence-based answer available when the model provider is {
+      cause: undefined,
+      url: 'https://api.openai.com/v1/responses',
+      requestBodyValues: [Object],
+      statusCode: 429,
+      responseHeaders: [Object],
+      responseBody: '{\n' +
+        '  "error": {\n' +
+        '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+        '    "type": "insufficient_quota",\n' +
+        '    "param": null,\n' +
+        '    "code": "insufficient_quota"\n' +
+        '  }\n' +
+        '}',
+      isRetryable: true,
+      data: [Object]
+    }
+  ],
+  lastError: Error [AI_APICallError]: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+      at async answerKnowledge (src\lib\knowledge\repository.ts:72:18)
+      at async POST (src\app\api\ask\route.ts:16:30)
+    70 |     const modelName=process.env.OPENAI_MODEL||"gpt-5.4";
+    71 |     const openai=createOpenAI({apiKey:process.env.OPENAI_API_KEY});
+  > 72 |     const result=await generateText({model:openai(modelName),maxOutputTokens:1800,system:`...
+       |                  ^
+    73 |     return {answer:result.text,citations,disclaimer,mode:"llm-rag",model:modelName};
+    74 |     } catch (error) {
+    75 |       // Keep the evidence-based answer available when the model provider is {
+    cause: undefined,
+    url: 'https://api.openai.com/v1/responses',
+    requestBodyValues: {
+      model: 'gpt-5.4',
+      input: [Array],
+      temperature: undefined,
+      top_p: undefined,
+      max_output_tokens: 1800,
+      conversation: undefined,
+      max_tool_calls: undefined,
+      metadata: undefined,
+      parallel_tool_calls: undefined,
+      previous_response_id: undefined,
+      store: undefined,
+      user: undefined,
+      instructions: undefined,
+      service_tier: undefined,
+      include: undefined,
+      prompt_cache_key: undefined,
+      prompt_cache_retention: undefined,
+      safety_identifier: undefined,
+      top_logprobs: undefined,
+      truncation: undefined,
+      tools: undefined,
+      tool_choice: undefined
+    },
+    statusCode: 429,
+    responseHeaders: {
+      'access-control-expose-headers': 'X-Request-ID, CF-Ray, CF-Ray',
+      'alt-svc': 'h3=":443"; ma=86400',
+      'cf-cache-status': 'DYNAMIC',
+      'cf-ray': 'a1a5ce298a6bc0b1-BKK',
+      connection: 'keep-alive',
+      'content-length': '316',
+      'content-type': 'application/json',
+      date: 'Mon, 13 Jul 2026 05:14:39 GMT',
+      'openai-organization': 'nhrc-epuno0',
+      'openai-processing-ms': '287',
+      'openai-project': 'proj_e3RcVVFf46HLMWqCT5L4Y65X',
+      'openai-version': '2020-10-01',
+      server: 'cloudflare',
+      'set-cookie': '__cf_bm=ya1HCSnDqO6hfiiQZFsQFcjr6AvCpot8INU6d.zIfyk-1783919678.96436-1.0.1.1-2ghoUpRs1viwssNfHYOBW5EjwZAz_8xSPcnAnzny.q5Yx8u2nLlkBeN6x69_ofmA5WzWjEo6oz83jj2fMal67CpnYNGzfEvc2tiPga8Tb4kNTKC9CvRnwkxUTgmnCviF; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.openai.com; Expires=Mon, 13 Jul 2026 05:44:39 GMT',
+      'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+      'x-content-type-options': 'nosniff',
+      'x-request-id': 'req_51773fdcfc1449abb9dff1af0481c34e'
+    },
+    responseBody: '{\n' +
+      '  "error": {\n' +
+      '    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",\n' +
+      '    "type": "insufficient_quota",\n' +
+      '    "param": null,\n' +
+      '    "code": "insufficient_quota"\n' +
+      '  }\n' +
+      '}',
+    isRetryable: true,
+    data: { error: [Object] }
+  }
+}
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

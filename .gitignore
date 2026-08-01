@@ -1,0 +1,25 @@
+.env
+web/node_modules/
+web/.next/
+web/.env.local
+web/.env.*.local
+.venv/
+venv/
+.tools/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# User documents, vector database, and local metadata.
+data/documents/*
+data/chroma/*
+data/document_index.json
+!data/documents/.gitkeep
+!data/chroma/.gitkeep
+
+# OS/editor noise.
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

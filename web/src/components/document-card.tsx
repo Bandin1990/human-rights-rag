@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { ArrowRight, CalendarDays, FileText } from "@/components/icons";
+import { HumanRightsDocument } from "@/types/document";
+export function DocumentCard({doc}:{doc:HumanRightsDocument}){return <article className="doc-card"><div className="doc-icon"><FileText size={25}/></div><div className="doc-main"><div className="tags"><span className="tag tag-type">{doc.type}</span><span className="tag tag-authority">{doc.authorityLevel}</span>{doc.categories.slice(0,3).map(c=><span className="tag" key={c}>{c}</span>)}</div><Link href={`/documents/${doc.id}`}><h3>{doc.title}</h3></Link><p>{doc.summary}</p><div className="metadata"><span><CalendarDays size={15}/> พ.ศ. {doc.buddhistYear}</span>{doc.pages&&<span>{doc.pages} หน้า</span>}<span>{doc.sourceSystem}</span><span>{doc.language.toUpperCase()}</span></div></div><Link className="round-link" href={`/documents/${doc.id}`} aria-label="อ่านเอกสาร"><ArrowRight size={19}/></Link></article>}
