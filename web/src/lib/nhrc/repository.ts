@@ -1,0 +1,299 @@
+/**
+ * NHRC Knowledge Base Repository
+ *
+ * Shared access to the structured index built by setup_obsidian_index.py
+ * (data/nhrc_index.json + data/nhrc_content/<document_id>.txt). Used by the
+ * search/case/stats API routes and by the case detail page, so there's one
+ * place that knows how the index is laid out on disk.
+ */
+import * as fs from "fs";
+import * as path from "path";
+import type { GraphData, NhrcDocument, SearchQuery, Statistics } from "./types";
+
+// Re-exported so existing server-side imports from "@/lib/nhrc/repository"
+// keep working unchanged. Client components must import from "./types"
+// directly - importing this file pulls in `fs`/`path` and breaks the build.
+export type { GraphData, NhrcDocument, SearchQuery, Statistics };
+export { DOCUMENT_CATEGORIES } from "./types";
+
+class NhrcRepository {
+  private documents: NhrcDocument[] = [];
+  private indexPath: string;
+  private contentDir: string;
+  private documentsDir: string;
+  private graphPath: string;
+
+  constructor() {
+    this.indexPath =
+      process.env.NHRC_INDEX_PATH ??
+      path.join(process.cwd(), "..", "data", "nhrc_index.json");
+    this.contentDir =
+      process.env.NHRC_CONTENT_DIR ??
+      path.join(process.cwd(), "..", "data", "nhrc_content");
+    this.documentsDir =
+      process.env.NHRC_DOCUMENTS_DIR ??
+      path.join(process.cwd(), "..", "data", "nhrc_documents");
+    this.graphPath =
+      process.env.NHRC_GRAPH_PATH ??
+      path.join(process.cwd(), "..", "data", "nhrc_graph.json");
+    this.loadIndex();
+  }
+
+  // Topic-map graph (see setup_obsidian_index.py's _export_graph) - read on
+  // demand rather than cached at construction, since it's only used by one
+  // page and there's no benefit to holding it in memory otherwise.
+  getGraph(): GraphData | null {
+    try {
+      if (fs.existsSync(this.graphPath)) {
+        return JSON.parse(fs.readFileSync(this.graphPath, "utf-8"));
+      }
+    } catch (error) {
+      console.error("Failed to load NHRC graph:", error);
+    }
+    return null;
+  }
+
+  private loadIndex() {
+    try {
+      if (fs.existsSync(this.indexPath)) {
+        this.documents = JSON.parse(fs.readFileSync(this.indexPath, "utf-8"));
+      }
+    } catch (error) {
+      console.error("Failed to load NHRC index:", error);
+      this.documents = [];
+    }
+  }
+
+  // Full text lives in one file per document, read on demand.
+  loadContent(documentId: string): string | undefined {
+    try {
+      const filePath = path.join(this.contentDir, `${documentId}.txt`);
+      if (fs.existsSync(filePath)) {
+        return fs.readFileSync(filePath, "utf-8");
+      }
+    } catch (error) {
+      console.error("Failed to load NHRC content:", error);
+    }
+    return undefined;
+  }
+
+  search(query: SearchQuery) {
+    let results = [...this.documents];
+
+    if (query.areaCode && query.areaCode !== "all") {
+      results = results.filter((doc) => doc.area_code === query.areaCode);
+    }
+    if (query.yearBuddhist) {
+      results = results.filter((doc) => doc.year_buddhist === query.yearBuddhist);
+    }
+    if (query.docType && query.docType !== "all") {
+      results = results.filter((doc) => doc.document_type === query.docType);
+    }
+    if (query.category) {
+      results = results.filter((doc) => doc.category === query.category);
+    }
+    if (query.topicId) {
+      results = results.filter((doc) => doc.topic_ids?.includes(query.topicId!));
+    }
+    if (query.query) {
+      const q = query.query.toLowerCase();
+      results = results.filter(
+        (doc) =>
+          doc.title.toLowerCase().includes(q) ||
+          doc.keywords.some((kw) => kw.toLowerCase().includes(q))
+      );
+    }
+
+    results.sort((a, b) => {
+      if (a.document_type === "case_note" && b.document_type !== "case_note") return -1;
+      if (a.document_type !== "case_note" && b.document_type === "case_note") return 1;
+      return new Date(b.uploaded_at).getTime() - new Date(a.uploaded_at).getTime();
+    });
+
+    const limit = query.limit ?? 20;
+    const offset = query.offset ?? 0;
+    const total = results.length;
+
+    return {
+      data: results.slice(offset, offset + limit),
+      pagination: { total, limit, offset, hasMore: offset + limit < total },
+    };
+  }
+
+  getStats(): Statistics {
+    const stats: Statistics = {
+      totalDocuments: this.documents.length,
+      byType: {},
+      byArea: {},
+      byCategory: {},
+      casesByYear: {},
+      topKeywords: [],
+      recentCases: [],
+    };
+
+    const keywordCounts: Record<string, number> = {};
+    for (const doc of this.documents) {
+      stats.byType[doc.document_type] = (stats.byType[doc.document_type] || 0) + 1;
+      if (doc.area_code) {
+        stats.byArea[doc.area_code] = (stats.byArea[doc.area_code] || 0) + 1;
+      }
+      if (doc.category) {
+        stats.byCategory[doc.category] = (stats.byCategory[doc.category] || 0) + 1;
+      }
+      if (doc.document_type === "case_note" && doc.year_buddhist) {
+        stats.casesByYear[doc.year_buddhist] = (stats.casesByYear[doc.year_buddhist] || 0) + 1;
+      }
+      for (const kw of doc.keywords) {
+        keywordCounts[kw] = (keywordCounts[kw] || 0) + 1;
+      }
+    }
+
+    stats.topKeywords = Object.entries(keywordCounts)
+      .map(([keyword, count]) => ({ keyword, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 20);
+
+    stats.recentCases = this.documents
+      .filter((doc) => doc.document_type === "case_note")
+      .sort((a, b) => new Date(b.uploaded_at).getTime() - new Date(a.uploaded_at).getTime())
+      .slice(0, 10);
+
+    return stats;
+  }
+
+  // Looks up by case_id first (the "128-2563" style ID case notes use), then
+  // falls back to document_id - documents without a case_id (situation
+  // reports, topics, research docs) are only reachable this way.
+  //
+  // Also tries the id percent-decoded: document_ids built from non-ASCII
+  // titles (research docs) come back from Next's dynamic route params still
+  // percent-encoded rather than decoded, so a raw === match against the
+  // Thai document_id never succeeds unless we decode first.
+  getCaseById(id: string): NhrcDocument | null {
+    let decoded = id;
+    try {
+      decoded = decodeURIComponent(id);
+    } catch {
+      // not valid percent-encoding - fall back to the raw id below
+    }
+    return (
+      this.documents.find(
+        (doc) =>
+          doc.case_id === id ||
+          doc.document_id === id ||
+          doc.case_id === decoded ||
+          doc.document_id === decoded
+      ) || null
+    );
+  }
+
+  getCaseWithContent(id: string): (NhrcDocument & { content?: string }) | null {
+    const doc = this.getCaseById(id);
+    if (!doc) return null;
+    return { ...doc, content: this.loadContent(doc.document_id) };
+  }
+
+  // Path to the source PDF for a document, if one was found and copied in by
+  // setup_obsidian_index.py. Returns null (not an error) when there's none -
+  // most case notes have a scan, but not all, and non-case documents vary.
+  getSourcePdfPath(documentId: string): string | null {
+    const filePath = path.join(this.documentsDir, `${documentId}.pdf`);
+    return fs.existsSync(filePath) ? filePath : null;
+  }
+
+  // Naive keyword-overlap ranking for the "ask a question" flow: no embeddings
+  // available locally, so score by how many of each case's curated keywords
+  // (and its title) literally appear in the question text.
+  findRelevantCases(
+    question: string,
+    limit: number = 5,
+    scope: { areaCode?: string; category?: string } = {}
+  ): NhrcDocument[] {
+    const q = question.toLowerCase();
+    const pool = this.documents.filter((doc) => {
+      if (doc.document_type !== "case_note") return false;
+      if (scope.areaCode && doc.area_code !== scope.areaCode) return false;
+      if (scope.category && doc.category !== scope.category) return false;
+      return true;
+    });
+
+    const scored = pool
+      .map((doc) => {
+        let score = 0;
+        if (doc.title && q.includes(doc.title.toLowerCase())) score += 5;
+        for (const kw of doc.keywords) {
+          if (kw.length >= 2 && q.includes(kw.toLowerCase())) score += 2;
+        }
+        return { doc, score };
+      })
+      .filter((s) => s.score > 0)
+      .sort((a, b) => b.score - a.score);
+
+    if (scored.length > 0) {
+      return scored.slice(0, limit).map((s) => s.doc);
+    }
+
+    // No keyword overlap at all - fall back to plain title/keyword substring search
+    // within the same scope.
+    return this.search({
+      query: question,
+      docType: "case_note",
+      areaCode: scope.areaCode,
+      category: scope.category,
+      limit,
+    }).data;
+  }
+
+  getRelatedCases(caseId: string, limit: number = 10): NhrcDocument[] {
+    return this.getRelatedDocuments(caseId, "case_note", limit);
+  }
+
+  // Same keyword/area/year-overlap ranking as getRelatedCases, generalized to
+  // any document_type - used for "งานวิจัย" docs too, which have no case_id
+  // (matched by document_id instead) and no area_code (that term just always
+  // scores 0 for them, keyword/year overlap still applies).
+  getRelatedDocuments(
+    documentId: string,
+    docType: NhrcDocument["document_type"],
+    limit: number = 10
+  ): NhrcDocument[] {
+    const source = this.getCaseById(documentId);
+    if (!source) return [];
+
+    const related = this.documents.filter((doc) => {
+      if (doc.document_id === source.document_id) return false;
+      if (doc.document_type !== docType) return false;
+      const areaMatch = !!source.area_code && doc.area_code === source.area_code;
+      const keywordMatch = source.keywords.some((kw) => doc.keywords.includes(kw));
+      const yearMatch = !!(source.year && doc.year && Math.abs(source.year - doc.year) <= 2);
+      return areaMatch || keywordMatch || yearMatch;
+    });
+
+    related.sort((a, b) => {
+      let scoreA = source.area_code && a.area_code === source.area_code ? 3 : 0;
+      let scoreB = source.area_code && b.area_code === source.area_code ? 3 : 0;
+      const sourceKeywords = new Set(source.keywords);
+      scoreA += a.keywords.filter((kw) => sourceKeywords.has(kw)).length;
+      scoreB += b.keywords.filter((kw) => sourceKeywords.has(kw)).length;
+      return scoreB - scoreA;
+    });
+
+    return related.slice(0, limit);
+  }
+
+  getCasesByArea(areaCode: string, limit: number = 20): NhrcDocument[] {
+    return this.documents
+      .filter((doc) => doc.area_code === areaCode && doc.document_type === "case_note")
+      .sort((a, b) => new Date(b.uploaded_at).getTime() - new Date(a.uploaded_at).getTime())
+      .slice(0, limit);
+  }
+}
+
+let repository: NhrcRepository | null = null;
+
+export function getNhrcRepository(): NhrcRepository {
+  if (!repository) {
+    repository = new NhrcRepository();
+  }
+  return repository;
+}

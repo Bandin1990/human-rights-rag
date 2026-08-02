@@ -6,10 +6,9 @@ import { useState } from "react";
 import { BookOpen, Menu, X } from "@/components/icons";
 
 const links = [
-  { href: "/", label: "ค้นเอกสาร", matches: (path: string) => path === "/" || path.startsWith("/documents") },
-  { href: "/#ask", label: "ถาม AI", matches: () => false },
-  { href: "/cases", label: "งานเรื่องร้องเรียน", matches: (path: string) => path.startsWith("/cases") },
-  { href: "/admin/import", label: "นำเข้าเอกสาร", matches: (path: string) => path.startsWith("/admin") },
+  { href: "/", label: "ค้นเอกสาร", matches: (path: string) => path === "/" || path.startsWith("/case") || path.startsWith("/documents") },
+  { href: "/knowledge/dashboard", label: "สถิติ กสม.", matches: (path: string) => path.startsWith("/knowledge/dashboard") },
+  { href: "/knowledge/graph", label: "แผนที่ประเด็นสิทธิ", matches: (path: string) => path.startsWith("/knowledge/graph") },
 ];
 
 export function Header() {

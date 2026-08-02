@@ -33,6 +33,32 @@
 .approve-btn:hover { background: var(--accent-primary); color: white; }
 .approve-btn.approved { background: var(--bg-mint-subtle, #dcfce7); border-color: var(--accent-mint, #16a34a); color: var(--accent-mint); cursor: default; }
 
+/* Stats dashboard (/knowledge/dashboard) */
+.stats-page{padding:56px 0 100px}
+.stats-head{margin-bottom:40px}
+.stats-head h1{font-size:36px;font-weight:800;letter-spacing:-0.02em;margin:0 0 8px}
+.stats-head p{color:var(--muted);margin:0;font-size:16px}
+.stats-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.stats-card{background:white;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-sm)}
+.stats-card-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px;background:var(--mint);color:var(--teal)}
+.stats-card b{display:block;font-size:28px;font-weight:800;color:var(--ink);line-height:1.2}
+.stats-card span{font-size:14px;color:var(--muted)}
+.stats-charts{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.stats-panel{background:white;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-sm)}
+.stats-panel h2{font-size:18px;font-weight:700;margin:0 0 20px}
+.stats-keyword-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;font-size:15px}
+.stats-keyword-row span:first-child{color:var(--ink);font-weight:500}
+.stats-keyword-bar{width:128px;height:8px;background:var(--paper);border-radius:8px;overflow:hidden;flex:0 0 auto}
+.stats-keyword-bar>div{height:100%;background:var(--teal);border-radius:8px}
+.stats-keyword-count{color:var(--muted);font-size:14px;width:32px;text-align:right}
+.stats-recent-item{display:block;padding:14px;background:var(--paper);border-radius:10px;border:1px solid var(--line);margin-bottom:10px;transition:border-color .2s,background .2s}
+.stats-recent-item:hover{border-color:var(--teal);background:var(--mint)}
+.stats-recent-item b{display:block;font-size:14px;color:var(--ink)}
+.stats-recent-item p{margin:4px 0 0;font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stats-recent-item small{display:block;margin-top:6px;font-size:13px;color:var(--muted)}
+@media(max-width:900px){.stats-metrics{grid-template-columns:repeat(2,1fr)}.stats-charts{grid-template-columns:1fr}}
+@media(max-width:600px){.stats-metrics{grid-template-columns:1fr}}
+
 /* A11y Settings */
 body.font-large { font-size: 110%; }
 body.font-xlarge { font-size: 125%; }

@@ -18,6 +18,15 @@ data/document_index.json
 !data/documents/.gitkeep
 !data/chroma/.gitkeep
 
+# NHRC Obsidian index: case notes may contain unredacted personal data
+# (complainant/respondent names, etc.) - see HANDOFF.md. Never commit.
+data/nhrc_index.json
+data/nhrc_index.db
+data/nhrc_index.db-journal
+data/nhrc_content/
+data/nhrc_documents/
+data/nhrc_graph.json
+
 # OS/editor noise.
 .DS_Store
 Thumbs.db
