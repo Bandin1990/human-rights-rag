@@ -1,0 +1,737 @@
+{
+  "nodes": [
+    {
+      "id": "area_A",
+      "type": "area",
+      "label": "สิทธิพลเมืองและสิทธิทางการเมือง",
+      "areaCode": "A",
+      "count": 83
+    },
+    {
+      "id": "area_B",
+      "type": "area",
+      "label": "สิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม",
+      "areaCode": "B",
+      "count": 162
+    },
+    {
+      "id": "area_C",
+      "type": "area",
+      "label": "สิทธิของกลุ่มบุคคล",
+      "areaCode": "C",
+      "count": 13
+    },
+    {
+      "id": "area_D",
+      "type": "area",
+      "label": "สถานการณ์เชิงพื้นที่-เฉพาะ",
+      "areaCode": "D",
+      "count": 2
+    },
+    {
+      "id": "area_E",
+      "type": "area",
+      "label": "เพิ่มเติมจากแท็กซอนอมีเดิม",
+      "areaCode": "E",
+      "count": 11
+    },
+    {
+      "id": "topic_A_กระบวนการยุติธรรม",
+      "type": "topic",
+      "label": "กระบวนการยุติธรรม",
+      "areaCode": "A",
+      "count": 73
+    },
+    {
+      "id": "topic_A_การค้ามนุษย์",
+      "type": "topic",
+      "label": "การค้ามนุษย์",
+      "areaCode": "A",
+      "count": 1
+    },
+    {
+      "id": "topic_A_การทรมานและการบังคับสูญหาย",
+      "type": "topic",
+      "label": "การทรมานและการบังคับสูญหาย",
+      "areaCode": "A",
+      "count": 12
+    },
+    {
+      "id": "topic_A_การมีส่วนร่วมทางการเมืองเลือกตั้ง",
+      "type": "topic",
+      "label": "การมีส่วนร่วมทางการเมืองเลือกตั้ง",
+      "areaCode": "A",
+      "count": 1
+    },
+    {
+      "id": "topic_A_นักปกป้องสิทธิมนุษยชน_(SLAPP)",
+      "type": "topic",
+      "label": "นักปกป้องสิทธิมนุษยชน (SLAPP)",
+      "areaCode": "A",
+      "count": 7
+    },
+    {
+      "id": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
+      "type": "topic",
+      "label": "เสรีภาพชุมนุมแสดงออกสื่อ",
+      "areaCode": "A",
+      "count": 7
+    },
+    {
+      "id": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "type": "topic",
+      "label": "ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "areaCode": "B",
+      "count": 130
+    },
+    {
+      "id": "topic_B_ธุรกิจกับสิทธิมนุษยชน_(BHR)",
+      "type": "topic",
+      "label": "ธุรกิจกับสิทธิมนุษยชน (BHR)",
+      "areaCode": "B",
+      "count": 18
+    },
+    {
+      "id": "topic_B_สิทธิการศึกษา",
+      "type": "topic",
+      "label": "สิทธิการศึกษา",
+      "areaCode": "B",
+      "count": 11
+    },
+    {
+      "id": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "type": "topic",
+      "label": "สิทธิสุขภาพสาธารณสุข",
+      "areaCode": "B",
+      "count": 28
+    },
+    {
+      "id": "topic_B_สิทธิแรงงาน",
+      "type": "topic",
+      "label": "สิทธิแรงงาน",
+      "areaCode": "B",
+      "count": 14
+    },
+    {
+      "id": "topic_B_สิ่งแวดล้อมและ_EIA",
+      "type": "topic",
+      "label": "สิ่งแวดล้อมและ EIA",
+      "areaCode": "B",
+      "count": 56
+    },
+    {
+      "id": "topic_C_คนจนเมืองที่อยู่อาศัย",
+      "type": "topic",
+      "label": "คนจนเมืองที่อยู่อาศัย",
+      "areaCode": "C",
+      "count": 14
+    },
+    {
+      "id": "topic_C_สิทธิกลุ่มชาติพันธุ์",
+      "type": "topic",
+      "label": "สิทธิกลุ่มชาติพันธุ์",
+      "areaCode": "C",
+      "count": 21
+    },
+    {
+      "id": "topic_C_สิทธิคนพิการ",
+      "type": "topic",
+      "label": "สิทธิคนพิการ",
+      "areaCode": "C",
+      "count": 6
+    },
+    {
+      "id": "topic_C_สิทธิผู้สูงอายุ",
+      "type": "topic",
+      "label": "สิทธิผู้สูงอายุ",
+      "areaCode": "C",
+      "count": 2
+    },
+    {
+      "id": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
+      "type": "topic",
+      "label": "สิทธิสตรีความเสมอภาคทางเพศ",
+      "areaCode": "C",
+      "count": 11
+    },
+    {
+      "id": "topic_C_สิทธิเด็ก",
+      "type": "topic",
+      "label": "สิทธิเด็ก",
+      "areaCode": "C",
+      "count": 7
+    },
+    {
+      "id": "topic_C_ไร้รัฐไร้สัญชาติ",
+      "type": "topic",
+      "label": "ไร้รัฐไร้สัญชาติ",
+      "areaCode": "C",
+      "count": 6
+    },
+    {
+      "id": "topic_D_สถานการณ์ชายแดนใต้",
+      "type": "topic",
+      "label": "สถานการณ์ชายแดนใต้",
+      "areaCode": "D",
+      "count": 4
+    },
+    {
+      "id": "topic_D_สถานการณ์โควิด_19",
+      "type": "topic",
+      "label": "สถานการณ์โควิด 19",
+      "areaCode": "D",
+      "count": 7
+    },
+    {
+      "id": "topic_E_สิทธิผู้ต้องขัง",
+      "type": "topic",
+      "label": "สิทธิผู้ต้องขัง",
+      "areaCode": "E",
+      "count": 33
+    },
+    {
+      "id": "topic_E_เสรีภาพทางศาสนา",
+      "type": "topic",
+      "label": "เสรีภาพทางศาสนา",
+      "areaCode": "E",
+      "count": 3
+    }
+  ],
+  "edges": [
+    {
+      "source": "area_A",
+      "target": "topic_A_กระบวนการยุติธรรม",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_A",
+      "target": "topic_A_การค้ามนุษย์",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_A",
+      "target": "topic_A_การทรมานและการบังคับสูญหาย",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_A",
+      "target": "topic_A_การมีส่วนร่วมทางการเมืองเลือกตั้ง",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_A",
+      "target": "topic_A_นักปกป้องสิทธิมนุษยชน_(SLAPP)",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_A",
+      "target": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_B",
+      "target": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_B",
+      "target": "topic_B_ธุรกิจกับสิทธิมนุษยชน_(BHR)",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_B",
+      "target": "topic_B_สิทธิการศึกษา",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_B",
+      "target": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_B",
+      "target": "topic_B_สิทธิแรงงาน",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_B",
+      "target": "topic_B_สิ่งแวดล้อมและ_EIA",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_C",
+      "target": "topic_C_คนจนเมืองที่อยู่อาศัย",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_C",
+      "target": "topic_C_สิทธิกลุ่มชาติพันธุ์",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_C",
+      "target": "topic_C_สิทธิคนพิการ",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_C",
+      "target": "topic_C_สิทธิผู้สูงอายุ",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_C",
+      "target": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_C",
+      "target": "topic_C_สิทธิเด็ก",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_C",
+      "target": "topic_C_ไร้รัฐไร้สัญชาติ",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_D",
+      "target": "topic_D_สถานการณ์ชายแดนใต้",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_D",
+      "target": "topic_D_สถานการณ์โควิด_19",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_E",
+      "target": "topic_E_สิทธิผู้ต้องขัง",
+      "type": "hierarchy"
+    },
+    {
+      "source": "area_E",
+      "target": "topic_E_เสรีภาพทางศาสนา",
+      "type": "hierarchy"
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_A_การทรมานและการบังคับสูญหาย",
+      "type": "shared_cases",
+      "weight": 11
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_A_การมีส่วนร่วมทางการเมืองเลือกตั้ง",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_A_นักปกป้องสิทธิมนุษยชน_(SLAPP)",
+      "type": "shared_cases",
+      "weight": 3
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
+      "type": "shared_cases",
+      "weight": 3
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "type": "shared_cases",
+      "weight": 9
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_B_สิทธิการศึกษา",
+      "type": "shared_cases",
+      "weight": 3
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "type": "shared_cases",
+      "weight": 3
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_B_สิทธิแรงงาน",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_C_คนจนเมืองที่อยู่อาศัย",
+      "type": "shared_cases",
+      "weight": 3
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_C_สิทธิกลุ่มชาติพันธุ์",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
+      "type": "shared_cases",
+      "weight": 3
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_C_สิทธิเด็ก",
+      "type": "shared_cases",
+      "weight": 3
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_C_ไร้รัฐไร้สัญชาติ",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_D_สถานการณ์ชายแดนใต้",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_D_สถานการณ์โควิด_19",
+      "type": "shared_cases",
+      "weight": 3
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_E_สิทธิผู้ต้องขัง",
+      "type": "shared_cases",
+      "weight": 20
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_E_เสรีภาพทางศาสนา",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_การค้ามนุษย์",
+      "target": "topic_B_สิทธิแรงงาน",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_การทรมานและการบังคับสูญหาย",
+      "target": "topic_D_สถานการณ์ชายแดนใต้",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_การมีส่วนร่วมทางการเมืองเลือกตั้ง",
+      "target": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_การมีส่วนร่วมทางการเมืองเลือกตั้ง",
+      "target": "topic_B_สิทธิการศึกษา",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_การมีส่วนร่วมทางการเมืองเลือกตั้ง",
+      "target": "topic_C_สิทธิเด็ก",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_นักปกป้องสิทธิมนุษยชน_(SLAPP)",
+      "target": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_นักปกป้องสิทธิมนุษยชน_(SLAPP)",
+      "target": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_นักปกป้องสิทธิมนุษยชน_(SLAPP)",
+      "target": "topic_B_สิ่งแวดล้อมและ_EIA",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_นักปกป้องสิทธิมนุษยชน_(SLAPP)",
+      "target": "topic_D_สถานการณ์ชายแดนใต้",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_นักปกป้องสิทธิมนุษยชน_(SLAPP)",
+      "target": "topic_E_เสรีภาพทางศาสนา",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
+      "target": "topic_B_สิทธิการศึกษา",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
+      "target": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
+      "target": "topic_C_สิทธิเด็ก",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "target": "topic_B_ธุรกิจกับสิทธิมนุษยชน_(BHR)",
+      "type": "shared_cases",
+      "weight": 10
+    },
+    {
+      "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "target": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "type": "shared_cases",
+      "weight": 6
+    },
+    {
+      "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "target": "topic_B_สิ่งแวดล้อมและ_EIA",
+      "type": "shared_cases",
+      "weight": 51
+    },
+    {
+      "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "target": "topic_C_คนจนเมืองที่อยู่อาศัย",
+      "type": "shared_cases",
+      "weight": 13
+    },
+    {
+      "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "target": "topic_C_สิทธิกลุ่มชาติพันธุ์",
+      "type": "shared_cases",
+      "weight": 18
+    },
+    {
+      "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "target": "topic_C_ไร้รัฐไร้สัญชาติ",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
+      "target": "topic_D_สถานการณ์ชายแดนใต้",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_B_ธุรกิจกับสิทธิมนุษยชน_(BHR)",
+      "target": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_B_ธุรกิจกับสิทธิมนุษยชน_(BHR)",
+      "target": "topic_B_สิทธิแรงงาน",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_B_ธุรกิจกับสิทธิมนุษยชน_(BHR)",
+      "target": "topic_B_สิ่งแวดล้อมและ_EIA",
+      "type": "shared_cases",
+      "weight": 9
+    },
+    {
+      "source": "topic_B_ธุรกิจกับสิทธิมนุษยชน_(BHR)",
+      "target": "topic_C_สิทธิกลุ่มชาติพันธุ์",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_B_สิทธิการศึกษา",
+      "target": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_B_สิทธิการศึกษา",
+      "target": "topic_C_สิทธิเด็ก",
+      "type": "shared_cases",
+      "weight": 4
+    },
+    {
+      "source": "topic_B_สิทธิการศึกษา",
+      "target": "topic_C_ไร้รัฐไร้สัญชาติ",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_B_สิทธิการศึกษา",
+      "target": "topic_D_สถานการณ์โควิด_19",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_B_สิทธิการศึกษา",
+      "target": "topic_E_เสรีภาพทางศาสนา",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "target": "topic_B_สิทธิแรงงาน",
+      "type": "shared_cases",
+      "weight": 4
+    },
+    {
+      "source": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "target": "topic_B_สิ่งแวดล้อมและ_EIA",
+      "type": "shared_cases",
+      "weight": 5
+    },
+    {
+      "source": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "target": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "target": "topic_D_สถานการณ์โควิด_19",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "target": "topic_E_สิทธิผู้ต้องขัง",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_B_สิทธิสุขภาพสาธารณสุข",
+      "target": "topic_E_เสรีภาพทางศาสนา",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_B_สิทธิแรงงาน",
+      "target": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_B_สิทธิแรงงาน",
+      "target": "topic_D_สถานการณ์โควิด_19",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_B_สิ่งแวดล้อมและ_EIA",
+      "target": "topic_C_สิทธิกลุ่มชาติพันธุ์",
+      "type": "shared_cases",
+      "weight": 10
+    },
+    {
+      "source": "topic_B_สิ่งแวดล้อมและ_EIA",
+      "target": "topic_D_สถานการณ์ชายแดนใต้",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_C_คนจนเมืองที่อยู่อาศัย",
+      "target": "topic_C_สิทธิกลุ่มชาติพันธุ์",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_C_สิทธิกลุ่มชาติพันธุ์",
+      "target": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_C_สิทธิกลุ่มชาติพันธุ์",
+      "target": "topic_C_ไร้รัฐไร้สัญชาติ",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_C_สิทธิคนพิการ",
+      "target": "topic_C_สิทธิผู้สูงอายุ",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
+      "target": "topic_D_สถานการณ์ชายแดนใต้",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
+      "target": "topic_E_สิทธิผู้ต้องขัง",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
+      "target": "topic_E_เสรีภาพทางศาสนา",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_C_สิทธิเด็ก",
+      "target": "topic_C_ไร้รัฐไร้สัญชาติ",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_C_สิทธิเด็ก",
+      "target": "topic_D_สถานการณ์โควิด_19",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_C_ไร้รัฐไร้สัญชาติ",
+      "target": "topic_E_สิทธิผู้ต้องขัง",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_D_สถานการณ์ชายแดนใต้",
+      "target": "topic_E_สิทธิผู้ต้องขัง",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_D_สถานการณ์ชายแดนใต้",
+      "target": "topic_E_เสรีภาพทางศาสนา",
+      "type": "shared_cases",
+      "weight": 2
+    },
+    {
+      "source": "topic_D_สถานการณ์โควิด_19",
+      "target": "topic_E_สิทธิผู้ต้องขัง",
+      "type": "shared_cases",
+      "weight": 3
+    },
+    {
+      "source": "topic_E_สิทธิผู้ต้องขัง",
+      "target": "topic_E_เสรีภาพทางศาสนา",
+      "type": "shared_cases",
+      "weight": 1
+    }
+  ]
+}

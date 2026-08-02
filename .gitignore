@@ -18,14 +18,15 @@ data/document_index.json
 !data/documents/.gitkeep
 !data/chroma/.gitkeep
 
-# NHRC Obsidian index: case notes may contain unredacted personal data
-# (complainant/respondent names, etc.) - see HANDOFF.md. Never commit.
-data/nhrc_index.json
+# NHRC Obsidian index/content: checked 2026-08-03, no complainant/respondent
+# names found in the parsed text (see HANDOFF.md) - committed intentionally
+# so the deployed site has real search data.
+# data/nhrc_documents/ (raw scanned PDFs, ~1.4GB) stays out: unverified for
+# personal data, and too large for git/Vercel regardless - needs a real file
+# storage solution (S3/Supabase storage/Vercel Blob), not git.
 data/nhrc_index.db
 data/nhrc_index.db-journal
-data/nhrc_content/
 data/nhrc_documents/
-data/nhrc_graph.json
 
 # OS/editor noise.
 .DS_Store
