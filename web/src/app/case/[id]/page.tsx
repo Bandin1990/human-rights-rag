@@ -61,6 +61,96 @@ function cleanMarkdown(text: string): string {
     .replace(/\*\*([^*]+)\*\*/g, "$1");
 }
 
+// Research ("general") docs open with a single bold metadata line:
+// "**ปีที่จัดทำ (พ.ศ.):** 2546 · **ประเภท:** วิจัยประยุกต์ · **ผู้จัดทำ:** ...
+// · **วิธีดำเนินการ:** ..." - present in 82/90 files as of this writing.
+// Returns null (not an error) for the minority that don't have it -
+// callers fall back to the plain-summary view.
+interface GeneralMetadata {
+  yearPrepared?: string;
+  researchType?: string;
+  preparedBy?: string;
+  method?: string;
+}
+function parseGeneralMetadata(content: string): GeneralMetadata | null {
+  const line = content.split("\n").find((l) => l.includes("**ปีที่จัดทำ"));
+  if (!line) return null;
+  const fields: GeneralMetadata = {};
+  const fieldMap: Record<string, keyof GeneralMetadata> = {
+    "ปีที่จัดทำ (พ.ศ.)": "yearPrepared",
+    "ประเภท": "researchType",
+    "ผู้จัดทำ": "preparedBy",
+    "วิธีดำเนินการ": "method",
+  };
+  const pattern = /\*\*([^*]+):\*\*\s*([^·]+)/g;
+  let match;
+  while ((match = pattern.exec(line)) !== null) {
+    const key = fieldMap[match[1].trim()];
+    if (key) fields[key] = match[2].trim();
+  }
+  return Object.keys(fields).length > 0 ? fields : null;
+}
+
+// Reading order for a research doc's own sections - the hand-written
+// abstract first (what a reader actually wants), methodology/scope after.
+// "คำสำคัญ" is skipped (already shown as tags above), "ลิงก์รายงาน" as a link.
+const GENERAL_SECTION_ORDER = [
+  "สาระสำคัญ",
+  "ประเด็นสิทธิที่วิจัย",
+  "ระเบียบวิธีวิจัย",
+  "ประเด็นสิทธิที่เกี่ยวข้อง",
+];
+const GENERAL_SECTION_EXCLUDE = new Set(["คำสำคัญ", "ลิงก์รายงาน"]);
+
+function splitGeneralSections(content: string): { heading: string; content: string }[] {
+  const withoutTitle = content.replace(/^#\s+.*\n?/, "").replace(/^\*\*ปีที่จัดทำ.*\n?/m, "");
+  const parts = withoutTitle.split(/\n(?=##\s)/).map((s) => s.trim()).filter(Boolean);
+
+  const sections = parts
+    .map((part) => {
+      const match = part.match(/^##\s*(.+)/);
+      const heading = match ? match[1].trim() : "";
+      const text = part.replace(/^##\s*.+\n?/, "").trim();
+      return { heading, content: cleanMarkdown(text) };
+    })
+    .filter((s) => s.heading && s.content && !GENERAL_SECTION_EXCLUDE.has(s.heading));
+
+  return sections.sort((a, b) => {
+    const ai = GENERAL_SECTION_ORDER.indexOf(a.heading);
+    const bi = GENERAL_SECTION_ORDER.indexOf(b.heading);
+    return (ai === -1 ? GENERAL_SECTION_ORDER.length : ai) - (bi === -1 ? GENERAL_SECTION_ORDER.length : bi);
+  });
+}
+
+function reportLink(content: string): string | null {
+  const match = content.match(/##\s*ลิงก์รายงาน\s*\n([\s\S]*?)(?=\n##\s|$)/);
+  if (!match) return null;
+  const urlMatch = match[1].match(/https?:\/\/\S+/);
+  return urlMatch ? urlMatch[0] : null;
+}
+
+function GeneralMetadataBox({ meta }: { meta: GeneralMetadata }) {
+  const rows: [string, string | undefined][] = [
+    ["ปีที่จัดทำ", meta.yearPrepared],
+    ["ประเภท", meta.researchType],
+    ["ผู้จัดทำ", meta.preparedBy],
+    ["วิธีดำเนินการ", meta.method],
+  ].filter(([, v]) => !!v) as [string, string][];
+  if (rows.length === 0) return null;
+  return (
+    <div className="cw-legal-refs" style={{ marginTop: 24 }}>
+      <div className="cw-legal-refs-head">
+        <Sparkles size={15} /> ข้อมูลงานวิจัย
+      </div>
+      {rows.map(([label, value]) => (
+        <p key={label} style={{ color: "#d1d5db", fontSize: "0.92rem", margin: "6px 0" }}>
+          <b>{label}:</b> {value}
+        </p>
+      ))}
+    </div>
+  );
+}
+
 function RelatedList({ title, cases }: { title: string; cases: NhrcDocument[] }) {
   if (cases.length === 0) return null;
   return (
@@ -158,6 +248,17 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
     : [];
   const sections = isCaseNote ? splitSections(caseDoc.content || "") : [];
   const legalRefs = isCaseNote ? await getLegalRefs(id) : null;
+  const generalMeta = isGeneral ? parseGeneralMetadata(caseDoc.content || "") : null;
+  const generalSections = isGeneral ? splitGeneralSections(caseDoc.content || "") : [];
+  const generalLink = isGeneral ? reportLink(caseDoc.content || "") : null;
+
+  const docTypeLabel = isCaseNote
+    ? "กรณีตรวจสอบ"
+    : isSituationReport
+    ? "รายงานประเมินสถานการณ์"
+    : isGeneral
+    ? "งานวิจัย"
+    : "เอกสาร";
 
   return (
     <main className="cw-detail-page">
@@ -168,7 +269,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
         <article>
           <div className="cw-detail-hero">
             <div className="cw-case-card-tags">
-              <span className="cw-case-tag">{isCaseNote ? "กรณีตรวจสอบ" : "รายงานประเมินสถานการณ์"}</span>
+              <span className="cw-case-tag">{docTypeLabel}</span>
               {caseDoc.area_code && (
                 <span className="cw-case-tag is-muted">
                   [{caseDoc.area_code}] {caseDoc.area_name || AREA_NAMES[caseDoc.area_code]}
@@ -228,11 +329,38 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
                 ))}
               </section>
             </>
+          ) : isGeneral && generalSections.length > 0 ? (
+            <>
+              {generalMeta && <GeneralMetadataBox meta={generalMeta} />}
+              <section className="cw-detail-body">
+                {generalSections.map((s, i) => (
+                  <section key={i} className="cw-detail-section">
+                    <span className="cw-detail-section-num">{String(i + 1).padStart(2, "0")}</span>
+                    <div>
+                      <h2>{s.heading}</h2>
+                      <p>{s.content}</p>
+                    </div>
+                  </section>
+                ))}
+                {generalLink && (
+                  <section className="cw-detail-section">
+                    <div>
+                      <h2>ลิงก์รายงาน</h2>
+                      <p>
+                        <a href={generalLink} target="_blank" rel="noopener noreferrer">
+                          {generalLink}
+                        </a>
+                      </p>
+                    </div>
+                  </section>
+                )}
+              </section>
+            </>
           ) : (
             <section className="cw-detail-body">
               <section className="cw-detail-section">
                 <div>
-                  <h2>เกี่ยวกับรายงานฉบับนี้</h2>
+                  <h2>เกี่ยวกับเอกสารฉบับนี้</h2>
                   <p>{caseDoc.summary}</p>
                   <p style={{ marginTop: 12 }}>
                     เอกสารฉบับเต็มเป็นรายงานฉบับตีพิมพ์ (แปลงจากไฟล์ PDF) จึงยังไม่ได้แบ่งเป็นหัวข้อย่อยแบบเดียวกับ
