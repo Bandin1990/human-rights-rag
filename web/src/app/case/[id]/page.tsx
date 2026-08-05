@@ -143,7 +143,8 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
   const isCaseNote = caseDoc.document_type === "case_note";
   const isSituationReport = caseDoc.document_type === "situation_report";
   const isGeneral = caseDoc.document_type === "general";
-  const hasPdf = !!repo.getSourcePdfPath(caseDoc.document_id);
+  const hasPdf =
+    !!repo.getSourcePdfPath(caseDoc.document_id) || !!repo.getDrivePdfFileId(caseDoc.document_id);
 
   const related = isCaseNote ? repo.getRelatedCases(id, 10) : [];
   const sameArea = isCaseNote
