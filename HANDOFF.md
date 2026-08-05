@@ -480,9 +480,57 @@ Bash บน Windows เข้ารหัสสตริงไทยที่ฝ
 เจอเอกสาร topic "เสรีภาพชุมนุมแสดงออกสื่อ" ตรงประเด็นทันที (เอกสารประเภท `topic`
 ซึ่งก่อนแก้จะถูกกรองทิ้งไปเลย)
 
-**ยังไม่ทำ**: การจับคู่ยังเป็น literal substring ล้วน ๆ ไม่ใช่ semantic search จริง
-(บั๊ก #6 เดิม) - คำถามที่ไม่มี keyword ปรากฏเป็นข้อความย่อยตรงๆ เลยจะยังหาไม่เจอ
-ต้องต่อ embeddings/ChromaDB จริงถึงจะแก้ขาดได้
+**อัปเดต**: แก้บั๊ก #6 (semantic search จริง) ตามหัวข้อถัดไปแล้ว - ข้อจำกัด literal
+substring ที่เขียนไว้ตอนแรกด้านบนไม่มีผลอีกต่อไปเมื่อ Gemini/Supabase ตั้งค่าไว้
+(fallback เป็น substring เหมือนเดิมถ้ายังไม่ตั้งค่า)
+
+### บั๊ก #6 (semantic search จริง) — แก้แล้วด้วย Gemini embeddings + Supabase pgvector
+
+ผู้ใช้ขอให้แก้ "บั๊กเดิม" ต่อจากการแก้ keyword matching ด้านบน คือทำ semantic search
+จริง (ไม่ใช่ substring) โครงสร้างที่เพิ่ม:
+
+- `supabase/nhrc_embeddings_schema.sql` — ตารางใหม่ `public.nhrc_embeddings`
+  (`document_id`, `embedding halfvec(768)`, `content_hash`) แยกจาก
+  `public.document_sections` เดิม (คนละฟีเจอร์ คนละ provider embedding -
+  ของเดิมตั้งไว้ `halfvec(1536)` สำหรับ OpenAI ซึ่งไม่ตรงกับโค้ด `embeddings.ts`
+  ปัจจุบันที่ใช้ Gemini 768 มิติอยู่แล้ว - เป็นของค้างจากตอน migrate ไป Gemini
+  ไม่ใช่ปัญหาที่เกิดจากงานนี้ ไม่ได้แตะ/แก้ตารางเดิม) พร้อม HNSW index +
+  RPC function `match_nhrc_documents(query_embedding, match_count)` ต้องรัน SQL
+  นี้เองผ่าน Supabase SQL Editor (repo ไม่มี migration runner)
+- `web/scripts/embed-nhrc-documents.mjs` — สคริปต์รันครั้งเดียว (rerun ได้ ข้าม
+  เอกสารที่ embed-text ไม่เปลี่ยนผ่าน `content_hash`) อ่าน `nhrc_index.json` +
+  `nhrc_content/*.txt` สร้าง embedding ทีละ batch (20 เอกสาร) อัปโหลดเข้า Supabase
+  มี retry+backoff อัตโนมัติเมื่อโดน rate limit (free tier ของ Gemini ติด
+  rate limit ง่ายมากกับ batch ใหญ่ - ต้องมี) รันสำเร็จครบ 404/404 เอกสารแล้ว
+- `web/src/lib/nhrc/semantic-search.ts` (ใหม่) — embed คำถามด้วย
+  `lib/embeddings.ts` แล้วเรียก RPC ข้างบน คืน `null` เงียบๆ ถ้ายังไม่ตั้งค่า/error
+  (ไม่ throw)
+- `api/ask-nhrc/route.ts` — เพิ่ม `findRelevantDocuments()`: ลอง semantic search
+  ก่อน (กรอง area/category scope เอง เพราะ vector index ไม่รู้เรื่อง scope) ถ้าไม่มี/
+  error/หลังกรอง scope แล้วว่าง **fallback ไปใช้ `repo.findRelevantCases()` เดิม**
+  (keyword substring) ทันที - ไม่มีทางพังกว่าของเดิม แค่ดีขึ้นเมื่อ config พร้อม
+
+**แก้โมเดล Gemini ระหว่างทาง**: `text-embedding-004` ที่ใช้อยู่เดิมเลิกใช้ไปแล้ว
+เช็ค `ListModels` แล้วเปลี่ยนเป็น `gemini-embedding-001` (ระบุ
+`outputDimensionality: 768` ตรงๆ ในทุก request เพราะโมเดลนี้ default คืนเวกเตอร์
+ใหญ่กว่ามาก ไม่ระบุจะไม่ตรงกับ `halfvec(768)`) แก้ทั้งใน `lib/embeddings.ts`
+(ใช้ตอน query) และ `embed-nhrc-documents.mjs` (ใช้ตอน index) ให้ตรงกัน
+
+**Gemini API key เจอ 2 รอบ**: รอบแรก key จากโปรเจกต์ `gen-lang-client-0228155967`
+(ตัวเดียวกับที่ทำ Drive OAuth) ติด "prepayment credits depleted" เพราะผูก billing
+แบบ pay-as-you-go ไปแล้ว - แก้โดยสร้าง key ใหม่จากโปรเจกต์ใหม่ผ่าน
+[aistudio.google.com/apikey](https://aistudio.google.com/apikey) โดยไม่ผูก billing
+account จะได้ free tier ปกติ (จำกัด rate ต่อนาทีแทน ซึ่งจัดการด้วย retry+backoff
+ในสคริปต์แล้ว)
+
+**ทดสอบยืนยันแล้ว**: คำถาม "เสรีภาพในการชุมนุมคืออะไร" ตอนนี้ได้
+`topic_A_เสรีภาพชุมนุมแสดงออกสื่อ` เป็นอันดับ 1 (เทียบกับก่อนหน้านี้ที่ literal
+substring หาไม่เจอเลยแม้จะแก้ scope/keyword-length ไปแล้วก็ตาม)
+
+**ยังไม่เสร็จ**: ต้องตั้ง `GEMINI_API_KEY` ใน Vercel ด้วย (คนละตัวกับตอน embed -
+ตอน query จริงบนเว็บต้อง embed คำถามของผู้ใช้แบบ real-time) — ตัว embeddings เองอยู่
+ใน Supabase แล้ว ใช้ร่วมกันได้ทั้ง local dev และ production ทันทีไม่ต้องรันสคริปต์ซ้ำ
+ต่อ environment, แค่ query-time embedding เท่านั้นที่ต้องมี key ในแต่ละที่ที่รัน
 
 ---
 

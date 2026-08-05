@@ -4,9 +4,38 @@
  */
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
-import { getNhrcRepository } from "@/lib/nhrc/repository";
+import { getNhrcRepository, NhrcDocument } from "@/lib/nhrc/repository";
+import { semanticSearch } from "@/lib/nhrc/semantic-search";
 
 export const runtime = "nodejs";
+
+// Real (embedding-based) search first, since it understands paraphrased
+// questions the old literal-keyword-substring match couldn't (see
+// repository.ts's findRelevantCases). Falls back to that keyword match
+// when semantic search isn't configured (no Gemini/Supabase env vars),
+// errors, or - after applying the area/category scope, which the vector
+// index doesn't know about - comes back empty.
+async function findRelevantDocuments(
+  repo: ReturnType<typeof getNhrcRepository>,
+  question: string,
+  limit: number,
+  scope: { areaCode?: string; category?: string }
+): Promise<NhrcDocument[]> {
+  const semanticMatches = await semanticSearch(question, limit * 3);
+  if (semanticMatches && semanticMatches.length > 0) {
+    const docs = semanticMatches
+      .map((m) => repo.getCaseById(m.documentId))
+      .filter((doc): doc is NhrcDocument => {
+        if (!doc) return false;
+        if (scope.areaCode && doc.area_code !== scope.areaCode) return false;
+        if (scope.category && doc.category !== scope.category) return false;
+        return true;
+      })
+      .slice(0, limit);
+    if (docs.length > 0) return docs;
+  }
+  return repo.findRelevantCases(question, limit, scope);
+}
 
 interface CitationInfo {
   case_id: string;
@@ -44,7 +73,7 @@ export async function POST(req: Request) {
     const category = typeof body.category === "string" ? body.category : undefined;
 
     const repo = getNhrcRepository();
-    const matches = repo.findRelevantCases(question, 5, { areaCode, category });
+    const matches = await findRelevantDocuments(repo, question, 5, { areaCode, category });
 
     if (matches.length === 0) {
       return NextResponse.json({

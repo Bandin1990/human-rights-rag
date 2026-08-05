@@ -1,5 +1,9 @@
-const EMBEDDING_MODEL = process.env.GEMINI_EMBEDDING_MODEL || "models/text-embedding-004";
-const EMBEDDING_DIMENSIONS = 768; // Gemini output dimensions
+// "text-embedding-004" is retired - gemini-embedding-001 is the current
+// model (confirmed via ListModels). It defaults to a much larger vector,
+// so outputDimensionality is required below to get the 768 dims this file
+// (and the halfvec(768) columns that store its output) expect.
+const EMBEDDING_MODEL = process.env.GEMINI_EMBEDDING_MODEL || "models/gemini-embedding-001";
+const EMBEDDING_DIMENSIONS = 768;
 
 type EmbeddingResponse = {
   embeddings?: Array<{ values: number[] }>;
@@ -21,7 +25,8 @@ export async function createEmbeddings(inputs: string[]): Promise<number[][]> {
   // Gemini batch embed
   const requests = inputs.map(input => ({
     model: EMBEDDING_MODEL,
-    content: { parts: [{ text: input }] }
+    content: { parts: [{ text: input }] },
+    outputDimensionality: EMBEDDING_DIMENSIONS,
   }));
 
   const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/${EMBEDDING_MODEL}:batchEmbedContents?key=${apiKey}`, {
