@@ -205,8 +205,27 @@ class ObsidianParser:
             # keep them out of the search index. The vault files themselves are
             # untouched, so Obsidian's own template picker still works fine.
             return None
+        elif path_parts[0] == "human-rights-platform":
+            # An entire unrelated software project (node_modules and all -
+            # ~370 stray .md files: package READMEs, AGENTS.md, docs/*) ended
+            # up copied inside the vault root at some point. Not case
+            # content in any sense - exclude outright rather than let it
+            # into the public search index as fake "research documents".
+            return None
         elif path_parts[0] == "รายงานประเมินสถานการณ์":
             doc = self._parse_situation_report(file_path, frontmatter, content, relative_path)
+        elif path_parts[0].startswith("ปี") and re.search(r'\d+', path_parts[0]):
+            # Top-level "ปี XXXX" folders are documented (see _find_case_pdf)
+            # as the PDF-scan home for every year - .md files aren't
+            # supposed to live here at all. For 2569, some raw/duplicate
+            # .md source dumps got saved here alongside the PDFs, but the
+            # real curated case note for each of those cases already exists
+            # under "03 กรณีตรวจสอบ (Case Notes)/ปี XXXX/...- บันทึก.md" with
+            # the same case_id - routing these to _parse_case_note too would
+            # collide on document_id and risk silently overwriting the good
+            # version with the raw one depending on filesystem glob order
+            # (verified this almost happened). Exclude outright instead.
+            return None
         else:
             doc = self._parse_generic(file_path, frontmatter, content, relative_path)
 
