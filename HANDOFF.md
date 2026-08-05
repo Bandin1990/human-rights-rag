@@ -373,6 +373,72 @@ lookup ตรง ๆ ผลคือ 270/285 เคส (94.7%) มี area_code 
 
 ---
 
+## Deploy จริงขึ้น Vercel — บั๊กที่เจอหลัง deploy (2026-08-05)
+
+Deploy ที่ https://human-rights-rag-enje-chi.vercel.app/ แล้วพบ 3 ปัญหา ตามที่ผู้ใช้แจ้ง
+("ค้นแล้วให้ข้อมูลไม่ตรง / AI ใช้งานไม่ได้ / ดาวโหลดเอกสารต้นฉบับไม่ได้"):
+
+1. **ค้นหาไม่ตรง** — ทดสอบซ้ำหลายคำถามแล้วผลลัพธ์ตรงประเด็นดี ยังไม่สามารถ reproduce
+   ปัญหานี้ได้ในรอบนี้ — รอตัวอย่างคำค้นที่ผู้ใช้เจอปัญหาจริงเพื่อไล่บั๊กต่อ
+2. **AI (Ask NHRC) ใช้งานไม่ได้** — สาเหตุ: ยังไม่ได้ตั้ง `ANTHROPIC_API_KEY` ใน Vercel
+   Environment Variables ทำให้ `/api/ask-nhrc` fallback ไปโหมด evidence-only เงียบๆ
+   (ดู [ask-nhrc/route.ts](web/src/app/api/ask-nhrc/route.ts) บรรทัด 75) — บอกขั้นตอนตั้งค่า
+   ให้ผู้ใช้ไปทำเองแล้ว (ตั้งค่า env var + redeploy) ยังไม่ยืนยันว่าทำเสร็จ
+3. **ดาวน์โหลด PDF ต้นฉบับไม่ได้** — สาเหตุ: `data/nhrc_documents/` (1.4GB, gitignored)
+   ไม่ได้ deploy ไปด้วย → แก้ด้วย Google Drive ตามหัวข้อถัดไป
+
+### PDF ต้นฉบับ (`data/nhrc_documents/`) → Google Drive
+
+**Spot-check ความเป็นส่วนตัวก่อนทำ**: เปิดดู PDF ตัวอย่าง 4 ไฟล์ (case_186_2564,
+case_221_2567, case_98_2567) ด้วย PyMuPDF render เป็นภาพ (ไฟล์เป็น scanned image
+ล้วน ไม่มี text layer เลย - ต้อง render ดูด้วยตา ทำ regex ตรงๆ ไม่ได้) พบว่าเอกสาร
+ต้นฉบับมีการปกปิดชื่อ (แถบดำ/"ปกปิดชื่อ") อยู่แล้วตั้งแต่ต้นทาง ตรงกับที่ผู้ใช้ยืนยัน
+("เอกสารเหล่านี้มีการปกปิดตัวตนแล้ว และมีการเผยแพร่ในเว็บอยู่แล้วครับ") จึงไป
+ต่อเรื่อง hosting ได้
+
+**ทางเลือก storage**: Supabase (แผน Free ~1GB ไม่พอกับ 1.4GB), Vercel Blob, S3,
+Google Drive — ผู้ใช้เลือก Google Drive (ฟรี บัญชีส่วนตัวมีอยู่แล้ว)
+
+**บทเรียนสำคัญ - Service Account ใช้กับ Drive ส่วนตัวไม่ได้**:
+ลองสร้าง Service Account ก่อน (`gen-lang-client-*.json`, gitignored) แชร์โฟลเดอร์
+Drive ให้ (Viewer ก่อน แล้วเปลี่ยนเป็น Editor) แต่ยังอัปโหลดไม่ได้ - error สุดท้าย
+คือ **"Service Accounts do not have storage quota. Leverage shared drives ...
+or use OAuth delegation instead."** นี่คือข้อจำกัดของ Google เอง: service account
+ไม่มีโควตาพื้นที่เก็บข้อมูลของตัวเอง อัปโหลดไฟล์เข้าไปเป็นเจ้าของไม่ได้ในบัญชี Drive
+ส่วนตัว (@gmail.com) เว้นแต่จะเป็น Shared Drive (ฟีเจอร์ Google Workspace เท่านั้น)
+→ **ต้องใช้ OAuth แบบ user-delegated แทนเสมอสำหรับ Drive บัญชีส่วนตัว**
+
+**วิธีที่ใช้จริง (OAuth)**:
+- สร้าง OAuth Client ID (Desktop app type) ในโปรเจกต์ GCP เดิม (`gen-lang-client-0228155967`)
+- consent screen ต้อง **Publish เป็น Production** ไม่งั้น refresh token จะหมดอายุใน 7 วัน
+  (scope `drive.file` ไม่ต้องผ่าน verification เต็มรูปแบบ เลย publish ได้เลยแม้ unverified)
+- `scripts/gdrive_oauth_setup.py` — รันครั้งเดียว เปิด local server รอ redirect,
+  ผู้ใช้เปิด URL ที่พิมพ์ออกมาในเบราว์เซอร์ตัวเองแล้วกด Allow → บันทึก refresh token
+  ลง `google_drive_token.json` (gitignored)
+- **ข้อจำกัดของ scope `drive.file`**: แอปเห็น "เฉพาะไฟล์/โฟลเดอร์ที่แอปสร้างเอง"
+  เท่านั้น — โฟลเดอร์ "NHRC PDF Documents" ที่สร้างด้วยมือไว้ก่อน (ตอนจะใช้ service
+  account) จะ**มองไม่เห็นเลย** ต้องให้สคริปต์สร้างโฟลเดอร์ใหม่ชื่อเดียวกันขึ้นมาเอง
+  (`find_or_create_root_folder()` ใน `scripts/upload_pdfs_to_drive.py`) ผลคือ Drive
+  ของผู้ใช้มีโฟลเดอร์ชื่อ "NHRC PDF Documents" ซ้ำกัน 2 อัน - อันเก่าว่างเปล่า ลบทิ้งได้
+- `scripts/upload_pdfs_to_drive.py` อัปโหลด 287 ไฟล์ แยกปีเป็นโฟลเดอร์ย่อยตามชื่อไฟล์
+  (`case_NNN_YYYY.pdf` → ปี YYYY) เขียน mapping `data/nhrc_pdf_drive_map.json`
+  (document_id → Drive file ID, **ไม่มีข้อมูลลับ ปลอดภัย commit ได้**) — รันสำเร็จ
+  287/287, 0 error, ตรวจ byte size ตัวอย่างตรงกับไฟล์ต้นฉบับ 100%
+- ฝั่งเว็บ: `web/src/lib/nhrc/drive.ts` (ใหม่) ใช้ `google.auth.OAuth2` +
+  refresh token จาก env vars `GOOGLE_DRIVE_CLIENT_ID/SECRET/REFRESH_TOKEN`,
+  `repository.ts` เพิ่ม `getDrivePdfFileId()` อ่าน mapping,
+  `/api/case/[id]/document` ลอง local disk ก่อน (dev) แล้ว fallback ไป Drive
+  (production) — **ทดสอบจริงแล้ว**: ย้าย `data/nhrc_documents` ออกชั่วคราวเพื่อบังคับ
+  ให้ใช้ path Drive, โหลดผ่าน route ได้ 200 OK, byte size ตรงกับต้นฉบับเป๊ะ
+
+**ยังไม่เสร็จ**: ต้องตั้ง env vars 3 ตัวใน Vercel (`GOOGLE_DRIVE_CLIENT_ID`,
+`GOOGLE_DRIVE_CLIENT_SECRET`, `GOOGLE_DRIVE_REFRESH_TOKEN` - ค่าจาก
+`google_drive_token.json` ในเครื่อง, ห้าม commit ไฟล์นั้น) แล้ว redeploy,
+จากนั้น commit+push โค้ด (`data/nhrc_pdf_drive_map.json` ปลอดภัย commit ได้
+เพราะมีแค่ Drive file ID ไม่มีความลับ)
+
+---
+
 ## คำเตือนเรื่องข้อมูลส่วนบุคคล
 
 เป้าหมายคือเปิดให้คนทั่วไปค้นได้ แต่ `03 กรณีตรวจสอบ` เป็นบันทึกเรื่องร้องเรียนที่

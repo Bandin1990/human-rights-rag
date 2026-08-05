@@ -22,6 +22,8 @@ class NhrcRepository {
   private contentDir: string;
   private documentsDir: string;
   private graphPath: string;
+  private driveMapPath: string;
+  private driveMap: Record<string, string> | null = null;
 
   constructor() {
     this.indexPath =
@@ -36,6 +38,9 @@ class NhrcRepository {
     this.graphPath =
       process.env.NHRC_GRAPH_PATH ??
       path.join(process.cwd(), "..", "data", "nhrc_graph.json");
+    this.driveMapPath =
+      process.env.NHRC_PDF_DRIVE_MAP_PATH ??
+      path.join(process.cwd(), "..", "data", "nhrc_pdf_drive_map.json");
     this.loadIndex();
   }
 
@@ -199,6 +204,25 @@ class NhrcRepository {
   getSourcePdfPath(documentId: string): string | null {
     const filePath = path.join(this.documentsDir, `${documentId}.pdf`);
     return fs.existsSync(filePath) ? filePath : null;
+  }
+
+  // Google Drive file ID for a document's source PDF, for environments
+  // (production) where data/nhrc_documents/ isn't on disk - see
+  // scripts/upload_pdfs_to_drive.py and lib/nhrc/drive.ts. Falls back to
+  // null (not an error) the same way getSourcePdfPath does.
+  getDrivePdfFileId(documentId: string): string | null {
+    if (this.driveMap === null) {
+      try {
+        this.driveMap = fs.existsSync(this.driveMapPath)
+          ? JSON.parse(fs.readFileSync(this.driveMapPath, "utf-8"))
+          : {};
+      } catch (error) {
+        console.error("Failed to load NHRC PDF Drive map:", error);
+        this.driveMap = {};
+      }
+    }
+    const map = this.driveMap ?? {};
+    return map[documentId] ?? null;
   }
 
   // Naive keyword-overlap ranking for the "ask a question" flow: no embeddings

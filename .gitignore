@@ -1,4 +1,8 @@
 .env
+gen-lang-client-*.json
+*-service-account*.json
+client_secret_*.json
+*token*.json
 web/node_modules/
 web/.next/
 web/.env.local
