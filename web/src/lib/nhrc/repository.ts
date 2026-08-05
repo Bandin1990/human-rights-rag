@@ -228,6 +228,10 @@ class NhrcRepository {
   // Naive keyword-overlap ranking for the "ask a question" flow: no embeddings
   // available locally, so score by how many of each case's curated keywords
   // (and its title) literally appear in the question text.
+  //
+  // Searches every document_type on purpose - not just case_note - so
+  // situation reports, research (general), and any type added later are
+  // all reachable without another code change here. Filter by scope only.
   findRelevantCases(
     question: string,
     limit: number = 5,
@@ -235,7 +239,6 @@ class NhrcRepository {
   ): NhrcDocument[] {
     const q = question.toLowerCase();
     const pool = this.documents.filter((doc) => {
-      if (doc.document_type !== "case_note") return false;
       if (scope.areaCode && doc.area_code !== scope.areaCode) return false;
       if (scope.category && doc.category !== scope.category) return false;
       return true;
@@ -258,10 +261,9 @@ class NhrcRepository {
     }
 
     // No keyword overlap at all - fall back to plain title/keyword substring search
-    // within the same scope.
+    // within the same scope (still every document_type, same reasoning as above).
     return this.search({
       query: question,
-      docType: "case_note",
       areaCode: scope.areaCode,
       category: scope.category,
       limit,

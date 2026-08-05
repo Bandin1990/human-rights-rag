@@ -579,7 +579,14 @@ class ObsidianParser:
         tokens = []
         for raw in raw_tokens:
             token = raw.strip().strip('.,!?;:()[]{}"\'“”‘’')
-            if len(token) < 2:
+            # 2-char cutoff let through common, low-signal Thai words the
+            # stopword corpus doesn't cover ("ทำ" do, "ดี" good, "แล" look) -
+            # they're real newmm tokens, just too generic to be a "keyword".
+            # 3 chars filters those out while keeping real content words.
+            # Curated frontmatter tags (seed_tags, added separately in
+            # _extract_keywords) aren't affected - short abbreviations like
+            # "ตร" (police) still work since they skip this tokenizer path.
+            if len(token) < 3:
                 continue
             if token in self._stopwords:
                 continue
