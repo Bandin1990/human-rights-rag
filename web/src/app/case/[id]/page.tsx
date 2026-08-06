@@ -169,7 +169,7 @@ function RelatedList({ title, cases }: { title: string; cases: NhrcDocument[] })
 function LegalRefsBox({
   refs,
 }: {
-  refs: { internationalInstruments: string[]; thaiLaws: string[] } | null;
+  refs: { internationalInstruments: string[]; thaiLaws: string[]; groundedThaiLaws?: string[] } | null;
 }) {
   return (
     <div className="cw-legal-refs">
@@ -202,6 +202,20 @@ function LegalRefsBox({
             ))
           ) : (
             <div className="cw-legal-refs-empty">ไม่พบกฎหมายที่เกี่ยวข้องชัดเจน</div>
+          )}
+
+          {refs.groundedThaiLaws && refs.groundedThaiLaws.length > 0 && (
+            <>
+              <h4>ยืนยันจากฐานข้อมูลตัวบทกฎหมาย</h4>
+              <p className="cw-legal-refs-note cw-legal-refs-note--grounded">
+                พบมาตราต่อไปนี้จริงในฐานข้อมูลตัวบทกฎหมายไทย 6,300 มาตรา (OpenThai 2.0 Legal) — ยังควรตรวจสอบก่อนอ้างอิงทางการ
+              </p>
+              {refs.groundedThaiLaws.map((item, i) => (
+                <div className="cw-legal-ref-item" key={i}>
+                  {item}
+                </div>
+              ))}
+            </>
           )}
         </>
       )}

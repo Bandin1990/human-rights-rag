@@ -521,6 +521,7 @@
 .cw-legal-refs { padding: 20px; margin-bottom: 20px; }
 .cw-legal-refs-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; color: #fb923c; font-size: 0.85rem; font-weight: 700; }
 .cw-legal-refs-note { font-size: 0.75rem; color: #6b7280; margin: 0 0 14px; }
+.cw-legal-refs-note--grounded { color: #7a9e7e; margin: -4px 0 8px; }
 .cw-legal-refs h4 { font-size: 0.8rem; color: #9ca3af; margin: 14px 0 8px; font-weight: 600; }
 .cw-legal-refs h4:first-of-type { margin-top: 0; }
 .cw-legal-ref-item { font-size: 0.85rem; color: #d1d5db; padding: 8px 10px; background-color: #1e2128; border: 1px solid #374151; border-radius: 8px; margin-bottom: 6px; }
