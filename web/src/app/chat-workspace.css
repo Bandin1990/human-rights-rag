@@ -527,6 +527,63 @@
 .cw-legal-refs-empty { font-size: 0.82rem; color: #6b7280; }
 .cw-legal-refs-loading { font-size: 0.82rem; color: #6b7280; display: flex; align-items: center; gap: 8px; }
 
+/* Stats dashboard (/knowledge/dashboard) - same ink/gold institutional
+   system as the graph and case-detail pages, so this no longer reads as a
+   leftover from an older, generic-blue-SaaS version of the app. */
+.cw-stats-page {
+  --graph-ink: #12141c;
+  --graph-panel: #1c2130;
+  --graph-panel-2: #232a3c;
+  --graph-border: #313a52;
+  --graph-gold: #c9a961;
+  --graph-gold-bright: #e3c583;
+  --graph-bronze: #8b7355;
+  --graph-paper: #ece7d9;
+  --graph-paper-dim: #a19b8a;
+  --graph-paper-faint: #6d6a5e;
+  min-height: 100vh;
+  background-color: var(--graph-ink);
+  background-image: radial-gradient(ellipse 900px 500px at 50% -10%, rgba(201, 169, 97, 0.06), transparent);
+  color: var(--graph-paper);
+  padding: 40px 24px 100px;
+}
+.cw-stats-inner { max-width: 1160px; margin: 0 auto; }
+.cw-stats-head { margin-bottom: 28px; }
+.cw-stats-head .eyebrow { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--graph-gold); font-weight: 700; }
+.cw-stats-head h1 { font-family: var(--font-serif-th), serif; font-weight: 600; font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.9rem); margin: 8px 0 6px; color: var(--graph-paper); }
+.cw-stats-head p { color: var(--graph-paper-dim); font-size: 0.88rem; margin: 0; }
+.cw-stats-status { color: var(--graph-paper-faint); font-size: 0.9rem; padding: 60px 24px; text-align: center; }
+
+.cw-stats-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+.cw-stats-card { background-color: var(--graph-panel); border: 1px solid var(--graph-border); border-radius: 14px; padding: 20px; }
+.cw-stats-card-icon { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 12px; background-color: var(--graph-panel-2); color: var(--graph-gold); }
+.cw-stats-card b { display: block; font-family: var(--font-serif-th), serif; font-size: 1.7rem; font-weight: 600; color: var(--graph-paper); line-height: 1.2; }
+.cw-stats-card span { font-size: 0.78rem; color: var(--graph-paper-dim); }
+
+.cw-stats-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.cw-stats-panel { background-color: var(--graph-panel); border: 1px solid var(--graph-border); border-radius: 14px; padding: 22px; }
+.cw-stats-panel h2 { font-family: var(--font-serif-th), serif; font-weight: 600; font-size: 1rem; margin: 0 0 18px; color: var(--graph-paper); }
+
+.cw-stats-keyword-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; font-size: 0.85rem; }
+.cw-stats-keyword-row span:first-child { color: var(--graph-paper); font-weight: 500; }
+.cw-stats-keyword-bar { width: 110px; height: 6px; background-color: var(--graph-panel-2); border-radius: 6px; overflow: hidden; flex: 0 0 auto; }
+.cw-stats-keyword-bar > div { height: 100%; background-color: var(--graph-gold); border-radius: 6px; }
+.cw-stats-keyword-count { color: var(--graph-paper-dim); font-size: 0.78rem; width: 30px; text-align: right; }
+
+.cw-stats-recent-item { display: block; padding: 12px 14px; background-color: var(--graph-panel-2); border-radius: 10px; border: 1px solid var(--graph-border); margin-bottom: 8px; transition: border-color 0.2s; }
+.cw-stats-recent-item:hover { border-color: var(--graph-gold); }
+.cw-stats-recent-item b { display: block; font-size: 0.82rem; color: var(--graph-gold); }
+.cw-stats-recent-item p { margin: 4px 0 0; font-size: 0.82rem; color: var(--graph-paper); max-height: 1.6em; overflow: hidden; mask-image: linear-gradient(to right, black 85%, transparent 100%); -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%); white-space: nowrap; }
+.cw-stats-recent-item small { display: block; margin-top: 6px; font-size: 0.75rem; color: var(--graph-paper-faint); }
+
+@media (max-width: 900px) {
+  .cw-stats-metrics { grid-template-columns: repeat(2, 1fr); }
+  .cw-stats-charts { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .cw-stats-metrics { grid-template-columns: 1fr; }
+}
+
 /* Topic map graph (/knowledge/graph) - deliberately its own palette:
    ink navy + muted gold, echoing the letterhead of กสม.'s own published
    reports (Garuda seal, formal gold ribbon) rather than the app's usual
@@ -549,16 +606,16 @@
   color: var(--graph-paper);
   padding: 40px 24px 100px;
 }
-.cw-graph-head { max-width: 1160px; margin: 0 auto 20px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+.cw-graph-head { max-width: 1160px; margin: 0 auto 20px; width: 100%; }
 .cw-graph-head h1 {
   font-family: var(--font-serif-th), serif;
-  font-size: 1.7rem;
+  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.9rem);
   font-weight: 600;
   margin: 0 0 8px;
   color: var(--graph-paper);
   letter-spacing: 0.01em;
 }
-.cw-graph-head p { color: var(--graph-paper-dim); font-size: 0.85rem; line-height: 1.7; margin: 0; max-width: 640px; }
+.cw-graph-head p { color: var(--graph-paper-dim); font-size: 0.85rem; line-height: 1.7; margin: 0; width: 100%; }
 .cw-graph-status { color: var(--graph-paper-faint, #6b7280); font-size: 0.9rem; padding: 60px 24px; text-align: center; }
 
 /* Toolbar: search + zoom controls, sits between the intro copy and canvas */
