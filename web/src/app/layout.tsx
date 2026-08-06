@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Serif_Thai } from "next/font/google";
 import { Header } from "@/components/header";
 import "./globals.css";
 import "./knowledge.css";
@@ -22,6 +22,16 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+// Display serif used on the topic-map page only - echoes the letterhead
+// typography of กสม.'s own published reports (see cw-graph-* in
+// chat-workspace.css) rather than reaching for the same geometric sans
+// used everywhere else in the app.
+const notoSerifThai = Noto_Serif_Thai({
+  subsets: ["thai", "latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-serif-th",
+});
+
 export const metadata: Metadata = {
   title: "ระบบงานสิทธิมนุษยชน | กสม.",
   description: "คลังความรู้ ระบบจัดการเรื่องร้องเรียน และการจัดทำรายงานตรวจสอบที่เชื่อมโยง RAG",
@@ -32,7 +42,11 @@ import { A11yToggle } from "@/components/a11y-toggle";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="th" className={`${bai.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html
+      lang="th"
+      className={`${bai.variable} ${inter.variable} ${notoSerifThai.variable}`}
+      suppressHydrationWarning
+    >
       <body suppressHydrationWarning>
         <A11yProvider>
           <Header />

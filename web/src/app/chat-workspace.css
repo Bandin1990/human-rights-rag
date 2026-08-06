@@ -326,23 +326,28 @@
   border-radius: 4px;
   margin-right: 8px;
 }
+/* Long titles/excerpts fade out rather than hard-cut mid-sentence - a
+   line-clamp's ellipsis lands wherever the line break happens to fall,
+   which for running Thai text (no inter-word spaces) often looks like a
+   broken word rather than an intentional truncation. */
 .cw-ref-title {
   color: #d1d5db;
   font-weight: 500;
   font-size: 0.85rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  max-height: 2.8em;
+  line-height: 1.4;
   overflow: hidden;
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
 }
 .cw-ref-excerpt {
   font-size: 0.8rem;
   color: #9ca3af;
   line-height: 1.6;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+  max-height: 6.4em;
   overflow: hidden;
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 .cw-ref-meta {
   margin-top: 12px;
@@ -444,7 +449,7 @@
 .cw-case-tag.is-muted { background: #1e2128; color: #9ca3af; border-color: #374151; }
 .cw-case-card h3 { margin: 0 0 6px; font-size: 1rem; color: #f3f4f6; font-weight: 600; }
 .cw-case-card h3:hover { color: #fb923c; }
-.cw-case-card p { margin: 0 0 10px; font-size: 0.85rem; color: #9ca3af; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.cw-case-card p { margin: 0 0 10px; font-size: 0.85rem; color: #9ca3af; line-height: 1.6; max-height: 3.2em; overflow: hidden; mask-image: linear-gradient(to bottom, black 65%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%); }
 .cw-case-meta { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.78rem; color: #6b7280; }
 .cw-case-arrow {
   width: 34px;
@@ -522,23 +527,130 @@
 .cw-legal-refs-empty { font-size: 0.82rem; color: #6b7280; }
 .cw-legal-refs-loading { font-size: 0.82rem; color: #6b7280; display: flex; align-items: center; gap: 8px; }
 
-/* Topic map graph (/knowledge/graph) */
-.cw-graph-page { min-height: 100vh; background-color: #1e2128; color: #e5e7eb; padding: 40px 24px 100px; }
-.cw-graph-head { max-width: 1160px; margin: 0 auto 24px; }
-.cw-graph-head h1 { font-size: 1.5rem; margin: 0 0 8px; color: #f3f4f6; }
-.cw-graph-head p { color: #9ca3af; font-size: 0.88rem; line-height: 1.7; margin: 0; max-width: 720px; }
-.cw-graph-status { color: #6b7280; font-size: 0.9rem; padding: 60px 24px; text-align: center; }
+/* Topic map graph (/knowledge/graph) - deliberately its own palette:
+   ink navy + muted gold, echoing the letterhead of กสม.'s own published
+   reports (Garuda seal, formal gold ribbon) rather than the app's usual
+   dark-dashboard orange. Scoped entirely under .cw-graph-* so it doesn't
+   touch any other page. */
+.cw-graph-page {
+  --graph-ink: #12141c;
+  --graph-panel: #1c2130;
+  --graph-panel-2: #232a3c;
+  --graph-border: #313a52;
+  --graph-gold: #c9a961;
+  --graph-gold-bright: #e3c583;
+  --graph-bronze: #8b7355;
+  --graph-paper: #ece7d9;
+  --graph-paper-dim: #a19b8a;
+  --graph-paper-faint: #6d6a5e;
+  min-height: 100vh;
+  background-color: var(--graph-ink);
+  background-image: radial-gradient(ellipse 900px 500px at 50% -10%, rgba(201, 169, 97, 0.06), transparent);
+  color: var(--graph-paper);
+  padding: 40px 24px 100px;
+}
+.cw-graph-head { max-width: 1160px; margin: 0 auto 20px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+.cw-graph-head h1 {
+  font-family: var(--font-serif-th), serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--graph-paper);
+  letter-spacing: 0.01em;
+}
+.cw-graph-head p { color: var(--graph-paper-dim); font-size: 0.85rem; line-height: 1.7; margin: 0; max-width: 640px; }
+.cw-graph-status { color: var(--graph-paper-faint, #6b7280); font-size: 0.9rem; padding: 60px 24px; text-align: center; }
+
+/* Toolbar: search + zoom controls, sits between the intro copy and canvas */
+.cw-graph-toolbar { max-width: 1160px; margin: 0 auto 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.cw-graph-search {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--graph-panel);
+  border: 1px solid var(--graph-border);
+  border-radius: 10px;
+  padding: 9px 14px;
+  color: var(--graph-paper-dim);
+}
+.cw-graph-search:focus-within { border-color: var(--graph-gold); }
+.cw-graph-search input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--graph-paper);
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+.cw-graph-search input::placeholder { color: var(--graph-paper-faint); }
+.cw-graph-search-count { font-size: 0.75rem; color: var(--graph-gold); white-space: nowrap; }
+.cw-graph-zoom-controls { display: flex; gap: 6px; }
+.cw-graph-zoom-controls button {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background-color: var(--graph-panel);
+  border: 1px solid var(--graph-border);
+  border-radius: 8px;
+  color: var(--graph-paper-dim);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.cw-graph-zoom-controls button:hover { border-color: var(--graph-gold); color: var(--graph-gold-bright); }
+
 .cw-graph-body { display: flex; gap: 20px; max-width: 1160px; margin: 0 auto; align-items: flex-start; }
-.cw-graph-canvas { flex: 1; min-width: 0; overflow-x: auto; background-color: #181a20; border: 1px solid #2d303b; border-radius: 14px; }
+.cw-graph-canvas {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  background-color: var(--graph-panel);
+  border: 1px solid var(--graph-border);
+  border-radius: 16px;
+  position: relative;
+}
 .cw-graph-canvas svg { display: block; touch-action: none; user-select: none; -webkit-user-drag: none; }
 .cw-graph-canvas svg text { pointer-events: none; }
-.cw-graph-panel { width: 320px; flex-shrink: 0; background-color: #252830; border: 1px solid #2d303b; border-radius: 14px; padding: 20px; max-height: 660px; overflow-y: auto; }
-.cw-graph-panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
-.cw-graph-panel-head h3 { font-size: 1.05rem; color: #f3f4f6; margin: 8px 0 4px; }
-.cw-graph-panel-head p { font-size: 0.8rem; color: #9ca3af; margin: 0; }
-.cw-graph-panel-head button { background: none; border: none; color: #6b7280; cursor: pointer; padding: 4px; }
-.cw-graph-panel-head button:hover { color: #f3f4f6; }
+.cw-graph-canvas.is-panning svg { cursor: grabbing; }
+.cw-graph-canvas:not(.is-panning) svg { cursor: grab; }
+.cw-graph-node-label {
+  font-family: var(--font-bai), sans-serif;
+  color: var(--graph-paper-dim);
+  font-size: 10.5px;
+  line-height: 1.25;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  pointer-events: none;
+}
+.cw-graph-node-label.is-area { font-weight: 700; font-size: 11.5px; color: var(--graph-paper); }
+
+.cw-graph-panel {
+  width: 320px;
+  flex-shrink: 0;
+  background-color: var(--graph-panel);
+  border: 1px solid var(--graph-border);
+  border-radius: 16px;
+  padding: 20px;
+  max-height: 660px;
+  overflow-y: auto;
+}
+.cw-graph-panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 12px; padding-bottom: 16px; border-bottom: 1px solid var(--graph-border); }
+.cw-graph-panel-head h3 { font-family: var(--font-serif-th), serif; font-weight: 600; font-size: 1.05rem; color: var(--graph-paper); margin: 8px 0 4px; }
+.cw-graph-panel-head p { font-size: 0.8rem; color: var(--graph-gold); margin: 0; }
+.cw-graph-panel-head button { background: none; border: none; color: var(--graph-paper-faint); cursor: pointer; padding: 4px; }
+.cw-graph-panel-head button:hover { color: var(--graph-paper); }
 .cw-graph-panel-list { display: flex; flex-direction: column; }
+.cw-graph-panel .cw-case-tag.is-muted { background: var(--graph-panel-2); color: var(--graph-gold); border-color: var(--graph-border); }
+.cw-graph-panel .cw-detail-related-item { border-top-color: var(--graph-border); color: var(--graph-paper-dim); }
+.cw-graph-panel .cw-detail-related-item:hover { color: var(--graph-paper); }
+.cw-graph-panel .cw-detail-related-item span { color: var(--graph-gold); }
 @media (max-width: 900px) {
   .cw-graph-body { flex-direction: column; }
   .cw-graph-panel { width: 100%; max-height: none; }
