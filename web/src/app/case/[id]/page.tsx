@@ -220,7 +220,13 @@ function LegalRefsBox({
   );
 }
 
-function SourcePdfLink({ id, available }: { id: string; available: boolean }) {
+// Case notes/situation reports have an actual PDF scan on disk or Drive -
+// served through /api/case/[id]/document. General docs (research, Thai
+// law, court judgments, ...) were never digitized as scans; their "source"
+// is whatever URL the note's own "## ลิงก์..." section points to (see
+// reportLink() and docs/vault-templates/) - externalUrl carries that
+// through instead so this button opens the right thing either way.
+function SourcePdfLink({ id, available, externalUrl }: { id: string; available: boolean; externalUrl?: string | null }) {
   if (!available) {
     return (
       <span className="cw-pdf-link is-disabled">
@@ -229,8 +235,8 @@ function SourcePdfLink({ id, available }: { id: string; available: boolean }) {
     );
   }
   return (
-    <a className="cw-pdf-link" href={`/api/case/${id}/document`} target="_blank" rel="noopener noreferrer">
-      <Download size={16} /> เปิดรายงานฉบับเต็ม (PDF)
+    <a className="cw-pdf-link" href={externalUrl || `/api/case/${id}/document`} target="_blank" rel="noopener noreferrer">
+      <Download size={16} /> เปิดเอกสารต้นฉบับ
     </a>
   );
 }
@@ -244,8 +250,6 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
   const isCaseNote = caseDoc.document_type === "case_note";
   const isSituationReport = caseDoc.document_type === "situation_report";
   const isGeneral = caseDoc.document_type === "general";
-  const hasPdf =
-    !!repo.getSourcePdfPath(caseDoc.document_id) || !!repo.getDrivePdfFileId(caseDoc.document_id);
 
   const related = isCaseNote ? repo.getRelatedCases(id, 10) : [];
   const sameArea = isCaseNote
@@ -262,6 +266,14 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
   const generalMeta = isGeneral ? parseGeneralMetadata(caseDoc.content || "") : null;
   const generalSections = isGeneral ? splitGeneralSections(caseDoc.content || "") : [];
   const generalLink = isGeneral ? reportLink(caseDoc.content || "") : null;
+
+  // General docs (research, Thai law, court judgments, ...) never had a PDF
+  // scan collected - their "source" is the note's own "## ลิงก์..." URL, if
+  // filled in. See SourcePdfLink's comment.
+  const hasPdf =
+    !!repo.getSourcePdfPath(caseDoc.document_id) ||
+    !!repo.getDrivePdfFileId(caseDoc.document_id) ||
+    (isGeneral && !!generalLink);
 
   const docTypeLabel = isCaseNote
     ? "กรณีตรวจสอบ"
@@ -302,7 +314,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
               </span>
             </div>
             <div style={{ marginTop: 16 }}>
-              <SourcePdfLink id={id} available={hasPdf} />
+              <SourcePdfLink id={id} available={hasPdf} externalUrl={isGeneral ? generalLink : null} />
             </div>
             {caseDoc.keywords.length > 0 && (
               <div className="cw-case-card-tags" style={{ marginTop: 16 }}>
@@ -353,18 +365,6 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
                     </div>
                   </section>
                 ))}
-                {generalLink && (
-                  <section className="cw-detail-section">
-                    <div>
-                      <h2>ลิงก์รายงาน</h2>
-                      <p>
-                        <a href={generalLink} target="_blank" rel="noopener noreferrer">
-                          {generalLink}
-                        </a>
-                      </p>
-                    </div>
-                  </section>
-                )}
               </section>
             </>
           ) : (
