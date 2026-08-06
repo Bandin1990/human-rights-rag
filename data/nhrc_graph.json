@@ -5,21 +5,21 @@
       "type": "area",
       "label": "สิทธิพลเมืองและสิทธิทางการเมือง",
       "areaCode": "A",
-      "count": 83
+      "count": 96
     },
     {
       "id": "area_B",
       "type": "area",
       "label": "สิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม",
       "areaCode": "B",
-      "count": 162
+      "count": 178
     },
     {
       "id": "area_C",
       "type": "area",
       "label": "สิทธิของกลุ่มบุคคล",
       "areaCode": "C",
-      "count": 13
+      "count": 14
     },
     {
       "id": "area_D",
@@ -40,7 +40,7 @@
       "type": "topic",
       "label": "กระบวนการยุติธรรม",
       "areaCode": "A",
-      "count": 73
+      "count": 85
     },
     {
       "id": "topic_A_การค้ามนุษย์",
@@ -68,21 +68,21 @@
       "type": "topic",
       "label": "นักปกป้องสิทธิมนุษยชน (SLAPP)",
       "areaCode": "A",
-      "count": 7
+      "count": 8
     },
     {
       "id": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
       "type": "topic",
       "label": "เสรีภาพชุมนุมแสดงออกสื่อ",
       "areaCode": "A",
-      "count": 7
+      "count": 12
     },
     {
       "id": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
       "type": "topic",
       "label": "ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
       "areaCode": "B",
-      "count": 130
+      "count": 144
     },
     {
       "id": "topic_B_ธุรกิจกับสิทธิมนุษยชน_(BHR)",
@@ -96,42 +96,42 @@
       "type": "topic",
       "label": "สิทธิการศึกษา",
       "areaCode": "B",
-      "count": 11
+      "count": 13
     },
     {
       "id": "topic_B_สิทธิสุขภาพสาธารณสุข",
       "type": "topic",
       "label": "สิทธิสุขภาพสาธารณสุข",
       "areaCode": "B",
-      "count": 28
+      "count": 30
     },
     {
       "id": "topic_B_สิทธิแรงงาน",
       "type": "topic",
       "label": "สิทธิแรงงาน",
       "areaCode": "B",
-      "count": 14
+      "count": 16
     },
     {
       "id": "topic_B_สิ่งแวดล้อมและ_EIA",
       "type": "topic",
       "label": "สิ่งแวดล้อมและ EIA",
       "areaCode": "B",
-      "count": 56
+      "count": 63
     },
     {
       "id": "topic_C_คนจนเมืองที่อยู่อาศัย",
       "type": "topic",
       "label": "คนจนเมืองที่อยู่อาศัย",
       "areaCode": "C",
-      "count": 14
+      "count": 15
     },
     {
       "id": "topic_C_สิทธิกลุ่มชาติพันธุ์",
       "type": "topic",
       "label": "สิทธิกลุ่มชาติพันธุ์",
       "areaCode": "C",
-      "count": 21
+      "count": 28
     },
     {
       "id": "topic_C_สิทธิคนพิการ",
@@ -152,14 +152,14 @@
       "type": "topic",
       "label": "สิทธิสตรีความเสมอภาคทางเพศ",
       "areaCode": "C",
-      "count": 11
+      "count": 14
     },
     {
       "id": "topic_C_สิทธิเด็ก",
       "type": "topic",
       "label": "สิทธิเด็ก",
       "areaCode": "C",
-      "count": 7
+      "count": 11
     },
     {
       "id": "topic_C_ไร้รัฐไร้สัญชาติ",
@@ -187,7 +187,7 @@
       "type": "topic",
       "label": "สิทธิผู้ต้องขัง",
       "areaCode": "E",
-      "count": 33
+      "count": 34
     },
     {
       "id": "topic_E_เสรีภาพทางศาสนา",
@@ -335,13 +335,13 @@
       "source": "topic_A_กระบวนการยุติธรรม",
       "target": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
       "type": "shared_cases",
-      "weight": 3
+      "weight": 8
     },
     {
       "source": "topic_A_กระบวนการยุติธรรม",
       "target": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
       "type": "shared_cases",
-      "weight": 9
+      "weight": 12
     },
     {
       "source": "topic_A_กระบวนการยุติธรรม",
@@ -363,6 +363,12 @@
     },
     {
       "source": "topic_A_กระบวนการยุติธรรม",
+      "target": "topic_B_สิ่งแวดล้อมและ_EIA",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_A_กระบวนการยุติธรรม",
       "target": "topic_C_คนจนเมืองที่อยู่อาศัย",
       "type": "shared_cases",
       "weight": 3
@@ -371,19 +377,19 @@
       "source": "topic_A_กระบวนการยุติธรรม",
       "target": "topic_C_สิทธิกลุ่มชาติพันธุ์",
       "type": "shared_cases",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "topic_A_กระบวนการยุติธรรม",
       "target": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
       "type": "shared_cases",
-      "weight": 3
+      "weight": 6
     },
     {
       "source": "topic_A_กระบวนการยุติธรรม",
       "target": "topic_C_สิทธิเด็ก",
       "type": "shared_cases",
-      "weight": 3
+      "weight": 5
     },
     {
       "source": "topic_A_กระบวนการยุติธรรม",
@@ -407,7 +413,7 @@
       "source": "topic_A_กระบวนการยุติธรรม",
       "target": "topic_E_สิทธิผู้ต้องขัง",
       "type": "shared_cases",
-      "weight": 20
+      "weight": 21
     },
     {
       "source": "topic_A_กระบวนการยุติธรรม",
@@ -485,13 +491,13 @@
       "source": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
       "target": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
       "type": "shared_cases",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "topic_A_เสรีภาพชุมนุมแสดงออกสื่อ",
       "target": "topic_C_สิทธิเด็ก",
       "type": "shared_cases",
-      "weight": 2
+      "weight": 4
     },
     {
       "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
@@ -509,7 +515,7 @@
       "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
       "target": "topic_B_สิ่งแวดล้อมและ_EIA",
       "type": "shared_cases",
-      "weight": 51
+      "weight": 57
     },
     {
       "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
@@ -521,7 +527,7 @@
       "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
       "target": "topic_C_สิทธิกลุ่มชาติพันธุ์",
       "type": "shared_cases",
-      "weight": 18
+      "weight": 24
     },
     {
       "source": "topic_B_ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน",
@@ -567,9 +573,15 @@
     },
     {
       "source": "topic_B_สิทธิการศึกษา",
+      "target": "topic_C_สิทธิกลุ่มชาติพันธุ์",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_B_สิทธิการศึกษา",
       "target": "topic_C_สิทธิเด็ก",
       "type": "shared_cases",
-      "weight": 4
+      "weight": 6
     },
     {
       "source": "topic_B_สิทธิการศึกษา",
@@ -593,7 +605,7 @@
       "source": "topic_B_สิทธิสุขภาพสาธารณสุข",
       "target": "topic_B_สิทธิแรงงาน",
       "type": "shared_cases",
-      "weight": 4
+      "weight": 6
     },
     {
       "source": "topic_B_สิทธิสุขภาพสาธารณสุข",
@@ -641,7 +653,7 @@
       "source": "topic_B_สิ่งแวดล้อมและ_EIA",
       "target": "topic_C_สิทธิกลุ่มชาติพันธุ์",
       "type": "shared_cases",
-      "weight": 10
+      "weight": 11
     },
     {
       "source": "topic_B_สิ่งแวดล้อมและ_EIA",
@@ -658,6 +670,12 @@
     {
       "source": "topic_C_สิทธิกลุ่มชาติพันธุ์",
       "target": "topic_C_สิทธิสตรีความเสมอภาคทางเพศ",
+      "type": "shared_cases",
+      "weight": 1
+    },
+    {
+      "source": "topic_C_สิทธิกลุ่มชาติพันธุ์",
+      "target": "topic_C_สิทธิเด็ก",
       "type": "shared_cases",
       "weight": 1
     },

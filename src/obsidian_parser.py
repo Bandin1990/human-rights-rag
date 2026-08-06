@@ -62,7 +62,11 @@ class ObsidianParser:
     }
 
     # [[123-2564_some title - บันทึก|1/2564]] -> captures ("123", "2564")
-    CASE_REF_PATTERN = re.compile(r'\[\[(\d+)-(\d+)[^\|\]]*\|')
+    # [[79-80-2568_some title - บันทึก|79-80/2568]] -> captures ("79-80", "2568")
+    # Must match _parse_case_note's case_id format exactly ("<case_num>-<year>")
+    # or joint-case topic backlinks silently fail to resolve (they did, before
+    # this was added to match the compound-case-number fix there).
+    CASE_REF_PATTERN = re.compile(r'\[\[((?:\d+-)*\d+)-(\d{4})[^\|\]]*\|')
     AREA_FOLDER_PATTERN = re.compile(r'^([A-E])\.\s*(.+)$')
     FRONTMATTER_PATTERN = re.compile(r'^---\s*\n(.*?)\n---\s*\n?', re.DOTALL)
     NON_KEYWORD_TOKEN = re.compile(r'^[0-9๐-๙\.\-_/]+$')
@@ -254,19 +258,23 @@ class ObsidianParser:
         """
         Parse case note from 03 กรณีตรวจสอบ folder
 
-        Expected format: "ID-YEAR_title - บันทึก.md"
+        Expected format: "ID-YEAR_title - บันทึก.md", where ID is usually one
+        number but is sometimes several joint case numbers chained with
+        dashes for a combined investigation, e.g. "79-80-2568_..." (cases 79
+        and 80 filed together) or "203-214-2564_..." (a 12-case batch). The
+        (\d{4}) for year relies on Buddhist years always being 4 digits and
+        case numbers in this vault never reaching 1000 - true as of writing.
         Example: "128-2563_เลือกปฏิบัติรับผู้ติดเชื้อ HIV - บันทึก.md"
+                 "79-80-2568_รัฐค้นจับกุมมิชอบและละเมิดข้อมูลผู้เสียหาย - บันทึก.md"
         """
         filename = file_path.stem  # Remove .md
 
-        # Extract Case ID and Year from filename
-        # Pattern: "128-2563_..." or "128-2563 ..."
-        match = re.match(r'^(\d+)-(\d+)[_\s](.+?)(?:\s*-\s*บันทึก)?$', filename)
+        match = re.match(r'^((?:\d+-)*\d+)-(\d{4})[_\s](.+?)(?:\s*-\s*บันทึก)?$', filename)
 
         if not match:
             return None
 
-        case_num = match.group(1)
+        case_num = match.group(1)  # e.g. "128" or "79-80"
         year_buddhist = int(match.group(2))
         title = match.group(3).strip()
         case_id = f"{case_num}-{year_buddhist}"
@@ -301,8 +309,10 @@ class ObsidianParser:
         page_count = max(1, len(content) // 1000)
 
         return {
-            # Core identifiers
-            "document_id": f"case_{case_num}_{year_buddhist}",
+            # Core identifiers - document_id keeps the underscore convention
+            # of every other case_note ("case_01_2566"), so a joint case
+            # becomes "case_79_80_2568" rather than mixing in a dash.
+            "document_id": f"case_{case_num.replace('-', '_')}_{year_buddhist}",
             "case_id": case_id,
             "file_name": file_path.name,
             "file_path": str(file_path),
