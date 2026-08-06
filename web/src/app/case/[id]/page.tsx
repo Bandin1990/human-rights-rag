@@ -61,50 +61,50 @@ function cleanMarkdown(text: string): string {
     .replace(/\*\*([^*]+)\*\*/g, "$1");
 }
 
-// Research ("general") docs open with a single bold metadata line:
-// "**ปีที่จัดทำ (พ.ศ.):** 2546 · **ประเภท:** วิจัยประยุกต์ · **ผู้จัดทำ:** ...
-// · **วิธีดำเนินการ:** ..." - present in 82/90 files as of this writing.
-// Returns null (not an error) for the minority that don't have it -
-// callers fall back to the plain-summary view.
-interface GeneralMetadata {
-  yearPrepared?: string;
-  researchType?: string;
-  preparedBy?: string;
-  method?: string;
-}
+// Non-case ("general") docs open with a single bold metadata line, e.g.
+// research: "**ปีที่จัดทำ (พ.ศ.):** 2546 · **ประเภท:** วิจัยประยุกต์ · ..."
+// or Thai law: "**ปีที่ประกาศใช้ (พ.ศ.):** 2560 · **หน่วยงานที่รับผิดชอบ:** ...".
+// Generic across categories on purpose - each document type (research,
+// Thai law, international instruments, court judgments, knowledge base;
+// see docs/vault-templates/) defines its own field labels, and this just
+// reads back whatever "**label:** value" pairs are on that first line
+// instead of hardcoding one category's fields. Returns null (not an
+// error) for docs that don't have the line - callers fall back to the
+// plain-summary view.
+type GeneralMetadata = Record<string, string>;
 function parseGeneralMetadata(content: string): GeneralMetadata | null {
-  const line = content.split("\n").find((l) => l.includes("**ปีที่จัดทำ"));
-  if (!line) return null;
+  const withoutTitle = content.replace(/^#\s+.*\n?/, "");
+  const firstLine = withoutTitle.split("\n").find((l) => l.trim().length > 0);
+  if (!firstLine || !firstLine.includes("**")) return null;
+
   const fields: GeneralMetadata = {};
-  const fieldMap: Record<string, keyof GeneralMetadata> = {
-    "ปีที่จัดทำ (พ.ศ.)": "yearPrepared",
-    "ประเภท": "researchType",
-    "ผู้จัดทำ": "preparedBy",
-    "วิธีดำเนินการ": "method",
-  };
   const pattern = /\*\*([^*]+):\*\*\s*([^·]+)/g;
   let match;
-  while ((match = pattern.exec(line)) !== null) {
-    const key = fieldMap[match[1].trim()];
-    if (key) fields[key] = match[2].trim();
+  while ((match = pattern.exec(firstLine)) !== null) {
+    fields[match[1].trim()] = match[2].trim();
   }
   return Object.keys(fields).length > 0 ? fields : null;
 }
 
-// Reading order for a research doc's own sections - the hand-written
-// abstract first (what a reader actually wants), methodology/scope after.
-// "คำสำคัญ" is skipped (already shown as tags above), "ลิงก์รายงาน" as a link.
+// Reading order for a general doc's own sections - the hand-written
+// abstract first (what a reader actually wants), everything else after.
+// Headings not listed here (a category-specific field like "มาตราที่
+// เกี่ยวข้องกับสิทธิมนุษยชน") just sort after the known ones instead of
+// being dropped. "คำสำคัญ" is skipped (shown as tags above); any "ลิงก์..."
+// heading is skipped too (shown as a link button instead of a section).
 const GENERAL_SECTION_ORDER = [
   "สาระสำคัญ",
   "ประเด็นสิทธิที่วิจัย",
   "ระเบียบวิธีวิจัย",
   "ประเด็นสิทธิที่เกี่ยวข้อง",
 ];
-const GENERAL_SECTION_EXCLUDE = new Set(["คำสำคัญ", "ลิงก์รายงาน"]);
+const GENERAL_SECTION_EXCLUDE = new Set(["คำสำคัญ"]);
 
 function splitGeneralSections(content: string): { heading: string; content: string }[] {
-  const withoutTitle = content.replace(/^#\s+.*\n?/, "").replace(/^\*\*ปีที่จัดทำ.*\n?/m, "");
-  const parts = withoutTitle.split(/\n(?=##\s)/).map((s) => s.trim()).filter(Boolean);
+  const withoutTitle = content.replace(/^#\s+.*\n?/, "");
+  const lines = withoutTitle.split("\n");
+  if (lines[0] && lines[0].includes("**")) lines.shift();
+  const parts = lines.join("\n").split(/\n(?=##\s)/).map((s) => s.trim()).filter(Boolean);
 
   const sections = parts
     .map((part) => {
@@ -113,7 +113,7 @@ function splitGeneralSections(content: string): { heading: string; content: stri
       const text = part.replace(/^##\s*.+\n?/, "").trim();
       return { heading, content: cleanMarkdown(text) };
     })
-    .filter((s) => s.heading && s.content && !GENERAL_SECTION_EXCLUDE.has(s.heading));
+    .filter((s) => s.heading && s.content && !GENERAL_SECTION_EXCLUDE.has(s.heading) && !s.heading.startsWith("ลิงก์"));
 
   return sections.sort((a, b) => {
     const ai = GENERAL_SECTION_ORDER.indexOf(a.heading);
@@ -122,25 +122,22 @@ function splitGeneralSections(content: string): { heading: string; content: stri
   });
 }
 
+// Any "## ลิงก์..." heading (ลิงก์รายงาน, ลิงก์กฎหมายฉบับเต็ม, ลิงก์คำพิพากษาฉบับเต็ม, ...)
+// becomes a link button instead of a text section - see GENERAL_SECTION_EXCLUDE above.
 function reportLink(content: string): string | null {
-  const match = content.match(/##\s*ลิงก์รายงาน\s*\n([\s\S]*?)(?=\n##\s|$)/);
+  const match = content.match(/##\s*ลิงก์[^\n]*\n([\s\S]*?)(?=\n##\s|$)/);
   if (!match) return null;
   const urlMatch = match[1].match(/https?:\/\/\S+/);
   return urlMatch ? urlMatch[0] : null;
 }
 
 function GeneralMetadataBox({ meta }: { meta: GeneralMetadata }) {
-  const rows: [string, string | undefined][] = [
-    ["ปีที่จัดทำ", meta.yearPrepared],
-    ["ประเภท", meta.researchType],
-    ["ผู้จัดทำ", meta.preparedBy],
-    ["วิธีดำเนินการ", meta.method],
-  ].filter(([, v]) => !!v) as [string, string][];
+  const rows = Object.entries(meta);
   if (rows.length === 0) return null;
   return (
     <div className="cw-legal-refs" style={{ marginTop: 24 }}>
       <div className="cw-legal-refs-head">
-        <Sparkles size={15} /> ข้อมูลงานวิจัย
+        <Sparkles size={15} /> ข้อมูลเอกสาร
       </div>
       {rows.map(([label, value]) => (
         <p key={label} style={{ color: "#d1d5db", fontSize: "0.92rem", margin: "6px 0" }}>
@@ -271,7 +268,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
     : isSituationReport
     ? "รายงานประเมินสถานการณ์"
     : isGeneral
-    ? "งานวิจัย"
+    ? caseDoc.category || "งานวิจัย"
     : "เอกสาร";
 
   return (

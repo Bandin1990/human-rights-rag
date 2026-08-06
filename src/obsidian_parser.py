@@ -44,11 +44,17 @@ class ObsidianParser:
     EXCLUDED_TITLES = {"00 หน้าแรก", "README - เริ่มต้นใช้งาน", "โจทย์วิจัยภาคใต้"}
 
     # Document-category taxonomy shown in the web UI's document-type filter.
-    # Only folders with real content get a category; the rest of the taxonomy
-    # (Thai law, international law, court judgments) has no vault content yet.
+    # "06"-"10" have no vault content yet - see docs/vault-templates/ for the
+    # note templates that seed each one once files exist under these folder
+    # names (any file there falls through to _parse_generic, same as "04").
     CATEGORY_BY_FOLDER_PREFIX = {
         "03": "รายงานตรวจสอบ/ข้อเสนอแนะ กสม.",
         "04": "งานวิจัย",
+        "06": "กฎหมายไทย",
+        "07": "กฎหมายสิทธิมนุษยชนระหว่างประเทศและเอกสารตีความ",
+        "08": "คลังความรู้ด้านสิทธิมนุษยชน",
+        "09": "คำพิพากษาศาลไทย",
+        "10": "คำพิพากษาศาลต่างประเทศ",
     }
 
     # Extra Thai stopwords beyond pythainlp's corpus (filler/structural words
