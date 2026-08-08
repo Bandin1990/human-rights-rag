@@ -525,6 +525,8 @@
 .cw-legal-refs h4 { font-size: 0.8rem; color: #9ca3af; margin: 14px 0 8px; font-weight: 600; }
 .cw-legal-refs h4:first-of-type { margin-top: 0; }
 .cw-legal-ref-item { font-size: 0.85rem; color: #d1d5db; padding: 8px 10px; background-color: #1e2128; border: 1px solid #374151; border-radius: 8px; margin-bottom: 6px; }
+.cw-legal-ref-item--link { display: block; text-decoration: none; cursor: pointer; }
+.cw-legal-ref-item--link:hover { color: #f3f4f6; border-color: #fb923c; }
 .cw-legal-refs-empty { font-size: 0.82rem; color: #6b7280; }
 .cw-legal-refs-loading { font-size: 0.82rem; color: #6b7280; display: flex; align-items: center; gap: 8px; }
 

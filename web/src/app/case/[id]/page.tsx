@@ -96,7 +96,17 @@ const GENERAL_SECTION_ORDER = [
   "สาระสำคัญ",
   "ประเด็นสิทธิที่วิจัย",
   "ระเบียบวิธีวิจัย",
+  // Thai-law / international-instrument headings (see docs/vault-templates/
+  // 06-.../07-...) - ordered like a legal brief: substance, then Thailand's
+  // obligations, then how it's actually used in NHRC casework.
+  "มาตราสำคัญ",
+  "พันธกรณีของไทย",
+  "ความเชื่อมโยงกับกรณีตรวจสอบของ กสม.",
   "ประเด็นสิทธิที่เกี่ยวข้อง",
+  // Always last regardless of where it sits in the source file - an AI-
+  // accuracy caveat belongs at the end of the read, not competing with the
+  // substance for the reader's attention.
+  "หมายเหตุความถูกต้อง",
 ];
 const GENERAL_SECTION_EXCLUDE = new Set(["คำสำคัญ"]);
 
@@ -166,7 +176,13 @@ function RelatedList({ title, cases }: { title: string; cases: NhrcDocument[] })
 function LegalRefsBox({
   refs,
 }: {
-  refs: { internationalInstruments: string[]; thaiLaws: string[]; groundedThaiLaws?: string[] } | null;
+  refs: {
+    internationalInstruments: string[];
+    thaiLaws: string[];
+    groundedThaiLaws?: string[];
+    groundedInternationalInstruments?: { document_id: string; title: string }[];
+    groundedThaiLawDocs?: { document_id: string; title: string }[];
+  } | null;
 }) {
   return (
     <div className="cw-legal-refs">
@@ -211,6 +227,42 @@ function LegalRefsBox({
                 <div className="cw-legal-ref-item" key={i}>
                   {item}
                 </div>
+              ))}
+            </>
+          )}
+
+          {refs.groundedInternationalInstruments && refs.groundedInternationalInstruments.length > 0 && (
+            <>
+              <h4>ยืนยันจากคลังตราสารระหว่างประเทศในระบบ</h4>
+              <p className="cw-legal-refs-note cw-legal-refs-note--grounded">
+                พบเอกสารตราสารต่อไปนี้จริงในคลังความรู้ กสม. (จับคู่จากคำสำคัญของกรณีนี้) — คลิกเพื่อดูรายละเอียดตราสาร
+              </p>
+              {refs.groundedInternationalInstruments.map((doc) => (
+                <Link
+                  href={`/case/${doc.document_id}`}
+                  className="cw-legal-ref-item cw-legal-ref-item--link"
+                  key={doc.document_id}
+                >
+                  {doc.title}
+                </Link>
+              ))}
+            </>
+          )}
+
+          {refs.groundedThaiLawDocs && refs.groundedThaiLawDocs.length > 0 && (
+            <>
+              <h4>ยืนยันจากคลังกฎหมายไทยในระบบ</h4>
+              <p className="cw-legal-refs-note cw-legal-refs-note--grounded">
+                พบเอกสารกฎหมายต่อไปนี้จริงในคลังความรู้ กสม. (จับคู่จากคำสำคัญของกรณีนี้) — คลิกเพื่อดูรายละเอียดกฎหมาย
+              </p>
+              {refs.groundedThaiLawDocs.map((doc) => (
+                <Link
+                  href={`/case/${doc.document_id}`}
+                  className="cw-legal-ref-item cw-legal-ref-item--link"
+                  key={doc.document_id}
+                >
+                  {doc.title}
+                </Link>
               ))}
             </>
           )}

@@ -11,6 +11,11 @@ import Anthropic from "@anthropic-ai/sdk";
 import { getNhrcRepository } from "@/lib/nhrc/repository";
 import { getGroundedThaiLaws } from "@/lib/nhrc/openthai-legal";
 
+export interface GroundedDoc {
+  document_id: string;
+  title: string;
+}
+
 export interface LegalRefsResult {
   summary: string;
   internationalInstruments: string[];
@@ -24,6 +29,14 @@ export interface LegalRefsResult {
   // already had right. Kept as an empty-by-default bonus list instead: only
   // shown when it actually found something, so it can only add value.
   groundedThaiLaws: string[];
+  // Also additive: real documents from our own vault (see docs/vault-templates/
+  // 06-.../07-...) matched by the same keyword-overlap ranking used for
+  // "related documents" (repo.findRelevantCases) - no external API involved.
+  // Unlike groundedThaiLaws (plain text from OpenThai, no page to link to),
+  // these point at an actual /case/[document_id] page in our own knowledge
+  // base, so the UI can render them as real links instead of inert text.
+  groundedInternationalInstruments: GroundedDoc[];
+  groundedThaiLawDocs: GroundedDoc[];
 }
 
 // Cheap in-memory cache so re-visiting a case during this server's lifetime
@@ -44,6 +57,8 @@ function parseJsonFromText(text: string): LegalRefsResult | null {
         ? parsed.thaiLaws.filter((v: unknown) => typeof v === "string")
         : [],
       groundedThaiLaws: [],
+      groundedInternationalInstruments: [],
+      groundedThaiLawDocs: [],
     };
   } catch {
     return null;
@@ -102,6 +117,18 @@ export async function getLegalRefs(caseId: string): Promise<LegalRefsResult | nu
     if (groundedThaiLaws && groundedThaiLaws.length > 0) {
       result.groundedThaiLaws = groundedThaiLaws.map((c) => `${c.law} มาตรา ${c.section}`);
     }
+
+    // Same additive idea, but against our own vault-backed corpus (see the
+    // GroundedDoc field comments) instead of an external API - reuses the
+    // existing keyword-overlap ranking that already powers "related
+    // documents" elsewhere, so a real match only happens on actual keyword
+    // overlap (never a blind top-N guess).
+    result.groundedInternationalInstruments = repo
+      .findRelevantCases(content, 5, { category: "กฎหมายสิทธิมนุษยชนระหว่างประเทศและเอกสารตีความ" })
+      .map((doc) => ({ document_id: doc.document_id, title: doc.title }));
+    result.groundedThaiLawDocs = repo
+      .findRelevantCases(content, 5, { category: "กฎหมายไทย" })
+      .map((doc) => ({ document_id: doc.document_id, title: doc.title }));
 
     cache.set(caseId, result);
     return result;
