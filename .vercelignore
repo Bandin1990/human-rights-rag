@@ -1,0 +1,15 @@
+.venv/
+venv/
+.tools/
+.git/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+web/node_modules/
+web/.next/
+data/documents/
+data/chroma/
+data/nhrc_documents/
+data/nhrc_index.db
+data/nhrc_index.db-journal
+*.pdf

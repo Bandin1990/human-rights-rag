@@ -37,3 +37,4 @@ data/nhrc_documents/
 Thumbs.db
 .vscode/
 .idea/
+.vercel
