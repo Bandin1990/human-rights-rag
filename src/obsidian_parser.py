@@ -40,6 +40,20 @@ class ObsidianParser:
     # Frontmatter tag values that are category markers, not real keywords
     GENERIC_TAGS = {"กรณีตรวจสอบ", "ประเด็นสิทธิ", "โปรเจกต์"}
 
+    # Every topic note in "02 ประเด็นสิทธิ" shares the exact same breadcrumb/
+    # heading template ("> ... กลุ่ม: B. สิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม",
+    # "## สถานการณ์และแนวโน้มรายปี", "### แนวโน้มสถานการณ์ (สรุป)" ...), and
+    # _extract_keywords tokenizes from the raw title+body - so these
+    # structural/template words (and the AREA NAME's own words, which leak
+    # in via the breadcrumb) show up as "keywords" on every single topic
+    # regardless of its actual subject. Filtered out only for topic nodes
+    # (see _parse_topic_area) since it's this template, specifically, that
+    # causes it - case notes/research docs don't share this pattern.
+    TOPIC_KEYWORD_STOPWORDS = {
+        "สถานการณ์", "แนวโน้ม", "รายปี", "สรุป", "กลุ่ม", "หน้าแรก", "กลับ",
+        "ทรงตัว", "โจทย์วิจัย", "เกี่ยวข้อง", "พื้นที่", "ภาคใต้",
+    }
+
     # Loose root-level notes that are navigational/planning, not case content
     EXCLUDED_TITLES = {"00 หน้าแรก", "README - เริ่มต้นใช้งาน", "โจทย์วิจัยภาคใต้"}
 
@@ -457,7 +471,22 @@ class ObsidianParser:
 
         title = file_path.stem
         seed_tags = [t for t in (frontmatter.get("tags") or []) if t not in self.GENERIC_TAGS]
-        keywords = self._extract_keywords(title, content, seed_tags=seed_tags)
+        # Every topic note opens with a "> [[00 หน้าแรก|...]] · กลุ่ม: <AREA
+        # NAME>" breadcrumb line - pure navigation, but its words (the area
+        # name itself, e.g. "สิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม") would
+        # otherwise leak into every single topic in that area's keyword
+        # list regardless of the topic's actual subject. Drop it before
+        # tokenizing; TOPIC_KEYWORD_STOPWORDS below catches the remaining
+        # heading-template words ("สถานการณ์", "แนวโน้ม", ...).
+        content_for_keywords = re.sub(r'^>.*$', '', content, flags=re.MULTILINE)
+        # Pull extra candidates before filtering, so the final list still has
+        # up to 10 real, topic-specific terms instead of being padded out
+        # with whatever template boilerplate survives the filter.
+        raw_keywords = self._extract_keywords(title, content_for_keywords, seed_tags=seed_tags, max_keywords=20)
+        keywords = [
+            k for k in raw_keywords
+            if k not in self.TOPIC_KEYWORD_STOPWORDS and not k.isdigit()
+        ][:10]
 
         # Topic notes carry a "## สถานการณ์และแนวโน้มรายปี" section: a
         # "### YYYY" entry per year (2564-2568) plus a closing

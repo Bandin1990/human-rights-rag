@@ -11,6 +11,12 @@ const WIDTH = 960;
 const HEIGHT = 620;
 const MIN_ZOOM_W = WIDTH * 0.28; // most zoomed-in
 const MAX_ZOOM_W = WIDTH * 2.2; // most zoomed-out
+// Keyword sub-nodes (see subNodes below): how many appear around an opened
+// topic, and how far from the parent's center - kept small/close so they
+// read as "detail of this node" rather than competing with the main graph.
+const SUB_NODE_MAX = 6;
+const SUB_NODE_DISTANCE = 60;
+const SUB_NODE_RADIUS = 12;
 
 // Muted, earthy palette instead of a saturated rainbow - keeps the 5 areas
 // distinguishable but cohesive with the ink/gold institutional theme (see
@@ -52,6 +58,10 @@ export function TopicGraph() {
     null
   );
   const [positions, setPositions] = useState<Map<string, Point>>(new Map());
+  // Keyword sub-node clicked within the currently-open topic (see
+  // SUB_NODE_MAX below) - filters the case list to cases tagged with it,
+  // reset whenever the selected node changes.
+  const [activeKeyword, setActiveKeyword] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("/api/graph")
@@ -76,6 +86,7 @@ export function TopicGraph() {
   }, [selected]);
 
   useEffect(() => {
+    setActiveKeyword(null);
     if (!selected) {
       setCases(null);
       return;
@@ -126,6 +137,35 @@ export function TopicGraph() {
     graph?.nodes.forEach((n) => map.set(n.id, n));
     return map;
   }, [graph]);
+
+  // Keyword sub-nodes: real points on the canvas around whichever topic is
+  // currently open, one per topic keyword (see obsidian_parser.py's
+  // TOPIC_KEYWORD_STOPWORDS filtering) - a finer-grained breakdown than the
+  // 23 fixed topic nodes, without needing a new authored data layer. Area
+  // nodes don't get these (no keywords of their own).
+  const subNodes = useMemo(() => {
+    if (!selected || selected.type !== "topic" || !selected.keywords?.length) return [];
+    const center = positions.get(selected.id);
+    if (!center) return [];
+    const words = selected.keywords.slice(0, SUB_NODE_MAX);
+    const angleStep = (2 * Math.PI) / words.length;
+    return words.map((keyword, i) => {
+      const angle = -Math.PI / 2 + i * angleStep;
+      return {
+        keyword,
+        x: center.x + Math.cos(angle) * SUB_NODE_DISTANCE,
+        y: center.y + Math.sin(angle) * SUB_NODE_DISTANCE,
+        parentX: center.x,
+        parentY: center.y,
+      };
+    });
+  }, [selected, positions]);
+
+  const displayedCases = useMemo(() => {
+    if (!cases) return cases;
+    if (!activeKeyword) return cases;
+    return cases.filter((c) => c.keywords?.includes(activeKeyword));
+  }, [cases, activeKeyword]);
 
   const selectedConnections = useMemo(() => {
     if (!selected || !graph) return [];
@@ -422,6 +462,46 @@ export function TopicGraph() {
                 </g>
               );
             })}
+
+            {subNodes.map((s) => {
+              const isActive = activeKeyword === s.keyword;
+              return (
+                <g key={s.keyword}>
+                  <line
+                    x1={s.parentX}
+                    y1={s.parentY}
+                    x2={s.x}
+                    y2={s.y}
+                    stroke={HIGHLIGHT}
+                    strokeWidth={1}
+                    opacity={isActive ? 0.8 : 0.4}
+                  />
+                  <g
+                    style={{ cursor: "pointer" }}
+                    onPointerDown={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveKeyword((cur) => (cur === s.keyword ? null : s.keyword));
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`คำสำคัญย่อย: ${s.keyword}`}
+                  >
+                    <circle
+                      cx={s.x}
+                      cy={s.y}
+                      r={SUB_NODE_RADIUS}
+                      fill="#1a1f2e"
+                      stroke={isActive ? HIGHLIGHT : "#5c5540"}
+                      strokeWidth={isActive ? 2.5 : 1.5}
+                    />
+                    <foreignObject x={s.x - 40} y={s.y + SUB_NODE_RADIUS + 3} width={80} height={26}>
+                      <div className="cw-graph-node-label cw-graph-subnode-label">{s.keyword}</div>
+                    </foreignObject>
+                  </g>
+                </g>
+              );
+            })}
           </svg>
         </div>
 
@@ -457,11 +537,22 @@ export function TopicGraph() {
 
               {!!selected.keywords?.length && (
                 <div className="cw-graph-modal-section">
+                  <h4>คำสำคัญย่อย (คลิกเพื่อกรองกรณีด้านล่าง)</h4>
                   <div className="cw-graph-tag-row">
+                    {/* Same keywords as the on-canvas sub-nodes (see subNodes
+                        above) - kept clickable here too since the canvas
+                        points can end up sitting right behind this modal,
+                        depending on where the parent node happens to be
+                        laid out. */}
                     {selected.keywords.map((k) => (
-                      <span key={k} className="cw-graph-tag">
+                      <button
+                        key={k}
+                        type="button"
+                        className={`cw-graph-tag ${activeKeyword === k ? "is-active" : ""}`}
+                        onClick={() => setActiveKeyword((cur) => (cur === k ? null : k))}
+                      >
                         {k}
-                      </span>
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -495,18 +586,28 @@ export function TopicGraph() {
 
               <div className="cw-graph-modal-section">
                 <h4>กรณีตรวจสอบที่เกี่ยวข้อง</h4>
+                {activeKeyword && (
+                  <div className="cw-graph-active-filter">
+                    กรองด้วยคำสำคัญ: <strong>{activeKeyword}</strong>
+                    <button type="button" onClick={() => setActiveKeyword(null)}>
+                      แสดงทั้งหมด ✕
+                    </button>
+                  </div>
+                )}
                 <div className="cw-graph-panel-list">
                   {casesLoading && <p className="cw-graph-status">กำลังโหลด...</p>}
-                  {!casesLoading && cases?.length === 0 && <p className="cw-graph-status">ไม่พบกรณี</p>}
+                  {!casesLoading && displayedCases?.length === 0 && (
+                    <p className="cw-graph-status">ไม่พบกรณีที่ตรงกับคำสำคัญนี้</p>
+                  )}
                   {!casesLoading &&
-                    cases?.slice(0, 40).map((c) => (
+                    displayedCases?.slice(0, 40).map((c) => (
                       <Link href={`/case/${c.case_id}`} key={c.document_id} className="cw-detail-related-item">
                         <span>{c.case_id}</span>
                         {c.title}
                       </Link>
                     ))}
-                  {!casesLoading && cases && cases.length > 40 && (
-                    <p className="cw-graph-status">และอีก {cases.length - 40} กรณี</p>
+                  {!casesLoading && displayedCases && displayedCases.length > 40 && (
+                    <p className="cw-graph-status">และอีก {displayedCases.length - 40} กรณี</p>
                   )}
                 </div>
               </div>
