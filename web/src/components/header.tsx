@@ -7,7 +7,7 @@ import { BookOpen, Menu, X } from "@/components/icons";
 
 const links = [
   { href: "/", label: "ค้นเอกสาร", matches: (path: string) => path === "/" || path.startsWith("/case") || path.startsWith("/documents") },
-  { href: "/knowledge/dashboard", label: "สถิติ กสม.", matches: (path: string) => path.startsWith("/knowledge/dashboard") },
+  { href: "/knowledge/dashboard", label: "สถิติระบบ", matches: (path: string) => path.startsWith("/knowledge/dashboard") },
   { href: "/knowledge/graph", label: "แผนที่ประเด็นสิทธิ", matches: (path: string) => path.startsWith("/knowledge/graph") },
   { href: "/help", label: "วิธีใช้งาน", matches: (path: string) => path.startsWith("/help") },
 ];

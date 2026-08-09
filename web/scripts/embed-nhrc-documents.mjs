@@ -173,13 +173,30 @@ async function main() {
   // Every chunk row for a given document carries the same content_hash, so
   // any one row for that document_id tells us its current hash - take the
   // first one seen per document.
-  const { data: existingRows, error: existingErr } = await supabase
-    .from("nhrc_embeddings")
-    .select("document_id, content_hash");
-  if (existingErr) throw existingErr;
+  //
+  // Paginated explicitly: PostgREST caps a plain .select() at 1000 rows by
+  // default, silently - it does NOT error or warn. This table is long past
+  // that now (3000+ chunk rows), so the unpaginated version of this query
+  // only ever saw the first 1000 and treated every document_id outside
+  // that window as "unknown" - which meant the orphan-cleanup below (see
+  // orphanIds) could only ever find orphans among that same first 1000,
+  // silently leaving any orphaned document past it in Supabase forever.
+  // Confirmed live: 3 of 25 excluded topic-note documents survived a
+  // "cleaned up" run this way and kept showing up in Ask NHRC citations.
   const existingHashes = new Map();
-  for (const row of existingRows || []) {
-    if (!existingHashes.has(row.document_id)) existingHashes.set(row.document_id, row.content_hash);
+  {
+    const PAGE_SIZE = 1000;
+    for (let from = 0; ; from += PAGE_SIZE) {
+      const { data: page, error: pageErr } = await supabase
+        .from("nhrc_embeddings")
+        .select("document_id, content_hash")
+        .range(from, from + PAGE_SIZE - 1);
+      if (pageErr) throw pageErr;
+      for (const row of page || []) {
+        if (!existingHashes.has(row.document_id)) existingHashes.set(row.document_id, row.content_hash);
+      }
+      if (!page || page.length < PAGE_SIZE) break;
+    }
   }
 
   // Hash the document's identity (title/area/keywords/content) as a whole,
