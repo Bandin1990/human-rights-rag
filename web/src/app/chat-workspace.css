@@ -939,3 +939,98 @@ nav a:hover, nav a.active { color: #f3f4f6 !important; }
 nav a.active:after { background: #fb923c !important; }
 .menu { color: #e5e7eb; }
 footer { background: #14161b !important; }
+
+/* Help/manual page (/help) - reuses the same ink/gold "formal document"
+   palette as the topic graph and stats pages rather than the chat's dark-
+   dashboard orange, since this is long-form reading content, not a tool.
+   Kept as its own copy of the variables (not shared with .cw-graph-page)
+   per this file's existing convention of scoping each page's theme
+   independently. */
+.cw-help-page {
+  --help-ink: #12141c;
+  --help-panel: #1c2130;
+  --help-border: #313a52;
+  --help-gold: #c9a961;
+  --help-gold-bright: #e3c583;
+  --help-paper: #ece7d9;
+  --help-paper-dim: #a19b8a;
+  --help-paper-faint: #6d6a5e;
+  min-height: 100vh;
+  background-color: var(--help-ink);
+  background-image: radial-gradient(ellipse 900px 500px at 50% -10%, rgba(201, 169, 97, 0.06), transparent);
+  color: var(--help-paper);
+  padding: 40px 24px 100px;
+}
+.cw-help-inner { max-width: 780px; margin: 0 auto; }
+.cw-help-inner > header { margin-bottom: 32px; }
+.cw-help-inner > header h1 {
+  font-family: var(--font-serif-th), serif;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: var(--help-paper);
+}
+.cw-help-inner > header p { color: var(--help-paper-dim); font-size: 0.92rem; line-height: 1.7; margin: 0; }
+
+.cw-help-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 40px;
+  padding: 16px;
+  background: var(--help-panel);
+  border: 1px solid var(--help-border);
+  border-radius: 12px;
+}
+.cw-help-toc a {
+  font-size: 0.82rem;
+  color: var(--help-gold);
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--help-border);
+  background: var(--help-ink);
+}
+.cw-help-toc a:hover { border-color: var(--help-gold); color: var(--help-gold-bright); }
+
+.cw-help-section { margin-bottom: 44px; scroll-margin-top: 24px; }
+.cw-help-section h2 {
+  font-family: var(--font-serif-th), serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--help-gold-bright);
+  margin: 0 0 6px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--help-border);
+}
+.cw-help-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--help-paper);
+  margin: 28px 0 10px;
+}
+.cw-help-section p { font-size: 0.92rem; line-height: 1.8; color: var(--help-paper-dim); margin: 0 0 14px; }
+.cw-help-section ul, .cw-help-section ol { margin: 0 0 14px; padding-left: 22px; }
+.cw-help-section li { font-size: 0.92rem; line-height: 1.8; color: var(--help-paper-dim); margin-bottom: 6px; }
+.cw-help-section li strong, .cw-help-section p strong { color: var(--help-paper); font-weight: 600; }
+.cw-help-note {
+  background: var(--help-panel);
+  border: 1px solid var(--help-border);
+  border-left: 3px solid var(--help-gold);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--help-paper-dim);
+  margin: 0 0 14px;
+}
+.cw-help-note strong { color: var(--help-gold-bright); }
+.cw-help-section code {
+  font-family: var(--font-mono, monospace);
+  background: var(--help-panel);
+  border: 1px solid var(--help-border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.85em;
+  color: var(--help-gold-bright);
+}
