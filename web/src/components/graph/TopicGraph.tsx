@@ -526,6 +526,7 @@ export function TopicGraph() {
                 <X size={18} />
               </button>
             </div>
+            <div className="cw-graph-modal-rule" />
 
             <div className="cw-graph-modal-body">
               {selected.summary && (

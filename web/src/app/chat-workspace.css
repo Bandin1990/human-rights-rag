@@ -779,12 +779,16 @@
   border-radius: 16px;
   padding: 20px;
   overflow-y: auto;
-  animation: cw-graph-modal-in 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: cw-graph-modal-in 0.32s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @keyframes cw-graph-modal-fade { from { opacity: 0; } to { opacity: 1; } }
-@keyframes cw-graph-modal-in { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: none; } }
+/* A considered "panel sliding into place" entrance rather than a flat
+   fade+scale - slides in from the right with the content settling, closer
+   to the slide/reveal motion language referenced from an external site the
+   user asked to match, rather than a generic dialog pop-in. */
+@keyframes cw-graph-modal-in { from { opacity: 0; transform: translateX(28px) scale(0.98); } to { opacity: 1; transform: none; } }
 
-.cw-graph-panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 12px; padding-bottom: 16px; border-bottom: 1px solid var(--graph-border); }
+.cw-graph-panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 0; padding-bottom: 16px; }
 .cw-graph-panel-head h3 { font-family: var(--font-serif-th), serif; font-weight: 600; font-size: 1.05rem; color: var(--graph-paper); margin: 8px 0 4px; }
 .cw-graph-panel-head p { font-size: 0.8rem; color: var(--graph-gold); margin: 0; }
 .cw-graph-panel-head button { background: none; border: none; color: var(--graph-paper-faint); cursor: pointer; padding: 4px; }
@@ -795,8 +799,31 @@
 .cw-graph-modal .cw-detail-related-item:hover { color: var(--graph-paper); }
 .cw-graph-modal .cw-detail-related-item span { color: var(--graph-gold); }
 
+/* A horizontal rule that grows from 0 to full width right after the header,
+   instead of a static border - a small but distinct "the panel is still
+   settling into place" beat between the header and body animating in. */
+.cw-graph-modal-rule {
+  height: 1px;
+  background: var(--graph-border);
+  margin-bottom: 18px;
+  transform-origin: left;
+  animation: cw-graph-rule-grow 0.4s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes cw-graph-rule-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
 .cw-graph-modal-body { display: flex; flex-direction: column; gap: 18px; }
 .cw-graph-modal-section h4 { font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--graph-paper-faint); margin: 0 0 8px; font-weight: 600; }
+/* Sections reveal in a quick stagger rather than all at once - each one
+   ~60ms behind the last (capped at 6 - later sections just inherit the
+   6th's delay rather than growing indefinitely for long content). */
+.cw-graph-modal-body > * { animation: cw-graph-section-in 0.32s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.cw-graph-modal-body > *:nth-child(1) { animation-delay: 0.08s; }
+.cw-graph-modal-body > *:nth-child(2) { animation-delay: 0.14s; }
+.cw-graph-modal-body > *:nth-child(3) { animation-delay: 0.2s; }
+.cw-graph-modal-body > *:nth-child(4) { animation-delay: 0.26s; }
+.cw-graph-modal-body > *:nth-child(5) { animation-delay: 0.32s; }
+.cw-graph-modal-body > *:nth-child(n+6) { animation-delay: 0.38s; }
+@keyframes cw-graph-section-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
 /* Yearly-timeline summary (see obsidian_parser.py's _parse_topic_area) is
    rendered through the shared MarkdownLite component (its "### YYYY" /

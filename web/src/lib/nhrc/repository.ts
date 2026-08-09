@@ -278,10 +278,21 @@ class NhrcRepository {
   // any document_type - used for "งานวิจัย" docs too, which have no case_id
   // (matched by document_id instead) and no area_code (that term just always
   // scores 0 for them, keyword/year overlap still applies).
+  //
+  // document_type alone isn't specific enough for "general" docs: research,
+  // Thai law, international instruments, court judgments, and knowledge-base
+  // notes all share document_type "general" (see DOCUMENT_CATEGORIES), so
+  // without also filtering by `category`, viewing an instrument could pull
+  // in a Thai law or research doc as a "related" match purely on keyword
+  // overlap - content that's plausible but from the wrong shelf, and a caller
+  // showing a single category-specific heading (e.g. "งานวิจัยที่เกี่ยวข้อง")
+  // would then be mislabeling whatever came back. Pass `category` whenever
+  // the source document has one to keep the two in sync.
   getRelatedDocuments(
     documentId: string,
     docType: NhrcDocument["document_type"],
-    limit: number = 10
+    limit: number = 10,
+    category?: string
   ): NhrcDocument[] {
     const source = this.getCaseById(documentId);
     if (!source) return [];
@@ -289,6 +300,7 @@ class NhrcRepository {
     const related = this.documents.filter((doc) => {
       if (doc.document_id === source.document_id) return false;
       if (doc.document_type !== docType) return false;
+      if (category && doc.category !== category) return false;
       const areaMatch = !!source.area_code && doc.area_code === source.area_code;
       const keywordMatch = source.keywords.some((kw) => doc.keywords.includes(kw));
       const yearMatch = !!(source.year && doc.year && Math.abs(source.year - doc.year) <= 2);

@@ -249,7 +249,7 @@ export function NhrcWorkspace({
           )}
         </div>
 
-        <div className="cw-footer">© 2026 Human Rights RAG</div>
+        <div className="cw-footer">© 2026 ค้นหาสิทธิ</div>
       </div>
 
       {/* Main */}
@@ -258,7 +258,7 @@ export function NhrcWorkspace({
           {mode === "welcome" && (
             <div className="cw-empty-state">
               <div className="cw-empty-title">
-                <Scale size={40} /> HumanRights RAG
+                <Scale size={40} /> ค้นหาสิทธิ
               </div>
               <p className="cw-empty-desc">
                 ผู้ช่วยค้นฐานความรู้กรณีตรวจสอบและประเด็นสิทธิของ กสม. — ค้นด้วยตัวกรอง หรือถามคำถามเป็นภาษาธรรมชาติ
@@ -351,7 +351,12 @@ export function NhrcWorkspace({
 
       {/* References */}
       <div className={`cw-references ${activeCitations.length === 0 ? "hidden" : ""}`}>
-        <div className="cw-ref-header">กรณีที่เกี่ยวข้อง</div>
+        {/* "เอกสารอ้างอิง" not "กรณีที่เกี่ยวข้อง" - since the diversified
+            retrieval + law/instrument backfill in api/ask-nhrc/route.ts,
+            these citations regularly include research, Thai law,
+            international instruments, and general comments alongside case
+            notes, not just cases. */}
+        <div className="cw-ref-header">เอกสารอ้างอิง</div>
         <div className="cw-ref-content">
           {activeCitations.map((c, idx) => {
             return (

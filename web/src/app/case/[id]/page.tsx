@@ -14,6 +14,24 @@ const AREA_NAMES: Record<string, string> = {
   E: "เพิ่มเติมจากแท็กซอนอมีเดิม",
 };
 
+// "general" document_type covers several very different DOCUMENT_CATEGORIES
+// (research, Thai law, international instruments, court judgments,
+// knowledge base) - the sidebar's "related documents" heading needs to name
+// whichever one the current document actually belongs to, not a hardcoded
+// "งานวิจัยที่เกี่ยวข้อง" regardless of what's actually being viewed.
+const RELATED_LIST_LABEL: Record<string, string> = {
+  "งานวิจัย": "งานวิจัยที่เกี่ยวข้อง",
+  "กฎหมายไทย": "กฎหมายไทยที่เกี่ยวข้อง",
+  "กฎหมายสิทธิมนุษยชนระหว่างประเทศและเอกสารตีความ": "ตราสาร/เอกสารตีความที่เกี่ยวข้อง",
+  "คลังความรู้ด้านสิทธิมนุษยชน": "องค์ความรู้ที่เกี่ยวข้อง",
+  "คำพิพากษาศาลไทย": "คำพิพากษาศาลไทยที่เกี่ยวข้อง",
+  "คำพิพากษาศาลต่างประเทศ": "คำพิพากษาศาลต่างประเทศที่เกี่ยวข้อง",
+};
+function relatedListLabel(category?: string): string {
+  const base = (category && RELATED_LIST_LABEL[category]) || "เอกสารที่เกี่ยวข้อง";
+  return `${base} (คำสำคัญใกล้เคียง)`;
+}
+
 // Reading order for a case note's body sections - narrative first (what
 // happened), context after. Headings not listed here (there shouldn't be
 // any - all 285 case notes use the same six) sort after known ones.
@@ -212,7 +230,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
     ? repo.search({ docType: "situation_report", limit: 20 }).data.filter((d) => d.document_id !== caseDoc.document_id)
     : [];
   const relatedResearch = isGeneral
-    ? repo.getRelatedDocuments(caseDoc.document_id, "general", 10)
+    ? repo.getRelatedDocuments(caseDoc.document_id, "general", 10, caseDoc.category)
     : [];
   const sections = isCaseNote ? splitSections(caseDoc.content || "") : [];
   const generalMeta = isGeneral ? parseGeneralMetadata(caseDoc.content || "") : null;
@@ -334,7 +352,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
           ) : isSituationReport ? (
             <RelatedList title="รายงานปีอื่น" cases={otherReports} />
           ) : (
-            <RelatedList title="งานวิจัยที่เกี่ยวข้อง (คำสำคัญใกล้เคียง)" cases={relatedResearch} />
+            <RelatedList title={relatedListLabel(caseDoc.category)} cases={relatedResearch} />
           )}
         </aside>
       </div>
