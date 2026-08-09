@@ -1,16 +1,27 @@
 /* chat-workspace.css */
+/* Was position:fixed/top:0/z-index:9999 ("Cover header and footer") - a
+   deliberate full-screen takeover that painted over the shared site
+   <Header> (globals.css's .site-header, z-index 40) entirely, even though
+   it was still there underneath. That made the top nav (ค้นเอกสาร/สถิติ
+   กสม./แผนที่ประเด็นสิทธิ) invisible on the homepage specifically, while
+   working fine on every other page that doesn't render this container.
+   Now sits below the header instead of covering it - see the matching
+   .header-inner height (76px, 65px under 600px) in globals.css. */
 .cw-container {
   position: fixed;
-  top: 0;
+  top: 76px;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  z-index: 9999; /* Cover header and footer */
+  height: calc(100vh - 76px);
+  z-index: 10;
   display: flex;
   background-color: #1e2128;
   color: #e5e7eb;
   font-family: var(--font-inter), var(--font-bai), sans-serif;
   overflow: hidden;
+}
+@media (max-width: 600px) {
+  .cw-container { top: 65px; height: calc(100vh - 65px); }
 }
 
 /* Sidebar */

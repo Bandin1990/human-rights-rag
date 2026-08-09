@@ -234,9 +234,18 @@ export async function POST(req: Request) {
       const client = new Anthropic({ apiKey });
       const model = process.env.ANTHROPIC_MODEL || "claude-haiku-4-5";
 
+      // 2048 (and then 4096) both cut real answers off mid-sentence once the
+      // evidence backfill (LAW_BACKFILL_CATEGORIES) + longer excerpts (see
+      // buildExcerpt) gave the model enough material to write a genuinely
+      // multi-category structured answer - confirmed via live tests where
+      // the last section stopped mid-word both times. 6144 leaves headroom
+      // for a full "summary + up to ~4 category sections + สรุปแนวทาง"
+      // answer; response.stop_reason is logged below so a future case that
+      // still hits the ceiling is visible in server logs instead of just
+      // silently truncating.
       const response = await client.messages.create({
         model,
-        max_tokens: 2048,
+        max_tokens: 6144,
         system:
           "คุณเป็นผู้ช่วยค้นคว้าและวิเคราะห์ของสำนักงานคณะกรรมการสิทธิมนุษยชนแห่งชาติ (กสม.) " +
           "วิเคราะห์ได้เฉพาะจากหลักฐานที่ส่งให้เท่านั้น ห้ามสร้างข้อเท็จจริง เลขคดี มาตรา หรือแนววินิจฉัยที่ไม่มีในหลักฐาน " +
@@ -259,6 +268,10 @@ export async function POST(req: Request) {
           },
         ],
       });
+
+      if (response.stop_reason === "max_tokens") {
+        console.warn(`Ask NHRC answer hit max_tokens (6144) and was truncated for question: "${question}"`);
+      }
 
       const answerText = response.content
         .filter((block): block is Anthropic.TextBlock => block.type === "text")

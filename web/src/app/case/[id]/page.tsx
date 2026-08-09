@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CalendarDays, ChevronLeft, Download, ShieldCheck, Sparkles } from "lucide-react";
 import { getNhrcRepository, NhrcDocument } from "@/lib/nhrc/repository";
-import { getLegalRefs } from "@/lib/nhrc/legal-refs";
+import { LegalRefsBox, AiCaseSummary } from "@/components/legal-refs-box";
 
 export const dynamic = "force-dynamic";
 
@@ -173,105 +173,6 @@ function RelatedList({ title, cases }: { title: string; cases: NhrcDocument[] })
   );
 }
 
-function LegalRefsBox({
-  refs,
-}: {
-  refs: {
-    internationalInstruments: string[];
-    thaiLaws: string[];
-    groundedThaiLaws?: string[];
-    groundedInternationalInstruments?: { document_id: string; title: string }[];
-    groundedThaiLawDocs?: { document_id: string; title: string }[];
-  } | null;
-}) {
-  return (
-    <div className="cw-legal-refs">
-      <div className="cw-legal-refs-head">
-        <Sparkles size={15} /> กฎหมาย/ตราสารที่เกี่ยวข้อง
-      </div>
-      <p className="cw-legal-refs-note">แนะนำโดย AI จากเนื้อหากรณี — ยังไม่ผ่านการตรวจสอบ โปรดยืนยันก่อนอ้างอิงจริง</p>
-
-      {refs === null ? (
-        <div className="cw-legal-refs-empty">ยังไม่สามารถวิเคราะห์ได้ในขณะนี้</div>
-      ) : (
-        <>
-          <h4>ตราสารระหว่างประเทศที่เกี่ยวข้อง</h4>
-          {refs.internationalInstruments.length > 0 ? (
-            refs.internationalInstruments.map((item, i) => (
-              <div className="cw-legal-ref-item" key={i}>
-                {item}
-              </div>
-            ))
-          ) : (
-            <div className="cw-legal-refs-empty">ไม่พบตราสารที่เกี่ยวข้องชัดเจน</div>
-          )}
-
-          <h4>กฎหมายไทยที่เกี่ยวข้อง</h4>
-          {refs.thaiLaws.length > 0 ? (
-            refs.thaiLaws.map((item, i) => (
-              <div className="cw-legal-ref-item" key={i}>
-                {item}
-              </div>
-            ))
-          ) : (
-            <div className="cw-legal-refs-empty">ไม่พบกฎหมายที่เกี่ยวข้องชัดเจน</div>
-          )}
-
-          {refs.groundedThaiLaws && refs.groundedThaiLaws.length > 0 && (
-            <>
-              <h4>ยืนยันจากฐานข้อมูลตัวบทกฎหมาย</h4>
-              <p className="cw-legal-refs-note cw-legal-refs-note--grounded">
-                พบมาตราต่อไปนี้จริงในฐานข้อมูลตัวบทกฎหมายไทย 6,300 มาตรา (OpenThai 2.0 Legal) — ยังควรตรวจสอบก่อนอ้างอิงทางการ
-              </p>
-              {refs.groundedThaiLaws.map((item, i) => (
-                <div className="cw-legal-ref-item" key={i}>
-                  {item}
-                </div>
-              ))}
-            </>
-          )}
-
-          {refs.groundedInternationalInstruments && refs.groundedInternationalInstruments.length > 0 && (
-            <>
-              <h4>ยืนยันจากคลังตราสารระหว่างประเทศในระบบ</h4>
-              <p className="cw-legal-refs-note cw-legal-refs-note--grounded">
-                พบเอกสารตราสารต่อไปนี้จริงในคลังความรู้ กสม. (จับคู่จากคำสำคัญของกรณีนี้) — คลิกเพื่อดูรายละเอียดตราสาร
-              </p>
-              {refs.groundedInternationalInstruments.map((doc) => (
-                <Link
-                  href={`/case/${doc.document_id}`}
-                  className="cw-legal-ref-item cw-legal-ref-item--link"
-                  key={doc.document_id}
-                >
-                  {doc.title}
-                </Link>
-              ))}
-            </>
-          )}
-
-          {refs.groundedThaiLawDocs && refs.groundedThaiLawDocs.length > 0 && (
-            <>
-              <h4>ยืนยันจากคลังกฎหมายไทยในระบบ</h4>
-              <p className="cw-legal-refs-note cw-legal-refs-note--grounded">
-                พบเอกสารกฎหมายต่อไปนี้จริงในคลังความรู้ กสม. (จับคู่จากคำสำคัญของกรณีนี้) — คลิกเพื่อดูรายละเอียดกฎหมาย
-              </p>
-              {refs.groundedThaiLawDocs.map((doc) => (
-                <Link
-                  href={`/case/${doc.document_id}`}
-                  className="cw-legal-ref-item cw-legal-ref-item--link"
-                  key={doc.document_id}
-                >
-                  {doc.title}
-                </Link>
-              ))}
-            </>
-          )}
-        </>
-      )}
-    </div>
-  );
-}
-
 // Case notes/situation reports have an actual PDF scan on disk or Drive -
 // served through /api/case/[id]/document. General docs (research, Thai
 // law, court judgments, ...) were never digitized as scans; their "source"
@@ -314,7 +215,6 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
     ? repo.getRelatedDocuments(caseDoc.document_id, "general", 10)
     : [];
   const sections = isCaseNote ? splitSections(caseDoc.content || "") : [];
-  const legalRefs = isCaseNote ? await getLegalRefs(id) : null;
   const generalMeta = isGeneral ? parseGeneralMetadata(caseDoc.content || "") : null;
   const generalSections = isGeneral ? splitGeneralSections(caseDoc.content || "") : [];
   const generalLink = isGeneral ? reportLink(caseDoc.content || "") : null;
@@ -381,17 +281,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
 
           {isCaseNote ? (
             <>
-              {legalRefs?.summary && (
-                <div className="cw-legal-refs" style={{ marginTop: 24 }}>
-                  <div className="cw-legal-refs-head">
-                    <Sparkles size={15} /> สรุปโดย AI
-                  </div>
-                  <p className="cw-legal-refs-note">สรุปโดยอัตโนมัติจากเนื้อหากรณี</p>
-                  <p style={{ color: "#d1d5db", fontSize: "0.92rem", lineHeight: 1.7, margin: 0 }}>
-                    {legalRefs.summary}
-                  </p>
-                </div>
-              )}
+              <AiCaseSummary caseId={id} />
               <section className="cw-detail-body">
                 {sections.map((s, i) => (
                   <section key={i} className="cw-detail-section">
@@ -437,7 +327,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
         <aside>
           {isCaseNote ? (
             <>
-              <LegalRefsBox refs={legalRefs} />
+              <LegalRefsBox caseId={id} />
               <RelatedList title="กรณีที่เกี่ยวข้อง (คำสำคัญใกล้เคียง)" cases={related} />
               <RelatedList title={`กรณีอื่นในประเด็น ${caseDoc.area_code || ""}`} cases={sameArea} />
             </>

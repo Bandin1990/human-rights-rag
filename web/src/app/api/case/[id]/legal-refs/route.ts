@@ -1,7 +1,11 @@
 /**
  * AI-suggested legal references for a case note (see src/lib/nhrc/legal-refs.ts).
- * The case detail page calls the shared function directly server-side;
- * this route exists for client-side refresh/retry if needed later.
+ *
+ * Fetched client-side by components/legal-refs-box.tsx, not awaited in
+ * case/[id]/page.tsx's server render - getLegalRefs() makes a live Claude
+ * API call plus an external OpenThai lookup on every cache-miss, and
+ * blocking the whole page behind that (previously several seconds on a
+ * cold cache) is exactly the "ข้อมูลแสดงช้ามาก" the user reported.
  */
 import { NextResponse } from "next/server";
 import { getLegalRefs } from "@/lib/nhrc/legal-refs";
