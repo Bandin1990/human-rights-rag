@@ -15,6 +15,18 @@ const RESULT_LIMIT = 10; // total evidence items sent to the LLM/shown as citati
 const PER_CATEGORY_CAP = 3; // max items from any single category, when browsing "all"
 const MIN_SIMILARITY_FLOOR = 0.55; // below this, a doc isn't worth citing even to "fill" a category
 
+// A question can be substantively about something a Thai law or
+// international instrument covers without echoing that document's own
+// wording closely enough to clear MIN_SIMILARITY_FLOOR or win its slot
+// against closer-but-less-legally-specific matches (e.g. a case note that
+// literally repeats the question's phrasing). Since these two categories
+// are exactly what a กสม. officer needs to ground an answer legally,
+// actively backfill one match from each if a plausible one exists anywhere
+// in the wider candidate pool - "if there's something relevant" (per the
+// user's own framing), not "force something in regardless of relevance".
+const LAW_BACKFILL_CATEGORIES = ["กฎหมายไทย", "กฎหมายสิทธิมนุษยชนระหว่างประเทศและเอกสารตีความ"];
+const LAW_BACKFILL_MIN_SIMILARITY = 0.45;
+
 // Real (embedding-based) search first, since it understands paraphrased
 // questions the old literal-keyword-substring match couldn't (see
 // repository.ts's findRelevantCases). Falls back to that keyword match
@@ -67,11 +79,30 @@ async function findRelevantDocuments(
           byCategory.set(key, list);
         }
       }
-      const diversified = Array.from(byCategory.values())
+      const diversifiedScored = Array.from(byCategory.values())
         .flat()
         .sort((a, b) => b.similarity - a.similarity)
-        .slice(0, limit)
-        .map((s) => s.doc);
+        .slice(0, limit);
+
+      // Backfill law/instrument categories missing from the cut above (see
+      // LAW_BACKFILL_CATEGORIES) - drop the current weakest match to make
+      // room if the evidence set is already full, so RESULT_LIMIT still
+      // caps what's sent to the LLM/shown as citations.
+      for (const cat of LAW_BACKFILL_CATEGORIES) {
+        if (diversifiedScored.some((s) => s.doc.category === cat)) continue;
+        const best = scored
+          .filter((s) => s.doc.category === cat && s.similarity >= LAW_BACKFILL_MIN_SIMILARITY)
+          .sort((a, b) => b.similarity - a.similarity)[0];
+        if (!best) continue;
+        if (diversifiedScored.length < limit) {
+          diversifiedScored.push(best);
+        } else {
+          diversifiedScored.sort((a, b) => b.similarity - a.similarity);
+          diversifiedScored[diversifiedScored.length - 1] = best;
+        }
+      }
+      diversifiedScored.sort((a, b) => b.similarity - a.similarity);
+      const diversified = diversifiedScored.map((s) => s.doc);
       if (diversified.length > 0) return diversified;
     }
   }
@@ -91,7 +122,13 @@ interface CitationInfo {
 const DISCLAIMER =
   "ระบบช่วยค้นและจัดประเด็นจากหลักฐานเท่านั้น ไม่ลงข้อยุติว่ามีหรือไม่มีการละเมิดแทน กสม. โปรดเปิดอ่านเอกสารต้นฉบับและตรวจสอบบริบททุกครั้ง";
 
-function buildExcerpt(content: string, maxLen = 600): string {
+// 600 chars (the old default) only ever covered a case note's opening
+// section ("รายละเอียด") - the LLM never actually saw "พฤติการณ์ที่วินิจฉัย
+// ว่าละเมิด", "ประเด็นสิทธิที่เกี่ยวข้อง", or "ช่องโหว่/สาเหตุ" for any
+// cited case, no matter how relevant. 1800 chars covers most full case
+// notes; with RESULT_LIMIT=10 documents that's ~18k characters of evidence
+// context, well within the model's context window.
+function buildExcerpt(content: string, maxLen = 1800): string {
   return content
     .replace(/^#.*$/m, "")
     .replace(/^##\s*.*$/gm, "")
