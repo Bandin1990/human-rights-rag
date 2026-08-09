@@ -231,7 +231,13 @@ class NhrcRepository {
   //
   // Searches every document_type on purpose - not just case_note - so
   // situation reports, research (general), and any type added later are
-  // all reachable without another code change here. Filter by scope only.
+  // all reachable without another code change here. Filter by scope only -
+  // except "topic" ("02 ประเด็นสิทธิ" area/topic overview notes, e.g.
+  // "[A] สิทธิพลเมืองฯ"), which power the /knowledge/graph node labels but
+  // aren't official documents (no case number, no law citation, no source
+  // PDF) - Ask NHRC shouldn't search or cite them as if they were. The
+  // primary (semantic search) path is excluded the same way in
+  // embed-nhrc-documents.mjs, which never embeds them in the first place.
   findRelevantCases(
     question: string,
     limit: number = 5,
@@ -239,6 +245,7 @@ class NhrcRepository {
   ): NhrcDocument[] {
     const q = question.toLowerCase();
     const pool = this.documents.filter((doc) => {
+      if (doc.document_type === "topic") return false;
       if (scope.areaCode && doc.area_code !== scope.areaCode) return false;
       if (scope.category && doc.category !== scope.category) return false;
       return true;

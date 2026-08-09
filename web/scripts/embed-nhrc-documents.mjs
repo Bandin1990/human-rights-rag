@@ -157,8 +157,18 @@ function buildChunks(text) {
 
 async function main() {
   const dataDir = path.join(process.cwd(), "..", "data");
-  const docs = JSON.parse(readFileSync(path.join(dataDir, "nhrc_index.json"), "utf-8"));
-  console.log(`Loaded ${docs.length} documents from nhrc_index.json`);
+  const allDocs = JSON.parse(readFileSync(path.join(dataDir, "nhrc_index.json"), "utf-8"));
+
+  // document_type "topic" ("02 ประเด็นสิทธิ" area/topic overview notes,
+  // e.g. "[A] สิทธิพลเมืองฯ" or "topic_B_สิ่งแวดล้อมและ_EIA") power the
+  // /knowledge/graph node labels/summaries - they aren't official
+  // documents (no case number, no law citation, no source PDF), so Ask
+  // NHRC shouldn't be able to search or cite them as if they were. Never
+  // embedding them in the first place is what actually keeps them out of
+  // semantic search (route.ts's keyword-search fallback filters them too,
+  // see repository.ts's findRelevantCases).
+  const docs = allDocs.filter((d) => d.document_type !== "topic");
+  console.log(`Loaded ${allDocs.length} documents from nhrc_index.json (${docs.length} embeddable, ${allDocs.length - docs.length} topic notes excluded)`);
 
   // Every chunk row for a given document carries the same content_hash, so
   // any one row for that document_id tells us its current hash - take the
