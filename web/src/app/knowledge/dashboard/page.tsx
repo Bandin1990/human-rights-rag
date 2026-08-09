@@ -1,7 +1,7 @@
 import { StatsDashboard } from "@/components/dashboard/StatsDashboard";
 
 export const metadata = {
-  title: "สถิติ - NHRC RAG",
+  title: "สถิติระบบ - กสม.",
   description: "สถิติฐานความรู้สิทธิมนุษยชน",
 };
 
