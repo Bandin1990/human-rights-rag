@@ -210,6 +210,51 @@
   padding-left: 0;
 }
 
+/* Structured AI answer (see components/markdown-lite.tsx) - renders our
+   constrained "## heading / **bold** / - bullet / > quote / [n] citation"
+   subset as real block elements instead of one flat pre-wrapped paragraph. */
+.cw-answer-p {
+  margin: 0 0 12px;
+}
+.cw-answer-p:last-child { margin-bottom: 0; }
+.cw-answer-h3 {
+  color: #f3f4f6;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 20px 0 8px;
+}
+.cw-answer-h3:first-child { margin-top: 0; }
+.cw-answer-h4 {
+  color: #e5e7eb;
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin: 14px 0 6px;
+}
+.cw-answer-list {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+.cw-answer-list li {
+  margin-bottom: 6px;
+}
+.cw-answer-quote {
+  margin: 0 0 12px;
+  padding: 8px 14px;
+  border-left: 3px solid #fb923c;
+  background-color: rgba(251, 146, 60, 0.08);
+  color: #d1d5db;
+  font-size: 0.9rem;
+  border-radius: 0 8px 8px 0;
+}
+.cw-cite-ref {
+  cursor: pointer;
+  color: #fb923c;
+  font-weight: 700;
+  margin-left: 1px;
+  user-select: none;
+}
+.cw-cite-ref:hover { text-decoration: underline; }
+
 /* Input Area */
 .cw-input-area {
   padding: 20px;
@@ -311,6 +356,14 @@
   transition: border-color 0.2s;
 }
 .cw-ref-card:hover { border-color: #6b7280; }
+/* Briefly highlighted when a [n] citation marker in the chat answer is
+   clicked (see nhrc-workspace.tsx's scrollToCitation) so the reader can see
+   which card the click landed on. */
+.cw-ref-card--highlight {
+  border-color: #fb923c;
+  box-shadow: 0 0 0 1px #fb923c;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
 .cw-ref-card-header {
   display: flex;
   justify-content: space-between;

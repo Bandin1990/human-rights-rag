@@ -38,7 +38,17 @@ export async function semanticSearch(
       console.error("match_nhrc_documents RPC failed", error);
       return null;
     }
-    return (data || []) as SemanticMatch[];
+    // The RPC returns snake_case columns (document_id, similarity) - map to
+    // the camelCase SemanticMatch shape explicitly. A prior version of this
+    // code cast `data` straight to SemanticMatch[] without this mapping, so
+    // every match's `documentId` was actually undefined at the call site
+    // (repository.ts's getCaseById(undefined) matches the first document
+    // lacking a case_id) - semantic search silently never worked and every
+    // Ask NHRC answer was quietly running on the keyword-substring fallback.
+    return ((data || []) as { document_id: string; similarity: number }[]).map((row) => ({
+      documentId: row.document_id,
+      similarity: row.similarity,
+    }));
   } catch (error) {
     console.error("Semantic search failed; falling back to keyword search", error);
     return null;

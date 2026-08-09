@@ -3,6 +3,7 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ExternalLink, Plus, Scale, Send } from "lucide-react";
 import { NhrcCaseCard } from "@/components/nhrc-case-card";
+import { MarkdownLite } from "@/components/markdown-lite";
 import { DOCUMENT_CATEGORIES, NhrcDocument } from "@/lib/nhrc/types";
 
 const AREAS = [
@@ -65,7 +66,20 @@ export function NhrcWorkspace({
   const [activeCitations, setActiveCitations] = useState<AskCitation[]>([]);
   const [asking, setAsking] = useState(false);
   const [recentQuestions, setRecentQuestions] = useState<string[]>([]);
+  const [highlightedCite, setHighlightedCite] = useState<number | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
+
+  // Clicking a "[n]" citation marker inside an AI answer (see markdown-lite.tsx)
+  // scrolls the matching source card into view in the references panel and
+  // briefly highlights it, so the reader can jump straight from a claim to
+  // the document that backs it instead of hunting through the list.
+  const scrollToCitation = (n: number) => {
+    const el = document.getElementById(`cw-ref-${n}`);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    setHighlightedCite(n);
+    setTimeout(() => setHighlightedCite((cur) => (cur === n ? null : cur)), 2000);
+  };
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -287,7 +301,13 @@ export function NhrcWorkspace({
                       <Scale size={18} />
                     </div>
                   )}
-                  <div className="cw-bubble">{chat.text}</div>
+                  <div className="cw-bubble">
+                    {chat.role === "ai" ? (
+                      <MarkdownLite text={chat.text} onCiteClick={scrollToCitation} />
+                    ) : (
+                      chat.text
+                    )}
+                  </div>
                 </div>
               ))}
               {asking && (
@@ -335,7 +355,11 @@ export function NhrcWorkspace({
         <div className="cw-ref-content">
           {activeCitations.map((c, idx) => {
             return (
-              <div key={c.case_id} className="cw-ref-card">
+              <div
+                key={c.case_id}
+                id={`cw-ref-${idx + 1}`}
+                className={`cw-ref-card ${highlightedCite === idx + 1 ? "cw-ref-card--highlight" : ""}`}
+              >
                 <div className="cw-ref-card-header">
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <span className="cw-ref-badge">{idx + 1}</span>
