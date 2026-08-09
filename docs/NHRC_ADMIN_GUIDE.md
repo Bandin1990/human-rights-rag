@@ -145,9 +145,13 @@ python scripts/upload_pdfs_to_drive.py
 ## 6. การ deploy ขึ้นโปรดักชัน (Vercel)
 
 ```bash
-cd web
 npx vercel --prod --yes --scope bandits-projects-111dbe2a
 ```
+
+**รันจาก root ของ repo (`D:\human-rights-rag`) ไม่ใช่จากใน `web/`** - การตั้งค่า Root Directory
+ของโปรเจกต์นี้บน Vercel เองระบุไว้เป็น `web` อยู่แล้ว (มันจะ cd เข้า `web/` เองตอน build) ถ้า `cd web`
+ก่อนรันจะได้ error `"The specified Root Directory \"web\" does not exist"` เพราะเท่ากับให้ Vercel
+หา `web/web` ที่ไม่มีจริง (เคยเขียนคู่มือผิดไว้ว่าให้ `cd web` ก่อน - แก้แล้ว)
 
 **ต้องระบุ `--scope`** แม้ `.vercel/project.json` จะผูก project ไว้แล้วก็ตาม — เคยเจอปัญหา
 `{"status":"error","reason":"deploy_failed","message":"Not authorized"}` เพราะ token
