@@ -40,6 +40,7 @@ export function TopicGraph() {
   const [graph, setGraph] = useState<GraphData | null>(null);
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState<GraphNode | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [cases, setCases] = useState<NhrcDocument[] | null>(null);
   const [casesLoading, setCasesLoading] = useState(false);
   const [search, setSearch] = useState("");
@@ -63,6 +64,15 @@ export function TopicGraph() {
       .catch(console.error)
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    if (!selected) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelected(null);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selected]);
 
   useEffect(() => {
     if (!selected) {
@@ -95,6 +105,37 @@ export function TopicGraph() {
     }
     return ids;
   }, [selected, graph]);
+
+  // Edges touching the hovered node get a flowing-dash animation (see
+  // .cw-graph-edge-flow) so pointing at a node visibly "runs" its
+  // connections, rather than the link just sitting there highlighted.
+  const hoveredEdgeKeys = useMemo(() => {
+    if (!hoveredId || !graph) return null;
+    const keys = new Set<string>();
+    graph.edges.forEach((e, i) => {
+      if (e.source === hoveredId || e.target === hoveredId) keys.add(String(i));
+    });
+    return keys;
+  }, [hoveredId, graph]);
+
+  // Node label -> node, for rendering readable "เชื่อมโยงกับ" links in the
+  // detail modal instead of raw ids.
+  const nodesById = useMemo(() => {
+    const map = new Map<string, GraphNode>();
+    graph?.nodes.forEach((n) => map.set(n.id, n));
+    return map;
+  }, [graph]);
+
+  const selectedConnections = useMemo(() => {
+    if (!selected || !graph) return [];
+    return graph.edges
+      .filter((e) => e.source === selected.id || e.target === selected.id)
+      .map((e) => {
+        const otherId = e.source === selected.id ? e.target : e.source;
+        return { node: nodesById.get(otherId), edge: e };
+      })
+      .filter((c): c is { node: GraphNode; edge: typeof graph.edges[number] } => !!c.node);
+  }, [selected, graph, nodesById]);
 
   // Search dims everything that doesn't match, independent of (and combined
   // with) node-selection dimming - lets you find a topic by name in a graph
@@ -259,6 +300,7 @@ export function TopicGraph() {
               const b = positions.get(e.target);
               if (!a || !b) return null;
               const dimmed = isDimmed(e.source) || isDimmed(e.target);
+              const flowing = hoveredEdgeKeys?.has(String(i)) ?? false;
               if (e.type === "hierarchy") {
                 return (
                   <line
@@ -267,14 +309,15 @@ export function TopicGraph() {
                     y1={a.y}
                     x2={b.x}
                     y2={b.y}
-                    stroke="#3d4560"
-                    strokeWidth={1.25}
-                    opacity={dimmed ? 0.1 : 0.5}
+                    stroke={flowing ? HIGHLIGHT : "#3d4560"}
+                    strokeWidth={flowing ? 2 : 1.25}
+                    opacity={dimmed ? 0.1 : flowing ? 0.9 : 0.5}
+                    className={flowing ? "cw-graph-edge-flow" : undefined}
                   />
                 );
               }
               const weight = e.weight || 1;
-              const opacity = dimmed ? 0.05 : 0.18 + (weight / maxWeight) * 0.5;
+              const opacity = dimmed ? 0.05 : flowing ? 0.95 : 0.18 + (weight / maxWeight) * 0.5;
               return (
                 <line
                   key={i}
@@ -283,8 +326,9 @@ export function TopicGraph() {
                   x2={b.x}
                   y2={b.y}
                   stroke={HIGHLIGHT}
-                  strokeWidth={0.75 + (weight / maxWeight) * 2.5}
+                  strokeWidth={flowing ? 2.5 : 0.75 + (weight / maxWeight) * 2.5}
                   opacity={opacity}
+                  className={flowing ? "cw-graph-edge-flow" : undefined}
                 />
               );
             })}
@@ -311,9 +355,13 @@ export function TopicGraph() {
                   style={{ cursor: "pointer" }}
                   onPointerDown={(e) => handleNodePointerDown(n.id, e)}
                   onClick={() => setSelected(n)}
+                  onPointerEnter={() => setHoveredId(n.id)}
+                  onPointerLeave={() => setHoveredId((cur) => (cur === n.id ? null : cur))}
                   role="button"
                   tabIndex={0}
                   aria-label={`${n.label}: ${n.count} กรณีตรวจสอบ`}
+                  onFocus={() => setHoveredId(n.id)}
+                  onBlur={() => setHoveredId((cur) => (cur === n.id ? null : cur))}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
@@ -349,8 +397,17 @@ export function TopicGraph() {
           </svg>
         </div>
 
-        {selected && (
-          <aside className="cw-graph-panel">
+      </div>
+
+      {selected && (
+        <div className="cw-graph-modal-backdrop" onClick={() => setSelected(null)}>
+          <div
+            className="cw-graph-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label={selected.label}
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="cw-graph-panel-head">
               <div>
                 <span className="cw-case-tag is-muted">{selected.type === "area" ? "กลุ่มประเด็น" : "ประเด็นสิทธิ"}</span>
@@ -361,23 +418,74 @@ export function TopicGraph() {
                 <X size={18} />
               </button>
             </div>
-            <div className="cw-graph-panel-list">
-              {casesLoading && <p className="cw-graph-status">กำลังโหลด...</p>}
-              {!casesLoading && cases?.length === 0 && <p className="cw-graph-status">ไม่พบกรณี</p>}
-              {!casesLoading &&
-                cases?.slice(0, 40).map((c) => (
-                  <Link href={`/case/${c.case_id}`} key={c.document_id} className="cw-detail-related-item">
-                    <span>{c.case_id}</span>
-                    {c.title}
-                  </Link>
-                ))}
-              {!casesLoading && cases && cases.length > 40 && (
-                <p className="cw-graph-status">และอีก {cases.length - 40} กรณี</p>
+
+            <div className="cw-graph-modal-body">
+              {selected.summary && (
+                <div className="cw-graph-modal-section">
+                  <h4>เกี่ยวกับประเด็นนี้</h4>
+                  <p className="cw-graph-modal-summary">{selected.summary}</p>
+                </div>
               )}
+
+              {!!selected.keywords?.length && (
+                <div className="cw-graph-modal-section">
+                  <div className="cw-graph-tag-row">
+                    {selected.keywords.map((k) => (
+                      <span key={k} className="cw-graph-tag">
+                        {k}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {selectedConnections.length > 0 && (
+                <div className="cw-graph-modal-section">
+                  <h4>เชื่อมโยงกับ</h4>
+                  <div className="cw-graph-related-list">
+                    {selectedConnections.map(({ node, edge }) => (
+                      <button
+                        key={node.id}
+                        type="button"
+                        className="cw-graph-related-item"
+                        onClick={() => setSelected(node)}
+                      >
+                        <span>{node.type === "area" ? "กลุ่มประเด็น" : "ประเด็นสิทธิ"}</span>
+                        {node.label}
+                        {edge.type === "shared_cases" && <em> · มีกรณีร่วมกัน {edge.weight} กรณี</em>}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {selected.type === "topic" && (
+                <Link href={`/case/${encodeURIComponent(selected.id)}`} className="cw-graph-modal-fulldoc">
+                  ดูรายละเอียดฉบับเต็ม →
+                </Link>
+              )}
+
+              <div className="cw-graph-modal-section">
+                <h4>กรณีตรวจสอบที่เกี่ยวข้อง</h4>
+                <div className="cw-graph-panel-list">
+                  {casesLoading && <p className="cw-graph-status">กำลังโหลด...</p>}
+                  {!casesLoading && cases?.length === 0 && <p className="cw-graph-status">ไม่พบกรณี</p>}
+                  {!casesLoading &&
+                    cases?.slice(0, 40).map((c) => (
+                      <Link href={`/case/${c.case_id}`} key={c.document_id} className="cw-detail-related-item">
+                        <span>{c.case_id}</span>
+                        {c.title}
+                      </Link>
+                    ))}
+                  {!casesLoading && cases && cases.length > 40 && (
+                    <p className="cw-graph-status">และอีก {cases.length - 40} กรณี</p>
+                  )}
+                </div>
+              </div>
             </div>
-          </aside>
-        )}
-      </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

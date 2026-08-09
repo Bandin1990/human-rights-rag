@@ -459,6 +459,17 @@ class ObsidianParser:
         seed_tags = [t for t in (frontmatter.get("tags") or []) if t not in self.GENERIC_TAGS]
         keywords = self._extract_keywords(title, content, seed_tags=seed_tags)
 
+        # Topic notes carry a "### แนวโน้มสถานการณ์ (สรุป)" wrap-up under the
+        # yearly timeline - a real synthesized overview, unlike the raw
+        # "> breadcrumb / ## สถานการณ์และแนวโน้มรายปี / ### 2564 ..." text that
+        # precedes it. Prefer that for the graph node's detail-modal summary
+        # (see setup_obsidian_index.py's _export_graph); fall back to a raw
+        # slice for the couple of topic notes without this heading (currently
+        # the two under "E. เพิ่มเติมจากแท็กซอนอมีเดิม").
+        summary = self._extract_section(content, "แนวโน้มสถานการณ์ (สรุป)")
+        if not summary:
+            summary = content.strip()[:500] if content else ""
+
         return {
             # Core identifiers
             "document_id": f"topic_{area_code}_{title.replace(' ', '_')}",
@@ -478,7 +489,7 @@ class ObsidianParser:
 
             # Content
             "title": title,
-            "summary": content.strip()[:500] if content else "",
+            "summary": summary,
             "keywords": keywords,
             "content": content,
 

@@ -57,6 +57,11 @@ export interface GraphNode {
   label: string;
   areaCode?: string;
   count: number;
+  // Topic nodes only - a short synthesized overview and keyword list carried
+  // from the topic's vault note (see setup_obsidian_index.py's
+  // _export_graph), shown in the graph's node-detail modal.
+  summary?: string;
+  keywords?: string[];
 }
 
 export interface GraphEdge {

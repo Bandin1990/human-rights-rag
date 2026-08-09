@@ -744,29 +744,84 @@
 }
 .cw-graph-node-label.is-area { font-weight: 700; font-size: 11.5px; color: var(--graph-paper); }
 
-.cw-graph-panel {
-  width: 320px;
-  flex-shrink: 0;
+/* Node-detail modal - replaces the old fixed side <aside> so clicking a node
+   (area or topic) opens an overlay with the node's own description/keywords/
+   connections first, and the case list as one section further down, instead
+   of the case list being the entire panel. */
+.cw-graph-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 9, 14, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 60;
+  animation: cw-graph-modal-fade 0.15s ease-out;
+}
+.cw-graph-modal {
+  width: min(520px, 100%);
+  max-height: min(720px, 90vh);
   background-color: var(--graph-panel);
   border: 1px solid var(--graph-border);
   border-radius: 16px;
   padding: 20px;
-  max-height: 660px;
   overflow-y: auto;
+  animation: cw-graph-modal-in 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
+@keyframes cw-graph-modal-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cw-graph-modal-in { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: none; } }
+
 .cw-graph-panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 12px; padding-bottom: 16px; border-bottom: 1px solid var(--graph-border); }
 .cw-graph-panel-head h3 { font-family: var(--font-serif-th), serif; font-weight: 600; font-size: 1.05rem; color: var(--graph-paper); margin: 8px 0 4px; }
 .cw-graph-panel-head p { font-size: 0.8rem; color: var(--graph-gold); margin: 0; }
 .cw-graph-panel-head button { background: none; border: none; color: var(--graph-paper-faint); cursor: pointer; padding: 4px; }
 .cw-graph-panel-head button:hover { color: var(--graph-paper); }
 .cw-graph-panel-list { display: flex; flex-direction: column; }
-.cw-graph-panel .cw-case-tag.is-muted { background: var(--graph-panel-2); color: var(--graph-gold); border-color: var(--graph-border); }
-.cw-graph-panel .cw-detail-related-item { border-top-color: var(--graph-border); color: var(--graph-paper-dim); }
-.cw-graph-panel .cw-detail-related-item:hover { color: var(--graph-paper); }
-.cw-graph-panel .cw-detail-related-item span { color: var(--graph-gold); }
+.cw-graph-modal .cw-case-tag.is-muted { background: var(--graph-panel-2); color: var(--graph-gold); border-color: var(--graph-border); }
+.cw-graph-modal .cw-detail-related-item { border-top-color: var(--graph-border); color: var(--graph-paper-dim); }
+.cw-graph-modal .cw-detail-related-item:hover { color: var(--graph-paper); }
+.cw-graph-modal .cw-detail-related-item span { color: var(--graph-gold); }
+
+.cw-graph-modal-body { display: flex; flex-direction: column; gap: 18px; }
+.cw-graph-modal-section h4 { font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--graph-paper-faint); margin: 0 0 8px; font-weight: 600; }
+.cw-graph-modal-summary { font-size: 0.88rem; line-height: 1.75; color: var(--graph-paper-dim); white-space: pre-line; margin: 0; }
+
+.cw-graph-tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.cw-graph-tag { font-size: 0.72rem; padding: 3px 10px; border-radius: 999px; background: var(--graph-panel-2); border: 1px solid var(--graph-border); color: var(--graph-gold); }
+
+.cw-graph-related-list { display: flex; flex-direction: column; gap: 6px; }
+.cw-graph-related-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  text-align: left;
+  background: var(--graph-panel-2);
+  border: 1px solid var(--graph-border);
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: var(--graph-paper);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.cw-graph-related-item:hover { border-color: var(--graph-gold); }
+.cw-graph-related-item span { font-size: 0.68rem; color: var(--graph-gold); text-transform: uppercase; letter-spacing: 0.03em; }
+.cw-graph-related-item em { font-style: normal; color: var(--graph-paper-faint); font-size: 0.78rem; }
+
+.cw-graph-modal-fulldoc { align-self: flex-start; font-size: 0.82rem; color: var(--graph-gold-bright); text-decoration: none; }
+.cw-graph-modal-fulldoc:hover { text-decoration: underline; }
+
+/* Hover-to-run edges: a moving dash gives the sense of the connection
+   "flowing" out of the pointed-at node, matching the animated hover state
+   the user asked to match from an external reference site. */
+.cw-graph-edge-flow { stroke-dasharray: 6 6; animation: cw-graph-dash-flow 0.6s linear infinite; }
+@keyframes cw-graph-dash-flow { to { stroke-dashoffset: -24; } }
+
 @media (max-width: 900px) {
   .cw-graph-body { flex-direction: column; }
-  .cw-graph-panel { width: 100%; max-height: none; }
 }
 
 /* Site header - dark theme (matches ChatWorkspace, applies site-wide) */

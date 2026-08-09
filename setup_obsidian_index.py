@@ -113,6 +113,11 @@ def _export_graph(documents: list, graph_path: Path) -> dict:
             "label": topic["title"],
             "areaCode": topic.get("area_code"),
             "count": len(cases),
+            # Carried through for the graph's node-detail modal (see
+            # TopicGraph.tsx) - lets clicking a node show an actual
+            # description instead of just a case list.
+            "summary": topic.get("summary") or "",
+            "keywords": topic.get("keywords") or [],
         })
 
     edges = []
