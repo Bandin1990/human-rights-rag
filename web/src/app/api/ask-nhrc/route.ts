@@ -43,17 +43,26 @@ const LAW_BACKFILL_MIN_SIMILARITY = 0.45;
 // contribute, so a broad question actually draws from every part of the
 // knowledge base that has a genuinely relevant hit - not just whichever
 // category dominates raw similarity.
+// A retrieved document paired with whichever chunk of it actually matched
+// the question (see semantic-search.ts) - undefined when the match came
+// from the keyword fallback below, which doesn't know about chunks.
+interface ScoredDoc {
+  doc: NhrcDocument;
+  similarity: number;
+  chunkText: string | undefined;
+}
+
 async function findRelevantDocuments(
   repo: ReturnType<typeof getNhrcRepository>,
   question: string,
   limit: number,
   scope: { areaCode?: string; category?: string }
-): Promise<NhrcDocument[]> {
+): Promise<{ doc: NhrcDocument; chunkText?: string }[]> {
   const semanticMatches = await semanticSearch(question, 60);
   if (semanticMatches && semanticMatches.length > 0) {
     const scored = semanticMatches
-      .map((m) => ({ doc: repo.getCaseById(m.documentId), similarity: m.similarity }))
-      .filter((s): s is { doc: NhrcDocument; similarity: number } => {
+      .map((m) => ({ doc: repo.getCaseById(m.documentId), similarity: m.similarity, chunkText: m.chunkText }))
+      .filter((s): s is ScoredDoc => {
         if (!s.doc) return false;
         if (scope.areaCode && s.doc.area_code !== scope.areaCode) return false;
         if (scope.category && s.doc.category !== scope.category) return false;
@@ -64,12 +73,12 @@ async function findRelevantDocuments(
       // Caller already pinned a category (left-nav filter) - no need to
       // diversify, just take the best matches within it.
       if (scope.category) {
-        return scored.slice(0, limit).map((s) => s.doc);
+        return scored.slice(0, limit);
       }
 
       const topSimilarity = scored[0].similarity;
       const floor = Math.max(MIN_SIMILARITY_FLOOR, topSimilarity - 0.12);
-      const byCategory = new Map<string, { doc: NhrcDocument; similarity: number }[]>();
+      const byCategory = new Map<string, ScoredDoc[]>();
       for (const s of scored) {
         if (s.similarity < floor) continue;
         const key = s.doc.category || "อื่นๆ";
@@ -102,11 +111,12 @@ async function findRelevantDocuments(
         }
       }
       diversifiedScored.sort((a, b) => b.similarity - a.similarity);
-      const diversified = diversifiedScored.map((s) => s.doc);
-      if (diversified.length > 0) return diversified;
+      if (diversifiedScored.length > 0) {
+        return diversifiedScored.map((s) => ({ doc: s.doc, chunkText: s.chunkText }));
+      }
     }
   }
-  return repo.findRelevantCases(question, limit, scope);
+  return repo.findRelevantCases(question, limit, scope).map((doc) => ({ doc }));
 }
 
 interface CitationInfo {
@@ -122,13 +132,16 @@ interface CitationInfo {
 const DISCLAIMER =
   "ระบบช่วยค้นและจัดประเด็นจากหลักฐานเท่านั้น ไม่ลงข้อยุติว่ามีหรือไม่มีการละเมิดแทน กสม. โปรดเปิดอ่านเอกสารต้นฉบับและตรวจสอบบริบททุกครั้ง";
 
-// 600 chars (the old default) only ever covered a case note's opening
-// section ("รายละเอียด") - the LLM never actually saw "พฤติการณ์ที่วินิจฉัย
-// ว่าละเมิด", "ประเด็นสิทธิที่เกี่ยวข้อง", or "ช่องโหว่/สาเหตุ" for any
-// cited case, no matter how relevant. 1800 chars covers most full case
-// notes; with RESULT_LIMIT=10 documents that's ~18k characters of evidence
-// context, well within the model's context window.
-function buildExcerpt(content: string, maxLen = 1800): string {
+// The chunk (or, for the keyword-fallback path with no chunk info, the raw
+// document content) still gets run through this to strip Markdown noise
+// before it reaches the prompt. maxLen is a safety cap, not the real length
+// control anymore: a semantic match's chunkText is already sized to
+// CHUNK_SIZE by embed-nhrc-documents.mjs (currently 3000 chars, plus a
+// small overlap), so this basically never truncates it further. It still
+// matters for the keyword-search fallback (no Supabase/Gemini configured,
+// or a category filter with zero semantic hits), which has no chunk
+// boundaries to work with and slices straight from the top of the file.
+function buildExcerpt(content: string, maxLen = 4000): string {
   return content
     .replace(/^#.*$/m, "")
     .replace(/^##\s*.*$/gm, "")
@@ -198,14 +211,18 @@ export async function POST(req: Request) {
       });
     }
 
-    const citations: CitationInfo[] = matches.map((doc) => ({
+    const citations: CitationInfo[] = matches.map(({ doc, chunkText }) => ({
       case_id: doc.case_id || doc.document_id,
       title: doc.title,
       category: doc.category,
       area_code: doc.area_code,
       area_name: doc.area_name,
       year_buddhist: doc.year_buddhist,
-      excerpt: buildExcerpt(repo.loadContent(doc.document_id) || doc.summary || ""),
+      // Prefer the actual matched chunk over re-slicing the raw file from
+      // the top - see findRelevantDocuments/semantic-search.ts. Falls back
+      // to the old top-of-file behaviour when there's no chunk (keyword
+      // search fallback path).
+      excerpt: buildExcerpt(chunkText || repo.loadContent(doc.document_id) || doc.summary || ""),
     }));
 
     const apiKey = process.env.ANTHROPIC_API_KEY;

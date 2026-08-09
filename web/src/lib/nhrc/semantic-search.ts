@@ -15,6 +15,13 @@ import { getPublicSupabaseClient } from "@/lib/supabase/server";
 export interface SemanticMatch {
   documentId: string;
   similarity: number;
+  // The actual chunk of the document that matched (see
+  // supabase/nhrc_embeddings_schema.sql / embed-nhrc-documents.mjs) - a long
+  // document is split into several chunks, so this is whichever piece was
+  // closest to the question, not necessarily the start of the file. Callers
+  // should prefer this over re-slicing the document's raw content from the
+  // top when building an excerpt for the AI to read.
+  chunkText?: string;
 }
 
 // Returns null (not an error) when semantic search isn't configured or the
@@ -45,9 +52,12 @@ export async function semanticSearch(
     // (repository.ts's getCaseById(undefined) matches the first document
     // lacking a case_id) - semantic search silently never worked and every
     // Ask NHRC answer was quietly running on the keyword-substring fallback.
-    return ((data || []) as { document_id: string; similarity: number }[]).map((row) => ({
+    return (
+      (data || []) as { document_id: string; similarity: number; chunk_text?: string }[]
+    ).map((row) => ({
       documentId: row.document_id,
       similarity: row.similarity,
+      chunkText: row.chunk_text,
     }));
   } catch (error) {
     console.error("Semantic search failed; falling back to keyword search", error);
