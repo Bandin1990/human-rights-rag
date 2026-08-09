@@ -1052,6 +1052,121 @@ footer { background: #14161b !important; }
 .footer-brand a { color: #9ca3af; font-size: 14px; text-decoration: none; }
 .footer-brand a:hover { color: #f3f4f6; }
 
+/* ============================================================
+   Accessibility overrides (การเข้าถึง toggle - see a11y-provider.tsx)
+   ============================================================
+   Every zone below defines its own colors independently of the global
+   --ink/--paper variables that globals.css's body.theme-high-contrast/
+   theme-dark rules already cover (case-detail pages, browse/search
+   results) - the chat workspace hardcodes hex colors directly, and the
+   graph/help/stats pages each keep their own separately-scoped
+   --graph- and --help- prefixed custom properties (see the comments above each).
+   Without this block, toggling high contrast had NO visible effect on
+   the homepage chat UI or the graph/help/stats pages - together, most of
+   what people actually use day to day. All declarations are !important
+   because several base rules here (the header/footer dark theme just
+   above, in particular) are already !important themselves.
+
+   Dark mode isn't touched here: every zone below is already dark-themed
+   by default, so that toggle is correctly a no-op for them - it does its
+   job on the lighter :root-variable pages that globals.css already
+   covers. */
+
+/* --- Site header / footer --- */
+body.theme-high-contrast .site-header { background: #ffffff !important; border-bottom-color: #000000 !important; }
+body.theme-high-contrast .brand b,
+body.theme-high-contrast .brand small,
+body.theme-high-contrast nav a,
+body.theme-high-contrast .menu { color: #000000 !important; }
+body.theme-high-contrast nav a.active:after { background: #0000ee !important; }
+body.theme-high-contrast .beta-badge { background: #ffffff !important; border-color: #000000 !important; color: #0000ee !important; }
+body.theme-high-contrast footer { background: #ffffff !important; color: #000000 !important; border-top: 1px solid #000000 !important; }
+body.theme-high-contrast .footer-brand a { color: #0000ee !important; }
+
+/* --- Chat workspace (homepage) --- */
+body.theme-high-contrast .cw-container,
+body.theme-high-contrast .cw-main,
+body.theme-high-contrast .cw-input-area { background-color: #ffffff !important; color: #000000 !important; }
+body.theme-high-contrast .cw-sidebar,
+body.theme-high-contrast .cw-references,
+body.theme-high-contrast .cw-mobile-topbar,
+body.theme-high-contrast .cw-mobile-icon-btn,
+body.theme-high-contrast .cw-drawer-close { background-color: #ffffff !important; border-color: #000000 !important; }
+body.theme-high-contrast .cw-logo,
+body.theme-high-contrast .cw-empty-title,
+body.theme-high-contrast .cw-empty-title svg,
+body.theme-high-contrast .cw-nav-link.active,
+body.theme-high-contrast .cw-avatar,
+body.theme-high-contrast .cw-cite-ref,
+body.theme-high-contrast .cw-ref-badge,
+body.theme-high-contrast .cw-ref-summary-title,
+body.theme-high-contrast .cw-ref-open-link:hover { color: #0000ee !important; }
+body.theme-high-contrast .cw-nav-link,
+body.theme-high-contrast .cw-nav-title,
+body.theme-high-contrast .cw-history-item,
+body.theme-high-contrast .cw-history-item:hover,
+body.theme-high-contrast .cw-footer,
+body.theme-high-contrast .cw-empty-desc,
+body.theme-high-contrast .cw-suggestion-btn,
+body.theme-high-contrast .cw-disclaimer,
+body.theme-high-contrast .cw-ref-label,
+body.theme-high-contrast .cw-ref-title,
+body.theme-high-contrast .cw-ref-excerpt,
+body.theme-high-contrast .cw-ref-summary-text,
+body.theme-high-contrast .cw-ref-meta,
+body.theme-high-contrast .cw-ref-open-link,
+body.theme-high-contrast .cw-answer-list,
+body.theme-high-contrast .cw-answer-h4,
+body.theme-high-contrast .cw-mobile-topbar-title,
+body.theme-high-contrast .cw-drawer-close { color: #000000 !important; }
+body.theme-high-contrast .cw-nav-link:hover,
+body.theme-high-contrast .cw-nav-link.active,
+body.theme-high-contrast .cw-suggestion-btn:hover,
+body.theme-high-contrast .cw-new-chat-btn:hover { background-color: #f0f0f0 !important; }
+body.theme-high-contrast .cw-new-chat-btn,
+body.theme-high-contrast .cw-suggestion-btn,
+body.theme-high-contrast .cw-input,
+body.theme-high-contrast .cw-select,
+body.theme-high-contrast .cw-ref-card { background-color: #ffffff !important; color: #000000 !important; border: 1px solid #000000 !important; }
+body.theme-high-contrast .cw-message-row.user .cw-bubble { background-color: #0000ee !important; color: #ffffff !important; }
+body.theme-high-contrast .cw-message-row.ai .cw-bubble,
+body.theme-high-contrast .cw-answer-p,
+body.theme-high-contrast .cw-answer-h3 { color: #000000 !important; }
+body.theme-high-contrast .cw-answer-quote { background-color: #f0f0f0 !important; border-left-color: #0000ee !important; color: #000000 !important; }
+body.theme-high-contrast .cw-send-btn,
+body.theme-high-contrast .cw-mobile-ref-btn { background-color: #0000ee !important; border-color: #0000ee !important; color: #ffffff !important; }
+body.theme-high-contrast .cw-drawer-backdrop { background: rgba(0, 0, 0, 0.7) !important; }
+
+/* --- Graph / Help / Stats: override each zone's own scoped custom
+   properties directly - every var(--graph-*)/var(--help-*) usage inside
+   picks up the new value automatically, no need to touch each individual
+   rule that reads from them. --- */
+body.theme-high-contrast .cw-graph-page,
+body.theme-high-contrast .cw-stats-page {
+  background-image: none !important;
+  --graph-ink: #ffffff;
+  --graph-panel: #ffffff;
+  --graph-panel-2: #ffffff;
+  --graph-border: #000000;
+  --graph-gold: #0000ee;
+  --graph-gold-bright: #0000ee;
+  --graph-bronze: #0000ee;
+  --graph-paper: #000000;
+  --graph-paper-dim: #000000;
+  --graph-paper-faint: #000000;
+}
+body.theme-high-contrast .cw-help-page {
+  background-image: none !important;
+  --help-ink: #ffffff;
+  --help-panel: #ffffff;
+  --help-border: #000000;
+  --help-gold: #0000ee;
+  --help-gold-bright: #0000ee;
+  --help-paper: #000000;
+  --help-paper-dim: #000000;
+  --help-paper-faint: #000000;
+}
+
 /* Help/manual page (/help) - reuses the same ink/gold "formal document"
    palette as the topic graph and stats pages rather than the chat's dark-
    dashboard orange, since this is long-form reading content, not a tool.

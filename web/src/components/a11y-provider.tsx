@@ -30,14 +30,28 @@ export function A11yProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    // Apply classes to body
-    const cl = document.body.classList;
-    cl.remove("font-large", "font-xlarge", "theme-high-contrast", "theme-dark");
+    // Font-size classes go on <html>, not <body>: nearly every font-size in
+    // this codebase is set in `rem`, which is always relative to the root
+    // (html) element's computed font-size, never body's - so `body{font-
+    // size:125%}` changed body's own text (and any element that inherits
+    // font-size with no rem/px override of its own) but left virtually
+    // every rem-sized heading, button, and label completely unaffected.
+    // Scaling html's own font-size instead means every rem value site-wide
+    // scales proportionally, with no other change needed.
+    const htmlCl = document.documentElement.classList;
+    htmlCl.remove("font-large", "font-xlarge");
+    if (fontSizeScale === "large") htmlCl.add("font-large");
+    if (fontSizeScale === "xlarge") htmlCl.add("font-xlarge");
 
-    if (fontSizeScale === "large") cl.add("font-large");
-    if (fontSizeScale === "xlarge") cl.add("font-xlarge");
-    if (themeContrast === "high") cl.add("theme-high-contrast");
-    if (themeContrast === "dark") cl.add("theme-dark");
+    // Contrast/dark stay on body - see globals.css's "A11y Settings" block
+    // (the :root-variable pages) and chat-workspace.css's "Accessibility
+    // overrides" block (the homepage chat UI, graph/help/stats pages, and
+    // site header/footer, which all define their own separately-scoped
+    // colors instead of reading the global --ink/--paper variables).
+    const bodyCl = document.body.classList;
+    bodyCl.remove("theme-high-contrast", "theme-dark");
+    if (themeContrast === "high") bodyCl.add("theme-high-contrast");
+    if (themeContrast === "dark") bodyCl.add("theme-dark");
 
     localStorage.setItem("a11y_fontSize", fontSizeScale);
     localStorage.setItem("a11y_theme", themeContrast);

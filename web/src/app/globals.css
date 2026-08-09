@@ -60,8 +60,12 @@
 @media(max-width:600px){.stats-metrics{grid-template-columns:1fr}}
 
 /* A11y Settings */
-body.font-large { font-size: 110%; }
-body.font-xlarge { font-size: 125%; }
+/* On <html>, not <body> - rem units (used almost everywhere in this
+   codebase) are always relative to the root element's font-size, so
+   scaling html itself is what actually makes rem-sized text grow
+   site-wide. See a11y-provider.tsx for why this used to be on body. */
+html.font-large { font-size: 110%; }
+html.font-xlarge { font-size: 125%; }
 body.theme-high-contrast {
   --ink: #000;
   --muted: #000;

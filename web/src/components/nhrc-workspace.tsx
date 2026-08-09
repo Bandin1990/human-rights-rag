@@ -16,12 +16,36 @@ const AREAS = [
 
 const YEARS = Array.from({ length: 7 }, (_, i) => 2563 + i).reverse();
 
-const SUGGESTIONS = [
+// A larger, deliberately cross-category pool (land/environment, health,
+// justice, children, gender, disability, labor, statelessness, business,
+// international/Thai law) rather than 4 fixed case-note-flavored examples -
+// SUGGESTION_COUNT of these are picked at random per visit (see
+// useEffect below) so repeat visitors see different examples over time,
+// not always the exact same 4.
+const SUGGESTION_POOL = [
   "สิทธิชุมชนกรณีเหมืองแร่มีกี่กรณี",
   "กรณี HIV ที่เกี่ยวกับการเลือกปฏิบัติมีอะไรบ้าง",
   "สิทธิผู้ต้องขังที่ถูกละเมิดมีกรณีอะไรบ้าง",
   "กรณีเกี่ยวกับผลกระทบสิ่งแวดล้อมและ EIA",
+  "สิทธิเด็กที่ถูกล่วงละเมิดมีกรณีอะไรบ้าง",
+  "การเลือกปฏิบัติทางเพศในที่ทำงานมีกรณีอะไรบ้าง",
+  "สิทธิคนพิการในการเข้าถึงบริการสาธารณะมีกรณีอะไรบ้าง",
+  "กรณีการทรมานหรือการบังคับสูญหายมีอะไรบ้าง",
+  "สิทธิแรงงานข้ามชาติที่ถูกละเมิดมีกรณีอะไรบ้าง",
+  "เสรีภาพในการชุมนุมและการแสดงออกมีกรณีอะไรบ้าง",
+  "กรณีคนไร้รัฐไร้สัญชาติมีอะไรบ้าง",
+  "ธุรกิจกับสิทธิมนุษยชน (BHR) มีกรณีอะไรบ้าง",
+  "สถานการณ์สิทธิมนุษยชนชายแดนใต้เป็นอย่างไร",
+  "กติการะหว่างประเทศ ICCPR เกี่ยวข้องกับกรณีใดบ้าง",
+  "กฎหมายไทยที่เกี่ยวกับการป้องกันการทรมานมีอะไรบ้าง",
+  "สิทธิผู้สูงอายุที่เกี่ยวข้องมีกรณีอะไรบ้าง",
 ];
+const SUGGESTION_COUNT = 4;
+
+function pickRandomSuggestions(): string[] {
+  const shuffled = [...SUGGESTION_POOL].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, SUGGESTION_COUNT);
+}
 
 interface SearchResult {
   data: NhrcDocument[];
@@ -68,6 +92,14 @@ export function NhrcWorkspace({
   const [recentQuestions, setRecentQuestions] = useState<string[]>([]);
   const [highlightedCite, setHighlightedCite] = useState<number | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
+
+  // Starts as a fixed, deterministic slice (so server/client markup match
+  // on first paint - Math.random() during render would cause a hydration
+  // mismatch) then reshuffles to an actually random 4 once mounted.
+  const [suggestions, setSuggestions] = useState<string[]>(SUGGESTION_POOL.slice(0, SUGGESTION_COUNT));
+  useEffect(() => {
+    setSuggestions(pickRandomSuggestions());
+  }, []);
 
   // Sidebar (280px) and references panel (420px) are both fixed-width flex
   // columns designed for desktop - on a real phone (~375px wide) they don't
@@ -310,7 +342,7 @@ export function NhrcWorkspace({
                 ผู้ช่วยค้นฐานความรู้กรณีตรวจสอบและประเด็นสิทธิของ กสม. — ค้นด้วยตัวกรอง หรือถามคำถามเป็นภาษาธรรมชาติ
               </p>
               <div className="cw-suggestions">
-                {SUGGESTIONS.map((q) => (
+                {suggestions.map((q) => (
                   <button key={q} className="cw-suggestion-btn" onClick={() => runAsk(q)}>
                     {q}
                   </button>
