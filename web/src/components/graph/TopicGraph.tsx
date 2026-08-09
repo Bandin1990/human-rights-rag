@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Search, X, ZoomIn, ZoomOut, Maximize2 } from "lucide-react";
 import type { GraphData, GraphNode, NhrcDocument } from "@/lib/nhrc/types";
 import { computeLayout, nodeRadius, type Point } from "@/lib/nhrc/force-layout";
+import { MarkdownLite } from "@/components/markdown-lite";
 
 const WIDTH = 960;
 const HEIGHT = 620;
@@ -299,8 +300,16 @@ export function TopicGraph() {
               const a = positions.get(e.source);
               const b = positions.get(e.target);
               if (!a || !b) return null;
-              const dimmed = isDimmed(e.source) || isDimmed(e.target);
               const flowing = hoveredEdgeKeys?.has(String(i)) ?? false;
+              const touchesSelected = !!selected && (e.source === selected.id || e.target === selected.id);
+              // Edges are hidden at rest - drawing every one of them at once
+              // turns a graph this size into an unreadable web. They only
+              // appear for a node you're actively pointing at (hover, with
+              // the flowing-dash animation) or have opened the detail modal
+              // for (selected, static highlight so the modal has visible
+              // on-canvas context behind it).
+              if (!flowing && !touchesSelected) return null;
+              const weight = e.weight || 1;
               if (e.type === "hierarchy") {
                 return (
                   <line
@@ -309,15 +318,13 @@ export function TopicGraph() {
                     y1={a.y}
                     x2={b.x}
                     y2={b.y}
-                    stroke={flowing ? HIGHLIGHT : "#3d4560"}
-                    strokeWidth={flowing ? 2 : 1.25}
-                    opacity={dimmed ? 0.1 : flowing ? 0.9 : 0.5}
+                    stroke={HIGHLIGHT}
+                    strokeWidth={flowing ? 2 : 1.5}
+                    opacity={flowing ? 0.9 : 0.55}
                     className={flowing ? "cw-graph-edge-flow" : undefined}
                   />
                 );
               }
-              const weight = e.weight || 1;
-              const opacity = dimmed ? 0.05 : flowing ? 0.95 : 0.18 + (weight / maxWeight) * 0.5;
               return (
                 <line
                   key={i}
@@ -326,8 +333,8 @@ export function TopicGraph() {
                   x2={b.x}
                   y2={b.y}
                   stroke={HIGHLIGHT}
-                  strokeWidth={flowing ? 2.5 : 0.75 + (weight / maxWeight) * 2.5}
-                  opacity={opacity}
+                  strokeWidth={flowing ? 2.5 : 1 + (weight / maxWeight) * 2}
+                  opacity={flowing ? 0.95 : 0.5}
                   className={flowing ? "cw-graph-edge-flow" : undefined}
                 />
               );
@@ -340,6 +347,7 @@ export function TopicGraph() {
               const r = nodeRadius(n);
               const dimmed = isDimmed(n.id);
               const isSelected = selected?.id === n.id;
+              const isHovered = hoveredId === n.id;
               const color = isArea ? "#12141c" : areaColor(n.areaCode);
               const ring = areaColor(n.areaCode);
               // Ring thickness (not just radius) carries case-count weight -
@@ -370,13 +378,33 @@ export function TopicGraph() {
                   }}
                 >
                   {isArea && <circle cx={p.x} cy={p.y} r={r + 5} fill="none" stroke={ring} strokeWidth={1} opacity={0.35} />}
+                  {/* Sonar-ping pulse, hover-only (see plan discussion: constant
+                      idle motion on ~50 nodes at once read as noisy for a
+                      formal government tool, so the node itself only "moves"
+                      while you're actively pointing at it - the edges get
+                      their own always-available flow animation separately). */}
+                  {isHovered && (
+                    <>
+                      <circle cx={p.x} cy={p.y} r={r} fill="none" stroke={HIGHLIGHT} strokeWidth={2} className="cw-graph-node-pulse" />
+                      <circle
+                        cx={p.x}
+                        cy={p.y}
+                        r={r}
+                        fill="none"
+                        stroke={HIGHLIGHT}
+                        strokeWidth={2}
+                        className="cw-graph-node-pulse cw-graph-node-pulse--delay"
+                      />
+                    </>
+                  )}
                   <circle
                     cx={p.x}
                     cy={p.y}
-                    r={r}
+                    r={isHovered ? r + 2 : r}
                     fill={isArea ? "url(#seal-area-fill)" : "#1a1f2e"}
                     stroke={isSelected ? HIGHLIGHT : ring}
                     strokeWidth={isSelected ? ringWidth + 1.5 : ringWidth}
+                    className="cw-graph-node-circle"
                   />
                   <text
                     x={p.x}
@@ -421,9 +449,9 @@ export function TopicGraph() {
 
             <div className="cw-graph-modal-body">
               {selected.summary && (
-                <div className="cw-graph-modal-section">
-                  <h4>เกี่ยวกับประเด็นนี้</h4>
-                  <p className="cw-graph-modal-summary">{selected.summary}</p>
+                <div className="cw-graph-modal-section cw-graph-modal-summary">
+                  <h4>สถานการณ์และแนวโน้มรายปี</h4>
+                  <MarkdownLite text={selected.summary} />
                 </div>
               )}
 

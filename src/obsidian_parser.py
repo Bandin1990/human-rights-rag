@@ -459,14 +459,24 @@ class ObsidianParser:
         seed_tags = [t for t in (frontmatter.get("tags") or []) if t not in self.GENERIC_TAGS]
         keywords = self._extract_keywords(title, content, seed_tags=seed_tags)
 
-        # Topic notes carry a "### แนวโน้มสถานการณ์ (สรุป)" wrap-up under the
-        # yearly timeline - a real synthesized overview, unlike the raw
-        # "> breadcrumb / ## สถานการณ์และแนวโน้มรายปี / ### 2564 ..." text that
-        # precedes it. Prefer that for the graph node's detail-modal summary
-        # (see setup_obsidian_index.py's _export_graph); fall back to a raw
-        # slice for the couple of topic notes without this heading (currently
-        # the two under "E. เพิ่มเติมจากแท็กซอนอมีเดิม").
-        summary = self._extract_section(content, "แนวโน้มสถานการณ์ (สรุป)")
+        # Topic notes carry a "## สถานการณ์และแนวโน้มรายปี" section: a
+        # "### YYYY" entry per year (2564-2568) plus a closing
+        # "### แนวโน้มสถานการณ์ (สรุป)" wrap-up - real synthesized content,
+        # unlike the raw "# title / > breadcrumb" text that precedes it.
+        # Used for the graph node's detail-modal summary (see
+        # setup_obsidian_index.py's _export_graph). The same section also
+        # carries "### โจทย์วิจัยที่เกี่ยวข้อง" / "...สำหรับพื้นที่ภาคใต้"
+        # subsections after the wrap-up - drop those: this system is built
+        # for กสม. staff operational use across every department, not for
+        # scoping academic research questions, so surfacing them in the
+        # modal would be off-purpose. Falls back to a raw slice for the
+        # couple of topic notes without this heading (currently the two
+        # under "E. เพิ่มเติมจากแท็กซอนอมีเดิม").
+        summary = self._extract_section(content, "สถานการณ์และแนวโน้มรายปี")
+        if summary:
+            cut = re.search(r'###\s*โจทย์วิจัย', summary)
+            if cut:
+                summary = summary[: cut.start()].strip()
         if not summary:
             summary = content.strip()[:500] if content else ""
 
