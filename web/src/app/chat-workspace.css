@@ -338,6 +338,104 @@
   opacity: 0;
   border: none;
 }
+
+/* Mobile chrome for the sidebar/references drawers below - hidden entirely
+   on desktop, where .cw-sidebar and .cw-references stay the always-visible
+   fixed-width columns above. */
+.cw-mobile-topbar,
+.cw-drawer-close,
+.cw-drawer-backdrop {
+  display: none;
+}
+
+/* Sidebar (280px) + references panel (420px) together are wider than most
+   phone screens, leaving zero usable width for the chat itself. Below
+   900px both become off-canvas drawers instead of permanent flex columns -
+   opened via the mobile topbar (hamburger / "เอกสารอ้างอิง N" button in
+   nhrc-workspace.tsx) or, for references, automatically when a citation
+   number is clicked (see scrollToCitation there). */
+@media (max-width: 900px) {
+  .cw-main { width: 100%; }
+
+  .cw-mobile-topbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background-color: #181a20;
+    border-bottom: 1px solid #2d303b;
+    flex-shrink: 0;
+  }
+  .cw-mobile-topbar-title { flex: 1; font-weight: 700; color: #f3f4f6; font-size: 0.95rem; }
+  .cw-mobile-icon-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #23262f;
+    border: 1px solid #2d303b;
+    color: #e5e7eb;
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  .cw-mobile-ref-btn { background-color: #f97316; border-color: #f97316; color: white; }
+
+  /* left/right (not transform) so the drawer's own position: fixed box
+     genuinely leaves the layout viewport when closed - verified via
+     getBoundingClientRect, not just visually assumed. */
+  .cw-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -100vw;
+    width: min(280px, 84vw);
+    z-index: 70;
+    transition: left 0.25s ease;
+    box-shadow: 12px 0 32px rgba(0, 0, 0, 0.4);
+  }
+  .cw-sidebar.is-open { left: 0; }
+
+  .cw-references,
+  .cw-references.hidden {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -100vw;
+    width: min(420px, 92vw);
+    z-index: 70;
+    opacity: 1;
+    border: none;
+    transition: right 0.25s ease;
+    box-shadow: -12px 0 32px rgba(0, 0, 0, 0.4);
+  }
+  .cw-references.is-open { right: 0; }
+
+  .cw-drawer-close {
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 12px 0 0;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    background: #23262f;
+    border: 1px solid #2d303b;
+    color: #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .cw-drawer-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 65;
+  }
+}
+
 .cw-ref-header {
   padding: 16px 20px;
   border-bottom: 1px solid #2d303b;
@@ -622,20 +720,26 @@
 .cw-stats-status { color: var(--graph-paper-faint); font-size: 0.9rem; padding: 60px 24px; text-align: center; }
 
 .cw-stats-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
-.cw-stats-card { background-color: var(--graph-panel); border: 1px solid var(--graph-border); border-radius: 14px; padding: 20px; }
+.cw-stats-card { background-color: var(--graph-panel); border: 1px solid var(--graph-border); border-radius: 14px; padding: 20px; min-width: 0; }
 .cw-stats-card-icon { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 12px; background-color: var(--graph-panel-2); color: var(--graph-gold); }
 .cw-stats-card b { display: block; font-family: var(--font-serif-th), serif; font-size: 1.7rem; font-weight: 600; color: var(--graph-paper); line-height: 1.2; }
 .cw-stats-card span { font-size: 0.78rem; color: var(--graph-paper-dim); }
 
 .cw-stats-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-.cw-stats-panel { background-color: var(--graph-panel); border: 1px solid var(--graph-border); border-radius: 14px; padding: 22px; }
+/* min-width: 0 overrides the grid item's default min-width: auto, which
+   otherwise refuses to shrink a "1fr" column below its content's intrinsic
+   width - the classic CSS Grid overflow trap. Without this, a long
+   untruncated keyword label (.cw-stats-keyword-row) or a wide recharts
+   SVG forced the whole panel, and with it the page, past the viewport
+   width on phones (measured ~438px wide content on a 375px screen). */
+.cw-stats-panel { background-color: var(--graph-panel); border: 1px solid var(--graph-border); border-radius: 14px; padding: 22px; min-width: 0; }
 .cw-stats-panel h2 { font-family: var(--font-serif-th), serif; font-weight: 600; font-size: 1rem; margin: 0 0 18px; color: var(--graph-paper); }
 
-.cw-stats-keyword-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; font-size: 0.85rem; }
-.cw-stats-keyword-row span:first-child { color: var(--graph-paper); font-weight: 500; }
+.cw-stats-keyword-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; font-size: 0.85rem; min-width: 0; }
+.cw-stats-keyword-row span:first-child { color: var(--graph-paper); font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 .cw-stats-keyword-bar { width: 110px; height: 6px; background-color: var(--graph-panel-2); border-radius: 6px; overflow: hidden; flex: 0 0 auto; }
 .cw-stats-keyword-bar > div { height: 100%; background-color: var(--graph-gold); border-radius: 6px; }
-.cw-stats-keyword-count { color: var(--graph-paper-dim); font-size: 0.78rem; width: 30px; text-align: right; }
+.cw-stats-keyword-count { color: var(--graph-paper-dim); font-size: 0.78rem; width: 30px; text-align: right; flex: 0 0 auto; }
 
 .cw-stats-recent-item { display: block; padding: 12px 14px; background-color: var(--graph-panel-2); border-radius: 10px; border: 1px solid var(--graph-border); margin-bottom: 8px; transition: border-color 0.2s; }
 .cw-stats-recent-item:hover { border-color: var(--graph-gold); }

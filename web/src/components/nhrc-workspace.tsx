@@ -1,7 +1,7 @@
 "use client";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ExternalLink, Plus, Scale, Send } from "lucide-react";
+import { ExternalLink, FileText, Menu, Plus, Scale, Send, X } from "lucide-react";
 import { NhrcCaseCard } from "@/components/nhrc-case-card";
 import { MarkdownLite } from "@/components/markdown-lite";
 import { DOCUMENT_CATEGORIES, NhrcDocument } from "@/lib/nhrc/types";
@@ -69,11 +69,24 @@ export function NhrcWorkspace({
   const [highlightedCite, setHighlightedCite] = useState<number | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
+  // Sidebar (280px) and references panel (420px) are both fixed-width flex
+  // columns designed for desktop - on a real phone (~375px wide) they don't
+  // fit alongside any usable chat area at all. Below 900px (see
+  // chat-workspace.css) both become off-canvas drawers instead, opened via
+  // the mobile-only topbar/citation clicks and dismissed via their own
+  // close button or the shared backdrop. Desktop ignores this state
+  // entirely (CSS keeps both panels always visible there).
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [referencesOpen, setReferencesOpen] = useState(false);
+
   // Clicking a "[n]" citation marker inside an AI answer (see markdown-lite.tsx)
   // scrolls the matching source card into view in the references panel and
   // briefly highlights it, so the reader can jump straight from a claim to
-  // the document that backs it instead of hunting through the list.
+  // the document that backs it instead of hunting through the list. On
+  // mobile the panel is a closed drawer by default, so also open it -
+  // otherwise the scroll/highlight would happen off-screen, invisibly.
   const scrollToCitation = (n: number) => {
+    setReferencesOpen(true);
     const el = document.getElementById(`cw-ref-${n}`);
     if (!el) return;
     el.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -152,21 +165,28 @@ export function NhrcWorkspace({
     setYear(0);
     setChatHistory([]);
     setActiveCitations([]);
+    setSidebarOpen(false);
   };
 
   const selectArea = (code: string) => {
     setMode("browse");
     setArea(code);
+    setSidebarOpen(false);
   };
   const selectCategory = (label: string) => {
     setMode("browse");
     setCategory(label);
+    setSidebarOpen(false);
   };
 
   return (
     <div className="cw-container">
-      {/* Sidebar */}
-      <div className="cw-sidebar">
+      {/* Sidebar - fixed 280px column on desktop, off-canvas drawer under
+          900px (see chat-workspace.css's .cw-sidebar media query) */}
+      <div className={`cw-sidebar ${sidebarOpen ? "is-open" : ""}`}>
+        <button className="cw-drawer-close" aria-label="ปิดเมนู" onClick={() => setSidebarOpen(false)}>
+          <X size={18} />
+        </button>
         <div className="cw-logo">
           <Scale size={24} /> ค้นหาสิทธิ
         </div>
@@ -238,7 +258,15 @@ export function NhrcWorkspace({
           </div>
           {recentQuestions.length > 0 ? (
             recentQuestions.map((q, i) => (
-              <div key={i} className="cw-history-item" onClick={() => setQuestion(q)} title={q}>
+              <div
+                key={i}
+                className="cw-history-item"
+                onClick={() => {
+                  setQuestion(q);
+                  setSidebarOpen(false);
+                }}
+                title={q}
+              >
                 {q}
               </div>
             ))
@@ -254,6 +282,24 @@ export function NhrcWorkspace({
 
       {/* Main */}
       <div className="cw-main">
+        {/* Mobile-only toolbar (hidden on desktop via CSS) - the sidebar and
+            references panel are always-visible columns there, so this
+            open/close chrome would be redundant. */}
+        <div className="cw-mobile-topbar">
+          <button className="cw-mobile-icon-btn" aria-label="เปิดเมนู" onClick={() => setSidebarOpen(true)}>
+            <Menu size={20} />
+          </button>
+          <span className="cw-mobile-topbar-title">ค้นหาสิทธิ</span>
+          {activeCitations.length > 0 && (
+            <button
+              className="cw-mobile-icon-btn cw-mobile-ref-btn"
+              aria-label="ดูเอกสารอ้างอิง"
+              onClick={() => setReferencesOpen(true)}
+            >
+              <FileText size={16} /> {activeCitations.length}
+            </button>
+          )}
+        </div>
         <div className="cw-chat-scroll">
           {mode === "welcome" && (
             <div className="cw-empty-state">
@@ -349,8 +395,16 @@ export function NhrcWorkspace({
         </div>
       </div>
 
-      {/* References */}
-      <div className={`cw-references ${activeCitations.length === 0 ? "hidden" : ""}`}>
+      {/* References - fixed 420px column on desktop, off-canvas drawer
+          under 900px */}
+      <div
+        className={`cw-references ${activeCitations.length === 0 ? "hidden" : ""} ${
+          referencesOpen ? "is-open" : ""
+        }`}
+      >
+        <button className="cw-drawer-close" aria-label="ปิด" onClick={() => setReferencesOpen(false)}>
+          <X size={18} />
+        </button>
         {/* "เอกสารอ้างอิง" not "กรณีที่เกี่ยวข้อง" - since the diversified
             retrieval + law/instrument backfill in api/ask-nhrc/route.ts,
             these citations regularly include research, Thai law,
@@ -391,6 +445,19 @@ export function NhrcWorkspace({
           })}
         </div>
       </div>
+
+      {/* Shared backdrop for whichever drawer is open (mobile only - see
+          chat-workspace.css, hidden entirely on desktop where both panels
+          are always-visible columns instead of drawers). */}
+      {(sidebarOpen || referencesOpen) && (
+        <div
+          className="cw-drawer-backdrop"
+          onClick={() => {
+            setSidebarOpen(false);
+            setReferencesOpen(false);
+          }}
+        />
+      )}
     </div>
   );
 }
