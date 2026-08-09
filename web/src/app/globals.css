@@ -92,3 +92,13 @@ body.theme-dark .hero h1, body.theme-dark .empty h3 { color: var(--ink); }
 
 .intake-sidebar-group { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 100px; }
 @media(max-width: 1100px) { .intake-container { grid-template-columns: 1fr; } .intake-sidebar-group { position: static; } }
+
+/* Sitewide "this is an experimental version" notice - one clearly visible
+   spot (next to the logo, every page) rather than buried in a footer line.
+   Links to /help#about-system for the full architecture/AI-transparency
+   explanation. */
+.brand-group{display:flex;align-items:center;gap:10px;min-width:0}
+.beta-badge{display:inline-flex;align-items:center;flex-shrink:0;padding:4px 10px;border-radius:999px;background:rgba(217,119,6,0.12);border:1px solid rgba(217,119,6,0.35);color:var(--gold);font-size:12px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;white-space:nowrap}
+.beta-badge:hover{background:rgba(217,119,6,0.22);border-color:var(--gold)}
+.beta-badge-short{display:none}
+@media(max-width:480px){.beta-badge-full{display:none}.beta-badge-short{display:inline}}
