@@ -863,26 +863,31 @@
    (area or topic) opens an overlay with the node's own description/keywords/
    connections first, and the case list as one section further down, instead
    of the case list being the entire panel. */
+/* Docked to the right edge as a full-height side panel (not a centered
+   dialog) - on narrow screens min(440px, 100%) naturally collapses to the
+   full viewport width with no extra breakpoint needed, so this one rule
+   covers desktop through phones. */
 .cw-graph-modal-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(8, 9, 14, 0.6);
   backdrop-filter: blur(2px);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
+  align-items: stretch;
+  justify-content: flex-end;
   z-index: 60;
   animation: cw-graph-modal-fade 0.15s ease-out;
 }
 .cw-graph-modal {
-  width: min(520px, 100%);
-  max-height: min(720px, 90vh);
+  width: min(440px, 100%);
+  max-width: 100%;
+  height: 100%;
   background-color: var(--graph-panel);
-  border: 1px solid var(--graph-border);
-  border-radius: 16px;
-  padding: 20px;
+  border-left: 1px solid var(--graph-border);
+  border-radius: 0;
+  padding: 24px;
   overflow-y: auto;
+  box-shadow: -16px 0 44px rgba(0, 0, 0, 0.35);
   animation: cw-graph-modal-in 0.32s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @keyframes cw-graph-modal-fade { from { opacity: 0; } to { opacity: 1; } }
@@ -890,7 +895,7 @@
    fade+scale - slides in from the right with the content settling, closer
    to the slide/reveal motion language referenced from an external site the
    user asked to match, rather than a generic dialog pop-in. */
-@keyframes cw-graph-modal-in { from { opacity: 0; transform: translateX(28px) scale(0.98); } to { opacity: 1; transform: none; } }
+@keyframes cw-graph-modal-in { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: none; } }
 
 .cw-graph-panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 0; padding-bottom: 16px; }
 .cw-graph-panel-head h3 { font-family: var(--font-serif-th), serif; font-weight: 600; font-size: 1.05rem; color: var(--graph-paper); margin: 8px 0 4px; }
