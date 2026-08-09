@@ -41,10 +41,19 @@ def _export_content_files(documents: list, content_dir: Path) -> None:
     documents' full text in memory.
     """
     content_dir.mkdir(parents=True, exist_ok=True)
+    current_ids = {doc["document_id"] for doc in documents}
     for doc in documents:
         content = doc.pop("content", "") or ""
         out_file = content_dir / f"{doc['document_id']}.txt"
         out_file.write_text(content, encoding="utf-8")
+
+    # Remove orphaned files left behind by a document that was renamed,
+    # deleted, or (as of the admin/tracking-note exclusion in
+    # obsidian_parser.py) newly recognized as not real content - otherwise
+    # they just sit here forever with no index entry pointing at them.
+    for stale_file in content_dir.glob("*.txt"):
+        if stale_file.stem not in current_ids:
+            stale_file.unlink()
 
 
 def _export_source_documents(documents: list, documents_dir: Path) -> int:

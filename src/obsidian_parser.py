@@ -57,6 +57,16 @@ class ObsidianParser:
     # Loose root-level notes that are navigational/planning, not case content
     EXCLUDED_TITLES = {"00 หน้าแรก", "README - เริ่มต้นใช้งาน", "โจทย์วิจัยภาคใต้"}
 
+    # Convention (already used by "00 หน้าแรก.md", the vault's own home note):
+    # a filename starting with "00" is a maintainer-facing manifest/checklist/
+    # status-tracking note about the FILES in a folder, not a document a กสม.
+    # officer would ever search for or want cited - e.g. "00_บัญชีรายการและ
+    # สถานะ.md", a table tracking which PDFs in a translation batch still
+    # need review. Checked by prefix (not exact title, unlike EXCLUDED_TITLES
+    # above) so a new tracking file added later under this same convention is
+    # excluded automatically, without needing another one-off entry here.
+    ADMIN_FILENAME_PREFIXES = ("00_", "00 ")
+
     # Document-category taxonomy shown in the web UI's document-type filter.
     # "06"-"10" have no vault content yet - see docs/vault-templates/ for the
     # note templates that seed each one once files exist under these folder
@@ -203,6 +213,11 @@ class ObsidianParser:
         if file_path.suffix.lower() not in ['.md', '.markdown']:
             return None
         if file_path.name.startswith('.'):
+            return None
+        # Admin/tracking notes (see ADMIN_FILENAME_PREFIXES) - checked here,
+        # before routing to any type-specific parser, so this applies no
+        # matter which folder/category the file happens to sit under.
+        if file_path.stem.startswith(self.ADMIN_FILENAME_PREFIXES):
             return None
 
         # Read file

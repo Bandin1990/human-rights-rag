@@ -266,6 +266,20 @@ async function main() {
     if (i + BATCH_SIZE < pending.length) await sleep(3_000); // stay well under free-tier per-minute limits
   }
 
+  // A document that was renamed, deleted, or (like a maintainer checklist
+  // file the parser now recognizes as non-content, see obsidian_parser.py's
+  // ADMIN_FILENAME_PREFIXES) no longer appears in nhrc_index.json still had
+  // its old chunk rows sitting in Supabase indefinitely, still fully
+  // matchable by semantic search - not just an unused row, but a real
+  // "wrong document surfaces in an AI answer's citations" risk.
+  const currentIds = new Set(docs.map((d) => d.document_id));
+  const orphanIds = [...existingHashes.keys()].filter((id) => !currentIds.has(id));
+  if (orphanIds.length > 0) {
+    const { error: orphanError } = await supabase.from("nhrc_embeddings").delete().in("document_id", orphanIds);
+    if (orphanError) throw orphanError;
+    console.log(`Removed ${orphanIds.length} orphaned document(s) no longer in nhrc_index.json.`);
+  }
+
   console.log(`Done. ${docsWritten} documents (${done} chunks) embedded/updated, ${skipped} already up to date.`);
 }
 

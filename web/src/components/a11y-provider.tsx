@@ -3,7 +3,14 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 type FontSizeScale = "normal" | "large" | "xlarge";
-type ThemeContrast = "normal" | "high" | "dark";
+// "dark" used to be a third option here, but almost the entire site (the
+// homepage chat UI, graph/help/stats pages) is already dark-themed by
+// default - toggling it away from "normal" had no visible effect on any of
+// those, and only changed the handful of lighter :root-variable pages
+// (case detail, browse results), which made "ปกติ" and "โหมดมืด" look
+// identical everywhere a user would actually notice. Down to the two
+// options that are genuinely different from each other everywhere.
+type ThemeContrast = "normal" | "high";
 
 interface A11yContextType {
   fontSizeScale: FontSizeScale;
@@ -43,15 +50,14 @@ export function A11yProvider({ children }: { children: React.ReactNode }) {
     if (fontSizeScale === "large") htmlCl.add("font-large");
     if (fontSizeScale === "xlarge") htmlCl.add("font-xlarge");
 
-    // Contrast/dark stay on body - see globals.css's "A11y Settings" block
-    // (the :root-variable pages) and chat-workspace.css's "Accessibility
+    // Contrast stays on body - see globals.css's "A11y Settings" block (the
+    // :root-variable pages) and chat-workspace.css's "Accessibility
     // overrides" block (the homepage chat UI, graph/help/stats pages, and
     // site header/footer, which all define their own separately-scoped
     // colors instead of reading the global --ink/--paper variables).
     const bodyCl = document.body.classList;
-    bodyCl.remove("theme-high-contrast", "theme-dark");
+    bodyCl.remove("theme-high-contrast", "theme-dark"); // theme-dark: drop a stale class from before this option existed
     if (themeContrast === "high") bodyCl.add("theme-high-contrast");
-    if (themeContrast === "dark") bodyCl.add("theme-dark");
 
     localStorage.setItem("a11y_fontSize", fontSizeScale);
     localStorage.setItem("a11y_theme", themeContrast);

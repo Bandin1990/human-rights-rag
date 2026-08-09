@@ -78,21 +78,6 @@ body.theme-high-contrast {
   --glass-bg: #fff;
   --glass-border: #000;
 }
-body.theme-dark {
-  --ink: #f8fafc;
-  --muted: #94a3b8;
-  --paper: #0f172a;
-  --white: #1e293b;
-  --teal: #38bdf8;
-  --teal-dark: #7dd3fc;
-  --mint: #1e293b;
-  --gold: #fbbf24;
-  --line: #334155;
-  --glass-bg: rgba(15, 23, 42, 0.8);
-  --glass-border: rgba(148, 163, 184, 0.2);
-}
-body.theme-dark .hero { background: var(--paper); }
-body.theme-dark .hero h1, body.theme-dark .empty h3 { color: var(--ink); }
 
 .intake-sidebar-group { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 100px; }
 @media(max-width: 1100px) { .intake-container { grid-template-columns: 1fr; } .intake-sidebar-group { position: static; } }

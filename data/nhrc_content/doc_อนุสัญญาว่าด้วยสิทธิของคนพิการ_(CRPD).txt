@@ -1,33 +1,3662 @@
-# อนุสัญญาว่าด้วยสิทธิของคนพิการ (Convention on the Rights of Persons with Disabilities: CRPD)
+# อนุสัญญาว่าด้วยสิทธิของคนพิการ
 
-**ปีที่รับรอง:** 2549 (2006) มีผลใช้บังคับทั่วไป 2551 (2008) · **ประเภทตราสาร:** สนธิสัญญาหลัก · **สถานะการเป็นภาคีของไทย:** ภาคีโดยการให้สัตยาบัน (ราว พ.ศ. 2551)
+## หน้าอ้างอิง 1
 
-## สาระสำคัญ
-เป็นสนธิสัญญาสิทธิมนุษยชนฉบับล่าสุดฉบับหนึ่งของ UN ที่เปลี่ยนกรอบคิดเรื่องความพิการจาก "แบบสงเคราะห์/การแพทย์" (medical model) มาเป็น "แบบสิทธิมนุษยชนและสังคม" (social/rights-based model) คือมองว่าอุปสรรคทางสังคมและสิ่งแวดล้อมต่างหากที่ทำให้คนพิการไม่สามารถเข้าถึงสิทธิอย่างเท่าเทียม ไม่ใช่ตัวความบกพร่องทางร่างกาย/จิตใจของบุคคลนั้น กำหนดหลักการเรื่องการเข้าถึงได้ (accessibility) การมีส่วนร่วมและการรวมเข้าเป็นส่วนหนึ่งของสังคมอย่างเต็มที่ (inclusion) และการปรับสภาพที่เหมาะสม (reasonable accommodation) มีคณะกรรมการว่าด้วยสิทธิคนพิการ (CRPD Committee) ทำหน้าที่ติดตาม
-
-## มาตราสำคัญ
-- มาตรา 2: นิยาม "การเลือกปฏิบัติเพราะเหตุแห่งความพิการ" และ "การปรับสภาพที่เหมาะสม"
-- มาตรา 5: ความเสมอภาคและการไม่เลือกปฏิบัติ
-- มาตรา 9: การเข้าถึงได้ (accessibility) ของสิ่งอำนวยความสะดวก ข้อมูล และบริการ
-- มาตรา 19: การใช้ชีวิตอย่างอิสระและการเป็นส่วนหนึ่งของชุมชน
-- มาตรา 24: สิทธิทางการศึกษาแบบเรียนรวม (inclusive education)
-- มาตรา 27: สิทธิในการทำงานและการจ้างงาน
-
-## พันธกรณีของไทย
-ไทยต้องรายงานตามวาระต่อคณะกรรมการ CRPD ประเด็นที่มักถูกหยิบยกคือการเข้าถึงสิ่งอำนวยความสะดวกสาธารณะ การจ้างงานคนพิการ และการยอมรับความสามารถทางกฎหมายของคนพิการอย่างเต็มที่ (legal capacity) ซึ่งเชื่อมโยงกับ พ.ร.บ. ส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการ พ.ศ. 2550 ของไทย
-
-## ความเชื่อมโยงกับกรณีตรวจสอบของ กสม.
-อ้างอิงหลักในกรณีเกี่ยวกับสิทธิคนพิการทุกด้าน โดยเฉพาะการเข้าถึงบริการสาธารณะและการจ้างงาน
-
-## คำสำคัญ
-#CRPD #สิทธิคนพิการ #การเข้าถึงได้ #inclusion
-
-## ลิงก์เอกสารฉบับเต็ม
-https://www.ohchr.org/en/instruments-mechanisms/instruments/convention-rights-persons-disabilities
-
-## ประเด็นสิทธิที่เกี่ยวข้อง
-- [[สิทธิคนพิการ|สิทธิคนพิการ]]
+1 อนุสัญญาว่าด้วยสิทธิคนพิการ
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์
+CRPD
 
 
-## หมายเหตุความถูกต้อง
-ปีที่เป็นภาคีเป็นข้อมูลจากความรู้ทั่วไปของ AI **ยังไม่ผ่านการตรวจสอบวันที่แน่นอนกับฐานข้อมูล OHCHR โดยตรง** โปรดตรวจสอบกับต้นฉบับที่ลิงก์ด้านบนก่อนอ้างอิงในรายงานทางการ
+## หน้าอ้างอิง 2
+
+3 2Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+อนุสัญญาว่าด้วยสิทธิคนพิการฉบับนี้ ประเทศไทยได้
+ให้สัตยาบันเมื่อวันที่ 29 กรกฎาคม 2551 และมีผลบังคับใช้ตั้งแต่วันที่
+28 สิงหาคม 2551  โดยมีเนื้อหาสาระในเรื่องของการส่งเสริม
+คุ้มครองและประกันให้คนพิการทั้งปวง ได้อุปโภคสิทธิมนุษยชน
+และเสรีภาพขั้นพื้นฐานทั้งปวงอย่างเต็มที่และเท่าเทียมกัน และส่งเสริม
+การเคารพในศักดิ์ศรีที่มีมาแต่กำเนิด การขจัดการเลือกปฏิบัติต่อ
+คนพิการทุกรูปแบบ การเข้าถึงและใช้ประโยชน์ได้จากสภาพแวดล้อม
+ทางกายภาพ การขนส่ง ข้อมูลข่าวสารและบริการสาธารณะ การยอมรับ
+ความเท่าเทียมกันของคนพิการในทางกฏหมาย ความเสมอภาคในโอกาส
+ทางการศึกษา การทำงาน การรักษาพยาบาล การมีส่วนร่วมทางการเมือง
+อย่างเท่าเทียมกับบุคคลทั่วไป ซึ่งถือว่าเป็นประโยชน์อย่างยิ่งต่อคนพิการ
+อนุสัญญาว่าด้วยสิทธิคนพิการฉบับแปลภาษาไทยฉบับนี้
+เป็นฉบับแรกที่จัดพิมพ์เผยแพร่โดยสำนักงานส่งเสริมและพัฒนาคุณภาพชีวิต
+คนพิการแห่งชาติ เพื่อเผยแพร่เนื้อหาของอนุสัญญาและให้ความรู้กับ
+คนพิการรวมทั้งบุคคลทั่วไปได้รับทราบถึงการคุ้มครองและประกันสิทธิ
+ของคนพิการ ซึ่งคำแปลภาษาไทยได้รับความเห็นชอบจากคณะกรรมการ
+ตรวจทานคำแปลอนุสัญญาว่าด้วยสิทธิคนพิการแล้ว
+                   สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+กันยายน  2552
+คำนำ
+อนุสัญญาว่าด้วยสิทธิคนพิการ Convention on the Rights of Persons with Disabilities
+ชื่อหนังสือ:อนุสัญญาว่าด้วยสิทธิคนพิการ
+Convention on the Rights of Persons
+with Disbilities (CRPD)
+จำนวนหน้า:180 หน้า
+ISBN :978-616-7192-13-0
+จัดพิมพ์โดย:สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิต
+คนพิการแห่งชาติ
+กระทรวงการพัฒนาสังคม
+และความมั่นคงของมนุษย์
+255 อาคาร 60 ปี กรมประชาสงเคราะห์
+ถนนราชวิถี เขตราชเทวี กรุงเทพฯ 10400
+โทร. 0 2354 3388  โทรสาร 0 2354 3899
+พิมพ์ครั้งที่:1
+จำนวนพิมพ์:3,000 เล่ม
+พิมพ์ที่:หจก.ไอเดีย สแควร์
+86 ถ.จรัลสนิทวงศ์  ซ.จรัลสนิทวงศ์ 57/2
+แขวงบางบำหรุ เขตบางพลัด กรุงเทพฯ 10700
+โทร. 0 2433 4791  โทรสาร 0 2881 8539 กด 0
+
+## หน้าอ้างอิง 3
+
+5 4Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+อนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+เรื่อง หน้า
+อนุสัญญาว่าด้วยสิทธิคนพิการ CRPD ...........................................1
+ภาคผนวก ................................................................................145
+พิธีสารเลือกรับอนุสัญญาว่าด้วยสิทธิคนพิการ .............................147
+คณะกรรมการตรวจทานคำแปลอนุสัญญาว่าด้วยสิทธิคนพิการ ......158
+ปฏิญญาสากลว่าด้วยสิทธิมนุษยชน ............................................164
+ปฏิญญาว่าด้วยสิทธิคนพิการไทย ...............................................174
+สารบัญ
+
+## หน้าอ้างอิง 4
+
+7 6Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+Convention on the Rights of Persons with Disabilities
+Preamble
+The States Parties to the present Convention,
+(a) Recalling the principles proclaimed in the Charter of
+the United Nations which recognize the inherent dignity and
+worth and the equal and inalienable rights of all members of
+the human family as the foundation of freedom, justice and
+peace in the world,
+(b) Recognizing that the United Nations, in the Universal
+Declaration of Human Rights and in the International Covenants
+on Human Rights, has proclaimed and agreed that everyone is
+entitled to all the rights and freedoms set forth therein, without
+distinction of any kind,
+(c) Reaffirming the universality, indivisibility,
+interdependence and interrelatedness of all human rights
+and fundamental freedoms and the need for persons with
+disabilities to be guaranteed their full enjoyment without
+discrimination,
+คำแปลอนุสัญญาว่าด้วยสิทธิของคนพิการ
+อารัมภบท
+รัฐภาคีแห่งอนุสัญญานี้
+(เอ)ระลึกถึงหลักการที่ประกาศไว้ในกฎบัตรสหประชาชาติ ซึ่งยอมรับ
+ในศักดิ์ศรีและคุณค่าที่มีมาแต่กำเนิด และสิทธิที่เท่าเทียมกัน และไม่อาจ
+เพิกถอนได้ของสมาชิกทั้งปวงของมวลมนุษยชาตินั้น เป็นรากฐานของ
+เสรีภาพ ความยุติธรรม และสันติภาพในโลก
+(บี)ยอมรับว่าสหประชาชาติได้ประกาศ และตกลงในปฏิญญาสากล
+ว่าด้วยสิทธิมนุษยชนและกติการะหว่างประเทศว่าด้วยสิทธิมนุษยชน
+ว่าทุกคนมีสิทธิและเสรีภาพทั้งปวงที่กำหนดไว้ โดยปราศจากความ
+แตกต่างไม่ว่าชนิดใดๆ
+(ซี)ยืนยันถึงความเป็นสากล ความแบ่งแยกไม่ได้ ความเกื้อกูล
+ซึ่งกันและกันและความเชื่อมโยงกันของสิทธิมนุษยชนและเสรีภาพขั้นพื้นฐาน
+ทั้งปวง และความต้องการจำเป็นที่คนพิการจะได้รับหลักประกันว่าจะได้
+อุปโภคสิทธิของตนอย่างเต็มที่โดยปราศจากการเลือกปฏิบัติ
+
+## หน้าอ้างอิง 5
+
+9 8Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(ดี)ระลึกถึงกติการะหว่างประเทศว่าด้วยสิทธิทางเศรษฐกิจ สังคม
+และวัฒนธรรมกติการะหว่างประเทศว่าด้วยสิทธิพลเมืองและสิทธิการเมือง
+อนุสัญญาระหว่างประเทศว่าด้วยการขจัดการเลือกปฏิบัติทางเชื้อชาติ
+ในทุกรูปแบบอนุสัญญาว่าด้วยการขจัดการเลือกปฏิบัติต่อสตรีในทุกรูปแบบ
+อนุสัญญาต่อต้านการทรมานและการปฏิบัติหรือลงโทษอื่นที่โหดร้าย
+ไร้มนุษยธรรม หรือย่ำยีศักดิ์ศรี อนุสัญญาว่าด้วยสิทธิเด็ก และอนุสัญญา
+ระหว่างประเทศว่าด้วยการคุ้มครองสิทธิของแรงงานผู้โยกย้ายถิ่นฐาน
+ทั้งปวงและสมาชิกในครอบครัว
+(อี)ยอมรับว่าความพิการเป็นแนวคิดที่มีพัฒนาการอยู่ตลอด
+และความพิการเกิดขึ้นจากปฏิสัมพันธ์ระหว่างบุคคลที่มีความบกพร่องใดๆ
+กับอุปสรรคทางเจตคติและสภาพแวดล้อม ซึ่งทำให้บุคคลนั้นไม่สามารถ
+มีส่วนร่วมในสังคมอย่างเต็มที่และมีประสิทธิผล บนพื้นฐานที่เท่าเทียม
+กับบุคคลอื่น
+(เอฟ)ยอมรับถึงความสำคัญของหลักการและแนวนโยบายที่
+กำหนดไว้ในแผนปฏิบัติการระดับโลกเกี่ยวกับคนพิการ และข้อกำหนด
+มาตรฐานว่าด้วยการให้โอกาสที่เท่าเทียมกันแก่คนพิการที่ส่งผลต่อการ
+ส่งเสริม จัดทำและประเมินผลนโยบาย แผน โปรแกรมและการปฏิบัติการ
+ในระดับประเทศ ระดับภูมิภาคและระดับระหว่างประเทศ เพื่อสร้างโอกาส
+ที่เท่าเทียมกันสำหรับคนพิการ
+(d) Recalling the International Covenant on Economic,
+Social and Cultural Rights, the International Covenant on
+Civil and Political Rights, the International Convention on the
+Elimination of All Forms of Racial Discrimination, the
+Convention on the Elimination of All Forms of Discrimination
+against Women, the Convention against Torture and Other
+Cruel, Inhuman or Degrading Treatment or Punishment, the
+Convention on the Rights of the Child, and the International
+Convention on the Protection of the Rights of All Migrant
+Workers and Members of Their Families,
+(e) Recognizing that disability is an evolving concept
+and that disability results from the interaction between persons
+with impairments and attitudinal and environmental barriers
+that hinders their full and effective participation in society
+on an equal basis with others,
+(f) Recognizing the importance of the principles and
+policy guidelines contained in the World Programme of
+Action concerning Disabled Persons and in the Standard
+Rules on the Equalization of Opportunities for Persons with
+Disabilities in influencing the promotion, formulation and
+evaluation of the policies, plans, programmes and actions
+
+## หน้าอ้างอิง 6
+
+11 10Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(จี)เน้นย้ำถึงความสำคัญของการบูรณาการประเด็นความพิการ
+ให้อยู่ในกระแสหลักของยุทธศาสตร์ที่เกี่ยวข้องในการพัฒนาที่ยั่งยืน
+(เอช)ยอมรับด้วยว่าการเลือกปฏิบัติต่อบุคคลใดๆ บนพื้นฐาน
+ของความพิการเป็นการละเมิดศักดิ์ศรีและคุณค่าที่มีมาแต่กำเนิดของมนุษย์
+(ไอ)ยอมรับต่อไปถึงความหลากหลายของคนพิการ
+(เจ)ยอมรับถึงความต้องการจำเป็นที่จะส่งเสริมและคุ้มครอง
+สิทธิมนุษยชนของคนพิการทุกคน รวมทั้งผู้ซึ่งต้องได้รับการสนับสนุน
+เป็นพิเศษเพิ่มขึ้น
+(เค)มีความห่วงใยว่าแม้จะมีตราสารหรือการดำเนินการต่างๆ
+เหล่านี้แล้ว คนพิการยังคงเผชิญกับอุปสรรคในการมีส่วนร่วมในฐานะ
+สมาชิกที่เท่าเทียมกันในสังคม และการละเมิดสิทธิมนุษยชนของตน
+ในทุกหนแห่งในโลก
+at the national, regional and international levels to further
+equalize opportunities for persons with disabilities,
+(g) Emphasizing the importance of mainstreaming
+disability issues as an integral part of relevant strategies of
+sustainable development,
+(h) Recognizing also that discrimination against any
+person on the basis of disability is a violation of the inherent
+dignity and worth of the human person,
+(i) Recognizing further the diversity of persons with
+disabilities,
+(j) Recognizing the need to promote and protect the
+human rights of all persons with disabilities, including those
+who require more intensive support,
+(k) Concerned that, despite these various instruments
+and undertakings, persons with disabilities continue to face
+barriers in their participation as equal members of society and
+violations of their human rights in all parts of the world,
+
+## หน้าอ้างอิง 7
+
+13 12Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(l) Recognizing the importance of international
+cooperation for improving the living conditions of persons
+with disabilities in every country, particularly in developing
+countries,
+(m) Recognizing the valued existing and potential
+contributions made by persons with disabilities to the
+overall well-being and diversity of their communities, and
+that the promotion of the full enjoyment by persons with
+disabilities of their human rights and fundamental freedoms
+and of full participation by persons with disabilities will result
+in their enhanced sense of belonging and in significant
+advances in the human, social and economic development
+of society and the eradication of poverty,
+(n) Recognizing the importance for persons with
+disabilities of their individual autonomy and independence,
+including the freedom to make their own choices,
+(o) Considering that persons with disabilities should
+have the opportunity to be actively involved in decision-making
+processes about policies and programmes, including those
+directly concerning them,
+(แอล)ยอมรับถึงความสำคัญของความร่วมมือระหว่างประเทศ
+เพื่อปรับปรุงสภาพความเป็นอยู่ของคนพิการในทุกประเทศ โดยเฉพาะ
+อย่างยิ่งในประเทศกำลังพัฒนา
+(เอ็ม)ยอมรับถึงการมีส่วนช่วยอันทรงคุณค่าของคนพิการ
+ที่มีอยู่และอาจมีขึ้นในความเป็นอยู่ที่ดีโดยรวมและความหลากหลาย
+ของชุมชน และยอมรับว่าการส่งเสริมให้คนพิการได้อุปโภคสิทธิมนุษยชน
+และเสรีภาพขั้นพื้นฐานของตนและมีส่วนร่วมอย่างเต็มที่ จะส่งผลให้
+เกิดความรู้สึกถึงความเป็นเจ้าของที่เพิ่มขึ้น และความก้าวหน้าที่สำคัญ
+ในการพัฒนาสังคมด้านมนุษย์ สังคม และเศรษฐกิจ และการขจัด
+ความยากจน
+(เอ็น)ยอมรับถึงความสำคัญที่คนพิการจะอยู่ได้ด้วยตนเอง
+และเป็นอิสระ รวมทั้งเสรีภาพในการเลือกแนวทางของตนเอง
+(โอ)พิจารณาว่าคนพิการควรมีโอกาสได้มีส่วนร่วมอย่างแข็งขัน
+ในกระบวนการตัดสินใจเกี่ยวกับนโยบายและโครงการต่างๆ รวมถึง
+นโยบายและโปรแกรมที่เกี่ยวข้องโดยตรงกับตน
+
+## หน้าอ้างอิง 8
+
+15 14Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(p) Concerned about the difficult conditions faced by
+persons with disabilities who are subject to multiple or
+aggravated forms of discrimination on the basis of race,
+colour, sex, language, religion, political or other opinion,
+national, ethnic, indigenous or social origin, property, birth,
+age or other status,
+(q) Recognizing that women and girls with disabilities
+are often at greater risk, both within and outside the home of
+violence, injury or abuse, neglect or negligent treatment,
+maltreatment or exploitation,
+(r) Recognizing that children with disabilities should
+have full enjoyment of all human rights and fundamental
+freedoms on an equal basis with other children, and recalling
+obligations to that end undertaken by States Parties to the
+Convention on the Rights of the Child,
+(s) Emphasizing the need to incorporate a gender
+perspective in all efforts to promote the full enjoyment of
+human rights and fundamental freedoms by persons with
+disabilities,
+(พี)มีความห่วงใยเกี่ยวกับสภาพความยากลำบากที่เผชิญอยู่
+โดยคนพิการ ซึ่งตกอยู่ภายใต้การเลือกปฏิบัติอย่างทวีคูณในรูปแบบ
+ที่หลากหลาย หรือมีความรุนแรงบนพื้นฐานของเชื้อชาติ สีผิว เพศ
+ภาษา ศาสนา ความคิดเห็นทางการเมืองหรืออื่นๆ ชาติกำเนิด ชาติพันธุ์
+ความเป็นชนพื้นเมืองหรือสังคมดั้งเดิม ทรัพย์สิน การเกิด อายุหรือ
+สถานภาพอื่น
+(คิว)ยอมรับว่าสตรีและเด็กหญิงพิการมักมีความเสี่ยงมากกว่า
+ทั้งในและนอกเคหสถาน ที่จะถูกกระทำความรุนแรง ทำร้ายหรือข่มเหง
+ทอดทิ้ง หรือปฏิบัติอย่างละเลย ปฏิบัติอย่างไม่เหมาะสมหรือแสวงหา
+ประโยชน์โดยมิชอบ
+(อาร์)ยอมรับว่าเด็กพิการควรได้อุปโภคสิทธิมนุษยชนและ
+เสรีภาพขั้นพื้นฐานทั้งปวงอย่างเต็มที่ บนพื้นฐานที่เท่าเทียมกันกับ
+เด็กอื่นๆ และระลึกถึงการดำเนินการตามพันธกรณีในเรื่องนี้ของรัฐภาคี
+อนุสัญญาว่าด้วยสิทธิเด็ก
+(เอส) เน้นย้ำถึงความต้องการจำเป็นที่จะรวมมุมมองทางเพศ
+สภาพไว้ในความพยายามทั้งปวงที่จะส่งเสริมให้คนพิการได้อุปโภค
+สิทธิมนุษยชนและเสรีภาพขั้นพื้นฐานอย่างเต็มที่
+
+## หน้าอ้างอิง 9
+
+17 16Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(t) Highlighting the fact that the majority of persons
+with disabilities live in conditions of poverty, and in this
+regard recognizing the critical need to address the negative
+impact of poverty on persons with disabilities,
+(u) Bearing in mind that conditions of peace and
+security based on full respect for the purposes and principles
+contained in the Charter of the United Nations and observance
+of applicable human rights instruments are indispensable
+for the full protection of persons with disabilities, in particular
+during armed conflicts and foreign occupation,
+(v) Recognizing the importance of accessibility to the
+physical, social, economic and cultural environment, to health
+and education and to information and communication, in
+enabling persons with disabilities to fully enjoy all human rights
+and fundamental freedoms,
+(w) Realizing that the individual, having duties to other
+individuals and to the community to which he or she belongs,
+is under a responsibility to strive for the promotion and
+observance of the rights recognized in the International Bill
+of Human Rights,
+(ที)เน้นข้อเท็จจริงที่ว่าคนพิการส่วนใหญ่มีสภาพความเป็นอยู่
+ที่ยากจนและในการนี้จึงยอมรับถึงความต้องการจำเป็นอย่างยิ่งยวด
+ในการแก้ไขผลกระทบเชิงลบของความยากจนที่มีต่อคนพิการ
+(ยู)คำนึงว่าเงื่อนไขของสันติภาพและความมั่นคงซึ่งตั้งอยู่
+บนพื้นฐานของการเคารพต่อความมุ่งประสงค์และหลักการในกฎบัตร
+สหประชาชาติ และการปฏิบัติตามตราสารต่างๆ ด้านสิทธิมนุษยชน
+ที่เกี่ยวข้องเป็นสิ่งที่จำเป็นอย่างยิ่งในการคุ้มครองคนพิการอย่างเต็มที่
+โดยเฉพาะในท่ามกลางความขัดแย้งทางอาวุธและการยึดครองของ
+ต่างชาติ
+(วี)ยอมรับถึงความสำคัญของความสามารถในการเข้าถึง
+สภาพแวดล้อมทางกายภาพ สังคม เศรษฐกิจ และวัฒนธรรม สาธารณสุข
+และการศึกษา และสารสนเทศและการสื่อสาร ซึ่งจะทำให้คนพิการ
+ได้อุปโภคสิทธิมนุษยชนและเสรีภาพขั้นพื้นฐานทั้งปวงได้อย่างเต็มที่
+(ดับเบิลยู) ตระหนักว่าปัจเจกชนผู้มีหน้าที่ต่อปัจเจกชนอื่น
+และต่อชุมชนของตนมีความรับผิดชอบที่จะเพียรพยายามในการส่งเสริม
+และการปฏิบัติตามสิทธิที่ได้รับการรับรองไว้ในกฎหมายระหว่างประเทศ
+ว่าด้วยสิทธิมนุษยชน
+
+## หน้าอ้างอิง 10
+
+19 18Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(เอกซ์)เชื่อมั่นว่าครอบครัวเป็นหน่วยรวมของสังคมซึ่งเป็น
+พื้นฐานและเป็นธรรมชาติและมีสิทธิได้รับการคุ้มครองจากสังคมและรัฐ
+และคนพิการรวมทั้งสมาชิกในครอบครัวควรได้รับการคุ้มครองและช่วยเหลือ
+ที่จำเป็นเพื่อให้ครอบครัวมีส่วนช่วยให้คนพิการได้อุปโภคสิทธิอย่างเต็มที่
+และเท่าเทียม
+(วาย)เชื่อมั่นว่าอนุสัญญาระหว่างประเทศที่มีเนื้อหาที่ครอบคลุม
+และครบถ้วนในการส่งเสริมและคุ้มครองสิทธิและศักดิ์ศรีของคนพิการ
+จะมีส่วนช่วยอย่างสำคัญในการแก้ไขความเสียเปรียบอย่างยิ่งทางสังคม
+ของคนพิการ และส่งเสริมการมีส่วนร่วมของคนพิการด้านความเป็น
+พลเมือง การเมือง เศรษฐกิจ สังคม และวัฒนธรรม ด้วยโอกาสที่เท่าเทียม
+ทั้งในประเทศกำลังพัฒนาและประเทศพัฒนาแล้ว
+ได้ตกลงกัน ดังนี้
+(x) Convinced that the family is the natural and
+fundamental group unit of society and is entitled to protection
+by society and the State, and that persons with disabilities
+and their family members should receive the necessary
+protection and assistance to enable families to contribute
+towards the full and equal enjoyment of the rights of persons
+with disabilities,
+(y) Convinced that a comprehensive and integral
+international convention to promote and protect the rights
+and dignity of persons with disabilities will make a significant
+contribution to redressing the profound social disadvantage
+of persons with disabilities and promote their participation
+in the civil, political, economic, social and cultural spheres
+with equal opportunities, in both developing and developed
+countries,
+Have agreed as follows:
+
+## หน้าอ้างอิง 11
+
+21 20Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ข้อ 1
+ความมุ่งประสงค์
+อนุสัญญานี้มีความมุ่งประสงค์เพื่อส่งเสริม คุ้มครองและประกัน
+ให้คนพิการทั้งปวง ได้อุปโภคสิทธิมนุษยชนและเสรีภาพขั้นพื้นฐาน
+ทั้งปวงอย่างเต็มที่และเท่าเทียมกัน และส่งเสริมการเคารพในศักดิ์ศรี
+ที่มีมาแต่กำเนิด
+คนพิการ หมายความรวมถึง บุคคลที่มีความบกพร่องทางร่างกาย
+จิตใจ สติปัญญา หรือทางประสาทสัมผัสในระยะยาว ซึ่งเมื่อมีปฏิสัมพันธ์
+กับอุปสรรคนานัปการ จะกีดขวางการมีส่วนร่วมในสังคมอย่างเต็มที่
+และมีประสิทธิผลบนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+ข้อ 2
+นิยาม
+เพื่อความมุ่งประสงค์ของอนุสัญญานี้
+“การสื่อสาร” หมายความรวมถึงการสื่อสารด้วยภาษา การแสดง
+ข้อความ อักษรเบรลล์ การสื่อสารด้วยการสัมผัส ตัวพิมพ์ขนาดใหญ่
+สื่อผสมที่สามารถเข้าถึงได้ ตลอดจนสื่อที่เป็นลายลักษณ์อักษร สื่อเสียง
+ภาษาที่เข้าใจง่าย ผู้อ่าน และช่องทาง วิธีการ และรูปแบบการสื่อสาร
+ทางเลือกและการสื่อสารเสริมรวมถึงเทคโนโลยีสารสนเทศและการสื่อสาร
+ที่สามารถเข้าถึงได้
+Article 1
+Purpose
+The purpose of the present Convention is to promote,
+protect and ensure the full and equal enjoyment of all human
+rights and fundamental freedoms by all persons with
+disabilities, and to promote respect for their inherent dignity.
+Persons with disabilities include those who have
+long-term physical, mental, intellectual or sensory impairments
+which in interaction with various barriers may hinder their
+full and effective participation in society on an equal basis
+with others
+Article 2
+Definitions
+For the purposes of the present Convention:
+“Communication” includes languages, display of text,
+Braille, tactile communication, large print, accessible multimedia
+as well as written, audio, plain-language, human-reader and
+augmentative and alternative modes, means and formats of
+communication, including accessible information and
+communication technology;
+
+## หน้าอ้างอิง 12
+
+23 22Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+“ภาษา” หมายความรวมถึงภาษาพูด ภาษามือ และรูปแบบอื่นๆ
+ของภาษาที่ไม่ใช้เสียงพูด
+“การเลือกปฏิบัติเพราะเหตุแห่งความพิการ” หมายถึงความ
+แตกต่าง การกีดกัน หรือการจำกัดบนพื้นฐานของความพิการซึ่งมี
+ความมุ่งประสงค์หรือส่งผลให้เป็นการเสื่อมเสียหรือทำให้ไร้ผลซึ่งการ
+ยอมรับ การอุปโภคหรือการใช้สิทธิมนุษยชนและเสรีภาพขั้นพื้นฐาน
+ทั้งปวงบนพื้นฐานที่เท่าเทียมกับบุคคลอื่นในด้านการเมือง เศรษฐกิจ
+สังคม วัฒนธรรม ความเป็นพลเมืองหรือด้านอื่น รวมถึงการเลือก
+ปฏิบัติในทุกรูปแบบ รวมทั้งการปฏิเสธการช่วยเหลือที่สมเหตุสมผล
+“การช่วยเหลือที่สมเหตุสมผล” หมายถึง การเปลี่ยนแปลงหรือ
+ปรับปรุงที่จำเป็นและเหมาะสมโดยไม่ก่อให้เกิดภาระอันเกินควรหรือเกิน
+สัดส่วน เฉพาะในกรณีที่จำเป็น เพื่อประกันว่าคนพิการได้อุปโภค
+และใช้สิทธิมนุษยชนและเสรีภาพขั้นพื้นฐานทั้งปวงที่เท่าเทียม
+กับบุคคลอื่น
+“การออกแบบที่เป็นสากล” หมายถึงการออกแบบผลิตภัณฑ์
+สภาพแวดล้อม โปรแกรม และบริการที่ทุกคนสามารถใช้ได้ ในขอบเขต
+มากที่สุดเท่าที่จะเป็นไปได้โดยไม่จำเป็นต้องดัดแปลง หรือออกแบบ
+เป็นพิเศษ ทั้งนี้ ในกรณีที่มีความต้องการจำเป็น “การออกแบบ
+“Language” includes spoken and signed languages and
+other forms of non spoken languages;
+“Discrimination on the basis of disability” means any
+distinction, exclusion or restriction on the basis of disability
+which has the purpose or effect of impairing or nullifying the
+recognition, enjoyment or exercise, on an equal basis with
+others, of all human rights and fundamental freedoms in the
+political, economic, social, cultural, civil or any other field.
+It includes all forms of discrimination, including denial of
+reasonable accommodation;
+“Reasonable accommodation” means necessary and
+appropriate modification and adjustments not imposing a
+disproportionate or undue burden, where needed in a
+particular case, to ensure to persons with disabilities the
+enjoyment or exercise on an equal basis with others of all
+human rights and fundamental freedoms;
+“Universal design” means the design of products,
+environments, programmes and services to be usable by all
+people, to the greatest extent possible, without the need for
+adaptation or specialized design. “Universal design” shall not
+
+## หน้าอ้างอิง 13
+
+25 24Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ที่เป็นสากล” จะต้องไม่กันออกไปซึ่งอุปกรณ์เครื่องช่วยคนพิการ
+เฉพาะกลุ่ม
+ข้อ 3
+หลักการทั่วไป
+หลักการของอนุสัญญานี้ มีดังนี้
+(เอ)การเคารพในศักดิ์ศรีที่มีมาแต่กำเนิด การอยู่ได้ด้วยตนเอง
+รวมถึงเสรีภาพในการตัดสินใจเลือกด้วยตนเอง และความเป็นอิสระ
+ของบุคคล
+(บี)การไม่เลือกปฏิบัติ
+(ซี)การเข้ามีส่วนร่วมและเข้าร่วมได้อย่างเต็มที่และมีประสิทธิผล
+ในสังคม
+(ดี)การเคารพความแตกต่างและการยอมรับว่าคนพิการ
+เป็นส่วนหนึ่งของความหลากหลายของมนุษย์และมนุษยชาติ
+(อี)ความเท่าเทียมกันของโอกาส
+(เอฟ)ความสามารถในการเข้าถึง
+(จี)ความเท่าเทียมกันระหว่างชายกับหญิง
+exclude assistive devices for particular groups of persons with
+disabilities where this is needed.
+Article 3
+General principles
+The principles of the present Convention shall be:
+(a) Respect for inherent dignity, individual autonomy
+including the freedom to make one’s own choices, and
+independence of persons;
+(b) Non-discrimination;
+(c) Full and effective participation and inclusion in
+society;
+(d) Respect for difference and acceptance of persons
+with disabilities as part of human diversity and humanity;
+(e) Equality of opportunity
+(f) Accessibility;
+(g) Equality between men and women;
+
+## หน้าอ้างอิง 14
+
+27 26Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(เอช)การเคารพขีดความสามารถของเด็กพิการที่มีพัฒนาการ
+อย่างต่อเนื่องและการเคารพสิทธิของเด็กพิการเพื่อสงวนรักษาอัตลักษณ์
+แห่งตน
+ข้อ 4
+พันธกรณีทั่วไป
+1.รัฐภาคีรับที่จะประกันและส่งเสริมในการทำให้สิทธิมนุษยชน
+และเสรีภาพขั้นพื้นฐานของคนพิการทั้งปวงกลายเป็นจริงอย่างเต็มที่
+โดยปราศจากการเลือกปฏิบัติในรูปแบบใดๆ บนพื้นฐานจากความพิการ
+เพื่อการนี้ รัฐภาคีรับที่จะดำเนินการ
+(เอ)ออกมาตรการทางกฎหมาย ทางปกครองและมาตรการอื่นๆ
+ที่เหมาะสมทั้งปวงเพื่อให้มีการปฏิบัติตามสิทธิที่รับรองไว้ในอนุสัญญานี้
+(บี)ดำเนินมาตรการที่เหมาะสมทั้งปวง รวมทั้งการออกกฎหมาย
+เพื่อแก้ไขหรือยกเลิกกฎหมาย กฎระเบียบ จารีตประเพณีและทางปฏิบัติ
+ที่มีอยู่ซึ่งก่อให้เกิดการเลือกปฏิบัติต่อคนพิการ
+(ซี)คำนึงถึงการคุ้มครองและส่งเสริมสิทธิมนุษยชนของ
+คนพิการในนโยบายและแผนงานทั้งปวง
+(h) Respect for the evolving capacities of children
+with disabilities and respect for the right of children with
+disabilities to preserve their identities.
+Article 4
+General obligations
+1. States Parties undertake to ensure and promote the full
+realization of all human rights and fundamental freedoms for
+all persons with disabilities without discrimination of any kind
+on the basis of disability. To this end, States Parties undertake
+(a) To adopt all appropriate legislative, administrative
+and other measures for the implementation of the rights
+recognized in the present Convention;
+(b) To take all appropriate measures, including legislation,
+to modify or abolish existing laws, regulations, customs and
+practices that constitute discrimination against persons with
+disabilities;
+(c) To take into account the protection and promotion of
+the human rights of persons with disabilities in all policies and
+programmers;
+
+## หน้าอ้างอิง 15
+
+29 28Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(ดี)ละเว้นไม่เข้าร่วมในการกระทำหรือทางปฏิบัติใดๆ
+อันไม่สอดคล้องกับอนุสัญญานี้ และประกันว่าหน่วยงานและสถาบัน
+ของรัฐจะกระทำการโดยสอดคล้องกับอนุสัญญานี้
+(อี)ดำเนินมาตรการที่เหมาะสมทั้งปวงเพื่อขจัดการเลือกปฏิบัติ
+เพราะเหตุแห่งความพิการโดยบุคคล องค์การหรือวิสาหกิจเอกชนใดๆ
+(เอฟ)รับที่จะดำเนินการหรือส่งเสริมการวิจัยและพัฒนาสินค้า
+บริการ เครื่องมือและสิ่งอำนวยความสะดวกที่ออกแบบอย่างเป็นสากล
+ตามที่กำหนดไว้ในข้อ 2 ของอนุสัญญานี้ โดยควรให้มีการดัดแปลง
+น้อยที่สุดและค่าใช้จ่ายต่ำที่สุดเท่าที่จะเป็นไปได้เพื่อให้ตรงกับความ
+ต้องการจำเป็นพิเศษของคนพิการ เพื่อส่งเสริมการจัดให้มีและ
+ใช้ประโยชน์ และเพื่อส่งเสริมการออกแบบที่เป็นสากลในการพัฒนา
+มาตรฐานและแนวทาง
+(จี)รับที่จะดำเนินการหรือส่งเสริมการวิจัยและการพัฒนา
+และส่งเสริมการจัดให้มีและการใช้เทคโนโลยีใหม่รวมถึงเทคโนโลยี
+สารสนเทศและการสื่อสาร เครื่องช่วยในการเคลื่อนไหว อุปกรณ์
+และเทคโนโลยีสิ่งอำนวยความสะดวกที่เหมาะสมต่อคนพิการ ทั้งนี้
+ให้ความสำคัญเป็นลำดับแรกกับเทคโนโลยีในราคาที่คนพิการสามารถ
+จ่ายได้
+(d) To refrain from engaging in any act or practice that
+is inconsistent with the present Convention and to ensure
+that public authorities and institutions act in conformity with
+the present Convention;
+(e) To take all appropriate measures to eliminate
+discrimination on the basis of disability by any person,
+organization or private enterprise;
+(f) To undertake or promote research and development
+of universally designed goods, services, equipment and
+facilities, as defined in article 2 of the present Convention,
+which should require the minimum possible adaptation and
+the least cost to meet the specific needs of a person with
+disabilities, to promote their availability and use, and to promote
+universal design in the development of standards and guidelines;
+(g) To undertake or promote research and development
+of, and to promote the availability and use of new technologies,
+including information and communications technologies,
+mobility aids, devices and assistive technologies, suitable for
+persons with disabilities, giving priority to technologies at an
+affordable cost;
+
+## หน้าอ้างอิง 16
+
+31 30Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(เอช)จัดให้มีสารสนเทศที่สามารถเข้าถึงได้แก่คนพิการเกี่ยวกับ
+เครื่องช่วยในการเคลื่อนไหว เครื่องมือ เทคโนโลยีสิ่งอำนวยความสะดวก
+รวมทั้งเทคโนโลยีใหม่ ตลอดจนความช่วยเหลือ บริการสนับสนุน
+และสิ่งอำนวยความสะดวกในรูปแบบอื่น
+(ไอ)ส่งเสริมการฝึกอบรมผู้ประกอบวิชาชีพและบุคลากรที่ทำงาน
+เกี่ยวกับคนพิการให้ทราบถึงสิทธิที่รับรองไว้ในอนุสัญญานี้ เพื่อให้
+ความช่วยเหลือและบริการตามที่ประกันไว้โดยสิทธิเหล่านั้นได้ดียิ่งขึ้น
+2.รัฐภาคีแต่ละรัฐรับที่จะดำเนินมาตรการ เกี่ยวกับสิทธิด้านเศรษฐกิจ
+สังคมและวัฒนธรรมโดยใช้ประโยชน์สูงสุดจากทรัพยากรที่มีอยู่ของตน
+และหากจำเป็น ภายใต้กรอบของความร่วมมือระหว่างประเทศ
+เพื่อให้สัมฤทธิ์ผลในการทำให้สิทธิเหล่านี้กลายเป็นจริงอย่างเต็มที่
+โดยลำดับโดยไม่กระทบต่อพันธกรณีที่ระบุไว้ในอนุสัญญานี้ซึ่งมีผล
+ใช้บังคับทันทีตามกฎหมายระหว่างประเทศ
+3.ในการพัฒนาและตามกฎหมายและนโยบายเพื่ออนุวัติอนุสัญญานี้
+และในกระบวนการตัดสินใจอื่นที่เกี่ยวกับประเด็นคนพิการ ให้รัฐภาคี
+หารือกับคนพิการอย่างใกล้ชิด และให้คนพิการ รวมทั้งให้เด็กพิการ
+ได้มีส่วนร่วมอย่างแข็งขันผ่านทางองค์การที่เป็นผู้แทนของตน
+(h) To provide accessible information to persons
+with disabilities about mobility aids, devices and assistive
+technologies, including new technologies, as well as other
+forms of assistance, support services and facilities;
+(i) To promote the training of professionals and
+staff working with persons with disabilities in the rights
+recognized in this Convention so as to better provide the
+assistance and services guaranteed by those rights.
+2. With regard to economic, social and cultural rights, each
+State Party undertakes to take measures to the maximum
+of its available resources and, where needed, within the
+framework of international cooperation, with a view to
+achieving progressively the full realization of these rights,
+without prejudice to those obligations contained in the present
+Convention that are immediately applicable according to
+international law.
+3. In the development and implementation of legislation and
+policies to implement the present Convention, and in other
+decision-making processes concerning issues relating to
+persons with disabilities, States Parties shall closely consult
+
+## หน้าอ้างอิง 17
+
+33 32Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+4.อนุสัญญานี้จะไม่มีผลกระทบต่อบทบัญญัติใดๆ ที่เป็นประโยชน์
+ยิ่งกว่าในการทำให้สิทธิของคนพิการกลายเป็นจริง และที่ได้ระบุไว้
+ในกฎหมายของรัฐภาคีหรือกฎหมายระหว่างประเทศที่มีผลบังคับใช้
+ต่อรัฐนั้น ทั้งนี้ จะห้ามจำกัดหรือลิดรอนสิทธิมนุษยชนและเสรีภาพ
+ขั้นพื้นฐานใดๆ ที่ได้รับการยอมรับหรือที่มีอยู่แล้วในรัฐภาคีของ
+อนุสัญญานี้ตามกฎหมาย อนุสัญญา กฎระเบียบหรือจารีตประเพณี
+โดยอ้างว่าอนุสัญญานี้ไม่รับรองสิทธิหรือเสรีภาพดังกล่าวหรือรับรองสิทธิ
+หรือเสรีภาพนั้นในขอบเขตที่ด้อยกว่า
+5.ให้บทบัญญัติของอนุสัญญานี้ครอบคลุมถึงทุกส่วนของสหพันธรัฐ
+โดยปราศจากข้อจำกัดหรือข้อยกเว้นใดๆ
+ข้อ 5
+ความเท่าเทียมกันและการไม่เลือกปฏิบัติ
+1.รัฐภาคียอมรับว่าทุกคนมีความเท่าเทียมกันเบื้องหน้าและภายใต้
+กฎหมายและมีสิทธิที่จะได้รับความคุ้มครองและสิทธิประโยชน์ที่เท่าเทียมกัน
+ตามกฎหมายโดยปราศจากการเลือกปฏิบัติใดๆ
+with and actively involve persons with disabilities, including
+children with disabilities, through their representative organizations.
+4. Nothing in the present Convention shall affect any
+provisions which are more conducive to the realization of
+the rights of persons with disabilities and which may be
+contained in the law of a State Party or international law in
+force for that State. There shall be no restriction upon or
+derogation from any of the human rights and fundamental
+freedoms recognized or existing in any State Party to
+the present Convention pursuant to law, conventions,
+regulation or custom on the pretext that the present
+Convention does not recognize such rights or freedoms or
+that it recognizes them to a lesser extent.
+5. The provisions of the present Convention shall extend to all
+parts of federal states without any limitations or exceptions.
+Article 5
+Equality and non-discrimination
+1. States Parties recognize that all persons are equal before
+and under the law and are entitled without any discrimination
+to the equal protection and equal benefit of the law.
+
+## หน้าอ้างอิง 18
+
+35 34Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+2.ให้รัฐภาคีห้ามการเลือกปฏิบัติทั้งปวงเพราะเหตุแห่งความพิการ
+และประกันให้คนพิการได้รับความคุ้มครองตามกฎหมายอย่างเท่าเทียม
+และมีประสิทธิผลจากการเลือกปฏิบัติด้วยเหตุทั้งปวง
+3.เพื่อเป็นการส่งเสริมความเท่าเทียมกันและขจัดการเลือกปฏิบัติ
+ให้รัฐภาคีดำเนินขั้นตอนที่เหมาะสมทั้งปวงเพื่อประกันว่าจะจัดให้มี
+การช่วยเหลือที่สมเหตุสมผล
+4.มาตรการเฉพาะซึ่งจำเป็นในการเร่งหรือเพื่อให้บรรลุถึงความ
+เท่าเทียมกันในทางปฏิบัติแก่คนพิการต้องไม่ถือเป็นการเลือกปฏิบัติ
+ภายใต้เงื่อนไขของอนุสัญญานี้
+ข้อ 6
+สตรีพิการ
+1.รัฐภาคียอมรับว่าสตรีและเด็กหญิงพิการนั้นตกอยู่ภายใต้การเลือก
+ปฏิบัติอย่างทวีคูณ  และในการนี้  รัฐภาคีต้องดำเนินมาตรการ
+เพื่อประกันว่าสตรีและเด็กหญิงพิการจะได้อุปโภคสิทธิมนุษยชน
+และเสรีภาพขั้นพื้นฐานทั้งปวงอย่างเต็มที่และโดยเท่าเทียมกัน
+2. States Parties shall prohibit all discrimination on the basis
+of disability and guarantee to persons with disabilities equal
+and effective legal protection against discrimination on all
+grounds.
+3. In order to promote equality and eliminate discrimination,
+States Parties shall take all appropriate steps to ensure that
+reasonable accommodation is provided.
+4. Specific measures which are necessary to accelerate or
+achieve de facto equality of persons with disabilities shall not
+be considered discrimination under the terms of the present
+Convention.
+Article 6
+Women with disabilities
+1. States Parties recognize that women and girls with
+disabilities are subject to multiple discrimination, and in this
+regard shall take measures to ensure the full and equal
+enjoyment by them of all human rights and fundamental
+freedoms.
+
+## หน้าอ้างอิง 19
+
+37 36Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+2.ให้รัฐภาคีดำเนินมาตรการที่เหมาะสมทั้งปวงเพื่อประกันให้เกิด
+การพัฒนา ความก้าวหน้าและการเสริมสร้างพลังอำนาจแก่สตรีอย่างเต็มที่
+เพื่อเป็นหลักประกันว่าบุคคลเหล่านี้จะสามารถใช้และอุปโภค
+สิทธิมนุษยชนและเสรีภาพขั้นพื้นฐานตามที่ระบุไว้ในอนุสัญญานี้
+ข้อ 7
+เด็กพิการ
+1.ให้รัฐภาคีดำเนินมาตรการที่จำเป็นทั้งปวงเพื่อประกันว่า เด็กพิการ
+ได้อุปโภคสิทธิมนุษยชนและเสรีภาพขั้นพื้นฐานทั้งปวงอย่างเต็มที่
+บนพื้นฐานที่เท่าเทียมกับเด็กอื่น
+2.ในการดำเนินการทั้งปวงที่เกี่ยวกับเด็กพิการ ประโยชน์สูงสุด
+ของเด็กเป็นสิ่งที่ต้องคำนึงถึงเป็นลำดับแรก
+3.ให้รัฐภาคีประกันว่าเด็กพิการมีสิทธิในการแสดงความคิดเห็น
+โดยเสรีในทุกเรื่องที่มีผลกระทบต่อตน ทั้งนี้ความคิดเห็นดังกล่าวของเด็ก
+จะได้รับการพิจารณาตามสมควรแก่อายุและวุฒิภาวะของเด็กนั้น
+บนพื้นฐานที่เท่าเทียมกับเด็กอื่น และได้รับความช่วยเหลือ ที่เหมาะสม
+กับวัยและความพิการ เพื่อให้การใช้สิทธิดังกล่าวบังเกิดผล
+2. States Parties shall take all appropriate measures to ensure
+the full development, advancement and empowerment of
+women, for the purpose of guaranteeing them the exercise
+and enjoyment of the human rights and fundamental freedoms
+set out in the present Convention.
+Article 7
+Children with disabilities
+1. States Parties shall take all necessary measures to ensure
+the full enjoyment by children with disabilities of all human
+rights and fundamental freedoms on an equal basis with other
+children.
+2. In all actions concerning children with disabilities, the best
+interests of the child shall be a primary consideration.
+3. States Parties shall ensure that children with disabilities
+have the right to express their views freely on all matters
+affecting them, their views being given due weight in
+accordance with their age and maturity, on an equal basis
+with other children, and to be provided with disability and
+age-appropriate assistance to realize that right.
+
+## หน้าอ้างอิง 20
+
+39 38Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ข้อ 8
+การสร้างความตระหนัก
+1.ให้รัฐภาคีดำเนินมาตรการที่มีประสิทธิผล เหมาะสม และมีผลทันที
+เพื่อ
+(เอ)สร้างความตระหนักเกี่ยวกับคนพิการให้มีขึ้นในสังคม รวมทั้ง
+ในระดับครอบครัว และเสริมสร้างการเคารพสิทธิและศักดิ์ศรีของคนพิการ
+(บี)ต่อสู้กับเจตคติแบบเก่า อคติและการปฏิบัติที่เป็นภัย
+ต่อคนพิการซึ่งรวมถึงเจตคติ อคติและการปฏิบัติบนพื้นฐานของเพศ
+และวัยในทุกด้านของการดำเนินชีวิต
+(ซี)ส่งเสริมการตระหนักถึงความสามารถและการมีส่วนสนับสนุน
+ของคนพิการต่อสังคม
+2.มาตรการเพื่อการนี้รวมถึง
+(เอ)ริเริ่มและคงไว้ซึ่งการรณรงค์สร้างความตระหนักแก่
+สาธารณะที่มีประสิทธิผล เพื่อ
+(1)ปลูกฝังการยอมรับในสิทธิของคนพิการ
+Article 8
+Awareness-raising
+1. States Parties undertake to adopt immediate, effective and
+appropriate measures:
+(a) To raise awareness throughout society, including at
+the family level, regarding persons with disabilities, and to
+foster respect for the rights and dignity of persons with
+disabilities;
+(b) To combat stereotypes, prejudices and harmful
+practices relating to persons with disabilities, including those
+based on sex and age, in all areas of life;
+(c) To promote awareness of the capabilities and
+contributions of persons with disabilities.
+2. Measures to this end include:
+(a) Initiating and maintaining effective public awareness
+campaigns designed:
+(i) To nurture receptiveness to the rights of persons
+with disabilities;
+
+## หน้าอ้างอิง 21
+
+41 40Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(2)ส่งเสริมทัศนคติเชิงบวกและเพิ่มความตระหนักทางสังคม
+ต่อคนพิการ
+(3)ส่งเสริมการยอมรับทักษะ ข้อดีและความสามารถของ
+คนพิการและการยอมรับการมีส่วนสนับสนุนของคนพิการต่อสถานที่ทำงาน
+และตลาดแรงงาน
+(บี)เสริมสร้างเจตคติในการเคารพสิทธิของคนพิการในทุกระดับ
+การศึกษา รวมทั้งในเด็กตั้งแต่วัยเยาว์
+(ซี)สนับสนุนให้องค์กรสื่อทั้งปวงเสนอภาพลักษณ์ของคนพิการ
+ในลักษณะที่สอดคล้องกับความมุ่งประสงค์ของอนุสัญญานี้
+(ดี)ส่งเสริมโปรแกรมการฝึกอบรมสร้างความตระหนักเกี่ยวกับ
+คนพิการและสิทธิของคนพิการ
+(ii) To promote positive perceptions and greater social
+awareness towards persons with disabilities;
+(iii) To promote recognition of the skills, merits and
+abilities of persons with disabilities, and of their contributions
+to the workplace and the labour market;
+(b) Fostering at all levels of the education system,
+including in all children from an early age, an attitude of
+respect for the rights of persons with disabilities;
+(c) Encouraging all organs of the media to portray
+persons with disabilities in a manner consistent with the
+purpose of the present Convention;
+(d) Promoting awareness-training programmes
+regarding persons with disabilities and the rights of persons
+with disabilities.
+
+## หน้าอ้างอิง 22
+
+43 42Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ข้อ 9
+ความสามารถในการเข้าถึง
+1.เพื่อให้คนพิการดำรงชีวิตอยู่ได้โดยอิสระและมีส่วนร่วมอย่างเต็มที่
+ในทุกด้านของการดำเนินชีวิต รัฐภาคีจะดำเนินมาตรการที่เหมาะสม
+ที่จะให้คนพิการสามารถเข้าถึงสภาพแวดล้อมทางกายภาพ การขนส่ง
+สารสนเทศและการสื่อสาร รวมทั้งเทคโนโลยีและระบบสารสนเทศ
+และการสื่อสาร และสิ่งอำนวยความสะดวก รวมถึงบริการอื่นที่เปิดหรือ
+ที่จัดให้แก่สาธารณะ ทั้งในเมืองและในชนบท ทั้งนี้บนพื้นฐาน
+ที่เท่าเทียมกับบุคคลอื่น มาตรการเหล่านี้ ซึ่งรวมถึงการบ่งชี้ และการขจัด
+อุปสรรคและข้อกีดกันต่อความสามารถในการเข้าถึง ซึ่งจะใช้บังคับกับ
+(เอ)อาคาร ถนน การขนส่งและสิ่งอำนวยความสะดวกอื่นๆ
+ทั้งภายในและภายนอกสถานที่ รวมถึงโรงเรียน บ้าน สถานบริการ
+ทางการแพทย์ และสถานที่ทำงาน
+(บี)บริการสารสนเทศ การสื่อสาร และบริการอื่นๆ รวมถึงบริการ
+อิเล็กทรอนิกส์และบริการในกรณีฉุกเฉิน
+Article 9
+Accessibility
+1. To enable persons with disabilities to live independently
+and participate fully in all aspects of life, States Parties
+shall take appropriate measures to ensure to persons with
+disabilities access, on an equal basis with others, to the
+physical environment, to transportation, to information and
+communications, including information and communications
+technologies and systems, and to other facilities and services
+open or provided to the public, both in urban and in rural
+areas. These measures, which shall include the identification
+and elimination of obstacles and barriers to accessibility,
+shall apply to, inter alia:
+(a) Buildings, roads, transportation and other indoor
+and outdoor facilities, including schools, housing, medical
+facilities and workplaces;
+(b) Information, communications and other services,
+including electronic services and emergency services.
+
+## หน้าอ้างอิง 23
+
+45 44Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+2.ให้รัฐภาคีดำเนินมาตรการที่เหมาะสมดังนี้
+(เอ)พัฒนา ประกาศใช้ และตรวจสอบติดตามการปฏิบัติ
+ตามมาตรฐานและแนวปฏิบัติขั้นต่ำเพื่อการเข้าถึงสิ่งอำนวยความสะดวก
+และบริการที่เปิดหรือที่จัดให้แก่สาธารณะ
+(บี)ประกันว่าองค์กรภาคเอกชนซึ่งจัดสิ่งอำนวยความสะดวก
+และบริการที่เปิดหรือจัดหาแก่สาธารณะจะคำนึงถึงแง่มุมทุกด้านของ
+การเข้าถึงสิ่งอำนวยความสะดวกและบริการสำหรับคนพิการ
+(ซี)จัดการฝึกอบรมสำหรับผู้มีส่วนได้ส่วนเสียเกี่ยวกับปัญหา
+การเข้าถึงที่คนพิการเผชิญอยู่
+(ดี)จัดให้มี สัญลักษณ์ที่เป็นอักษรเบรลล์ และในรูปแบบ
+ที่อ่านและเข้าใจได้ง่ายไว้ในอาคารและสถานที่ที่เปิดให้แก่สาธารณะ
+(อี)จัดให้มีรูปแบบความช่วยเหลือที่เป็นสิ่งมีชีวิต และเป็น
+สื่อกลาง รวมถึงคนนำทาง ผู้อ่านและล่ามภาษามืออาชีพ เพื่ออำนวย
+ความสะดวกในการเข้าถึงอาคารและสถานที่ที่เปิดให้แก่สาธารณะ
+2. States Parties shall also take appropriate measures to:
+(a) Develop, promulgate and monitor the implementation
+of minimum standards and guidelines for the accessibility of
+facilities and services open or provided to the public;
+(b) Ensure that private entities that offer facilities and
+services which are open or provided to the public take into
+account all aspects of accessibility for persons with disabilities;
+(c) Provide training for stakeholders on accessibility
+issues facing persons with disabilities;
+(d) Provide in buildings and other facilities open to
+the public signage in Braille and in easy to read and
+understand forms;
+(e) Provide forms of live assistance and intermediaries,
+including guides, readers and professional sign language
+interpreters, to facilitate accessibility to buildings and other
+facilities open to the public;
+
+## หน้าอ้างอิง 24
+
+47 46Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(เอฟ)ส่งเสริมรูปแบบที่เหมาะสมอื่นๆ ของความช่วยเหลือ
+และการสนับสนุนแก่คนพิการเพื่อประกันให้คนพิการเข้าถึงสารสนเทศ
+(จี)ส่งเสริมให้คนพิการเข้าถึงเทคโนโลยีและระบบสารสนเทศ
+และการสื่อสารใหม่ๆ รวมถึงอินเตอร์เน็ต
+(เอช)ส่งเสริมการออกแบบ การพัฒนา การผลิตและการจำหน่าย
+เทคโนโลยีและระบบสารสนเทศและการสื่อสารที่สามารถเข้าถึงได้ตั้งแต่
+ระยะแรกเริ่ม เพื่อให้เกิดการเข้าถึงเทคโนโลยีและระบบดังกล่าว
+ด้วยค่าใช้จ่ายที่ต่ำสุด
+ข้อ 10
+สิทธิในชีวิต
+รัฐภาคียืนยันว่ามนุษย์ทุกคนมีสิทธิที่มีมาแต่กำเนิดในการมีชีวิต
+และจะดำเนินมาตรการที่จำเป็นทั้งปวงเพื่อให้คนพิการสามารถอุปโภคสิทธิ
+ดังกล่าวได้อย่างมีประสิทธิผลบนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+(f) Promote other appropriate forms of assistance and
+support to persons with disabilities to ensure their access to
+information;
+(g) Promote access for persons with disabilities to new
+information and communications technologies and systems,
+including the Internet;
+(h) Promote the design, development, production and
+distribution of accessible information and communications
+technologies and systems at an early stage, so that these
+technologies and systems become accessible at minimum cost.
+Article 10
+Right to life
+States Parties reaffirm that every human being has the
+inherent right to life and shall take all necessary measures to
+ensure its effective enjoyment by persons with disabilities
+on an equal basis with others.
+
+## หน้าอ้างอิง 25
+
+49 48Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ข้อ 11
+สถานการณ์ที่มีความเสี่ยงและสถานการณ์ฉุกเฉินทางมนุษยธรรม
+รัฐภาคีจะดำเนินมาตรการที่จำเป็นทั้งปวงเพื่อประกันการคุ้มครอง
+และความปลอดภัยของคนพิการในสถานการณ์ที่มีความเสี่ยง รวมทั้ง
+สถานการณ์ความขัดแย้งทางอาวุธสถานการณ์ฉุกเฉินทางมนุษยธรรม
+และการเกิดขึ้นของภัยพิบัติทางธรรมชาติ ทั้งนี้ ตามพันธกรณี
+ของรัฐภาคีภายใต้กฎหมายระหว่างประเทศ ซึ่งรวมทั้งกฎหมาย
+มนุษยธรรมระหว่างประเทศและกฎหมายสิทธิมนุษยชนระหว่างประเทศ
+ข้อ 12
+การยอมรับอย่างเท่าเทียมกันเบื้องหน้ากฎหมาย
+1.รัฐภาคียืนยันว่าคนพิการมีสิทธิที่จะได้รับการยอมรับว่าเป็นบุคคล
+เบื้องหน้ากฎหมายในทุกแห่งหน
+2.ให้รัฐภาคียอมรับว่าคนพิการอุปโภคความสามารถทางกฎหมาย
+ในทุกด้านของการดำเนินชีวิต บนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+3.ให้รัฐภาคีดำเนินมาตรการที่เหมาะสมในการจัดให้คนพิการเข้าถึง
+การสนับสนุนที่ตนต้องการในการใช้ความสามารถทางกฎหมาย
+Article 11
+Situations of risk and humanitarian emergencies
+States Parties shall take, in accordance with their
+obligations under international law, including international
+humanitarian law and international human rights law, all
+necessary measures to ensure the protection and safety of
+persons with disabilities in situations of risk, including
+situations of armed conflict, humanitarian emergencies
+and the occurrence of natural disasters.
+Article 12
+Equal recognition before the law
+1. States Parties reaffirm that persons with disabilities have
+the right to recognition everywhere as persons before the law.
+2. States Parties shall recognize that persons with disabilities
+enjoy legal capacity on an equal basis with others in all
+aspects of life.
+3. States Parties shall take appropriate measures to provide
+access by persons with disabilities to the support they may
+require in exercising their legal capacity.
+
+## หน้าอ้างอิง 26
+
+51 50Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+4.ให้รัฐภาคีประกันว่ามาตรการทั้งปวงที่เกี่ยวข้องกับการใช้ความสามารถ
+ทางกฎหมายจะให้การปกป้องที่เหมาะสมและมีประสิทธิผลเพื่อป้องกัน
+การใช้ความสามารถนั้นไปในทางที่ผิด ทั้งนี้โดยสอดคล้องกับกฎหมาย
+สิทธิมนุษยชนระหว่างประเทศ มาตรการปกป้องดังกล่าวจะต้องประกัน
+ให้มาตรการที่เกี่ยวข้องกับการใช้ความสามารถทางกฎหมายนั้นเคารพสิทธิ
+เจตนารมณ์ และความประสงค์ของบุคคลนั้น ปราศจากผลประโยชน์
+ทับซ้อน และอิทธิพลที่เกินควร อีกทั้งต้องได้สัดส่วนและเหมาะสม
+กับสภาวการณ์ของบุคคล โดยจะบังคับใช้ในระยะเวลาที่สั้นที่สุด
+เท่าที่จะเป็นไปได้และจะต้องมีการทบทวนเป็นระยะโดยหน่วยงาน
+ที่มีอำนาจซึ่งมีความเป็นอิสระและเป็นกลางหรือองค์กรทางตุลาการ
+มาตรการปกป้องดังกล่าวจะต้องได้สัดส่วนกับระดับที่มาตรการกระทบ
+ต่อสิทธิและส่วนได้เสียของบุคคลนั้น
+5.ภายใต้บทบัญญัติของข้อนี้ ให้รัฐภาคีดำเนินมาตรการทั้งปวง
+ที่เหมาะสมและมีประสิทธิผลเพื่อประกันสิทธิที่เท่าเทียมกันของคนพิการ
+ในการเป็นเจ้าของหรือรับทรัพย์มรดก การควบคุมเรื่องการเงินของตนเอง
+และการเข้าถึงเงินกู้ธนาคาร การจำนอง และสินเชื่อทางการเงิน
+ในรูปแบบอื่น อย่างเท่าเทียมกัน รวมทั้งต้องประกันว่าคนพิการ
+จะไม่ถูกลิดรอนทรัพย์สินตามอำเภอใจ
+4. States Parties shall ensure that all measures that relate to
+the exercise of legal capacity provide for appropriate and
+effective safeguards to prevent abuse in accordance with
+international human rights law. Such safeguards shall ensure
+that measures relating to the exercise of legal capacity respect
+the rights, will and preferences of the person, are free of
+conflict of interest and undue influence, are proportional and
+tailored to the person’s circumstances, apply for the shortest
+time possible and are subject to regular review by a competent,
+independent and impartial authority or judicial body. The
+safeguards shall be proportional to the degree to which such
+measures affect the person’s rights and interests.
+5. Subject to the provisions of this article, States Parties shall
+take all appropriate and effective measures to ensure the
+equal right of persons with disabilities to own or inherit
+property, to control their own financial affairs and to have
+equal access to bank loans, mortgages and other forms of
+financial credit, and shall ensure that persons with disabilities
+are not arbitrarily deprived of their property.
+
+## หน้าอ้างอิง 27
+
+53 52Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ข้อ 13
+การเข้าถึงกระบวนการยุติธรรม
+1.ให้รัฐภาคีประกันการเข้าถึงกระบวนการยุติธรรมอย่างมีประสิทธิผล
+สำหรับคนพิการบนพื้นฐานที่เท่าเทียมกับบุคคลอื่นซึ่งรวมถึงการให้
+ความช่วยเหลือในเรื่องกระบวนวิธีพิจารณาและความช่วยเหลือที่เหมาะสม
+ตามวัยเพื่ออำนวยความสะดวกในการแสดงบทบาทของคนพิการในฐานะ
+ผู้มีส่วนร่วมโดยตรงและโดยทางอ้อม รวมทั้งในฐานะเป็นพยาน
+ในกระบวนการพิจารณาทางกฎหมายทั้งปวง รวมทั้งในขั้นตอน
+การสอบสวนและกระบวนการเบื้องต้นอื่นๆ
+2.เพื่อประกันการเข้าถึงกระบวนการยุติธรรมอย่างมีประสิทธิผล
+สำหรับคนพิการให้รัฐภาคีส่งเสริมการฝึกอบรมที่เหมาะสมสำหรับ
+ผู้ที่ทำงานในด้านกระบวนการยุติธรรม  รวมถึงเจ้าหน้าที่ตำรวจ
+และเจ้าหน้าที่ราชทัณฑ์
+ข้อ 14
+เสรีภาพและความมั่นคงของบุคคล
+1.ให้รัฐภาคีประกันให้คนพิการ บนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+(เอ)อุปโภคสิทธิในเสรีภาพและความมั่นคงของบุคคล
+Article 13
+Access to justice
+1. States Parties shall ensure effective access to justice for
+persons with disabilities on an equal basis with others,
+including through the provision of procedural and age-
+appropriate accommodations, in order to facilitate their
+effective role as direct and indirect participants, including as
+witnesses, in all legal proceedings, including at investigative
+and other preliminary stages.
+2. In order to help to ensure effective access to justice for
+persons with disabilities, States Parties shall promote
+appropriate training for those working in the field of
+administration of justice, including police and prison staff.
+Article 14
+Liberty and security of the person
+1. States Parties shall ensure that persons with disabilities, on an
+equal basis with others:
+(a) Enjoy the right to liberty and security of person;
+
+## หน้าอ้างอิง 28
+
+55 54Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(บี)ไม่ถูกลิดรอนเสรีภาพของตนโดยมิชอบด้วยกฎหมาย
+หรือตามอำเภอใจ และการลิดรอนเสรีภาพใดๆ จะต้องสอดคล้องกับ
+กฎหมาย และไม่ว่ากรณีใดก็ตามความพิการที่มีอยู่ย่อมไม่เป็นเหตุ
+แห่งการลิดรอนเสรีภาพ
+2.ให้รัฐภาคีประกันว่า หากคนพิการถูกลิดรอนเสรีภาพโดยกระบวนการใดๆ
+พวกเขาจะมีสิทธิได้รับหลักประกันที่สอดคล้องกับกฎหมายสิทธิมนุษยชน
+ระหว่างประเทศ บนพื้นฐานที่เท่าเทียมกับบุคคลอื่น และจะได้รับ
+การปฏิบัติโดยสอดคล้องกับความมุ่งประสงค์และหลักการของอนุสัญญานี้
+รวมทั้งการได้รับการช่วยเหลือที่สมเหตุสมผล
+ข้อ 15
+เสรีภาพจากการถูกทรมาน หรือการลงโทษ หรือการปฏิบัติที่โหดร้าย
+ไร้มนุษยธรรม หรือย่ำยีศักดิ์ศรี
+1.บุคคลจะถูกทรมานหรือได้รับการปฏิบัติหรือการลงโทษที่โหดร้าย
+ไร้มนุษยธรรม หรือย่ำยีศักดิ์ศรีมิได้ โดยเฉพาะอย่างยิ่งบุคคลจะถูกใช้
+ในการทดลองทางการแพทย์หรือทางวิทยาศาสตร์ โดยปราศจาก
+ความยินยอมอย่างเสรีของบุคคลนั้นมิได้
+2.ให้รัฐภาคีดำเนินมาตรการทั้งปวงทางกฎหมาย ทางปกครอง ทางศาล
+หรือมาตรการอื่นๆ ที่มีประสิทธิผลเพื่อป้องกันคนพิการจากการเป็น
+(b) Are not deprived of their liberty unlawfully or
+arbitrarily, and that any deprivation of liberty is in conformity
+with the law, and that the existence of a disability shall in
+no case justify a deprivation of liberty.
+2. States Parties shall ensure that if persons with disabilities
+are deprived of their liberty through any process, they are,
+on an equal basis with others, entitled to guarantees in
+accordance with international human rights law and shall be
+treated in compliance with the objectives and principles
+of this Convention, including by provision of reasonable
+accommodation
+Article 15
+Freedom from torture or cruel, inhuman or degrading
+treatment or punishment
+1. No one shall be subjected to torture or to cruel, inhuman
+or degrading treatment or punishment. In particular, no one
+shall be subjected without his or her free consent to medical
+or scientific experimentation.
+2. States Parties shall take all effective legislative,
+administrative, judicial or other measures to prevent persons
+
+## หน้าอ้างอิง 29
+
+57 56Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+เหยื่อของการกระทำทรมาน ปฏิบัติหรือลงโทษที่โหดร้าย ไร้มนุษยธรรม
+หรือย่ำยีศักดิ์ศรีบนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+ข้อ 16
+เสรีภาพจากการถูกแสวงประโยชน์ การใช้ความรุนแรงและการล่วงละเมิด
+1.ให้รัฐภาคีดำเนินมาตรการทั้งปวงทางกฎหมาย ทางปกครอง สังคม
+การศึกษาและมาตรการอื่นที่เหมาะสมทั้งปวงเพื่อคุ้มครองคนพิการ
+ทั้งภายในและนอกเคหสถาน จากการถูกแสวงประโยชน์ การใช้
+ความรุนแรงและการล่วงละเมิดในทุกรูปแบบ รวมถึงการกระทำ เช่นว่า
+บนพื้นฐานของเพศสภาพ
+2.ให้รัฐภาคีดำเนินมาตรการที่เหมาะสมทั้งปวงเพื่อป้องกันการถูกแสวง
+ประโยชน์ การใช้ความรุนแรงและการล่วงละเมิด ด้วยการประกันให้
+มีรูปแบบความช่วยเหลือและการสนับสนุนที่เหมาะสมและคำนึงถึงเพศ
+และวัยแก่คนพิการและครอบครัวและผู้ดูแล รวมทั้งการจัดทำข้อมูล
+สารสนเทศและการศึกษาว่าด้วยการหลีกเลี่ยง ตระหนักและรายงาน
+เหตุการณ์การถูกแสวงประโยชน์ การใช้ความรุนแรงและการล่วงละเมิด
+ให้รัฐภาคีประกันว่าการบริการให้ความคุ้มครองจะคำนึงถึงวัย เพศสภาพ
+และความพิการของบุคคล
+with disabilities, on an equal basis with others, from being
+subjected to torture or cruel, inhuman or degrading treatment
+or punishment.
+Article 16
+Freedom from exploitation, violence and abuse
+1. States Parties shall take all appropriate legislative,
+administrative, social, educational and other measures to protect
+persons with disabilities, both within and outside the home,
+from all forms of exploitation, violence and abuse, including
+their gender-based aspects
+2. States Parties shall also take all appropriate measures to
+prevent all forms of exploitation, violence and abuse by
+ensuring, inter alia, appropriate forms of gender- and age-sensitive
+assistance and support for persons with disabilities and their
+families and caregivers, including through the provision of
+information and education on how to avoid, recognize and
+report instances of exploitation, violence and abuse. States
+Parties shall ensure that protection services are age-, gender- and
+disability-sensitive.
+
+## หน้าอ้างอิง 30
+
+59 58Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+3.เพื่อป้องกันมิให้เกิดการถูกแสวงประโยชน์ การใช้ความรุนแรงและการ
+ล่วงละเมิดให้รัฐภาคีประกันว่าสิ่งอำนวยความสะดวกและโปรแกรม
+ที่ออกแบบเพื่อให้บริการคนพิการจะต้องได้รับการตรวจสอบอย่างมี
+ประสิทธิผลจากหน่วยงานอิสระ
+4.ให้รัฐภาคีดำเนินมาตรการที่เหมาะสมทั้งปวงในการส่งเสริมการฟื้นคืน
+การฟื้นฟูสมรรถภาพทางร่างกาย ทางจิตใจ และการรับรู้ และการคืนสู่
+สังคมของคนพิการซึ่งตกเป็นเหยื่อของการถูกแสวงประโยชน์
+การใช้ความรุนแรงและการล่วงละเมิด ไม่ว่าในรูปแบบใดๆ รวมถึง
+โดยการจัดให้มีบริการให้ความคุ้มครองการ ฟื้นคืนและการคืนสู่
+สังคมเช่นว่านั้นจะต้องเกิดขึ้นได้ในสภาพแวดล้อมที่ส่งเสริมสุขภาพ
+ความเป็นอยู่ที่ดี การเคารพตนเอง ศักดิ์ศรีและการอยู่ได้ด้วยตนเอง
+ของบุคคล และคำนึงถึงความต้องการจำเป็นเฉพาะตามเพศสภาพและวัย
+ของบุคคลด้วย
+5.ให้รัฐภาคีจัดทำกฎหมายและนโยบายที่มีประสิทธิภาพ รวมถึง
+กฎหมายและนโยบายสำหรับสตรีและเด็กเป็นการเฉพาะ เพื่อประกันว่า
+การถูกแสวงประโยชน์การใช้ความรุนแรงและการล่วงละเมิดที่เกิดขึ้น
+จะได้รับการพิสูจน์ทราบ สอบสวนและ ฟ้องร้องดำเนินคดีต่อไปได้ในกรณี
+ที่เหมาะสม
+3. In order to prevent the occurrence of all forms of exploitation,
+violence and abuse, States Parties shall ensure that all facilities
+and programmes designed to serve persons with disabilities
+are effectively monitored by independent authorities.
+4. States Parties shall take all appropriate measures to
+promote the physical, cognitive and psychological recovery,
+rehabilitation and social reintegration of persons with
+disabilities who become victims of any form of exploitation,
+violence or abuse, including through the provision of protection
+services. Such recovery and reintegration shall take place in
+an environment that fosters the health, welfare, self-respect,
+dignity and autonomy of the person and takes into account
+gender- and age-specific needs.
+5. States Parties shall put in place effective legislation and
+policies, including women-and child-focused legislation and
+policies, to ensure that instances of exploitation, violence and
+abuse against persons with disabilities are identified, investigated
+and, where appropriate, prosecuted.
+
+## หน้าอ้างอิง 31
+
+61 60Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ข้อ 17
+การคุ้มครองบูรณภาพของบุคคล
+คนพิการทุกคนมีสิทธิที่จะได้รับการเคารพในบูรณภาพทางร่างกาย
+และจิตใจของตนบนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+ข้อ 18
+เสรีภาพในการโยกย้ายถิ่นฐานและการถือสัญชาติ
+1.ให้รัฐภาคียอมรับสิทธิของคนพิการที่จะมีเสรีภาพในการโยกย้าย
+ถิ่นฐาน เสรีภาพในการเลือกที่อยู่อาศัยของตนเอง และการถือสัญชาติ
+บนพื้นฐานที่เท่าเทียมกับบุคคลอื่น รวมทั้งโดยการประกันให้คนพิการ :
+(เอ)มีสิทธิในการได้และเปลี่ยนแปลงสัญชาติ และจะต้อง
+ไม่ถูกถอนสัญชาติตามอำเภอใจหรือเพราะเหตุแห่งความพิการ
+(บี)ไม่ถูกลิดรอนจากการมีสิทธิที่จะได้รับครอบครองและ
+ใช้เอกสารสัญชาติของตนหรือเอกสารอื่นเกี่ยวกับบัตรประจำตัว
+หรือดำเนินขั้นตอนที่เกี่ยวข้อง อาทิ ขั้นตอนการตรวจคนเข้าเมือง
+ที่จำเป็นในการโยกย้ายถิ่นฐานได้ ทั้งนี้ เพราะเหตุแห่งความพิการ
+Article 17
+Protecting the integrity of the person
+Every person with disabilities has a right to respect for
+his or her physical and mental integrity on an equal basis
+with others.
+Article 18
+Liberty of movement and nationality
+1. States Parties shall recognize the rights of persons with
+disabilities to liberty of movement, to freedom to choose their
+residence and to a nationality, on an equal basis with others,
+including by ensuring that persons with disabilities:
+(a) Have the right to acquire and change a nationality
+and are not deprived of their nationality arbitrarily or on
+the basis of disability;
+(b) Are not deprived, on the basis of disability, of their
+ability to obtain, possess and utilize documentation of their
+nationality or other documentation of identification, or to
+utilize relevant processes such as immigration proceedings,
+that may be needed to facilitate exercise of the right to liberty
+of movement;
+
+## หน้าอ้างอิง 32
+
+63 62Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(ซี)ย่อมออกจากประเทศใดๆ รวมทั้งประเทศของตนได้โดยเสรี
+(ดี)ไม่ถูกลิดรอนสิทธิในการเดินทางเข้าประเทศของตน
+ตามอำเภอใจหรือเพราะเหตุแห่งความพิการ
+2.เด็กพิการจะได้รับการจดทะเบียนทันทีหลังจากเกิด และจะมีสิทธิ
+ตั้งแต่เกิดในการมีชื่อ มีสิทธิที่จะได้มาซึ่งสัญชาติ และในขอบเขต
+ที่เป็นไปได้ที่สุด สิทธิที่จะรู้จักและได้รับการเลี้ยงดูจากบิดามารดาของตน
+ในขอบเขตที่เป็นไปได้ที่สุด
+ข้อ 19
+การอยู่ได้โดยอิสระและการเป็นส่วนหนึ่งในชุมชน
+รัฐภาคีแห่งอนุสัญญานี้ ยอมรับสิทธิเท่าเทียมกันของคนพิการ
+ทั้งหลายในการอยู่อาศัยในชุมชน โดยสามารถเลือกได้อย่างเท่าเทียม
+กับบุคคลอื่นและจะดำเนินมาตรการที่มีประสิทธิผลและเหมาะสม
+ที่เอื้อให้คนพิการได้อุปโภคสิทธินี้ได้อย่างเต็มที่ และการเป็นส่วนหนึ่ง
+และมีส่วนร่วมอย่างเต็มที่ในชุมชน รวมทั้งประกันว่า
+(เอ)คนพิการมีโอกาสเลือกสถานที่อยู่อาศัย ทั้งสถานที่ตั้ง
+และบุคคลที่ตนต้องการอาศัยอยู่ด้วยบนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+และไม่จำเป็นต้องอาศัยอยู่ในที่อาศัยที่มีการจัดเตรียมให้เฉพาะเท่านั้น
+(c) Are free to leave any country, including their own;
+(d) Are not deprived, arbitrarily or on the basis of
+disability, of the right to enter their own country.
+2. Children with disabilities shall be registered immediately
+after birth and shall have the right from birth to a name, the
+right to acquire a nationality and, as far as possible, the right
+to know and be cared for by their parents.
+Article 19
+Living independently and being included in the community
+States Parties to this Convention recognize the equal
+right of all persons with disabilities to live in the community,
+with choices equal to others, and shall take effective and
+appropriate measures to facilitate full enjoyment by persons
+with disabilities of this right and their full inclusion and
+participation in the community, including by ensuring that:
+(a) Persons with disabilities have the opportunity to
+choose their place of residence and where and with whom
+they live on an equal basis with others and are not obliged to
+live in a particular living arrangement;
+
+## หน้าอ้างอิง 33
+
+65 64Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(บี)คนพิการจะสามารถเข้าถึงบริการในระดับต่างๆ ทั้งบริการ
+ภายในเคหสถาน บริการที่พักอาศัยและบริการสนับสนุนอื่นๆ ในชุมชน
+รวมถึงความช่วยเหลือส่วนบุคคลที่จำเป็นต่อการดำรงชีวิต การเป็น
+ส่วนหนึ่งในชุมชนและการป้องกันการถูกทำให้โดดเดี่ยวหรือแบ่งแยก
+ออกจากชุมชน
+(ซี)บริการและสิ่งอำนวยความสะดวกของชุมชนที่จัดไว้สำหรับ
+ประชาชนทั่วไปจะต้องจัดไว้ให้สำหรับคนพิการบนพื้นฐานที่เท่าเทียมกัน
+และตอบสนองต่อความต้องการจำเป็นของคนพิการ
+ข้อ 20
+การเคลื่อนไหวส่วนบุคคล
+ให้รัฐภาคีดำเนินมาตรการที่มีประสิทธิผลเพื่อประกันการ
+เคลื่อนไหวส่วนบุคคลสำหรับคนพิการ อย่างเป็นอิสระที่เป็นไปได้สูงสุด
+รวมทั้ง
+(เอ)การอำนวยความสะดวกในการเคลื่อนไหวส่วนบุคคลของ
+คนพิการในลักษณะและเวลาที่คนพิการเลือก และในราคาที่คนพิการ
+สามารถจ่ายได้
+(บี)การอำนวยความสะดวกให้คนพิการเข้าถึงเครื่องช่วยการ
+เคลื่อนไหว เครื่องมือ เทคโนโลยีสิ่งอำนวยความสะดวก และรูปแบบ
+ความช่วยเหลือที่เป็นสิ่งมีชีวิตและสื่อกลาง รวมทั้งทำให้สิ่งดังกล่าว
+(b) Persons with disabilities have access to a range of
+in-home, residential and other community support services,
+including personal assistance necessary to support living
+and inclusion in the community, and to prevent isolation or
+segregation from the community;
+(c) Community services and facilities for the general
+population are available on an equal basis to persons with
+disabilities and are responsive to their needs.
+Article 20
+Personal mobility
+States Parties shall take effective measures to ensure
+personal mobility with the greatest possible independence
+for persons with disabilities, including by:
+(a) Facilitating the personal mobility of persons with
+disabilities in the manner and at the time of their choice, and
+at affordable cost;
+(b) Facilitating access by persons with disabilities to
+quality mobility aids, devices, assistive technologies and forms
+of live assistance and intermediaries, including by making
+
+## หน้าอ้างอิง 34
+
+67 66Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+อยู่ในราคาที่คนพิการสามารถจ่ายได้
+(ซี)การจัดการฝึกอบรมด้านทักษะการเคลื่อนไหวให้แก่คนพิการ
+และแก่เจ้าหน้าที่เฉพาะทางที่ทำงานกับคนพิการ
+(ดี)การสนับสนุนให้องค์กรที่ผลิตเครื่องช่วยในการเคลื่อนไหว
+เครื่องมือ เทคโนโลยีสิ่งอำนวยความสะดวกต่างๆ คำนึงถึงทุกแง่มุม
+ของการเคลื่อนไหวสำหรับคนพิการ
+ข้อ 21
+เสรีภาพในการแสดงออกและแสดงความคิดเห็น และการเข้าถึง
+สารสนเทศ
+ให้รัฐภาคีดำเนินมาตรการที่เหมาะสมทั้งปวงเพื่อประกันให้
+คนพิการสามารถใช้สิทธิในการมีเสรีภาพในการแสดงออกและแสดง
+ความคิดเห็น รวมถึงเสรีภาพในการแสวงหาได้รับและเผยแพร่สารสนเทศ
+และความคิดบนพื้นฐานที่เท่าเทียมกับบุคคลอื่น และโดยผ่านรูปแบบ
+การสื่อสารทั้งปวงที่คนพิการเลือก ตามที่ได้นิยามไว้ในข้อ 2 ของ
+อนุสัญญานี้ โดยรวมถึง
+(เอ)การจัดให้มีสารสนเทศที่มีไว้สำหรับประชาชนทั่วไปแก่
+คนพิการในรูปแบบและเทคโนโลยีที่สามารถเข้าถึงได้และเหมาะสม
+ต่อความพิการในรูปแบบต่างๆ ภายในเวลาที่เหมาะสมและไม่มี
+them available at affordable cost;
+(c) Providing training in mobility skills to persons with
+disabilities and to specialist staff working with persons with
+disabilities;
+(d) Encouraging entities that produce mobility aids,
+devices and assistive technologies to take into account all
+aspects of mobility for persons with disabilities.
+Article 21
+Freedom of expression and opinion, and access to information
+States Parties shall take all appropriate measures to
+ensure that persons with disabilities can exercise the right to
+freedom of expression and opinion, including the freedom to
+seek, receive and impart information and ideas on an equal
+basis with others and through all forms of communication of
+their choice, as defined in article 2 of the present Convention,
+including by:
+(a) Providing information intended for the general
+public to persons with disabilities in accessible formats and
+technologies appropriate to different kinds of disabilities in a
+
+## หน้าอ้างอิง 35
+
+69 68Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ค่าใช้จ่ายเพิ่ม
+(บี)การยอมรับและอำนวยความสะดวกการใช้ภาษามือ
+อักษรเบรลล์ การสื่อสารทางเลือกและการสื่อสารเสริม และช่องทาง
+วิธีการและรูปแบบการสื่อสารทั้งปวงที่สามารถเข้าถึงได้ ที่คนพิการเลือก
+ในการมีปฏิสัมพันธ์กับหน่วยงานภาครัฐ
+(ซี)การเร่งรัดองค์กรภาคเอกชนซึ่งให้บริการประชาชนโดยทั่วไป
+รวมถึงบริการผ่านอินเตอร์เน็ต เพื่อให้สารสนเทศและบริการในรูปแบบ
+ที่คนพิการสามารถเข้าถึงและใช้ประโยชน์ได้
+(ดี)การสนับสนุนให้สื่อมวลชน รวมทั้งผู้ให้สารสนเทศทาง
+อินเตอร์เน็ต จัดทำบริการของตนให้คนพิการสามารถเข้าถึงได้
+(อี)การยอมรับและส่งเสริมการใช้ภาษามือ
+timely manner and without additional cost;
+(b) Accepting and facilitating the use of sign languages,
+Braille, augmentative and alternative communication, and
+all other accessible means, modes and formats of
+communication of their choice by persons with disabilities
+in official interactions;
+(c) Urging private entities that provide services to the
+general public, including through the Internet, to provide
+information and services in accessible and usable formats
+for persons with disabilities;
+(d) Encouraging the mass media, including providers
+of information through the Internet, to make their services
+accessible to persons with disabilities;
+(e) Recognizing and promoting the use of sign languages.
+
+## หน้าอ้างอิง 36
+
+71 70Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ข้อ 22
+การเคารพความเป็นส่วนตัว
+1.คนพิการไม่ว่าจะมีสถานที่อยู่อาศัยหรือการจัดที่อยู่อาศัยลักษณะใด
+จะถูกแทรกแซงความเป็นส่วนตัว ครอบครัว เคหสถาน หรือการติดต่อ
+ทางจดหมายหรือการสื่อสารชนิดอื่นโดยพลการหรือโดยมิชอบด้วย
+กฎหมายหรือถูกลบหลู่เกียรติยศและชื่อเสียงโดยมิชอบด้วยกฎหมายมิได้
+คนพิการมีสิทธิที่จะได้รับความคุ้มครองตามกฎหมายจากการถูก
+แทรกแซงหรือถูกลบหลู่ดังกล่าว
+2.ให้รัฐภาคีคุ้มครองความเป็นส่วนตัวของข้อมูลส่วนบุคคล ข้อมูล
+เกี่ยวกับสุขภาพและการฟื้นฟูสมรรถภาพของคนพิการ บนพื้นฐาน
+ที่เท่าเทียมกับบุคคลอื่น
+ข้อ 23
+การเคารพในการสร้างครอบครัวและสถาบันครอบครัว
+1.ให้รัฐภาคีดำเนินมาตรการที่มีประสิทธิผลและเหมาะสมเพื่อขจัด
+การเลือกปฏิบัติต่อคนพิการในทุกด้านที่เกี่ยวกับการสมรส ครอบครัว
+ความเป็นบิดามารดา และความสัมพันธ์ต่างๆ บนพื้นฐานที่เท่าเทียม
+กับบุคคลอื่น โดยประกันว่า
+Article 22
+Respect for privacy
+1. No person with disabilities, regardless of place of residence
+or living arrangements, shall be subjected to arbitrary or
+unlawful interference with his or her privacy, family, home
+or correspondence or other types of communication or to
+unlawful attacks on his or her honour and reputation. Persons
+with disabilities have the right to the protection of the law
+against such interference or attacks.
+2. States Parties shall protect the privacy of personal, health
+and rehabilitation information of persons with disabilities on an
+equal basis with others.
+Article 23
+Respect for home and the family
+1. States Parties shall take effective and appropriate measures
+to eliminate discrimination against persons with disabilities in
+all matters relating to marriage, family, parenthood and
+relationships, on an equal basis with others, so as to ensure that:
+
+## หน้าอ้างอิง 37
+
+73 72Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(เอ)สิทธิของคนพิการทั้งปวงที่ถึงวัยสมรสให้สามารถสมรส
+และสร้างครอบครัวได้บนพื้นฐานของความยินยอมพร้อมใจและโดยอิสระ
+ของผู้เจตนาจะสมรสกัน
+(บี)สิทธิของคนพิการในการตัดสินใจได้อย่างอิสระและอย่างมี
+ความรับผิดชอบในการกำหนดจำนวนบุตรและการเว้นระยะการมีบุตร
+และให้เข้าถึงสารสนเทศที่เหมาะสมกับวัย การให้ความรู้เกี่ยวกับ
+การเจริญพันธุ์และการวางแผนครอบครัว ย่อมได้รับการยอมรับ
+และจัดให้มีวิธีการที่ช่วยให้คนพิการสามารถใช้สิทธิเหล่านี้ได้
+(ซี)คนพิการรวมทั้งเด็กพิการ คงไว้ซึ่งความสามารถในการ
+เจริญพันธุ์บนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+2.ให้รัฐภาคีประกันสิทธิและความรับผิดชอบของคนพิการในเรื่อง
+การปกครองบุตร การปกป้องบุตร การได้รับมอบหมายให้ดูแลบุตร
+และการรับบุตรบุญธรรม หรือรูปแบบใดๆ ที่คล้ายคลึงกัน ซึ่งแนวคิด
+เหล่านี้ปรากฏในกฎหมายภายใน ในทุกกรณีประโยชน์สูงสุดของเด็ก
+จะเป็นสิ่งสำคัญที่สุด ให้รัฐภาคีให้ความช่วยเหลือที่เหมาะสมแก่
+คนพิการในการทำหน้าที่รับผิดชอบเลี้ยงดูบุตร
+(a) The right of all persons with disabilities who are of
+marriageable age to marry and to found a family on the basis of
+free and full consent of the intending spouses is recognized;
+(b) The rights of persons with disabilities to decide
+freely and responsibly on the number and spacing of their
+children and to have access to age-appropriate information,
+reproductive and family planning education are recognized,
+and the means necessary to enable them to exercise these
+rights are provided;
+(c) Persons with disabilities, including children, retain
+their fertility on an equal basis with others.
+2. States Parties shall ensure the rights and responsibilities
+of persons with disabilities, with regard to guardianship,
+wardship, trusteeship, adoption of children or similar
+institutions, where these concepts exist in national legislation;
+in all cases the best interests of the child shall be paramount.
+States Parties shall render appropriate assistance to persons
+with disabilities in the performance of their child-rearing
+responsibilities.
+
+## หน้าอ้างอิง 38
+
+75 74Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+3.ให้รัฐภาคีประกันว่าเด็กพิการมีสิทธิเท่าเทียมกับบุคคลอื่น
+ในด้านชีวิตครอบครัว และเพื่อให้สามารถใช้สิทธิเหล่านี้ได้จริง
+และเพื่อป้องกันการปกปิด ทอดทิ้ง ละเลย และพรากเด็กพิการ
+จากครอบครัว รัฐภาคีจะดำเนินการเพื่อจัดให้มีสารสนเทศ การบริการ
+และการสนับสนุนที่ครอบคลุมและตั้งแต่แรกเริ่มแก่เด็กพิการ
+และครอบครัว
+4.ให้รัฐภาคีประกันว่าเด็กจะไม่ถูกแยกจากบิดามารดา โดยขัดต่อ
+ความประสงค์ของบิดามารดา เว้นแต่จะกำหนดโดยหน่วยงานที่มีอำนาจ
+ว่าการแยกเช่นนี้จำเป็นเพื่อประโยชน์สูงสุดของเด็ก โดยสอดคล้อง
+กับกฎหมายและวิธีพิจารณาที่ใช้บังคับอยู่ ทั้งนี้ การกำหนด เช่นว่า
+อาจถูกทบทวนได้โดยทางศาล ในทุกกรณีเด็กย่อมไม่ถูกแยกจาก
+บิดามารดาเพราะเหตุแห่งความพิการไม่ว่าของเด็ก หรือของบิดา
+หรือของมารดาหรือของทั้งบิดาและมารดา
+5.ในกรณีที่ครอบครัวใกล้ชิดไม่สามารถดูแลเด็กพิการได้ ให้รัฐภาคี
+ดำเนินความพยายามทุกวิถีทางเพื่อให้เด็กพิการได้รับการดูแลทางเลือก
+ภายในครอบครัวขยายของเด็กนั้น แต่หากยังไม่อาจเป็นไปได้ ก็ให้
+ได้รับการดูแลแบบครอบครัวภายในชุมชนที่เด็กพิการดังกล่าวอาศัยอยู่
+3. States Parties shall ensure that children with disabilities
+have equal rights with respect to family life. With a view
+to realizing these rights, and to prevent concealment,
+abandonment, neglect and segregation of children with
+disabilities, States Parties shall undertake to provide early and
+comprehensive information, services and support to children
+with disabilities and their families.
+4. States Parties shall ensure that a child shall not be
+separated from his or her parents against their will, except
+when competent authorities subject to judicial review
+determine, in accordance with applicable law and procedures,
+that such separation is necessary for the best interests of
+the child. In no case shall a child be separated from parents on
+the basis of a disability of either the child or one or both
+of the parents.
+5. States Parties shall, where the immediate family is unable
+to care for a child with disabilities, undertake every effort
+to provide alternative care within the wider family, and failing
+that, within the community in a family setting.
+
+## หน้าอ้างอิง 39
+
+77 76Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ข้อ 24
+การศึกษา
+1.รัฐภาคียอมรับสิทธิของคนพิการด้านการศึกษา และเพื่อให้สามารถ
+ใช้สิทธิเหล่านี้ได้จริงโดยปราศจากการเลือกปฏิบัติและบนพื้นฐาน
+ของโอกาสที่เท่าเทียมกัน ให้รัฐภาคีประกันการมีระบบการศึกษา
+แบบเรียนร่วมในทุกระดับและการเรียนรู้ตลอดชีวิตโดยมุ่งเพื่อ
+(เอ)การพัฒนาศักยภาพของมนุษย์และการสำนึกในศักดิ์ศรี
+และคุณค่าของตนอย่างเต็มที่ และการเสริมสร้างการเคารพ
+ในสิทธิมนุษยชน เสรีภาพขั้นพื้นฐานและความหลากหลายของมนุษย์
+(บี)การให้คนพิการได้พัฒนาบุคลิกภาพ พรสวรรค์ และความคิด
+สร้างสรรค์ของตน รวมทั้งความสามารถด้านจิตใจและร่างกาย ให้ถึง
+ศักยภาพสูงสุด
+(ซี)การให้คนพิการสามารถเข้ามีส่วนร่วมในสังคมเสรีได้อย่างมี
+ประสิทธิผล
+2.เพื่อให้สามารถใช้สิทธินี้ได้จริง ให้รัฐภาคีประกันว่า
+(เอ)คนพิการจะไม่ถูกกีดกันออกจากระบบการศึกษาทั่วไป
+เพราะเหตุแห่งความพิการ และเด็กพิการนั้นจะไม่ถูกกีดกันจากการศึกษา
+Article 24
+Education
+1. States Parties recognize the right of persons with disabilities
+to education. With a view to realizing this right without
+discrimination and on the basis of equal opportunity, States
+Parties shall ensure an inclusive education system at all levels
+and life long learning directed to:
+(a) The full development of human potential and
+sense of dignity and self-worth, and the strengthening of
+respect for human rights, fundamental freedoms and human
+diversity;
+(b) The development by persons with disabilities of
+their personality, talents and creativity, as well as their mental
+and physical abilities, to their fullest potential;
+(c) Enabling persons with disabilities to participate
+effectively in a free society.
+2. In realizing this right, States Parties shall ensure that:
+(a) Persons with disabilities are not excluded from the
+general education system on the basis of disability, and that
+
+## หน้าอ้างอิง 40
+
+79 78Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ภาคบังคับระดับประถมศึกษาและโดยไม่เสียค่าใช้จ่าย หรือการศึกษา
+ระดับมัธยมศึกษา เพราะเหตุแห่งความพิการ
+(บี)คนพิการสามารถเข้าถึงการศึกษาระดับประถมศึกษาและ
+มัธยมศึกษาแบบเรียนร่วมที่มีคุณภาพและโดยไม่เสียค่าใช้จ่าย
+บนพื้นฐานที่เท่าเทียมกับบุคคลอื่นในชุมชนที่ตนอาศัยอยู่
+(ซี)คนพิการจะได้รับความช่วยเหลือที่สมเหตุสมผลกับ
+ความต้องการของแต่ละบุคคล
+(ดี)คนพิการได้รับการสนับสนุนตามที่ต้องการในระบบ
+การศึกษาทั่วไป เพื่ออำนวยความสะดวกในการศึกษาอย่างมีประสิทธิผล
+แก่คนพิการนั้น
+(อี)มีการจัดมาตรการสนับสนุนเฉพาะบุคคลที่มีประสิทธิผลแก่
+คนพิการในสภาพแวดล้อมที่ส่งเสริมการพัฒนาทางวิชาการและการพัฒนา
+ทางสังคมอย่างสูงสุด และสอดคล้องกับเป้าหมายการเป็นส่วนหนึ่งของ
+สังคมอย่างเต็มที่
+children with disabilities are not excluded from free and
+compulsory primary education, or from secondary education, on
+the basis of disability;
+(b) Persons with disabilities can access an inclusive,
+quality and free primary education and secondary education
+on an equal basis with others in the communities in which
+they live;
+(c) Reasonable accommodation of the individual’s
+requirements is provided;
+(d) Persons with disabilities receive the support
+required, within the general education system, to facilitate
+their effective education;
+(e) Effective individualized support measures are
+provided in environments that maximize academic and social
+development, consistent with the goal of full inclusion.
+
+## หน้าอ้างอิง 41
+
+81 80Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+3.ให้รัฐภาคีดำเนินการให้คนพิการสามารถเรียนรู้ทักษะในการ
+พัฒนาชีวิตและทักษะทางสังคมเพื่อให้สามารถเข้าร่วมในการศึกษา
+ได้อย่างเต็มที่และเท่าเทียมและในฐานะเป็นสมาชิกของชุมชน เพื่อการนี้
+ให้รัฐภาคีดำเนินมาตรการที่เหมาะสม อันรวมถึง
+(เอ)การส่งเสริมการเรียนอักษรเบรลล์ ตัวอักษรทางเลือกอื่น
+ช่องทาง วิธีการและรูปแบบการสื่อสารทางเลือกและการสื่อสารเสริม
+และทักษะการทำความคุ้นเคยกับสภาพแวดล้อมและเคลื่อนไหว
+และการส่งเสริมการสนับสนุนแบบเพื่อนช่วยเพื่อน และระบบพี่เลี้ยง
+(บี)การส่งเสริมให้มีการเรียนภาษามือและการสนับสนุน
+เอกลักษณ์ทางภาษาของชุมชนคนหูหนวก
+(ซี)การประกันว่าการให้การศึกษาแก่บุคคล โดยเฉพาะ
+อย่างยิ่งเด็กตาบอด หูหนวก หรือตาบอดหูหนวกจะมีภาษาและวิธีสื่อสาร
+ที่เหมาะสมที่สุดสำหรับแต่ละบุคคล และในสิ่งแวดล้อมที่ส่งเสริม
+ให้เกิดการพัฒนาทางวิชาการและการพัฒนาทางสังคมได้อย่างสูงสุด
+4.เพื่อเป็นการช่วยประกันการใช้สิทธินี้ได้จริงในประการดังกล่าว
+ให้รัฐภาคีดำเนินมาตรการที่เหมาะสมเพื่อจ้างครู รวมทั้งครูพิการ
+ที่มีความชำนาญในการใช้ภาษามือและ/หรืออักษรเบรลล์ และจะฝึกอบรม
+3. States Parties shall enable persons with disabilities to
+learn life and social development skills to facilitate their
+full and equal participation in education and as members
+of the community. To this end, States Parties shall take
+appropriate measures, including:
+(a) Facilitating the learning of Braille, alternative
+script, augmentative and alternative modes, means and
+formats of communication and orientation and mobility
+skills, and facilitating peer support and mentoring;
+(b) Facilitating the learning of sign language and the
+promotion of the linguistic identity of the deaf community;
+(c) Ensuring that the education of persons, and in
+particular children, who are blind, deaf or deafblind, is delivered
+in the most appropriate languages and modes and means of
+communication for the individual, and in environments
+which maximize academic and social development.
+4. In order to help ensure the realization of this right, States
+Parties shall take appropriate measures to employ teachers,
+including teachers with disabilities, who are qualified in
+
+## หน้าอ้างอิง 42
+
+83 82Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ผู้ประกอบวิชาชีพและเจ้าหน้าที่ที่ทำงานในทุกระดับการศึกษา
+การฝึกอบรมดังกล่าวจะบรรจุการตระหนักเรื่องความพิการไว้และการใช้
+ช่องทาง วิธีการ และรูปแบบการสื่อสารทางเลือกและการสื่อสารเสริม
+ที่เหมาะสม เทคนิคสื่อและวิธีการเรียนการสอนเพื่อสนับสนุนคนพิการ
+5.ให้รัฐภาคีประกันว่าคนพิการสามารถเข้าถึงการศึกษาทั่วไปในระดับ
+อุดมศึกษา การฝึกอบรมวิชาชีพ การศึกษาผู้ใหญ่และการเรียนรู้ตลอดชีวิต
+ปราศจากการเลือกปฏิบัติและบนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+เพื่อการนี้ ให้รัฐภาคีประกันว่าจะจัดให้มีความช่วยเหลือที่สมเหตุสมผล
+แก่คนพิการ
+ข้อ 25
+สุขภาพ
+รัฐภาคียอมรับว่าคนพิการมีสิทธิในการอุปโภคมาตรฐานสาธารณสุข
+ที่สูงสุดเท่าที่จะหาได้โดยปราศจากการเลือกปฏิบัติ เพราะเหตุแห่ง
+ความพิการ ให้รัฐภาคีดำเนินมาตรการที่เหมาะสมทั้งปวงเพื่อประกัน
+ให้คนพิการเข้าถึงบริการด้านสาธารณสุขโดยคำนึงถึงเพศสภาพ
+รวมถึงการฟื้นฟูสมรรถภาพด้านสุขภาพ โดยเฉพาะอย่างยิ่งให้รัฐภาคี
+sign language and/or Braille, and to train professionals and
+staff who work at all levels of education. Such training shall
+incorporate disability awareness and the use of appropriate
+augmentative and alternative modes, means and formats
+of communication, educational techniques and materials to
+support persons with disabilities.
+5. States Parties shall ensure that persons with disabilities
+are able to access general tertiary education, vocational
+training, adult education and lifelong learning without
+discrimination and on an equal basis with others. To this end,
+States Parties shall ensure that reasonable accommodation
+is provided to persons with disabilities.
+Article 25
+Health
+States Parties recognize that persons with disabilities
+have the right to the enjoyment of the highest attainable
+standard of health without discrimination on the basis of
+disability. States Parties shall take all appropriate measures to
+ensure access for persons with disabilities to health services
+that are gender-sensitive, including health-related rehabilitation.
+In particular, States Parties shall:
+
+## หน้าอ้างอิง 43
+
+85 84Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(เอ)จัดให้มีบริการด้านสุขภาพโดยไม่ต้องเสียค่าใช้จ่าย หรือ
+ที่สามารถจ่ายได้สำหรับคนพิการในระดับคุณภาพและมาตรฐานเช่นเดียวกับ
+การที่จัดให้บุคคลอื่นรวมถึงบริการด้านสุขภาพทางเพศและอนามัย
+เจริญพันธุ์ และโปรแกรมสาธารณสุขที่มีให้กับประชาชนทั่วไป
+(บี)จัดให้มีบริการด้านสุขภาพที่จำเป็นสำหรับคนพิการ โดยเฉพาะ
+อย่างยิ่งที่เกี่ยวกับความพิการรวมทั้งการบ่งชี้และช่วยเหลือในระยะแรกเริ่ม
+อย่างเหมาะสมและการบริการที่จัดให้เพื่อจำกัดระดับความพิการให้น้อยที่สุด
+และป้องกันไม่ให้เกิดความพิการเพิ่มขึ้น ทั้งนี้ รวมทั้งในเด็กและผู้สูงอายุ
+(ซี)จัดให้มีบริการด้านสุขภาพเหล่านี้ ให้อยู่ใกล้เคียงมากที่สุด
+กับชุมชนที่คนพิการอาศัยอยู่เท่าที่จะเป็นไปได้ รวมทั้งในพื้นที่ชนบท
+(ดี)กำหนดให้บุคลากรทางการแพทย์ให้การดูแลคนพิการ
+ด้วยคุณภาพเดียวกันกับที่ให้แก่คนอื่นๆ รวมถึงบนพื้นฐานของความยินยอม
+โดยสมัครใจและโดยได้รับข้อมูลข่าวสาร ด้วยการสร้างความตระหนัก
+ด้านสิทธิมนุษยชน ศักดิ์ศรี การอยู่ได้ด้วยตนเอง และความต้องการ
+จำเป็นของคนพิการโดยวิธีฝึกอบรมและประกาศใช้มาตรฐานจรรยาบรรณ
+สำหรับการดูแลสุขภาพโดยภาครัฐและเอกชน
+(a) Provide persons with disabilities with the same
+range, quality and standard of free or affordable health care
+and programmes as provided to other persons, including in
+the area of sexual and reproductive health and population-
+based public health programmes;
+(b) Provide those health services needed by persons
+with disabilities specifically because of their disabilities,
+including early identification and intervention as appropriate,
+and services designed to minimize and prevent further
+disabilities, including among children and older persons;
+(c) Provide these health services as close as possible to
+people’s own communities, including in rural areas;
+(d) Require health professionals to provide care of
+the same quality to persons with disabilities as to others,
+including on the basis of free and informed consent by, inter
+alia, raising awareness of the human rights, dignity, autonomy
+and needs of persons with disabilities through training and
+the promulgation of ethical standards for public and private
+health care;
+
+## หน้าอ้างอิง 44
+
+87 86Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(อี)ห้ามการเลือกปฏิบัติต่อคนพิการในการประกันสุขภาพและ
+การประกันชีวิต ซึ่งต้องจัดให้มีอย่างยุติธรรมและสมเหตุสมผล
+และในกรณีการประกันชีวิต ให้เป็นไปตามกฎหมายภายในของรัฐนั้น
+ที่กำหนดให้มีการประกันชีวิตได้
+(เอฟ)ป้องกันการปฏิเสธการดูแลด้านสุขภาพหรือการบริการ
+ด้านสุขภาพหรืออาหารและสารเหลวโดยเลือกปฏิบัติด้วยเหตุแห่งความพิการ
+ข้อ 26
+การส่งเสริมสมรรถภาพและการฟื้นฟูสมรรถภาพ
+1.ให้รัฐภาคีดำเนินมาตรการที่เหมาะสมและมีประสิทธิผล รวมถึง
+การสนับสนุนแบบเพื่อนช่วยเพื่อน เพื่อให้คนพิการสามารถบรรลุ
+และรักษาความเป็นอิสระไว้อย่างสูงสุด เต็มความสามารถทั้งทางร่างกาย
+จิตใจ สังคมและการอาชีพ และการรวมเป็นส่วนหนึ่งและมีส่วนร่วม
+อย่างเต็มที่ในทุกด้านของชีวิต  เพื่อการนี้  ให้รัฐภาคีจัดบริการ
+และโปรแกรมด้านการส่งเสริมสมรรถภาพและการฟื้นฟูสมรรถภาพ
+ที่ครอบคลุม โดยเฉพาะอย่างยิ่งในด้านสุขภาพ การว่าจ้างงาน การศึกษา
+และบริการสังคม ในลักษณะที่บริการและโปรแกรมเหล่านี้
+(e) Prohibit discrimination against persons with
+disabilities in the provision of health insurance, and life
+insurance where such insurance is permitted by national law,
+which shall be provided in a fair and reasonable manner;
+(f) Prevent discriminatory denial of health care or
+health services or food and fluids on the basis of disability.
+Article 26
+Habilitation and rehabilitation
+1. States Parties shall take effective and appropriate measures,
+including through peer support, to enable persons with
+disabilities to attain and maintain maximum independence,
+full physical, mental, social and vocational ability, and full
+inclusion and participation in all aspects of life. To that end,
+States Parties shall organize, strengthen and extend comprehensive
+habilitation and rehabilitation services and programmes,
+particularly in the areas of health, employment, education
+and social services, in such a way that these services and
+programmes:
+
+## หน้าอ้างอิง 45
+
+89 88Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(เอ)เริ่มดำเนินการตั้งแต่ในระยะแรกสุดเท่าที่จะเป็นไปได้
+และบนพื้นฐานการประเมินความต้องการจำเป็นและจุดแข็งของแต่ละบุคคล
+โดยหลักสหวิชาชีพ
+(บี)สนับสนุนการมีส่วนร่วมในชุมชนและการเป็นส่วนหนึ่ง
+ในชุมชนและทุกด้านของสังคม โดยให้เป็นไปตามความสมัครใจ
+ของคนพิการ และจัดไว้ให้ใกล้เคียงกับชุมชนที่คนพิการอาศัยอยู่เท่าที่
+จะเป็นไปได้ รวมทั้งในพื้นที่ชนบท
+2.ให้รัฐภาคีส่งเสริมการพัฒนาการฝึกอบรมขั้นต้นและต่อเนื่องสำหรับ
+นักวิชาชีพและเจ้าหน้าที่ที่ทำงานด้านบริการส่งเสริมสมรรถภาพและฟื้นฟู
+สมรรถภาพของคนพิการ
+3.ให้รัฐภาคีส่งเสริมการจัดให้มีไว้ การให้ความรู้ และการใช้ อุปกรณ์
+และเทคโนโลยีสิ่งอำนวยความสะดวกที่ออกแบบสำหรับคนพิการ
+ซึ่งต่างล้วนเกี่ยวเนื่องกับการส่งเสริมสมรรถภาพและการฟื้นฟูสมรรถภาพ
+คนพิการ
+ข้อ 27
+งานและการจ้างงาน
+1.รัฐภาคียอมรับสิทธิของคนพิการในการทำงานบนพื้นฐานที่เท่าเทียม
+กับบุคคลอื่นทั้งนี้รวมถึงสิทธิในโอกาสที่จะหาเลี้ยงชีพโดยการทำงาน
+ที่ตนเป็นผู้ตัดสินใจเลือกโดยอิสระและได้รับการยอมรับในตลาดแรงงาน
+(a) Begin at the earliest possible stage, and are based
+on the multidisciplinary assessment of individual needs and
+strengths;
+(b) Support participation and inclusion in the
+community and all aspects of society, are voluntary, and
+are available to persons with disabilities as close as possible
+to their own communities, including in rural areas.
+2. States Parties shall promote the development of initial
+and continuing training for professionals and staff working
+in habilitation and rehabilitation services.
+3. States Parties shall promote the availability, knowledge
+and use of assistive devices and technologies, designed for
+persons with disabilities, as they relate to habilitation and
+rehabilitation.
+Article 27
+Work and employment
+1. States Parties recognize the right of persons with disabilities
+to work, on an equal basis with others; this includes the
+right to the opportunity to gain a living by work freely chosen
+
+## หน้าอ้างอิง 46
+
+91 90Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+or accepted in a labour market and work environment that is
+open, inclusive and accessible to persons with disabilities.
+States Parties shall safeguard and promote the realization of
+the right to work, including for those who acquire a disability
+during the course of employment, by taking appropriate steps,
+including through legislation, to, inter alia:
+(a) Prohibit discrimination on the basis of disability
+with regard to all matters concerning all forms of employment,
+including conditions of recruitment, hiring and employment,
+continuance of employment, career advancement and safe
+and healthy working conditions;
+(b) Protect the rights of persons with disabilities, on an
+equal basis with others, to just and favourable conditions of
+work, including equal opportunities and equal remuneration
+for work of equal value, safe and healthy working
+conditions, including protection from harassment, and the
+redress of grievances;
+(c) Ensure that persons with disabilities are able to
+exercise their labour and trade union rights on an equal
+basis with others;
+และทำงานในสภาพแวดล้อมการทำงานที่เปิดกว้างทำงานร่วมกัน
+และที่คนพิการสามารถเข้าถึงได้ ให้รัฐภาคีปกป้องและส่งเสริม
+ให้การใช้สิทธิของคนพิการในการทำงานดังกล่าวเป็นจริง รวมถึงสำหรับ
+ผู้ซึ่งได้รับความพิการในระหว่างการจ้างงาน โดยการดำเนินขั้นตอน
+ที่เหมาะสม รวมถึงการตรากฎหมาย
+(เอ)ห้ามการเลือกปฏิบัติเพราะเหตุแห่งความพิการในทุกด้าน
+ที่เกี่ยวกับการจ้างงาน รวมถึงเงื่อนไขในการคัดเลือกบุคคล การว่าจ้าง
+และการจ้างงาน การจ้างงานอย่างต่อเนื่อง ความก้าวหน้าในอาชีพการงาน
+และสภาพการทำงานที่ถูกสุขอนามัยและปลอดภัย
+(บี)คุ้มครองสิทธิของคนพิการ บนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+ในการมีเงื่อนไขการทำงานที่เป็นธรรมและเอื้อประโยชน์ต่อคนพิการ
+รวมทั้งโอกาสที่เท่าเทียมกันและค่าตอบแทนการทำงานที่เท่ากันสำหรับ
+เนื้องานที่เท่ากัน ความปลอดภัยและเงื่อนไขการทำงานที่ถูกสุขอนามัย
+รวมถึงการคุ้มครองจากการถูกคุกคาม และการจัดการแก้ไขข้อร้องเรียน
+(ซี)ประกันว่าคนพิการสามารถใช้สิทธิด้านแรงงานและสหภาพ
+แรงงานบนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+
+## หน้าอ้างอิง 47
+
+93 92Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(ดี)ทำให้คนพิการสามารถเข้าถึงโปรแกรมแนะแนวอาชีพ
+และแนะแนวทั่วไป บริการจัดหางานและการฝึกอาชีพอย่างต่อเนื่อง
+อย่างมีประสิทธิผล
+(อี)ส่งเสริมโอกาสการจ้างงานและความก้าวหน้าในอาชีพ
+สำหรับคนพิการในตลาดแรงงาน รวมทั้งความช่วยเหลือในการหางาน
+ได้งานและคงสภาพการจ้างงานรวมทั้งการกลับเข้าทำงาน
+(เอฟ)ส่งเสริมโอกาสในการประกอบอาชีพอิสระ การเป็น
+ผู้ประกอบการและการพัฒนาสหกรณ์ และการเริ่มธุรกิจของตนเอง
+(จี)ว่าจ้างคนพิการเข้าทำงานในหน่วยงานภาครัฐ
+(เอช)ส่งเสริมการจ้างงานคนพิการในหน่วยงานภาคเอกชนด้วย
+นโยบายและมาตรการที่เหมาะสม ซึ่งอาจรวมถึงโปรแกรมที่เป็น
+มาตรการเชิงบวก  สิ่งจูงใจและมาตรการอื่นๆ
+(ไอ)ประกันว่ามีการจัดให้มีความช่วยเหลือที่สมเหตุสมผลแก่
+คนพิการในสถานที่ทำงาน
+(d) Enable persons with disabilities to have effective
+access to general technical and vocational guidance
+programmes, placement services and vocational and
+continuing training;
+(e) Promote employment opportunities and career
+advancement for persons with disabilities in the labour
+market, as well as assistance in finding, obtaining, maintaining
+and returning to employment;
+(f) Promote opportunities for self-employment,
+entrepreneurship, the development of cooperatives and
+starting one’s own business;
+(g) Employ persons with disabilities in the public sector;
+(h) Promote the employment of persons with disabilities
+in the private sector through appropriate policies and
+measures, which may include affirmative action programmes,
+incentives and other measures;
+(i) Ensure that reasonable accommodation is provided
+to persons with disabilities in the workplace;
+
+## หน้าอ้างอิง 48
+
+95 94Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(เจ)ส่งเสริมให้คนพิการได้รับประสบการณ์ทำงานในตลาด
+แรงงานเปิด
+(เค)ส่งเสริมให้มีโปรแกรมการฟื้นฟูสมรรถภาพด้านอาชีพ
+และวิชาชีพ การรักษาตำแหน่งงานและการกลับเข้าทำงานสำหรับคนพิการ
+2.ให้รัฐภาคีประกันว่าคนพิการย่อมไม่ถูกนำลงไปเป็นทาสหรือ
+ไม่ตกอยู่ในภาวะเยี่ยงทาส และจะได้รับการคุ้มครองจากการถูกเกณฑ์
+แรงงานหรือแรงงานบังคับ  ทั้งนี้บนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+ข้อ 28
+มาตรฐานความเป็นอยู่และความคุ้มครองทางสังคมอย่างเพียงพอ
+1.รัฐภาคียอมรับถึงสิทธิของคนพิการในการมีมาตรฐานความเป็นอยู่ที่
+เพียงพอสำหรับตนและครอบครัว รวมถึง อาหาร เครื่องนุ่งห่ม
+และที่อยู่อาศัยที่เพียงพอ และสภาพการครองชีพที่ดีอย่างต่อเนื่อง
+และให้รัฐภาคีดำเนินขั้นตอนที่เหมาะสม เพื่อปกป้องและส่งเสริม
+ให้สิทธินี้เกิดขึ้นได้จริงโดยปราศจากการเลือกปฏิบัติเพราะเหตุ
+แห่งความพิการ
+2.รัฐภาคียอมรับถึงสิทธิของคนพิการในการได้รับความคุ้มครอง
+ทางสังคม และการอุปโภคสิทธินั้น โดยปราศจากการเลือกปฏิบัติ
+เพราะเหตุแห่งความพิการและให้รัฐภาคีดำเนินขั้นตอนเพื่อปกป้องและ
+(j) Promote the acquisition by persons with disabilities
+of work experience in the open labour market;
+(k) Promote vocational and professional rehabilitation,
+job retention and return-to-work programmes for persons
+with disabilities.
+2. States Parties shall ensure that persons with disabilities
+are not held in slavery or in servitude, and are protected, on an
+equal basis with others, from forced or compulsory labour.
+Article 28
+Adequate standard of living and social protection
+1. States Parties recognize the right of persons with disabilities
+to an adequate standard of living for themselves and their
+families, including adequate food, clothing and housing, and
+to the continuous improvement of living conditions, and shall
+take appropriate steps to safeguard and promote the realization
+of this right without discrimination on the basis of disability.
+2. States Parties recognize the right of persons with disabilities
+to social protection and to the enjoyment of that right without
+discrimination on the basis of disability, and shall take
+
+## หน้าอ้างอิง 49
+
+97 96Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ส่งเสริมให้สิทธินี้เกิดขึ้นได้จริง ทั้งนี้รวมถึงมาตรการดังนี้
+(เอ)ประกันการเข้าถึงบริการน้ำสะอาดโดยคนพิการอย่างเท่าเทียม
+และประกันการเข้าถึงบริการอุปกรณ์ต่างๆ และความช่วยเหลืออื่นสำหรับ
+ความต้องการจำเป็นอันเกี่ยวเนื่องกับความพิการที่เหมาะสมและที่
+สามารถจ่ายได้
+(บี)ประกันการเข้าถึงโปรแกรมการคุ้มครองทางสังคมและโปรแกรม
+ลดความยากจนสำหรับคนพิการโดยเฉพาะอย่างยิ่งสตรีและเด็กหญิงพิการ
+และผู้สูงอายุที่พิการ
+(ซี)ประกันว่าคนพิการและครอบครัวของคนพิการที่มีสภาพ
+ความเป็นอยู่ยากจน สามารถเข้าถึงความช่วยเหลือจากรัฐในเรื่องค่าใช้จ่าย
+ที่เกี่ยวกับความพิการรวมถึงการฝึกอบรมที่เพียงพอ การให้คำปรึกษา
+ความช่วยเหลือทางการเงิน และการให้ความดูแลชั่วคราว
+(ดี)ประกันการเข้าถึงโปรแกรมสวัสดิการที่อยู่อาศัยของรัฐสำหรับ
+คนพิการ
+appropriate steps to safeguard and promote the realization
+of this right, including measures:
+(a) To ensure equal access by persons with disabilities
+to clean water services, and to ensure access to appropriate
+and affordable services, devices and other assistance for
+disability-related needs;
+(b) To ensure access by persons with disabilities, in
+particular women and girls with disabilities and older persons
+with disabilities, to social protection programmes and poverty
+reduction programmes;
+(c) To ensure access by persons with disabilities
+and their families living in situations of poverty to assistance
+from the State with disability-related expenses, including
+adequate training, counselling, financial assistance and respite
+care;
+(d) To ensure access by persons with disabilities to
+public housing programmes;
+
+## หน้าอ้างอิง 50
+
+99 98Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(อี)ประกันการเข้าถึงโปรแกรมและสิทธิประโยชน์หลังการ
+เกษียณอายุสำหรับคนพิการอย่างเท่าเทียม
+ข้อ 29
+การมีส่วนร่วมทางการเมืองและเรื่องสาธารณะ
+ให้รัฐภาคีประกันสิทธิทางการเมืองของคนพิการและการอุปโภค
+สิทธิดังกล่าว บนพื้นฐานที่เท่าเทียมกับบุคคลอื่น และให้ดำเนินการ
+(เอ)ประกันว่าคนพิการสามารถมีส่วนร่วมทางการเมืองและเรื่อง
+สาธารณะได้อย่างมีประสิทธิผลและเต็มที่บนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+ทั้งโดยทางตรงหรือโดยผ่านผู้แทนที่ได้รับเลือกอย่างอิสระ รวมถึงสิทธิ
+และโอกาสของคนพิการในการออกเสียงและได้รับเลือกตั้ง
+โดยเฉพาะอย่างยิ่ง
+(1)ประกันให้กระบวนการออกเสียง สิ่งอำนวยความสะดวก
+และวัสดุอุปกรณ์ที่ใช้ในการออกเสียงเหมาะสม เข้าถึงได้ เข้าใจ
+และใช้งานได้ง่าย
+(2)คุ้มครองสิทธิของคนพิการในการออกเสียงด้วยการลงคะแนน
+ลับในการเลือกตั้งและการลงประชามติ โดยปราศจากการคุกคาม
+และสามารถลงสมัครรับเลือกตั้งและดำรงตำแหน่งทุกตำแหน่ง
+และในทุกระดับของภาครัฐ จัดให้มีการอำนวยความสะดวกในการใช้
+(e) To ensure equal access by persons with disabilities
+to retirement benefits and programmes.
+Article 29
+Participation in political and public life
+States Parties shall guarantee to persons with disabilities
+political rights and the opportunity to enjoy them on an equal
+basis with others, and shall undertake to:
+(a) Ensure that persons with disabilities can effectively
+and fully participate in political and public life on an equal basis
+with others, directly or through freely chosen representatives,
+including the right and opportunity for persons with disabilities
+to vote and be elected, inter alia, by:
+(i) Ensuring that voting procedures, facilities and
+materials are appropriate, accessible and easy to understand
+and use;
+(ii) Protecting the right of persons with disabilities to
+vote by secret ballot in elections and public referendums
+without intimidation, and to stand for elections, to effectively
+hold office and perform all public functions at all levels of
+
+## หน้าอ้างอิง 51
+
+101 100Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+government, facilitating the use of assistive and new
+technologies where appropriate;
+(iii)Guaranteeing the free expression of the will of
+persons with disabilities as electors and to this end, where
+necessary, at their request, allowing assistance in voting by a
+person of their own choice;
+(b) Promote actively an environment in which persons
+with disabilities can effectively and fully participate in the
+conduct of public affairs, without discrimination and on an equal
+basis with others, and encourage their participation in public
+affairs, including:
+(i) Participation in non-governmental organizations
+and associations concerned with the public and political life
+of the country, and in the activities and administration of
+political parties;
+(ii)Forming and joining organizations of persons with
+disabilities to represent persons with disabilities at international,
+national, regional and local levels.
+อุปกรณ์และเทคโนโลยีเครื่องช่วยความพิการใหม่ๆ ตามความเหมาะสม
+(3)รับรองให้คนพิการมีเสรีภาพในการแสดงเจตนารมณ์
+ในฐานะเป็นผู้ลงคะแนนเสียงเลือกตั้ง และเพื่อการนี้ อนุญาตให้บุคคล
+ที่คนพิการเลือกเองช่วยเหลือในการลงคะแนนเสียง หากจำเป็น
+และตามที่คนพิการร้องขอ
+(บี)ส่งเสริมอย่างแข็งขันให้เกิดสภาพแวดล้อมที่คนพิการ
+สามารถมีส่วนร่วมในการดำเนินกิจกรรมสาธารณะได้อย่างมีประสิทธิผล
+และอย่างเต็มที่ โดยปราศจากการเลือกปฏิบัติ บนพื้นฐานที่เท่าเทียม
+กับบุคคลอื่น และกระตุ้นให้มีส่วนร่วมในสาธารณกิจ อันรวมถึง
+(1)การมีส่วนร่วมในองค์กรพัฒนาเอกชน และสมาคมที่ทำงาน
+ด้านสาธารณะและด้านการเมืองของประเทศ รวมทั้งในกิจกรรม
+และการบริหารของพรรคการเมือง
+(2)ก่อตั้งและร่วมกับองค์กรคนพิการ ในการเป็นผู้แทนของ
+คนพิการในระดับนานาประเทศ ระดับประเทศระดับภูมิภาคและระดับ
+ท้องถิ่น
+
+## หน้าอ้างอิง 52
+
+103 102Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+Article 30
+Participation in cultural life, recreation, leisure and sport
+1. States Parties recognize the right of persons with disabilities
+to take part on an equal basis with others in cultural life, and
+shall take all appropriate measures to ensure that persons with
+disabilities:
+(a) Enjoy access to cultural materials in accessible
+formats;
+(b) Enjoy access to television programmes, films,
+theatre and other cultural activities, in accessible formats;
+(c) Enjoy access to places for cultural performances or
+services, such as theatres, museums, cinemas, libraries and
+tourism services, and, as far as possible, enjoy access to monuments
+and sites of national cultural importance.
+2. States Parties shall take appropriate measures to enable
+persons with disabilities to have the opportunity to develop
+and utilize their creative, artistic and intellectual potential, not
+only for their own benefit, but also for the enrichment of society.
+ข้อ 30
+การมีส่วนร่วมทางวัฒนธรรม นันทนาการ การผ่อนคลายยามว่าง
+และกีฬา
+1.รัฐภาคียอมรับในสิทธิของคนพิการในการมีส่วนร่วมทางวัฒนธรรม
+บนพื้นฐานของความเท่าเทียมกับบุคคลอื่น ทั้งนี้ให้รัฐภาคีดำเนินมาตรการ
+ที่เหมาะสมทั้งปวงเพื่อประกันว่าคนพิการ
+(เอ)เข้าถึงสิ่งต่างๆ ที่เกี่ยวกับวัฒนธรรมในรูปแบบที่สามารถ
+เข้าถึงได้
+(บี)การเข้าถึงรายการโทรทัศน์ ภาพยนตร์ ละคร และกิจกรรม
+อื่นๆ ทางวัฒนธรรมในรูปแบบที่สามารถเข้าถึงได้
+(ซี)เข้าถึงสถานที่ที่จัดแสดงวัฒนธรรมหรือบริการ อาทิ
+โรงละคร พิพิธภัณฑ์ โรงภาพยนตร์ ห้องสมุดและบริการด้านท่องเที่ยว
+และทั้งนี้ ในขอบเขตที่จะทำได้ สามารถเข้าถึงอนุสรณ์สถาน และสถานที่
+ที่มีความสำคัญทางวัฒนธรรมของชาติ
+2.ให้รัฐภาคีดำเนินมาตรการที่เหมาะสมเพื่อให้คนพิการมีโอกาส
+ได้พัฒนาและใช้ศักยภาพของตนทางด้านการสร้างสรรค์งาน ด้านศิลปะ
+และสติปัญญา ไม่เพียงแต่เพื่อให้เกิดประโยชน์แก่ตนเองเท่านั้น
+แต่ยังเพื่อเพิ่มคุณค่าให้แก่สังคมอีกด้วย
+
+## หน้าอ้างอิง 53
+
+105 104Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+3. States Parties shall take all appropriate steps, in accordance
+with international law, to ensure that laws protecting
+intellectual property rights do not constitute an unreasonable
+or discriminatory barrier to access by persons with disabilities
+to cultural materials.
+4. Persons with disabilities shall be entitled, on an equal basis
+with others, to recognition and support of their specific
+cultural and linguistic identity, including sign languages and
+deaf culture.
+5. With a view to enabling persons with disabilities to
+participate on an equal basis with others in recreational,
+leisure and sporting activities, States Parties shall take
+appropriate measures:
+(a) To encourage and promote the participation, to
+the fullest extent possible, of persons with disabilities in
+mainstream sporting activities at all levels;
+(b) To ensure that persons with disabilities have an
+opportunity to organize, develop and participate in disability-
+specific sporting and recreational activities and, to this end,
+3.ให้รัฐภาคีดำเนินขั้นตอนที่เหมาะสมทั้งปวงโดยสอดคล้องหรือตาม
+กฎหมายระหว่างประเทศ เพื่อประกันว่ากฎหมายต่างๆ ที่คุ้มครอง
+ทรัพย์สินทางปัญญาไม่เป็นการกีดกั้นที่ไม่สมเหตุสมผลหรือเลือกปฏิบัติ
+ต่อการเข้าถึงสิ่งต่างๆ ที่เกี่ยวกับวัฒนธรรมโดยคนพิการ
+4.ให้คนพิการมีสิทธิได้รับการยอมรับและส่งเสริมอัตลักษณ์เฉพาะ
+ด้านวัฒนธรรมและภาษา รวมถึงภาษามือและวัฒนธรรมของคนหูหนวก
+ทั้งนี้ บนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+5.เพื่อให้คนพิการได้มีส่วนร่วมบนพื้นฐานที่เท่าเทียมกับบุคคลอื่น
+ในกิจกรรมด้านนันทนาการ การผ่อนคลายยามว่างและกีฬา ให้รัฐภาคี
+ดำเนินมาตรการที่เหมาะสมดังนี้
+(เอ)กระตุ้นและส่งเสริมการมีส่วนร่วมของคนพิการเท่าที่จะ
+เป็นไปได้มากที่สุดในกิจกรรมกีฬาทั่วไปทุกระดับ
+(บี)ประกันให้คนพิการมีโอกาสจัด พัฒนาและมีส่วนร่วม
+ในกิจกรรมกีฬาและนันทนาการเฉพาะของคนพิการแต่ละประเภท
+ได้อย่างเหมาะสมกับลักษณะความพิการ และเพื่อการนี้ ส่งเสริม
+
+## หน้าอ้างอิง 54
+
+107 106Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+encourage the provision, on an equal basis with others, of
+appropriate instruction, training and resources;
+(c) To ensure that persons with disabilities have
+access to sporting, recreational and tourism venues;
+(d) To ensure that children with disabilities have
+equal access with other children to participation in play,
+recreation and leisure and sporting activities, including those
+activities in the school system;
+(e) To ensure that persons with disabilities have
+access to services from those involved in the organization
+of recreational, tourism, leisure and sporting activities.
+Article 31
+Statistics and data collection
+1. States Parties undertake to collect appropriate information,
+including statistical and research data, to enable them to
+formulate and implement policies to give effect to the present
+Convention. The process of collecting and maintaining this
+information shall:
+การจัดให้มี การสอน การฝึกอบรมและทรัพยากรที่เหมาะสมบนพื้นฐาน
+ที่เท่าเทียมกับบุคคลอื่น
+(ซี)ประกันให้คนพิการสามารถเข้าถึงสถานที่จัดกีฬา นันทนาการ
+และท่องเที่ยว
+(ดี)ประกันให้เด็กพิการสามารถเข้าถึงอย่างเท่าเทียมกับเด็กอื่น
+ในกิจกรรมการเล่น นันทนาการ และการผ่อนคลายยามว่างและกีฬา
+โดยรวมถึงกิจกรรมเหล่านั้นในระบบโรงเรียน
+(อี)ประกันให้คนพิการเข้าถึงบริการจากผู้ที่เกี่ยวข้องในการ
+จัดกิจกรรมนันทนาการ การท่องเที่ยว การผ่อนคลายยามว่างและกีฬา
+ข้อ 31
+สถิติและการเก็บรวบรวมข้อมูล
+1.รัฐภาคีจะดำเนินการเก็บรวบรวมสารสนเทศที่เหมาะสม รวมถึงข้อมูล
+ทางสถิติและวิจัย เพื่อให้สามารถจัดทำและดำเนินการตามนโยบาย
+เพื่อทำให้อนุสัญญานี้เกิดผล กระบวนการรวบรวมและเก็บรักษา
+สารสนเทศนี้ต้อง
+
+## หน้าอ้างอิง 55
+
+109 108Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(a) Comply with legally established safeguards, including
+legislation on data protection, to ensure confidentiality and
+respect for the privacy of persons with disabilities;
+(b) Comply with internationally accepted norms to
+protect human rights and fundamental freedoms and ethical
+principles in the collection and use of statistics.
+2. The information collected in accordance with this article
+shall be disaggregated, as appropriate, and used to help
+assess the implementation of States Parties’ obligations under
+the present Convention and to identify and address the barriers
+faced by persons with disabilities in exercising their rights.
+3. States Parties shall assume responsibility for the
+dissemination of these statistics and ensure their accessibility
+to persons with disabilities and others.
+Article 32
+International cooperation
+1. States Parties recognize the importance of international
+cooperation and its promotion, in support of national efforts
+for the realization of the purpose and objectives of the
+(เอ)สอดคล้องกับมาตรการปกป้องทางกฎหมาย รวมถึงกฎหมาย
+คุ้มครองข้อมูล เพื่อประกันการรักษาความลับและการเคารพในความ
+เป็นส่วนตัวของคนพิการ
+(บี)สอดคล้องกับปทัสถานที่ยอมรับกันในทางระหว่างประเทศ
+เพื่อคุ้มครองสิทธิมนุษยชนและเสรีภาพขั้นพื้นฐานและหลักจรรยาบรรณ
+ในการรวบรวมและใช้สถิติ
+2.สารสนเทศที่เก็บรวบรวมตามข้อนี้จะได้รับการจำแนกอย่างเหมาะสม
+และใช้เพื่อช่วยประเมินผลการปฏิบัติตามพันธกรณีของรัฐภาคี
+ภายใต้อนุสัญญานี้และใช้เพื่อบ่งชี้และแก้ไขข้อกีดกั้นที่คนพิการ
+เผชิญอยู่ในการใช้สิทธิของตน
+3.ให้รัฐภาคีรับผิดชอบในการเผยแพร่สถิติเหล่านี้ และประกันว่า
+คนพิการและบุคคลอื่นๆ สามารถเข้าถึงสถิติได้
+ข้อ 32
+ความร่วมมือระหว่างประเทศ
+1.รัฐภาคียอมรับถึงความสำคัญของความร่วมมือระหว่างประเทศ
+และการส่งเสริมความร่วมมือเช่นว่านั้น เพื่อสนับสนุนให้ความพยายาม
+ระดับประเทศบรรลุความมุ่งประสงค์และวัตถุประสงค์ของอนุสัญญานี้
+
+## หน้าอ้างอิง 56
+
+111 110Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+present Convention, and will undertake appropriate and
+effective measures in this regard, between and among States
+and, as appropriate, in partnership with relevant international
+and regional organizations and civil society, in particular
+organizations of persons with disabilities. Such measures
+could include, inter alia:
+(a) Ensuring that international cooperation, including
+international development programmes, is inclusive of and
+accessible to persons with disabilities;
+(b) Facilitating and supporting capacity-building,
+including through the exchange and sharing of information,
+experiences, training programmes and best practices;
+(c) Facilitating cooperation in research and access to
+scientific and technical knowledge;
+(d) Providing, as appropriate, technical and economic
+assistance, including by facilitating access to and sharing of
+accessible and assistive technologies, and through the transfer
+of technologies.
+ได้จริง และจะดำเนินมาตรการที่เหมาะสมและมีประสิทธิผลในเรื่องนี้
+ระหว่างและในหมู่รัฐ และหากเหมาะสม ในลักษณะเป็นหุ้นส่วน
+กับองค์การระหว่างประเทศและภูมิภาคที่เกี่ยวข้องและภาคประชาสังคม
+และโดยเฉพาะอย่างยิ่งองค์การของคนพิการ มาตรการเช่นว่านี้อาจรวมถึง
+(เอ)การประกันว่าความร่วมมือระหว่างประเทศ รวมถึงโปรแกรม
+พัฒนาระหว่างประเทศ ที่ครอบคลุมคนพิการ และคนพิการสามารถ
+เข้าถึงได้
+(บี)การอำนวยความสะดวกและการสนับสนุนการเสริมสร้าง
+ศักยภาพ รวมถึงการแลกเปลี่ยนและการแบ่งปันสารสนเทศ
+ประสบการณ์ โปรแกรมการฝึกอบรมและแนวปฏิบัติที่เป็นเลิศ
+(ซี)การอำนวยความสะดวกในความร่วมมือในการวิจัยและ
+การเข้าถึงความรู้ด้านวิทยาศาสตร์และเทคนิค
+(ดี)การจัดความช่วยเหลือด้านวิชาการและเศรษฐกิจ รวมถึง
+การอำนวยความสะดวกในการเข้าถึงและแบ่งปันเทคโนโลยีสิ่งอำนวย
+ความสะดวกและเทคโนโลยีที่สามารถเข้าถึงได้ และโดยการถ่ายโอน
+เทคโนโลยี ทั้งนี้ หากเหมาะสม
+
+## หน้าอ้างอิง 57
+
+113 112Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+2. The provisions of this article are without prejudice to the
+obligations of each State Party to fulfil its obligations under
+the present Convention.
+Article 33
+National implementation and monitoring
+1. States Parties, in accordance with their system of
+organization, shall designate one or more focal points within
+government for matters relating to the implementation of the
+present Convention, and shall give due consideration to the
+establishment or designation of a coordination mechanism
+within government to facilitate related action in different
+sectors and at different levels.
+2. States Parties shall, in accordance with their legal and
+administrative systems, maintain, strengthen, designate or
+establish within the State Party, a framework, including one
+or more independent mechanisms, as appropriate, to promote,
+protect and monitor implementation of the present Convention.
+When designating or establishing such a mechanism, States
+Parties shall take into account the principles relating to the
+status and functioning of national institutions for protection
+and promotion of human rights.
+2.บทบัญญัติของข้อนี้ไม่มีผลกระทบต่อพันธกรณีของรัฐในการ
+ปฏิบัติตามพันธกรณีของตนภายใต้อนุสัญญานี้
+ข้อ 33
+การอนุวัติและการตรวจสอบติดตามระดับประเทศ
+1.ภายใต้ระบบการจัดองค์กรของตน ให้รัฐภาคีกำหนดหน่วย
+ประสานงานหลักหนึ่งหน่วยงาน หรือมากกว่าหนึ่งหน่วยงาน
+ภายในภาครัฐ เพื่อกิจการที่เกี่ยวกับการอนุวัติตามอนุสัญญานี้ และจะต้อง
+ให้ความสำคัญในการจัดตั้งหรือแต่งตั้งกลไกการประสานงานภายในรัฐบาล
+เพื่ออำนวยความสะดวกในการดำเนินการที่เกี่ยวข้องในภาคส่วนต่างๆ
+และในระดับต่างๆ
+2.ภายใต้ระบบกฎหมายและระบบการปกครองของตน ให้รัฐภาคีรักษา
+เสริมสร้างให้เกิดความเข้มแข็ง แต่งตั้งหรือจัดตั้งโครงสร้างภายในประเทศ
+รวมถึงกลไกอิสระหนึ่งหน่วยงานหรือมากกว่าหากเหมาะสม เพื่อส่งเสริม
+คุ้มครองและติดตามการอนุวัติตามอนุสัญญาในการแต่งตั้งหรือจัดตั้งกลไก
+ดังกล่าว ให้รัฐภาคีคำนึงถึงหลักการที่เกี่ยวกับสถานะและหน้าที่ของ
+สถาบันระดับประเทศที่เกี่ยวกับการคุ้มครองและส่งเสริมสิทธิมนุษยชน
+
+## หน้าอ้างอิง 58
+
+115 114Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+3. Civil society, in particular persons with disabilities and
+their representative organizations, shall be involved and
+participate fully in the monitoring process.
+Article 34
+Committee on the Rights of Persons with Disabilities
+1. There shall be established a Committee on the Rights of
+Persons with Disabilities (hereafter referred to as “the
+Committee”), which shall carry out the functions hereinafter
+provided.
+2. The Committee shall consist, at the time of entry into force
+of the present Convention, of twelve experts. After an
+additional sixty ratifications or accessions to the Convention,
+the membership of the Committee shall increase by six
+members, attaining a maximum number of eighteen members.
+3. The members of the Committee shall serve in their personal
+capacity and shall be of high moral standing and recognized
+competence and experience in the field covered by the present
+Convention. When nominating their candidates, States Parties
+are invited to give due consideration to the provision set out in
+article 4.3 of the present Convention.
+3.ภาคประชาสังคม โดยเฉพาะอย่างยิ่งคนพิการและองค์การผู้แทน
+ของคนพิการจะต้องมีส่วนเกี่ยวข้องและมีส่วนร่วมอย่างเต็มที่
+ในกระบวนการตรวจสอบติดตามการดำเนินงาน
+ข้อ 34
+คณะกรรมการว่าด้วยสิทธิคนพิการ
+1.ให้จัดตั้งคณะกรรมการว่าด้วยสิทธิคนพิการขึ้นคณะหนึ่ง (ซึ่งต่อไปนี้
+เรียกว่า “คณะกรรมการ”) ซึ่งจะปฏิบัติตามหน้าที่ที่ระบุไว้
+2.เมื่ออนุสัญญานี้เริ่มมีผลบังคับใช้ คณะกรรมการจะประกอบด้วย
+ผู้ทรงคุณวุฒิสิบสองคนภายหลังที่มีการยื่นสัตยาบันสารหรือภาค
+ยานุวัติสารเพิ่มอีกหกสิบประเทศ องค์ประกอบของคณะกรรมการจะเพิ่ม
+ขึ้นได้อีก หกคนทำให้คณะกรรมการมีจำนวนได้มากสุดถึงสิบแปดคน
+3.สมาชิกของคณะกรรมการจะปฏิบัติหน้าที่ในฐานะเฉพาะตัว
+และต้องเป็นผู้มีศีลธรรมสูงมีความสามารถและประสบการณ์ที่เป็นที่
+ยอมรับในสาขาภายใต้อนุสัญญานี้ เมื่อมีการเสนอชื่อผู้เข้ารับการเลือกตั้ง
+ให้รัฐภาคีคำนึงถึงบทบัญญัติที่กำหนดไว้ในข้อ 4 วรรค 3 ของอนุสัญญานี้
+
+## หน้าอ้างอิง 59
+
+117 116Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+4. The members of the Committee shall be elected by
+States Parties, consideration being given to equitable
+geographical distribution, representation of the different
+forms of civilization and of the principal legal systems,
+balanced gender representation and participation of experts
+with disabilities.
+5. The members of the Committee shall be elected by secret
+ballot from a list of persons nominated by the States Parties
+from among their nationals at meetings of the Conference of
+States Parties. At those meetings, for which two thirds of
+States Parties shall constitute a quorum, the persons elected
+to the Committee shall be those who obtain the largest
+number of votes and an absolute majority of the votes of the
+representatives of States Parties present and voting.
+6. The initial election shall be held no later than six months
+after the date of entry into force of the present Convention.
+At least four months before the date of each election, the
+Secretary-General of the United Nations shall address a letter
+to the States Parties inviting them to submit the nominations
+within two months. The Secretary-General shall subsequently
+prepare a list in alphabetical order of all persons thus
+4.สมาชิกของคณะกรรมการจะได้รับการเลือกตั้งจากรัฐภาคี โดยพิจารณา
+ถึงการกระจายตามเขตภูมิศาสตร์อย่างเป็นธรรม และการตั้งผู้แทนตาม
+อารยธรรมที่มีรูปแบบแตกต่างกัน ตลอดจนตามระบบกฎหมายหลัก
+การเป็นตัวแทนเพศสภาพที่สมดุล และการมีส่วนร่วมของผู้ทรงคุณวุฒิ
+ที่มีความพิการ
+5.ในการประชุมของที่ประชุมรัฐภาคี สมาชิกของคณะกรรมการ
+จะได้รับการเลือกตั้งโดยการลงคะแนนลับจากบัญชีรายชื่อบุคคล
+ที่เสนอชื่อโดยรัฐภาคีรัฐภาคีแต่ละรัฐอาจเสนอชื่อบุคคลหนึ่งคน
+จากบรรดาคนชาติของตนเองในการประชุมของที่ประชุมรัฐภาคีในการประชุม
+ดังกล่าวซึ่งองค์ประชุมจะต้องประกอบด้วยรัฐภาคีแห่งอนุสัญญานี้
+จำนวนสองในสาม บุคคลซึ่งได้รับการเลือกตั้งเป็นคณะกรรมการ
+จะต้องเป็นผู้ได้รับคะแนนเสียงจำนวนสูงที่สุดและเป็นเสียงข้างมาก
+โดยเด็ดขาดของคะแนนเสียงจากผู้แทนรัฐภาคีที่เข้าประชุมและออกเสียง
+6.การเลือกตั้งครั้งแรกจะกระทำขึ้นภายในไม่เกินหกเดือนหลังจาก
+ที่อนุสัญญานี้เริ่มมีผลบังคับใช้ อย่างน้อยที่สุดสี่เดือนก่อนวันเลือกตั้ง
+ของแต่ละครั้ง เลขาธิการสหประชาชาติจะจัดทำบัญชีรายชื่อของ
+บุคคลทั้งปวง ตามที่ได้รับการเสนอชื่อนั้นเรียงตามลำดับอักษร
+โดยระบุถึงรัฐภาคีซึ่งได้เสนอชื่อบุคคลเหล่านั้นและจะเสนอบัญชีนั้น
+ต่อรัฐภาคี
+
+## หน้าอ้างอิง 60
+
+119 118Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+nominated, indicating the State Parties which have nominated
+them, and shall submit it to the States Parties to the present
+Convention.
+7. The members of the Committee shall be elected for a term
+of four years. They shall be eligible for re-election once.
+However, the term of six of the members elected at the first
+election shall expire at the end of two years; immediately
+after the first election, the names of these six members shall
+be chosen by lot by the chairperson of the meeting referred
+to in paragraph 5 of this article.
+8. The election of the six additional members of the
+Committee shall be held on the occasion of regular elections,
+in accordance with the relevant provisions of this article.
+9. If a member of the Committee dies or resigns or declares
+that for any other cause she or he can no longer perform
+her or his duties, the State Party which nominated the
+member shall appoint another expert possessing the
+qualifications and meeting the requirements set out in the
+relevant provisions of this article, to serve for the remainder of
+the term.
+7.สมาชิกของคณะกรรมการจะทำการเลือกตั้งขึ้นเพื่อดำรงตำแหน่ง
+เป็นระยะเวลาสี่ปี โดยมีสิทธิได้รับเลือกตั้งใหม่อีกครั้งในทันทีที่หมดวาระ
+อย่างไรก็ดี ระยะเวลาในการดำรงตำแหน่งสำหรับสมาชิกทั้งหกคน
+ที่เลือกตั้งขึ้นคราวแรกให้สิ้นสุดลงเมื่อครบกำหนดสองปีนับจากการ
+เลือกตั้งในคราวแรกนั้น โดยรายชื่อของสมาชิกทั้งหกคนดังกล่าวจะทำ
+การคัดเลือกด้วยการจับสลากโดยประธานที่ประชุมตามอ้างอิงถึง
+ในวรรค 5 ของข้อนี้
+8.การเลือกตั้งสมาชิกในคณะกรรมการ เพิ่มจำนวนหกคน ให้จัดให้มีขึ้น
+ในวาระการเลือกตั้งปกติโดยเป็นไปตามบทบัญญัติที่เกี่ยวข้องซึ่งระบุไว้
+ในข้อนี้
+9.หากสมาชิกคนใดคนหนึ่งของคณะกรรมการ ตายหรือลาออกหรือ
+แจ้งว่าตนไม่อาจปฏิบัติหน้าที่ต่อไปได้ไม่ว่าด้วยเหตุใดก็ดี รัฐภาคีซึ่งเป็น
+ผู้เสนอชื่อสมาชิกผู้นั้น จะแต่งตั้งผู้เชี่ยวชาญท่านอื่นซึ่งมีคุณสมบัติ
+พร้อมตามบทบัญญัติอันระบุไว้ในข้อนี้เพื่อให้ดำรงตำแหน่งแทนในระยะเวลา
+ที่เหลือ
+
+## หน้าอ้างอิง 61
+
+121 120Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+10. The Committee shall establish its own rules of procedure.
+11. The Secretary-General of the United Nations shall
+provide the necessary staff and facilities for the effective
+performance of the functions of the Committee under the
+present Convention, and shall convene its initial meeting.
+12. With the approval of the General Assembly, the members
+of the Committee established under the present Convention
+shall receive emoluments from United Nations resources
+on such terms and conditions as the Assembly may
+decide, having regard to the importance of the Committee’s
+responsibilities.
+13. The members of the Committee shall be entitled to the
+facilities, privileges and immunities of experts on mission for
+the United Nations as laid down in the relevant sections of
+the Convention on the Privileges and Immunities of the
+United Nations.
+10. คณะกรรมการ จะกำหนดระเบียบข้อบังคับการประชุมของตนเอง
+11. เลขาธิการสหประชาชาติจะจัดเจ้าหน้าที่และสิ่งอำนวยความสะดวก
+ที่จำเป็นสำหรับการปฏิบัติงานที่มีประสิทธิผลของคณะกรรมการภายใต้
+อนุสัญญานี้ และให้เรียกประชุมคณะกรรมการเป็นครั้งแรก
+12.โดยความเห็นชอบของสมัชชาสหประชาชาติ สมาชิกของ
+คณะกรรมการนี้จะได้รับค่าตอบแทนจากแหล่งการเงินของสหประชาชาติ
+ตามข้อกำหนดและเงื่อนไขซึ่งสมัชชาสหประชาชาติพิจารณากำหนด
+โดยคำนึงถึงความสำคัญของภาระรับผิดชอบของคณะกรรมการ
+13. สมาชิกของคณะกรรมการ มีสิทธิได้รับการอำนวยความสะดวก
+เอกสิทธิ์และความคุ้มกันที่ให้สำหรับผู้เชี่ยวชาญ ที่ปฏิบัติภารกิจ
+เพื่อสหประชาชาติตามที่กำหนดไว้ในหมวดที่เกี่ยวข้องของอนุสัญญา
+ว่าด้วยเอกสิทธิ์และความคุ้มกันของสหประชาชาติ
+
+## หน้าอ้างอิง 62
+
+123 122Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+Article 35
+Reports by States Parties
+1. Each State Party shall submit to the Committee, through
+the Secretary-General of the United Nations, a comprehensive
+report on measures taken to give effect to its obligations
+under the present Convention and on the progress made in
+that regard, within two years after the entry into force
+of the present Convention for the State Party concerned.
+2. Thereafter, States Parties shall submit subsequent reports
+at least every four years and further whenever the
+Committee so requests.
+3. The Committee shall decide any guidelines applicable
+to the content of the reports.
+4. A State Party which has submitted a comprehensive
+initial report to the Committee need not, in its subsequent
+reports, repeat information previously provided. When
+preparing reports to the Committee, States Parties are invited
+to consider doing so in an open and transparent process
+and to give due consideration to the provision set out in
+article 4. 3 of the present Convention.
+ข้อ 35
+การจัดทำรายงานของรัฐภาคี
+1.ให้รัฐภาคีแต่ละรัฐส่งรายงานฉบับสมบูรณ์เกี่ยวกับมาตรการ
+ในการปฏิบัติตามพันธกรณีภายใต้อนุสัญญานี้และความคืบหน้า
+ในส่วนที่เกี่ยวข้องต่อคณะกรรมการ โดยผ่านเลขาธิการสหประชาชาติ
+ทั้งนี้ภายในระยะเวลาสองปีหลังจากที่อนุสัญญานี้มีผลบังคับใช้กับรัฐภาคี
+ที่เกี่ยวข้อง
+2.หลังจากนั้น ให้รัฐภาคีส่งรายงานฉบับต่อ ไปอย่างน้อยทุกๆ สี่ปี
+และเมื่อใดก็ตามที่คณะกรรมการร้องขอ
+3.ให้คณะกรรมการกำหนดแนวทางเกี่ยวกับเนื้อหาของรายงาน
+4.รัฐภาคีซึ่งส่งรายงานฉบับเริ่มแรกที่สมบูรณ์ไปยังคณะกรรมการแล้ว
+ไม่จำเป็นต้องรายงานข้อมูลที่ได้กล่าวไปแล้วซ้ำในรายงานฉบับต่อๆไป
+เมื่อมีการจัดเตรียมรายงานต่อคณะกรรมการ รัฐภาคีจะพิจารณา
+จัดเตรียมรายงานโดยกระบวนการที่เปิดกว้างและโปร่งใส และให้คำนึงถึง
+ข้อบัญญัติที่กำหนดไว้ใน ข้อ 4 วรรค 3 ของอนุสัญญานี้
+
+## หน้าอ้างอิง 63
+
+125 124Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+5. Reports may indicate factors and difficulties affecting the
+degree of fulfilment of obligations under the present Convention.
+Article 36
+Consideration of reports
+1. Each report shall be considered by the Committee, which
+shall make such suggestions and general recommendations
+on the report as it may consider appropriate and shall forward
+these to the State Party concerned. The State Party may
+respond with any information it chooses to the Committee.
+The Committee may request further information from States
+Parties relevant to the implementation of the present Convention.
+2. If a State Party is significantly overdue in the submission
+of a report, the Committee may notify the State Party
+concerned of the need to examine the implementation of the
+present Convention in that State Party, on the basis of reliable
+information available to the Committee, if the relevant report
+is not submitted within three months following the notification.
+The Committee shall invite the State Party concerned to
+participate in such examination. Should the State Party respond
+by submitting the relevant report, the provisions of paragraph
+1 of this article will apply.
+5.รายงานอาจระบุปัจจัยและความยากลำบากซึ่งกระทบต่อระดับ
+ความสำเร็จที่ทำให้ไม่สามารถปฏิบัติตามพันธกรณี ภายใต้อนุสัญญานี้
+ข้อ 36
+การพิจารณารายงาน
+1.รายงานแต่ละฉบับจะได้รับการพิจารณาโดยคณะกรรมการ ซึ่งจะให้
+ข้อเสนอแนะและข้อแนะนำทั่วไปเกี่ยวกับรายงานตามที่คณะกรรมการ
+เห็นสมควรและจะส่งต่อไปยังรัฐภาคีที่เกี่ยวข้อง รัฐภาคีอาจตอบข้อมูลใด
+ที่ตนเลือกไปยังคณะกรรมการ คณะกรรมการอาจร้องขอข้อมูลที่เกี่ยวข้อง
+กับการอนุวัติการตามอนุสัญญานี้เพิ่มเติมจากรัฐภาคี
+2.ถ้ารัฐภาคีส่งรายงานช้ากว่ากำหนด คณะกรรมการอาจแจ้งต่อรัฐภาคี
+ที่เกี่ยวข้องถึงความจำเป็นในการตรวจสอบการปฏิบัติตามอนุสัญญานี้
+บนพื้นฐานของข้อมูลที่เชื่อถือได้ที่คณะกรรมการมีอยู่ ถ้ารัฐภาคีนั้น
+ไม่ส่งรายงานที่เกี่ยวข้องภายในระยะเวลาสามเดือนหลังจากการที่ได้รับ
+แจ้งให้คณะกรรมการเชิญรัฐภาคีที่เกี่ยวข้องเข้าร่วมการตรวจสอบนี้ด้วย
+ถ้ารัฐภาคีส่งรายงานที่เกี่ยวข้องบทบัญญัติของวรรคหนึ่งของข้อนี้
+จะนำมาใช้บังคับ
+
+## หน้าอ้างอิง 64
+
+127 126Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+3. The Secretary-General of the United Nations shall make
+available the reports to all States Parties.
+4. States Parties shall make their reports widely available
+to the public in their own countries and facilitate access to
+the suggestions and general recommendations relating to these
+reports.
+5. The Committee shall transmit, as it may consider
+appropriate, to the specialized agencies, funds and programmes
+of the United Nations, and other competent bodies, reports
+from States Parties in order to address a request or indication
+of a need for technical advice or assistance contained therein,
+along with the Committee’s observations and recommendations,
+if any, on these requests or indications.
+Article 37
+Cooperation between States Parties and the Committee
+1. Each State Party shall cooperate with the Committee and
+assist its members in the fulfilment of their mandate.
+2. In its relationship with States Parties, the Committee shall
+give due consideration to ways and means of enhancing
+3.เลขาธิการสหประชาชาติจะเปิดโอกาสให้รัฐภาคีทุกประเทศ
+สามารถเข้าถึงรายงาน
+4.ให้รัฐภาคีเปิดโอกาสให้สาธารณชนในประเทศของตนสามารถ
+เข้าถึงรายงานและเปิดโอกาสให้เข้าถึงข้อเสนอแนะและข้อแนะนำทั่วไป
+ที่เกี่ยวกับรายงานเหล่านี้
+5.หากพิจารณาว่าเหมาะสม ให้คณะกรรมการนำส่งรายงานของรัฐภาคี
+ไปยังทบวงการชำนัญพิเศษ กองทุน และโปรแกรมต่างๆ ของ
+สหประชาชาติ และองค์กรอื่นๆ ที่เกี่ยวข้อง เพื่อแจ้งคำร้องหรือข้อระบุ
+ความต้องการคำแนะนำทางวิชาการหรือความช่วยเหลือที่ระบุในรายงาน
+พร้อมข้อสังเกตและข้อแนะนำของคณะกรรมการ (ถ้ามี) เกี่ยวกับคำร้อง
+หรือข้อระบุความต้องการเหล่านี้
+ข้อ 37
+ความร่วมมือระหว่างรัฐภาคีและคณะกรรมการ
+1.ให้รัฐภาคีแต่ละรัฐร่วมมือกับคณะกรรมการ และช่วยเหลือสมาชิกของ
+คณะกรรมการในการดำเนินการตามอาณัติให้บรรลุผลสำเร็จ
+2.ในความสัมพันธ์กับรัฐภาคี คณะกรรมการจะคำนึงถึงหนทางและวิธี
+การเพิ่มประสิทธิผลของประเทศในการอนุวัติการตามอนุสัญญานี้
+
+## หน้าอ้างอิง 65
+
+129 128Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+national capacities for the implementation of the present
+Convention, including through international cooperation.
+Article 38
+Relationship of the Committee with other bodies
+In order to foster the effective implementation of the
+present Convention and to encourage international cooperation
+in the field covered by the present Convention:
+(a) The specialized agencies and other United Nations
+organs shall be entitled to be represented at the consideration
+of the implementation of such provisions of the present
+Convention as fall within the scope of their mandate.
+The Committee may invite the specialized agencies and other
+competent bodies as it may consider appropriate to provide
+expert advice on the implementation of the Convention in
+areas falling within the scope of their respective mandates.
+The Committee may invite specialized agencies and other
+United Nations organs to submit reports on the implementation
+of the Convention in areas falling within the scope of their
+activities;
+ซึ่งรวมถึงผ่านความร่วมมือระหว่างประเทศ
+ข้อ 38
+ความสัมพันธ์ของคณะกรรมการกับหน่วยงานอื่นๆ
+เพื่อให้การอนุวัติการตามอนุสัญญานี้ เป็นไปอย่างมีประสิทธิผล
+และเพื่อกระตุ้นให้เกิดความร่วมมือระหว่างประเทศในด้านที่อยู่ภายใต้
+อนุสัญญานี้
+(เอ)ทบวงการชำนัญพิเศษและองค์กรอื่นๆ ของสหประชาชาติ
+มีสิทธิที่จะมีตัวแทนในการพิจารณาการอนุวัติการตามบทบัญญัติ
+เหล่านั้นของอนุสัญญานี้ภายในขอบข่ายอำนาจหน้าที่ขององค์กร
+เหล่านั้น คณะกรรมการอาจเชิญทบวงการชำนัญพิเศษและองค์กรอื่นๆ
+ของสหประชาชาติตามที่เห็นสมควร เพื่อให้คำแนะนำในฐานะผู้เชี่ยวชาญ
+เกี่ยวกับการอนุวัติการตามอนุสัญญา ในเรื่องที่อยู่ในขอบข่าย
+อำนาจหน้าที่ขององค์กรนั้นคณะกรรมการอาจเชิญทบวงการชำนัญพิเศษ
+และองค์กรอื่นๆของสหประชาชาติให้เสนอรายงานเกี่ยวกับการอนุวัติการ
+ตามอนุสัญญา ในเรื่องที่อยู่ภายในขอบข่ายกิจกรรมขององค์กรดังกล่าว
+
+## หน้าอ้างอิง 66
+
+131 130Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(b) The Committee, as it discharges its mandate, shall
+consult, as appropriate, other relevant bodies instituted by
+international human rights treaties, with a view to ensuring
+the consistency of their respective reporting guidelines,
+suggestions and general recommendations, and avoiding
+duplication and overlap in the performance of their functions.
+Article 39
+Report of the Committee
+The Committee shall report every two years to the
+General Assembly and to the Economic and Social Council
+on its activities, and may make suggestions and general
+recommendations based on the examination of reports and
+information received from the States Parties. Such suggestions
+and general recommendations shall be included in the report
+of the Committee together with comments, if any, from
+States Parties.
+Article 40
+Conference of States Parties
+1. The States Parties shall meet regularly in a Conference of
+States Parties in order to consider any matter with regard to
+the implementation of the present Convention.
+(บี)หากเหมาะสม ในการปฏิบัติตามขอบข่ายอำนาจหน้าที่ของตน
+คณะกรรมการจะหารือกับองค์กรอื่นๆ ที่เกี่ยวข้องที่จัดตั้งขึ้น
+โดยสนธิสัญญาสิทธิมนุษยชนระหว่างประเทศต่างๆ เพื่อประกันว่า
+แนวทางในการจัดทำรายงานข้อเสนอแนะและข้อแนะนำทั่วไป
+มีความสอดคล้องกันและหลีกเลี่ยงการซ้ำซ้อนและทับซ้อน
+ในการปฏิบัติหน้าที่ต่างๆ
+ข้อ 39
+รายงานของคณะกรรมการ
+คณะกรรมการจะรายงานต่อสมัชชาสหประชาชาติและ
+คณะมนตรีเศรษฐกิจและสังคมเป็นประจำทุกๆสองปี เกี่ยวกับ
+กิจกรรมของคณะกรรมการ และอาจทำข้อเสนอแนะและข้อแนะนำทั่วไป
+โดยพิจารณาจากรายงานและสารสนเทศที่ได้รับจากรัฐภาคีเป็นฐาน
+ข้อเสนอแนะและข้อแนะนำทั่วไปเช่นว่านั้นต้องรวมอยู่ในรายงาน
+ของคณะกรรมการ พร้อมทั้งข้อสังเกตจากรัฐภาคี (ถ้ามี)
+ข้อ 40
+ที่ประชุมของรัฐภาคี
+1.รัฐภาคีจะต้องประชุมอย่างสม่ำเสมอในที่ประชุมของรัฐภาคี
+เพื่อพิจารณาประเด็นที่เกี่ยวข้องกับการอนุวัติการอนุสัญญานี้
+
+## หน้าอ้างอิง 67
+
+133 132Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+2. No later than six months after the entry into force of the
+present Convention, the Conference of the States Parties
+shall be convened by the Secretary-General of the United
+Nations. The subsequent meetings shall be convened by the
+Secretary-General of the United Nations biennially or upon
+the decision of the Conference of States Parties.
+Article 41
+Depositary
+The Secretary-General of the United Nations shall be
+the depositary of the present Convention.
+Article 42
+Signature
+The present Convention shall be open for signature by
+all States and by regional integration organizations at
+United Nations Headquarters in New York as of 30 March
+2007
+Article 43
+Consent to be bound
+The present Convention shall be subject to ratification
+by signatory States and to formal confirmation by signatory
+2.ภายในเวลาไม่เกินหกเดือนหลังจากที่อนุสัญญานี้เริ่มมีผลบังคับใช้
+เลขาธิการสหประชาชาติจะเรียกประชุมที่ประชุมของรัฐภาคี
+การประชุมครั้งต่อๆ ไปเลขาธิการสหประชาชาติจะเรียกประชุมทุกๆ
+สองปี หรือตามมติที่ประชุมของรัฐภาคี
+ข้อ 41
+การเก็บรักษาอนุสัญญา
+เลขาธิการสหประชาชาติเป็นผู้เก็บรักษาอนุสัญญานี้
+ข้อ 42
+การลงนาม
+อนุสัญญานี้จะเปิดให้ทุกรัฐ และองค์การรวมตัวระดับภูมิภาค
+ลงนามได้ที่สำนักงานใหญ่องค์การสหประชาชาติ ณ นครนิวยอร์ก
+นับแต่วันที่ 30 มีนาคม พ. ศ. 2550
+ข้อ 43
+ความยินยอมให้ผูกพัน
+อนุสัญญานี้ จะต้องได้รับการสัตยาบันโดยรัฐที่ได้ลงนามในอนุสัญญา
+และได้รับการยืนยันอย่างเป็นทางการโดยองค์การรวมตัวระดับภูมิภาค
+
+## หน้าอ้างอิง 68
+
+135 134Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+regional integration organizations. It shall be open for
+accession by any State or regional integration organization
+which has not signed the Convention.
+Article 44
+Regional integration organizations
+1. “Regional integration organization” shall mean an
+organization constituted by sovereign States of a given region,
+to which its member States have transferred competence in
+respect of matters governed by this Convention. Such organizations
+shall declare, in their instruments of formal confirmation or
+accession, the extent of their competence with respect to
+matters governed by this Convention. Subsequently, they shall
+inform the depositary of any substantial modification in the
+extent of their competence.
+2. References to “States Parties” in the present Convention
+shall apply to such organizations within the limits of their
+competence.
+3. For the purposes of article 45, paragraph 1, and article 47,
+paragraphs 2 and 3, any instrument deposited by a regional
+integration organization shall not be counted.
+ที่ได้ลงนามในอนุสัญญา อนุสัญญาจะเปิดให้มีการภาคยานุวัติโดยรัฐ
+หรือองค์การรวมตัวระดับภูมิภาคใดๆ ที่ไม่ได้ลงนามในอนุสัญญา
+ข้อ 44
+องค์การรวมตัวระดับภูมิภาค
+1. “องค์การรวมตัวระดับภูมิภาค” หมายถึง องค์การที่ประกอบด้วย
+รัฐอธิปไตยของภูมิภาคหนึ่งๆ ซึ่งรัฐสมาชิกได้ถ่ายโอนอำนาจที่เกี่ยวข้อง
+กับประเด็นตามอนุสัญญานี้ให้กับองค์การระดับภูมิภาคดังกล่าวแล้ว
+องค์การต่างๆ ดังกล่าวจะต้องประกาศในตราสารยืนยันอย่างเป็นทางการ
+หรือภาคยานุวัติสาร ถึงขอบเขตอำนาจของตนในเรื่องที่เกี่ยวกับประเด็น
+ภายใต้อนุสัญญานี้ หลังจากนั้น องค์การดังกล่าวจะต้องแจ้งไปยัง
+ผู้เก็บรักษาอนุสัญญาให้ทราบถึงการแก้ไขที่สำคัญเกี่ยวกับขอบเขต
+อำนาจของตน
+2.การอ้างถึง “รัฐภาคี” ในอนุสัญญานี้จะใช้กับองค์การดังกล่าว
+ภายในขอบเขตอำนาจขององค์การนั้นๆ
+3.ภายใต้ความมุ่งประสงค์ของข้อ 45 วรรค 1 และข้อ 47 วรรค 2
+และ 3 จะไม่นับรวมถึงตราสารที่ยื่นโดยองค์การรวมตัวระดับภูมิภาค
+
+## หน้าอ้างอิง 69
+
+137 136Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+4. Regional integration organizations, in matters within their
+competence, may exercise their right to vote in the Conference
+of States Parties, with a number of votes equal to the number
+of their member States that are Parties to this Convention.
+Such an organization shall not exercise its right to vote if any
+of its member States exercises its right, and vice versa.
+Article 45
+Entry into force
+1. The present Convention shall enter into force on the
+thirtieth day after the deposit of the twentieth instrument of
+ratification or accession.
+2. For each State or regional integration organization
+ratifying, formally confirming or acceding to the Convention
+after the deposit of the twentieth such instrument, the
+Convention shall enter into force on the thirtieth day after the
+deposit of its own such instrument.
+Article 46
+Reservations
+1. Reservations incompatible with the object and purpose
+of the present Convention shall not be permitted.
+4.องค์การรวมตัวระดับภูมิภาค ในเรื่องที่อยู่ในขอบเขตอำนาจของตน
+อาจใช้สิทธิในการลงคะแนนเสียงในที่ประชุมของรัฐภาคี โดยจำนวน
+คะแนนเสียงทั้งหมดเท่ากับจำนวนรัฐสมาชิกทั้งหมดที่เป็นภาคีอนุสัญญานี้
+องค์การ จะไม่มีสิทธิลงคะแนนเสียงหากรัฐสมาชิกใดขององค์การ
+ใช้สิทธิในการลงคะแนนเสียงของตน และในทางกลับกัน
+ข้อ 45
+การเริ่มมีผลบังคับใช้
+1.อนุสัญญานี้จะมีผลใช้บังคับในวันที่สามสิบถัดจากวันที่ได้มีการยื่น
+สัตยาบันสารหรือภาคยานุวัติสารฉบับที่ยี่สิบ
+2.สำหรับแต่ละรัฐหรือองค์การรวมตัวระดับภูมิภาคที่ได้ให้สัตยาบัน
+ยืนยันอย่างเป็นทางการหรือได้ภาคยานุวัติอนุสัญญาภายหลังจากที่ได้
+มีการยื่นสัตยาบันสารหรือภาคยานุวัติสารฉบับที่ยี่สิบ อนุสัญญาจะเริ่ม
+มีผลบังคับใช้ในวันที่สามสิบนับถัดจากวันที่ได้ยื่นสัตยาบันสารหรือ
+ภาคยานุวัติสารของตน
+ข้อ 46
+ข้อสงวน
+1.ห้ามตั้งข้อสงวนที่ไม่สอดคล้องต่อวัตถุที่หมายและความมุ่งประสงค์
+ของอนุสัญญานี้
+
+## หน้าอ้างอิง 70
+
+139 138Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+2. Reservations may be withdrawn at any time.
+Article 47
+Amendments
+1. Any State Party may propose an amendment to the present
+Convention and submit it to the Secretary-General of the
+United Nations. The Secretary-General shall communicate
+any proposed amendments to States Parties, with a request
+to be notified whether they favour a conference of States
+Parties for the purpose of considering and deciding upon the
+proposals. In the event that, within four months from the
+date of such communication, at least one third of the States
+Parties favour such a conference, the Secretary-General
+shall convene the conference under the auspices of the
+United Nations. Any amendment adopted by a majority of
+two thirds of the States Parties present and voting shall be
+submitted by the Secretary-General to the General Assembly
+for approval and thereafter to all States Parties for acceptance.
+2. An amendment adopted and approved in accordance with
+paragraph 1 of this article shall enter into force on the
+thirtieth day after the number of instruments of acceptance
+deposited reaches two thirds of the number of States Parties
+2.อาจถอนข้อสงวนในเวลาใดก็ได้
+ข้อ 47
+การแก้ไข
+1.รัฐภาคีใดๆ อาจเสนอข้อแก้ไขอนุสัญญานี้และยื่นต่อเลขาธิการ
+สหประชาชาติ หลังจากนั้นเลขาธิการสหประชาชาติ จะต้องส่งข้อแก้ไข
+ที่เสนอมาแก่รัฐภาคีทั้งหลาย พร้อมกับคำร้องขอที่ให้รัฐภาคีระบุว่า
+รัฐภาคีนั้นเห็นชอบให้จัดประชุมที่ประชุมของรัฐภาคีเพื่อความมุ่งประสงค์
+ในการพิจารณาและลงคะแนนเสียงต่อข้อเสนอนั้นหรือไม่ ในกรณี
+ที่ภายในสี่เดือนนับจากวันที่ได้แจ้งข้อเสนอเช่นว่านั้น มีรัฐภาคีจำนวน
+อย่างน้อยที่สุดหนึ่งในสามเห็นชอบกับการจัดประชุมเช่นว่านั้น เลขาธิการ
+สหประชาชาติจะจัดให้มีการประชุมภายใต้การอุปถัมภ์ของสหประชาชาติ
+ข้อแก้ไขใดๆที่รับรองโดยรัฐภาคีส่วนใหญ่ที่เข้าร่วมและลงคะแนนเสียง
+ในที่ประชุมจะต้องเสนอต่อสมัชชาสหประชาชาติ เพื่อให้ความเห็นชอบ
+2.ข้อแก้ไขที่ได้มีการรับเอาและเห็นชอบตามวรรคหนึ่ง ของข้อนี้
+จะเริ่มมีผลบังคับใช้ในวันที่สามสิบถัดจากวันที่ได้มีการยื่นตราสารยอมรับ
+ข้อแก้ไขด้วยคะแนนเสียงข้างมากจำนวนสองในสามของรัฐภาคี ณ
+วันที่รับเอาข้อแก้ไขดังกล่าวนั้นหลังจากนั้นข้อเสนอแก้ไขจะมีผลบังคับใช้
+
+## หน้าอ้างอิง 71
+
+141 140Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+at the date of adoption of the amendment. Thereafter, the
+amendment shall enter into force for any State Party on the
+thirtieth day following the deposit of its own instrument of
+acceptance. An amendment shall be binding only on those
+States Parties which have accepted it.
+3. If so decided by the Conference of States Parties by
+consensus, an amendment adopted and approved in accordance
+with paragraph 1 of this article which relates exclusively
+to articles 34, 38, 39 and 40 shall enter into force for all
+States Parties on the thirtieth day after the number of
+instruments of acceptance deposited reaches two thirds
+of the number of States Parties at the date of adoption of the
+amendment.
+Article 48
+Denunciation
+A State Party may denounce the present Convention
+by written notification to the Secretary-General of the United
+Nations. The denunciation shall become effective one year
+after the date of receipt of the notification by the Secretary-
+General
+สำหรับรัฐภาคีใด ณ วันที่สามสิบถัดจากวันที่รัฐภาคีนั้นยื่นตราสารยอมรับ
+ข้อแก้ไข การแก้ไขจะผูกพันเฉพาะรัฐภาคีที่ยอมรับข้อแก้ไขนั้น
+3.หากที่ประชุมรัฐภาคีมีฉันทามติ ข้อแก้ไขที่ได้มีการรับเอาและเห็นชอบ
+ตามวรรคหนึ่ง ของข้อนี้ ซึ่งเกี่ยวเนื่องเฉพาะกับข้อ 34 ข้อ 38 ข้อ 39
+และข้อ 40 จะเริ่มมีผลบังคับใช้ต่อรัฐภาคีทั้งปวง ณ วันที่สามสิบ
+ถัดจากวันที่รัฐภาคีนั้นยื่นตราสารยอมรับข้อแก้ไขข้อแก้ไขจะผูกพันเฉพาะ
+รัฐภาคีที่ยอมรับข้อแก้ไขนั้น
+ข้อ 48
+การบอกเลิก
+รัฐภาคีอาจบอกเลิกอนุสัญญานี้โดยการแจ้งเป็นลายลักษณ์อักษร
+ไปยังเลขาธิการสหประชาชาติ การบอกเลิกจะมีผลหนึ่งปีหลังจากวันที่
+เลขาธิการสหประชาชาติได้รับแจ้ง
+
+## หน้าอ้างอิง 72
+
+143 142Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+Article 49
+Accessible format
+The text of the present Convention shall be made
+available in accessible formats.
+Article 50
+Authentic texts
+The Arabic, Chinese, English, French, Russian and
+Spanish texts of the present Convention shall be equally authentic.
+In witnessthereof the undersigned plenipotentiaries,
+being duly authorized thereto by their respective Governments,
+have signed the present Convention.
+ข้อ 49
+รูปแบบที่เข้าถึงได้
+ตัวบทของอนุสัญญานี้จะต้องจัดให้มีอยู่ในรูปแบบที่สามารถเข้าถึงได้
+ข้อ 50
+ตัวบทที่ถูกต้อง
+ตัวบทฉบับภาษาอาหรับ  จีน  อังกฤษ  ฝรั่งเศส  รัสเซีย  และสเปน
+ของอนุสัญญานี้มีความถูกต้องเท่าเทียมกัน
+เพื่อเป็นประจักษ์แก่การนี้ ผู้มีอำนาจเต็มซึ่งลงนามข้างท้ายนี้
+ซึ่งได้รับการมอบอำนาจโดยชอบจากรัฐบาลของตนได้ลงนามในอนุสัญญานี้
+
+## หน้าอ้างอิง 73
+
+145 144Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ภาคผนวก
+
+## หน้าอ้างอิง 74
+
+147 146Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+Optional Protocol to the Convention on the Rights of
+Persons with Disabilities
+.................................................................
+The States Parties to the present Protocol have agreed
+as follows:
+Article 1
+1. A State Party to the present Protocol (“State Party”)
+recognizes the competence of the Committee on the Rights
+of Persons with Disabilities (“the Committee”) to receive and
+consider communications from or on behalf of individuals or
+groups of individuals subject to its jurisdiction who claim to
+be victims of a violation by that State Party of the provisions
+of the Convention.
+2. No communication shall be received by the Committee
+if it concerns a State Party to the Convention that is not
+a party to the present Protocol.
+Article 2
+The Committee shall consider a communication
+inadmissible when:
+พิธีสารเลือกรับ
+อนุสัญญาว่าด้วยสิทธิคนพิการ
+
+## หน้าอ้างอิง 75
+
+149 148Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+Article 3
+Subject to the provisions of article 2 of the present
+Protocol, the Committee shall bring any communications
+submitted to it confidentially to the attention of the State Party.
+Within six months, the receiving State shall submit to the
+Committee written explanations or statements clarifying the
+matter and the remedy, if any, that may have been taken
+by that State.
+Article 4
+1. At any time after the receipt of a communication and
+before a determination on the merits has been reached, the
+Committee may transmit to the State Party concerned for its
+urgent consideration a request that the State Party take such
+interim measures as may be necessary to avoid possible
+irreparable damage to the victim or victims of the alleged violation.
+2. Where the Committee exercises its discretion under
+paragraph 1 of this article, this does not imply a determination
+on admissibility or on the merits of the communication.
+(a) The communication is anonymous;
+(b) The communication constitutes an abuse of
+the right of submission of such communications or is
+incompatible with the provisions of the Convention;
+(c) The same matter has already been examined by
+the Committee or has been or is being examined under
+another procedure of international investigation or settlement;
+(d) All available domestic remedies have not been
+exhausted. This shall not be the rule where the application
+of the remedies is unreasonably prolonged or unlikely to bring
+effective relief;
+(e) It is manifestly ill-founded or not sufficiently
+substantiated; or when
+(f) The facts that are the subject of the communication
+occurred prior to the entry into force of the present Protocol
+for the State Party concerned unless those facts continued
+after that date.
+
+## หน้าอ้างอิง 76
+
+151 150Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+3. After examining the findings of such an inquiry, the
+Committee shall transmit these findings to the State Party
+concerned together with any comments and recommendations.
+4. The State Party concerned shall, within six months of
+receiving the findings, comments and recommendations
+transmitted by the Committee, submit its observations to the
+Committee.
+5. Such an inquiry shall be conducted confidentially and
+the cooperation of the State Party shall be sought at all stages
+of the proceedings.
+Article 7
+1. The Committee may invite the State Party concerned to
+include in its report under article 35 of the Convention details
+of any measures taken in response to an inquiry conducted
+under article 6 of the present Protocol.
+2. The Committee may, if necessary, after the end of the
+period of six months referred to in article 6.4, invite the
+State Party concerned to inform it of the measures taken in
+response to such an inquiry.
+Article 5
+The Committee shall hold closed meetings when
+examining communications under the present Protocol.
+After examining a communication, the Committee shall
+forward its suggestions and recommendations, if any, to the
+State Party concerned and to the petitioner.
+Article 6
+1. If the Committee receives reliable information indicating
+grave or systematic violations by a State Party of rights set
+forth in the Convention, the Committee shall invite that State
+Party to cooperate in the examination of the information
+and to this end submit observations with regard to the
+information concerned.
+2. Taking into account any observations that may have been
+submitted by the State Party concerned as well as any other
+reliable information available to it, the Committee may
+designate one or more of its members to conduct an inquiry
+and to report urgently to the Committee. Where warranted
+and with the consent of the State Party, the inquiry may
+include a visit to its territory.
+
+## หน้าอ้างอิง 77
+
+153 152Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+State or regional integration organization which has ratified,
+formally confirmed or acceded to the Convention and which
+has not signed the Protocol.
+Article 12
+1. “Regional integration organization” shall mean an
+organization constituted by sovereign States of a given region,
+to which its member States have transferred competence in
+respect of matters governed by the Convention and this
+Protocol. Such organizations shall declare, in their instruments
+of formal confirmation or accession, the extent of their
+competence with respect to matters governed by the
+Convention and this Protocol. Subsequently, they shall inform
+the depositary of any substantial modification in the extent
+of their competence.
+2. References to “States Parties” in the present Protocol shall
+apply to such organizations within the limits of their competence.
+3. For the purposes of article 13, paragraph 1, and article 15,
+paragraph 2, any instrument deposited by a regional integration
+organization shall not be counted.
+Article 8
+Each State Party may, at the time of signature or
+ratification of the present Protocol or accession thereto,
+declare that it does not recognize the competence of the
+Committee provided for in articles 6 and 7.
+Article 9
+The Secretary-General of the United Nations shall be
+the depositary of the present Protocol.
+Article 10
+The present Protocol shall be open for signature by
+signatory States and regional integration organizations of the
+Convention at United Nations Headquarters in New York as
+of 30 March 2007.
+Article 11
+The present Protocol shall be subject to ratification
+by signatory States of this Protocol which have ratified or
+acceded to the Convention. It shall be subject to formal
+confirmation by signatory regional integration organizations
+of this Protocol which have formally confirmed or acceded
+to the Convention. It shall be open for accession by any
+
+## หน้าอ้างอิง 78
+
+155 154Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+4. Regional integration organizations, in matters within
+their competence, may exercise their right to vote in the
+meeting of States Parties, with a number of votes equal to
+the number of their member States that are Parties to this
+Protocol. Such an organization shall not exercise its right to
+vote if any of its member States exercises its right, and vice
+versa.
+Article 13
+1. Subject to the entry into force of the Convention, the
+present Protocol shall enter into force on the thirtieth day after
+the deposit of the tenth instrument of ratification or accession.
+2. For each State or regional integration organization
+ratifying, formally confirming or acceding to the Protocol after
+the deposit of the tenth such instrument, the Protocol shall
+enter into force on the thirtieth day after the deposit of its own
+such instrument.
+Article 14
+1. Reservations incompatible with the object and purpose
+of the present Protocol shall not be permitted.
+2. Reservations may be withdrawn at any time.
+Article 15
+1. Any State Party may propose an amendment to the
+present Protocol and submit it to the Secretary-General of the
+United Nations. The Secretary-General shall communicate
+any proposed amendments to States Parties, with a request
+to be notified whether they favour a meeting of States Parties
+for the purpose of considering and deciding upon the
+proposals. In the event that, within four months from the date
+of such communication, at least one third of the States Parties
+favour such a meeting, the Secretary-General shall convene
+the meeting under the auspices of the United Nations. Any
+amendment adopted by a majority of two thirds of the States
+Parties present and voting shall be submitted by the Secretary-
+General to the General Assembly for approval and thereafter
+to all States Parties for acceptance.
+2. An amendment adopted and approved in accordance with
+paragraph 1 of this article shall enter into force on the
+thirtieth day after the number of instruments of acceptance
+deposited reaches two thirds of the number of States Parties
+at the date of adoption of the amendment. Thereafter, the
+
+## หน้าอ้างอิง 79
+
+157 156Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+คณะกรรมการตรวจทานคำแปล
+อนุสัญญาว่าด้วยสิทธิคนพิการ
+amendment shall enter into force for any State Party on the
+thirtieth day following the deposit of its own instrument
+of acceptance. An amendment shall be binding only on
+those States Parties which have accepted it.
+Article 16
+A State Party may denounce the present Protocol
+by written notification to the Secretary-General of the United
+Nations. The denunciation shall become effective one year
+after the date of receipt of the notification by the Secretary-
+General.
+Article 17
+The text of the present Protocol shall be made available
+in accessible formats.
+Article 18
+The Arabic, Chinese, English, French, Russian and
+Spanish texts of the present Protocol shall be equally authentic.
+In witness thereof the undersigned plenipotentiaries,
+being duly authorized thereto by their respective Governments,
+have signed the present Protocol.
+
+## หน้าอ้างอิง 80
+
+159 158Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+เพื่อให้การดำเนินงานดังกล่าวบรรลุวัตถุประสงค์ จึงแต่งตั้ง
+คณะกรรมการตรวจทานคำแปลอนุสัญญาว่าด้วยสิทธิคนพิการ
+โดยมีองค์ประกอบและอำนาจหน้าที่  ดังนี้
+1.องค์ประกอบ
+1.1รองศาสตราจารย์นพนิธิ  สุริยะ ประธานกรรมการ
+1.2นางสุนีย์  สายสุพัฒน์ผล รองประธานกรรมการ
+รองเลขาธิการ
+สำนักงานส่งเสริมและ
+พัฒนาคุณภาพชีวิต
+คนพิการแห่งชาติ
+1.3ผู้แทนสำนักงานอัยการสูงสุด กรรมการ
+1.4ผู้แทนสำนักงาน
+คณะกรรมการกฤษฎีกา กรรมการ
+1.5ผู้แทนกรมคุ้มครองสิทธิ
+และเสรีภาพ กรรมการ
+1.6ผู้แทนกรมสนธิสัญญา
+และกฎหมาย กรรมการ
+1.7ผู้แทนกรมองค์การ
+ระหว่างประเทศกรรมการ
+1.8ประธานสภาคนพิการ
+ทุกประเภทแห่งประเทศไทย
+หรือผู้แทน กรรมการ
+คำสั่งสำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+ที่ 1 / 2552
+เรื่อง
+แต่งตั้งคณะกรรมการตรวจทานคำแปลอนุสัญญาว่าด้วยสิทธิคนพิการ
+____________________
+ด้วยกระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์
+โดยสำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+ได้รับมอบหมายให้เป็นหน่วยงานหลักในการขับเคลื่อนอนุสัญญา
+ว่าด้วยสิทธิคนพิการ โดยประเทศไทยเข้าเป็นภาคีและให้สัตยาบัน
+เมื่อวันที่ 29 กรกฎาคม 2551 มีผลใช้บังคับกับประเทศไทย ตั้งแต่วันที่
+28 สิงหาคม 2551 ซึ่งทำให้ประเทศไทยมีพันธกรณีที่จะต้องปฏิบัติ
+เกี่ยวกับการส่งเสริม พิทักษ์ และรับรองให้คนพิการได้รับการคุ้มครอง
+สิทธิมนุษยชนขั้นพื้นฐาน และมีความเสมอภาคอย่างกว้างขวาง
+จึงควรทำการพิจารณาตรวจทานคำแปลอนุสัญญาว่าด้วยสิทธิคนพิการ
+ให้มีความสมบูรณ์มากยิ่งขึ้น อันจะเป็นประโยชน์อย่างยิ่งต่อการจัดพิมพ์
+คำแปลอนุสัญญาดังกล่าวอย่างเป็นทางการ และเผยแพร่หลักการ
+ของอนุสัญญาว่าด้วยสิทธิคนพิการสู่สาธารณชนต่อไป
+
+
+## หน้าอ้างอิง 81
+
+161 160Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+1.9ผู้ช่วยศาสตราจารย์
+พิรุณา ติงศภัทิย์กรรมการ
+1.10นางกมลพรรณ  พันพึ่ง กรรมการ
+1.11ผู้อำนวยการสำนักนโยบาย
+และวิชาการ กรรมการ
+และเลขานุการ
+สำนักงานส่งเสริมและ
+พัฒนาคุณภาพชีวิต
+คนพิการแห่งชาติ
+1.12ผู้อำนวยการ
+กลุ่มความร่วมมือ
+ระหว่างประเทศกรรมการ
+และผู้ช่วยเลขานุการ
+สำนักงานส่งเสริมและ
+พัฒนาคุณภาพชีวิต
+คนพิการแห่งชาติ
+1.13ผู้อำนวยการกลุ่มกฎหมาย กรรมการ
+และผู้ช่วยเลขานุการ
+2.อำนาจหน้าที่
+2.1พิจารณาตรวจทาน แก้ไข และปรับปรุงคำแปลอนุสัญญา
+ว่าด้วยสิทธิคนพิการ
+2.2จัดทำคำแปลอนุสัญญว่าด้วยสิทธิคนพิการและอธิบาย
+คำศัพท์เฉพาะด้าน
+2.3ดำเนินการอื่นๆ ตามที่ได้รับมอบหมาย
+ทั้งนี้ ตั้งแต่บัดนี้เป็นต้นไป
+สั่ง ณ วันที่ 12 มกราคม พ.ศ. 2552
+(นางกิ่งแก้ว  อินหว่าง)
+เลขาธิการสำนักงานส่งเสริม
+และพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+
+## หน้าอ้างอิง 82
+
+163 162Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+คำสั่งสำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+ที่ 28 / 2552
+เรื่อง แต่งตั้งกรรมการตรวจทานคำแปลอนุสัญญาว่าด้วยสิทธิคนพิการ
+____________________
+ด้วยคณะกรรมการตรวจทานคำแปลอนุสัญญาว่าด้วยสิทธิ
+คนพิการซึ่งแต่งตั้งตามคำสั่งสำนักงานส่งเสริมและพัฒนาคุณภาพชีวิต
+คนพิกรแห่งชาติ ที่ 1/2552 ลงวันที่ 12 มกราคม 2552 มีมติ
+ในคราวประชุม ครั้งที่ 1/2552 เมื่อวันที่ 16 กุมภาพันธ์ 2552
+เห็นชอบให้มีการปรับปรุงองค์ประกอบคณะอนุกรรมการตรวจทาน
+คำแปลอนุสัญญาว่าด้วยสิทธิคนพิการ เพื่อให้มีการปฏิบัติงานเป็นไป
+อย่างมีประสิทธิภาพยิ่งขึ้น เห็นชอบให้มีการแต่งตั้งกรรมการเพิ่งเติม  ดังนี้
+1.ผู้แทนราชบัณฑิตยสถานกรรมการ
+2.ผู้แทนสมาคมคนตาบอด
+แห่งประเทศไทยกรรมการ
+ทั้งนี้  ตั้งแต่บัดนี้เป็นต้นไป
+สั่ง ณ วันที่ 17 กุมภาพันธ์  พ.ศ. 2552
+(นางกิ่งแก้ว  อินหว่าง)
+เลขาธิการสำนักงานส่งเสริม
+และพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+
+## หน้าอ้างอิง 83
+
+165 164Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ปฏิญญาสากลว่าด้วยสิทธิมนุษยชน
+คำปรารภ
+โดยที่การยอมรับนับถือเกียรติ์ศักดิ์ประจำตัวและสิทธิ
+เท่าเทียมกันและโอนมิได้ของบรรดาสมาชิกทั้งหลายแห่งครอบครัว
+มนุษย์เป็นหลักมูลเหตุ แห่งอิสรภาพ และความยุติธรรม และสันติภาพ
+ในโลก
+โดยไม่นำพาและเหยียดหยามต่อมนุษยชน ยังผลให้มีการ
+กระทำอย่างป่าเถื่อน ซึ่งเป็นการละเมิดมโนธรรมของมนุษยชาติ
+อย่างร้ายแรง และได้มีการประกาศว่า ปฏิญญาสูงสุดของสามัญชน
+ได้แก่ความต้องการให้มนุษย์มีชีวิตอยู่ในโลกด้วยอิสรภาพ ในการพูด
+และความเชื่อถือและอิสรภาพพ้นจากความหวาดกลัวและความต้องการ
+โดยที่เป็นความจำเป็นอย่างที่สิทธิมนุษยชนควรได้รับความคุ้มครอง
+โดยหลักบังคับของกฎหมาย ถ้าไม่ประสงค์จะให้คนตกอยู่ในบังคับ
+ให้หันเข้าหาขบถขัดขืนต่อทรราชและการกดขี่เป็นวิถีทางสุดท้าย
+โดยที่เป็นความจำเป็นอย่างยิ่งที่จะส่งเสริมวิวัฒนาการแห่ง
+สัมพันธ์ไมตรีระหว่างนานาชาติ
+โดยที่ประชาชนแห่งสหประชาชาติได้ยืนยันไว้ในกฎบัตร
+ถึงความเชื่อมั่นในสิทธิมนุษยชนอันเป็นหลักมูล ในเกียรติศักดิ์
+และคุณค่าของมนุษย์และสิทธิในความเท่าเทียมกันของบรรดาชายและหญิง
+และได้ตกลงใจที่จะส่งเสริมความก้าวหน้าทางสังคมและมาตรฐาน
+แห่งชีวิตที่ดีขึ้นด้วยในอิสรภาพ อันกว้างขวางยิ่งขึ้น
+ปฏิญญาสากล
+ว่าด้วยสิทธิมนุษยชน
+
+## หน้าอ้างอิง 84
+
+167 166Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ข้อ 2 (1)ทุกคนย่อมมีสิทธิและอิสรภาพบรรดาที่กำหนดไว้
+ในปฏิญญานี้ โดยปราศจากความแตกต่างไม่ว่าชนิดใด ๆ ดังเช่น เชื้อชาติ
+ผิว เพศ ภาษา ศาสนา การคิดเห็นทางการเมืองหรือทางอื่น เผ่าพันธุ์
+แห่งชาติ หรือสังคม ทรัพย์สิน กำเนิด หรือสถานะอื่น ๆ
+(2)อนึ่งจะไม่มีความแตกต่างใด ๆ ตามมูลฐาน
+แห่งสถานะทางการเมือง ทางการศาล หรือทางการระหว่างประเทศ
+ของประเทศหรือดินแดนของบุคคลสังกัด ไม่ว่าดินแดนนี้เป็นเอกราช
+อยู่ในความพิทักษ์ไม่ได้ปกครองตนเอง หรืออยู่ภายใต้การจำกัด
+อธิปไตยใด ๆ ทั้งสิ้น
+ข้อ 3คนทุกคนมีสิทธิในการดำรงชีวิตเสรีภาพ และความมั่นคง
+แห่งตัวตน
+ข้อ 4บุคคลใด ๆ จะถูกยึดเป็นทาษ หรือต้องภาระความจำยอม
+ไม่ได้ ความเป็นทาษ และการค้าทาษ เป็นห้ามขาดทุกรูป
+ข้อ 5บุคคลใด ๆ จะถูกทรมาร หรือได้รับผลปฏิบัติ หรือ
+การลงโทษที่โหดร้ายผิดมนุษยธรรมหรือต่ำช้าไม่ได้
+ข้อ 6ทุกคนมีสิทธิที่จะได้รับการยอมรับนับถือว่า เป็นบุคคล
+ตามกฎหมายทุกแห่งทุกหน
+ข้อ 7ทุกคนเสมอกันตามกฎหมายและมีสิทธิที่จะได้รับ
+ความคุ้มครองของกฎหมายเท่าเทียมกัน โดยปราศจากการเลือก
+ปฏิบัติใด ๆ ทุกคนมีสิทธิที่จะได้รับความคุ้มครองเท่าเทียมกัน
+จากการเลือกปฏิบัติใดๆอันเป็นการล่วงละเมิดปฏิญญา และจากการยุยง
+ให้เลือกปฏิบัติดังกล่าว
+ข้อ 8ทุกคนมีสิทธิที่จะได้รับบำบัดอันเป็นผลจริงจังจากศาล
+โดยที่รัฐสมาชิกต่างปฏิญาณจะให้บรรลุถึงซึ่งการส่งเสริม
+การเคารพและปฏิบัติตามทั่วสากลต่อสิทธิมนุษยชนและอิสรภาพ
+หลักมูล โดยร่วมมือกับสหประชาชาติ
+โดยที่ความเข้าใจร่วมกันในสิทธิ และอิสรภาพเหล่านี้เป็น
+สิ่งสำคัญยิ่ง เพื่อให้ปฏิญญานี้สำเร็จผลเต็มบริบูรณ์
+ฉะนั้น  บัดนี้  สมัชชาจึงประกาศมาว่า
+ปฏิญญาสากลว่าด้วยสิทธิมนุษยชนนี้ เป็นมาตรฐานร่วมกัน
+แห่งความสำเร็จสำหรับบรรดาประชาการและประชาติทั้งหลาย
+เพื่อจุดหมายปลายทางที่ว่า เอกชนทุกคนและองค์การสังคมทุกองค์การ
+โดยการรำลึกถึงปฏิญญานี้เป็นเนื่องนิจ จะบากบั่นพยายามด้วย
+การสอนและศึกษา ในอันที่ส่งเสริมการเคารพสิทธิและอิสรภาพเหล่านี้
+และด้วยมาตรการอันก้าวหน้าทั้งในและระหว่างประเทศ ในอันที่จะ
+ส่งเสริมการเคารพสิทธิและอิสรภาพเหล่านี้ และด้วยมาตรการ
+อันก้าวหน้าทั้งในและระหว่างประเทศ ในอันที่จะให้มีการยอมรับนับถือ
+และการปฏิบัติตามโดยสากลและอย่างเป็นผลจริงจัง ทั้งในบรรดา
+ประชาชนของรัฐสมาชิกด้วยกันเอง และในบรรดาประชาชนของ
+ดินแดนที่อยู่ใต้อำนาจของรัฐนั้น ๆ
+ข้อ 1มนุษย์ทั้งหลายเกิดมามีอิสระและเสมอภาคกันใน
+เกียรติศักดิ์และสิทธิ ต่างมีเหตุผลและมโนธรรม และควรปฏิบัติต่อกัน
+ด้วยเจตนารมณ์แห่งภารดรภาพ
+
+## หน้าอ้างอิง 85
+
+169 168Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+(2)ทุกคนมีสิทธิที่จะออกจากประเทศใดๆไป
+รวมทั้งประเทศของตนเองด้วย และที่จะกลับยังประเทศตน
+ข้อ 14 (1)ทุกคนมีสิทธิที่จะแสวงหา และที่จะได้อาศัย
+พำนักในประเทศอื่นเพื่อลี้ภัยจากการประหัตประหาร
+(2)จะอ้างสิทธินี้ไม่ได้ ในกรณีที่การดำเนินคดี
+สืบเนื่องอย่างแท้จริงมาจากความผิดที่ไม่ใช่ทางการเมือง หรือจาก
+การกระทำอันขัดต่อวัตถุประสงค์และหลักการของสหประชาชาติ
+ข้อ 15 (1)ทุกคนมีสิทธิในการถือสัญชาติหนึ่ง
+(2)บุคคลใดๆจะถูกตัดสัญชาติของตนโดยพลการ
+หรือถูกปฏิเสธสิทธิที่จะเปลี่ยนสัญชาติไม่ได้
+ข้อ 16 (1)ชายและหญิงที่มีอายุเต็มบริบูรณ์ มีสิทธิ
+ที่จะทำการสมรส และจะก่อตั้ง  ครอบครัว โดยปราศจากการจำกัดใด ๆ
+อันเนื่องจากเชื้อชาติ สัญชาติหรือ ศาสนา ต่างมีสิทธิเท่าเทียมกัน
+ในเรื่องการสมรส ระหว่างการสมรสและการขาดจากสมรส
+(2)การสมรสจะกระทำกันก็แต่ด้วยความยินยอม
+โดยอิสระและเต็มที่ของผู้ที่เจตนาจะเป็นคู่สมรส
+(3)ครอบครัวเป็นหน่วยธรรมชาติ และหลักมูล
+ของสังคมและมีสิทธิที่จะได้รับความคุมครองจากสังคมและรัฐ
+ข้อ 17 (1)ทุกคนมีสิทธิที่จะเป็นเจ้าของทรัพย์สิน
+โดยลำพังตนเองเช่นเดียวกับโดยร่วมกับผู้อื่น
+(2)บุคคลใด ๆ ที่จะถูกริบทรัพย์สินโดยพลการไม่ได้
+ข้อ 18ทุกคนมีสิทธิในอิสรภาพแห่งความคิดมโนธรรม
+และศาสนาสิทธินี้รวมถึงอิสรภาพในการที่จะประกาศ ศาสนา
+ที่มีอำนาจแห่งชาติต่อการกระทำอันละเมิดสิทธิหลักมูล ซึ่งตนได้รับ
+ตามรัฐธรรมนูญหรือกฎหมาย
+ข้อ 9บุคคลใดจะถูกจับกุม กักขัง หรือเนรเทศไปต่างถิ่น
+โดยพลการไม่ได้
+ข้อ 10ทุกคนมีสิทธิโดยเสมอภาคเต็มที่ในอันที่จะได้รับ
+การพิจารณาที่เป็นธรรมและเปิดเผย จากศาลที่อิสระและเที่ยงธรรม
+ในการกำหนดสิทธิและหน้าที่ของตนและการกระทำผิดอาชญาใด ๆ
+ที่ตนถูกกล่าวหา
+ข้อ 11 (1)ทุกคนที่ถูกกล่าวหาว่าทำผิดทางอาชญา มีสิทธิ
+ที่จะได้รับการสันนิษฐานไว้ก่อนว่าบริสุทธิ์จนกว่าจะพิสูจน์ ได้ว่ามีผิดตาม
+กฎหมายในการพิจารณาเปิดเผย ซึ่งตนได้รับหลักประกันบรรดา
+ที่จำเป็นสำหรับการต่อสู้คดี
+(2)จะถือบุคคลใดๆว่ามีความผิดทางอาญา
+เนื่องด้วยการกระทำหรือละเว้นใด ๆ อันมิได้จัดเป็นความผิดทางอาชญา
+ตามกฎหมายแห่งชาติหรือกฎหมายระหว่างประเทศในขณะได้กระทำ
+การนั้นขึ้นไม่ได้ และจะลงโทษอันหนักกว่าที่ใช้อยู่ในขณะที่ได้กระทำ
+ความผิดทางอาชญานั้นไม่ได้
+ข้อ12บุคคลใด ๆ จะถูกแทรกสอดโดยพลการในความ
+เป็นอยู่ส่วนตัวในครอบครัว ในเคหสถานหรือในการสื่อสาร หรือจะ
+ถูกลบหลู่ในเกียรติยศและชื่อเสียงไม่ได้ทุกคนมีสิทธิที่จะได้รับ
+ความคุ้มครองของกฎหมายต่อการแทรกสอด หรือการลบหลู่ดังกล่าวนั้น
+ข้อ 13 (1)ทุกคนมีสิทธิในอิสรภาพแห่งการเคลื่อนไหว
+และสถานที่อยู่ภายในเขตของแต่ละรัฐ
+
+## หน้าอ้างอิง 86
+
+171 170Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+และการพัฒนาบุคลิกภาพของตนอย่างอิสระ ทั้งนี้ โดยความเพียร
+พยายามแห่งชาติและความร่วมมือระหว่างประเทศ และตามระบอบ
+การและทรัพยากรของแต่ละรัฐ
+ข้อ 23 (1)ทุกมีสิทธิในการงาน ในการเลือกงานโดยอิสระ
+ในเงื่อนไขอันยุติธรรม และเป็นประโยชน์แห่งการงาน และการคุ้มครอง
+แห่งการว่างงาน
+(2)ทุกคนมีสิทธิที่จะได้รับเงินค่าจ้างเท่าเทียมกัน
+สำหรับงานเท่าเทียมกัน โดยปราศจากการเลือกปฏิบัติใด ๆ
+(3)ทุกคนที่ทำงานมีสิทธิที่จะได้รับค่าจ้างที่ยุติธรรม
+และเป็นประโยชน์ ที่จะให้ประกันแก่ตนเองละครอบครัวแห่งตน
+ซึ่งความเป็นอยู่อันคู่ควรแก่เกียรติศักดิ์ของมนุษย์ และถ้าจำเป็น
+ก็จะต้องได้รับวิถีทางคุ้มครองทางสังคมอื่น ๆ เพิ่มเติมด้วย
+(4)ทุกคนมีสิทธิที่จะจัดตั้ง และที่จะเข้าร่วม
+สหพันธ์กรรมกรเพื่อความคุ้มครองแห่งประโยชน์ของตน
+ข้อ 24ทุกคนมีสิทธิในการพักผ่อนและเวลาว่าง รวมทั้ง
+จำกัดเวลาการทำงานตามสมควร และวันหยุดงานเป็นครั้งคราว
+โดยได้รับสินจ้าง
+ข้อ 25 (1)ทุกคนมีสิทธิในมาตรฐานการครองชีพ
+อันเพียงพอสำหรับสุขภาพและความเป็นอยู่ดีของตนและครอบครัว
+รวมทั้งอาหาร เครื่องนุ่งห่ม ที่อยู่อาศัย และการดูแลรักษาทางการแพทย์
+และบริการสังคมที่จำเป็น และมีสิทธิในความมั่นคงในยามว่างงาน
+เจ็บป่วยพิการ เป็นหม้าย วัยชรา หรือขาดอาชีพอื่นในพฤติการณ์
+ที่นอกเหนืออำนาจของตน
+หรือความเชื่อของตน โดยการสอนการปฏิบัติสักการบูชาและ
+การประกอบพิธีกรรม ไม่ว่าจะโดยลำพังตนเองหรือประชาคมร่วมกับ
+ผู้อื่น และเป็นการสาธารณะหรือส่วนบุคคล
+ข้อ 19ทุกคนมีสิทธิในอิสรภาพแห่งความเห็นและ
+การแสดงออกสิทธินี้รวมถึงอิสรภาพในการที่จะถือเอาความคิด
+โดยปราศจากความแทรกสอดและที่จะแสวงหา รับและแจกจ่ายข่าวสาร
+และความคิดเห็นไม่ว่าโดยวิธีใด ๆ และโดยไม่คำนึงถึงเขตแดน
+ข้อ 20 (1)ทุกคนมีสิทธิในอิสรภาพแห่งการร่วมประชุม
+และการตั้งสมาคมโดยสันติ
+(2)บุคคลใด ๆ จะถูกบังคับให้สังกัดสมาคมใด
+สมาคมหนึ่งไม่ได้
+ข้อ 21 (1)ทุกคนมีสิทธิที่จะมีส่วนในรัฐบาลของประเทศตน
+จะเป็นโดยตรงหรือโดยการผ่านทางผู้แทนซึ่งได้เลือกตั้งโดยอิสระ
+(2)บุคคลมีสิทธิที่เข้าถึงบริการสาธารณะในประเทศ
+ของตนโดยเสมอภาค
+(3)เจตจำนงของประชาชนจะต้องเป็นมูลฐาน
+แห่งอำนาจของรัฐบาลเจตจำนงนี้จะต้องแสดงออกทางการเลือกตั้งตาม
+กำหนดเวลา และอย่างแท้จริง ซึ่งอาศัยการออกเสียงกันอย่างทั่วไป
+และเสมอภาค และการลงคะแนนลับ หรือวิธีการลงคะแนนโดยอิสระ
+อย่างอื่นทำนองเดียวกัน
+ข้อ 22ทุกคน ในฐานะที่เป็นสมาชิกของสังคม มีสิทธิ
+ในทางมั่นคงของสังคม และมีสิทธิในการบรรลุถึงซึ่งสิทธิทางเศรษฐกิจ
+ทางสังคม และทางวัฒนธรรม อันจำเป็นอย่างยิ่งสำหรับเกียรติศักดิ์ของตน
+
+## หน้าอ้างอิง 87
+
+173 172Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ในปฏิญญานี้
+ข้อ 29 (1)ทุกคนมีหน้าที่ต่อประชาคม ด้วยการพัฒนาต่อ
+บุคลิกภาพของตนโดยอิสรภาพเต็มที่ จะกระทำได้ก็แค่ประชาคมเท่านั้น
+(2)ในการใช้สิทธิและอิสรภาพแห่งตน ทุกคน
+ตกอยู่ในบังคับของข้อจำกัด เพียงเท่าที่ได้กำหนดลงโดยกฎหมายเท่านั้น
+เพื่อประโยชน์ที่ได้มาซึ่งการนับถือ และเคารพสิทธิและอิสรภาพของ
+ผู้อื่นตามสมควรและที่จะเผชิญกับความเรียกร้องต้องการอันเที่ยงธรรม
+ของศีลธรรม ความสงบเรียบร้อยของประชาชน และสวัสดิการทั่วไป
+ในสังคมประชาธิปไตย
+(3)สิทธิและอิสรภาพเหล่านี้ จะใช้ขัดต่อวัตถุประสงค์
+และหลักการของสหประชาชาติไม่ได้ว่าในกรณีใด ๆ
+ข้อ 30ไม่มีบทใด ในปฏิญญานี้ที่จะอนุมานว่าให้สิทธิใด ๆ
+แก่รัฐ หมู่คน หรือบุคคล ในอันที่จะดำเนินกิจกรรมใด ๆ หรือปฏิบัติการ
+ใด ๆ อันมุ่งต่อการทำลายสิทธิและอิสรภาพ ดังกำหนดไว้ ณ ที่นี้
+(2)มารดาและเด็กมีสิทธิที่จะรับการดูแลรักษา
+และช่วยเหลือเป็นพิเศษ เด็กทั้งปวงไม่ว่าจะเกิดในหรือนอกสมรส
+จะต้องได้รับการคุ้มครองทางสังคมเช่นเดียวกัน
+ข้อ 26 (1)ทุกคนมีสิทธิในศึกษา การศึกษาจะต้องให้เปล่า
+อย่างน้อยในชั้นประถมศึกษาและการศึกษาชั้นหลักมูล การประถมศึกษา
+จะต้องเป็นการบังคับ การศึกษาทางเทคนิคและวิชาชีพ จะต้องเป็นอันเปิด
+โดยทั่วไป และการศึกษาชั้นสูงสุดขึ้นไป จะต้องเป็นอันเปิดสำหรับทุกคน
+เข้าได้ถึงโดยเสมอภาคตามมูลฐานแห่งคุณวุฒิ
+(2)การศึกษาจะได้จัดไปในทางพัฒนาบุคลิกภาพ
+ของมนุษย์อย่างเต็มที่และยังความเคารพต่อสิทธิมนุษยชน และอิสรภาพ
+หลักมูลให้มั่นคงแข็งแรง จะต้องส่งเสริมความเข้าใจ ขันติธรรม
+และมิตรภาพแห่งบรรดาประชาชาติ กลุ่มเชื้อชาติ หรือศาสนา และจะต้อง
+ส่งเสริมกิจกรรมของสหประชาชาติ เพื่อธำรงไว้ซึ่งสันติภาพ
+(3)บิดามารดา มีสิทธิเบื้องแรกที่จะเลือกชนิดของ
+การศึกษาอันจะให้แก่บุตรหลานของตน
+ข้อ 27 (1)ทุกคนมีสิทธิที่เข้าร่วมในชีวิตทางวัฒนธรรม
+ของประชาชนโดยอิสระ  ที่จะบันเทิงใจในศิลปะและที่มีส่วน
+ในความรุดหน้า และคุณประโยชน์ทางวิทยาศาสตร์
+(2) ทุกคนมีสิทธิที่จะได้รับการคุ้มครองผลประโยชน์
+ทางศีลธรรมและทางวัตถุ อันเป็นผลจากการประดิษฐกรรมใด ๆ
+ทางวิทยาศาสตร์ วรรณกรรมและทางศิลปกรรม ซึ่งตนเป็นผู้สร้าง
+ข้อ 28ทุกคนมีสิทธิในระเบียบทางสังคมและระหว่างประเทศ
+ซึ่งจะเป็นทางให้สำเร็จผลเต็มที่ตามสิทธิและอิสรภาพดังกำหนดไว้
+
+## หน้าอ้างอิง 88
+
+175 174Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ปฏิญญาว่าด้วยสิทธิคนพิการไทย
+ความนำ
+คนพิการหรือทุพพลภาพเป็นทรัพยากรมนุษย์ที่มีคุณค่า
+จึงสมควรที่จะได้รับสิทธิและโอกาสในการพัฒนาให้เต็มศักยภาพ
+ได้รับการปกป้องคุ้มครองจากการถูกเอารัดเอาเปรียบ ได้เข้าร่วม
+ในกิจกรรมต่าง ๆ ทั้งด้านเศรษฐกิจ สังคม และการเมืองด้วย
+ความเสมอภาค ได้รับข้อมูลข่าวสารจากสื่อต่าง ๆ ที่เหมาะสมกับ
+ความพิการ และได้รับการยอมรับในศักดิ์ศรีแห่งความเป็นมนุษย์
+ปฏิญญาว่าด้วยสิทธิคนพิการไทยนี้ให้ความสำคัญต่อสิทธิ โอกาส
+ความเสมอภาค การมีส่วนร่วมอย่างเต็มที่และความต้องการของคนพิการ
+หรือทุพพลภาพ ตามรัฐธรรมนูญแห่งราชอาณาจักรไทย
+คณะผู้จัดทำอันประกอบด้วย องค์กรที่เกี่ยวข้องกับคนพิการ
+ทั้งภาครัฐ ภาคเอกชนและองค์กรของคนพิการ จะดำเนินการ
+ด้วยวิธีการต่าง ๆ เพื่อให้คนพิการได้รับประโยชน์สูงสุดตามเจตนารมณ์
+แห่งปฏิญญานี้
+ปฏิญญา
+ว่าด้วยสิทธิคนพิการไทย
+
+## หน้าอ้างอิง 89
+
+177 176Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+เมื่อ พ.ศ. 2536 ผู้นำรัฐบาลไทยได่ร่วมลงนามพร้อมกับผู้นำของ
+ประเทศในภูมิภาคนี้ในประกาศการมีส่วนร่วมอย่างเต็มที่และความเสมอภาค
+ของคนพิการในภูมิภาคเอเซียและแปซิฟิคเพื่อเป็นคำมั่นสัญญาใน
+การพัฒนาคุณภาคชีวิตคนพิการ และขจัดเจตคติที่ไม่ถูกต้องของสังคม
+ที่มีต่อคนพิการ
+รัฐธรรมนูญแห่งราชอาณาจักรไทย พ.ศ. 2540 ได้บัญญัติ
+ถึงเรื่องการคุ้มครองเสรีภาพ ศักดิ์ศรี ความเป็นมนุษย์ สิทธิของคนพิการ
+เพื่อให้มีคุณภาพชีวิตที่ดีขึ้นและสามารถพึ่งตนเองได้
+เพื่อเป็นการนำเจตนารมณ์ในเรื่องสิทธิ โอกาส และความเสมอภาค
+ของคนพิการดังที่ปรกฎในรัฐธรรมนุญแห่งราชอาณาจักรไทย ปฏิญญา
+ขององค์การสหประชาชาติ ประกาศการมีส่วนร่วมอย่างเต็มที่และ
+ความเสมอภาคของคนพิการในภูมิภาคเอเซียและแปซิฟิค แผนงาน
+และกฎระเบียบอื่น ๆ ที่ได้กำหนดไว้ไปสู่การปฏิบัติ ผู้แทนจากองค์กร
+ที่เกี่ยวข้องกับคนพิการทั้งภาครัฐและเอกชน และองค์กรคนพิการ
+จึงได้ร่วมกันจัดทำปฏิญญาว่าด้วยสิทธิคนพิการไทย เพื่อถือปฏิบัติ
+ให้เป็นไปในทิศทางเดียวกันให้เกิดประโยชน์สูงสุดแก่คนพิการ
+ปฏิญญาว่าด้วยสิทธิคนพิการไทยนี้ได้รับความเห็นชอบจาก
+คณะรัฐมนตรีเมื่อวันที่ 10 พฤศจิกายน 2541
+ความเป็นมา
+องค์การสหประชาชาติได้ให้ความสำคัญเรื่องสิทธิ โอกาส
+และความเสมอภาคของคนพิการ โดยในปี พ.ศ. 2541 ได้ประกาศ
+ปฏิญญาว่าด้วยสิทธิของคนพิการทางสติปัญญาและการเรียนรู้
+พ.ศ. 2518 ประกาศปฏิญญาว่าด้วยสิทธิของคนพิการ พ.ศ. 2524
+ประกาศให้เป็นปีคนพิการสากล และประกาศให้ช่วงปี พ.ศ. 2526 -
+2535 เป็นทศวรรษของคนพิการพร้อมทั้งกำหนดแผนปฏิบัติการโลก
+เมื่อสิ้นสุดทศวรรษคนพิการแล้วคณะกรรมาธิการเศรษฐกิจและสังคม
+แห่งเอเซียและแปซิฟิค องค์การสหประชาชาติ ต้องการที่จะปฏิบัติ
+กิจกรรมและรณรงค์เรื่องสิทธิและโอกาสของคนพิการอย่างต่อเนื่อง
+จึงได้ประกาศให้ปี พ.ศ. 2536 - 2545 เป็นทศวรรษคนพิการ
+ของภูมิภาคเอเซียและแปซิฟิค
+สำหรับประเทศไทย  รัฐบาลได้ตระหนักถึงความสำคัญเรื่องสิทธิ
+และโอกาสของคนพิการเช่นกัน โดยหน่วยงานต่าง ๆ ร่วมกับ
+คนพิการได้ยกร่างพระราชบัญญัติการฟื้นฟูสมรรถภาพคนพิการตั้งแต่
+พ.ศ. 2520 และเมื่อปีคนพิการสากล พ.ศ. 2524 ได้จัดกิจกรรมต่างๆ
+พร้อมทั้งประกาศใช้แผนการสงเคราะห์และฟื้นฟูสมรรถภาพคนพิการ
+แห่งชาติระยะยาว (พ.ศ.2525-2534)
+ในปี พ.ศ. 2534 ได้มีการตราพระราชบัญญัติการฟื้นฟู
+สมรรถภาพคนพิการ และต่อมาได้ประกาศกฎกระทรวง ระเบียบต่าง ๆ
+รวมทั้งกำหนดนโยบายของรัฐเพื่อให้คนพิการได้รับสิทธิโอกาส
+และมีส่วนร่วมในกิจกรรมต่างๆ อย่างเท่าเทียมกับสมาชิกอื่นในสังคม
+
+## หน้าอ้างอิง 90
+
+179 178Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+หรือข้อยกเว้นใด ๆ
+7.คนพิการ มีสิทธิและโอกาสได้รับการเตรียมความพร้อม
+ด้านอาชีพ การฝึกอาชีพ การประกอบอาชีพทุกประเภท ได้รับ
+การจ้างงานหรือว่าจ้างงานเข้าทำงานตามความต้องการและความสามารถ
+โดยได้รับค่าตอบแทนและสวัสดิการ ได้รับความก้าวหน้า รวมทั้ง
+ได้เข้าร่วมเป็นสมาชิกสหภาพแรงงานโดยไม่มีการกีดกันหรือเลือกปฏิบัติ
+8.คนพิการ มีสิทธิได้รับการปกป้องคุ้มครองจากการถูกคุกคาม
+ทางเพศ ทำร้ายร่างกายและจิตใจ กักขัง เอารัดเอาเปรียบ หรือการแสวงหา
+ประโยชน์ใด ๆ จากความพิการ ทั้งนี้ ให้ได้รับความช่วยเหลือ
+ทางด้านกฎหมายเช่นเดียวกับบุคคลทั่วไป
+9.คนพิการ มีสิทธิอยู่ร่วมกับครอบครัว ชุมชนของตน
+และมีส่วนร่วมอย่างเต็มที่ในกิจกรรมของครอบครัว ชุมชน และสังคม
+10.คนพิการ มีสิทธิได้รับสิ่งอำนวยความสะดวก บริการ
+และความช่วยเหลือจากรัฐ เพื่อให้สามารถดำรงชีวิตอยู่ในสังคม
+ได้เช่นเดียวกับบุคคลทั่วไป
+11.คนพิการ มีสิทธิได้รับการเผยแพร่และประชาสัมพันธ์
+ให้ครอบครัว ชุมชน และสังคมได้รับรู้และเข้าใจคนพิการในทางที่
+สร้างสรรค์ โดยเฉพาะในเรื่องสิทธิ ศักยภาพ และความสามารถ
+รวมทั้งการบำเพ็ญประโยชน์ของคนพิการ
+12.คนพิการ มีสิทธิได้รับและเข้าถึงข้อมูลข่าวสาร โดยเฉพาะ
+เรื่องที่เกี่ยวข้องกับสิทธิของคนพิการ ทั้งนี้ ต้องได้รับการสนับสนุน
+ให้มีสื่อทุกประเภทที่เหมาะสมกับความพิการ รวมทั้งต้องจัดให้มี
+ล่ามภาษามือ อักษรเบรลล์ สื่ออิเลคโทรนิคส์ หรืออุปกรณ์พิเศษอื่น ๆ
+ปฏิญญาว่าด้วยสิทธิคนพิการไทย
+1.คนพิการ มีศักดิ์ศรีแห่งความเป็นมนุษย์ มีสิทธิ และเสรีภาพ
+แห่งบุคคล ย่อมได้รับความคุ้มครองในฐานะพลเมืองไทยตามรัฐธรรมนูญ
+แห่งราชอาณาจักรไทย และมีสิทธิต่าง ๆ ตามที่ระบุไว้ภายใต้ปฏิญญา
+ฉบับนี้ โดยไม่มีข้อยกเว้นใด ๆ และโดยปราศจากการแบ่งแยกเชื้อชาติ
+ศาสนา การเมือง ภาษา ถิ่นกำเนิด เพศ อายุ หรือสถานะอื่นใด
+2.คนพิการ มีสิทธิแสดงความคิดเห็น และมีส่วนร่วม
+ในกิจกรรมทางการเมือง
+3.คนพิการ มีสิทธิเข้าร่วมในการตัดสินในกำหนดนโยบาย
+และแผนงานทุกด้านที่เกี่ยวกับคนพิการทั้งในระดับชาติและระดับท้องถิ่น
+4.คนพิการ มีสิทธิได้รับการดูแลฟื้นฟูสมรรถภาพ และพัฒนา
+ตั้งแต่แรกเกิดและแรกเริ่มที่พบความพิการ รวมทั้งผู้ปกครองและ
+ครอบครัวของคนพิการต้องได้รับการสนับสนุนจากรัฐในทุกด้าน
+เพื่อให้สามารถฟื้นฟูสมรรถภาพและพัฒนาคนพิการอย่างเต็มศักยภาพ
+และสอดคล้องกับความต้องการของแต่ละบุคคล
+5.คนพิการ มีสิทธิได้รับบริการฟื้นฟูสมรรถภาพ เพื่อให้
+สามารถดำรงชีวิตอย่างอิสระได้ด้วยตนเองอย่างเต็มศักยภาพของ
+แต่ละบุคคล
+6.คนพิการ มีสิทธิและโอกาสได้รับการศึกษาอย่างมีคุณภาพ
+ในทุกระดับ ทุกรูปแบบของการจัดการศึกษาตามความต้องการของ
+คนพิการอย่างเท่าเทียบกับบุคคลทั่วไป ทั้งการศึกษาในระบบ นอกระบบ
+และการศึกษาต่อเนื่องตลอดชีวิต โดยไม่มีการจำกัด กีดกัน เลือกปฏิบัติ
+
+## หน้าอ้างอิง 91
+
+181 180Convention on the Rights of Persons with Disabilitiesอนุสัญญาว่าด้วยสิทธิคนพิการ
+CRPD
+กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ สำนักงานส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการแห่งชาติ
+CRPD
+ที่ใช้ในการสื่อสาร
+13.คนพิการ และครอบครัว ชุมชน สังคม มีสิทธิได้รับ
+และเข้าถึงข้อมูล ข่าวสาร เพื่อทราบถึงสิทธิอันระบุไว้ในปฏิญญา
+ฉบับนี้โดยทั่วถึง
+14.รัฐต้องให้ความสำคัญและปฏิบัติตามพันธสัญญาที่
+เกี่ยวข้องกับคนพิการ ซึ่งได้ลงนามหรือตกลงร่วมกันในระดับประเทศ
+และระดับนานาชาติ
+(นายชวน  หลีกภัย)
+นายกรัฐมนตรี
+วันที่ 3 เดือน ธันวาคม พุทธศักราช 2541

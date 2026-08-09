@@ -1056,21 +1056,20 @@ footer { background: #14161b !important; }
    Accessibility overrides (การเข้าถึง toggle - see a11y-provider.tsx)
    ============================================================
    Every zone below defines its own colors independently of the global
-   --ink/--paper variables that globals.css's body.theme-high-contrast/
-   theme-dark rules already cover (case-detail pages, browse/search
-   results) - the chat workspace hardcodes hex colors directly, and the
-   graph/help/stats pages each keep their own separately-scoped
-   --graph- and --help- prefixed custom properties (see the comments above each).
-   Without this block, toggling high contrast had NO visible effect on
-   the homepage chat UI or the graph/help/stats pages - together, most of
-   what people actually use day to day. All declarations are !important
-   because several base rules here (the header/footer dark theme just
-   above, in particular) are already !important themselves.
+   --ink/--paper variables that globals.css's body.theme-high-contrast
+   rule already covers (case-detail pages, browse/search results) - the
+   chat workspace hardcodes hex colors directly, and the graph/help/stats
+   pages each keep their own separately-scoped --graph- and --help-
+   prefixed custom properties (see the comments above each). Without this
+   block, toggling high contrast had NO visible effect on the homepage
+   chat UI or the graph/help/stats pages - together, most of what people
+   actually use day to day. All declarations are !important because
+   several base rules here (the header/footer dark theme just above, in
+   particular) are already !important themselves.
 
-   Dark mode isn't touched here: every zone below is already dark-themed
-   by default, so that toggle is correctly a no-op for them - it does its
-   job on the lighter :root-variable pages that globals.css already
-   covers. */
+   (There used to be a separate "dark mode" toggle/override here too - cut
+   since every zone below is already dark-themed by default, so it was
+   indistinguishable from "ปกติ" everywhere a user would actually look.) */
 
 /* --- Site header / footer --- */
 body.theme-high-contrast .site-header { background: #ffffff !important; border-bottom-color: #000000 !important; }

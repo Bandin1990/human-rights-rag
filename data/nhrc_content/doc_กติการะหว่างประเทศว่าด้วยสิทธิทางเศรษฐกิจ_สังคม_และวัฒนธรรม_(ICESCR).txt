@@ -1,37 +1,958 @@
-# กติการะหว่างประเทศว่าด้วยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม (International Covenant on Economic, Social and Cultural Rights: ICESCR)
+# กติการะหว่างประเทศว่าด้วยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
 
-**ปีที่รับรอง:** 2509 (1966) มีผลใช้บังคับทั่วไป 2519 (1976) · **ประเภทตราสาร:** สนธิสัญญาหลัก · **สถานะการเป็นภาคีของไทย:** ภาคีโดยการภาคยานุวัติ (5 กันยายน 2542)
-
-## สาระสำคัญ
-คู่กับ ICCPR ในฐานะสนธิสัญญาหลักที่แปลงหลักการใน UDHR ให้มีผลผูกพัน แต่เน้นสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม เช่น สิทธิในการทำงานและสภาพการทำงานที่เป็นธรรม สิทธิในการรวมตัวเป็นสหภาพแรงงาน สิทธิในมาตรฐานการครองชีพที่เพียงพอ (อาหาร ที่อยู่อาศัย) สิทธิด้านสุขภาพ สิทธิทางการศึกษา และสิทธิในการมีส่วนร่วมทางวัฒนธรรม พันธกรณีภายใต้ ICESCR มีลักษณะ "progressive realization" คือให้รัฐดำเนินการอย่างเต็มความสามารถของทรัพยากรที่มีเพื่อบรรลุสิทธิเหล่านี้อย่างค่อยเป็นค่อยไป ต่างจาก ICCPR ที่ส่วนใหญ่ต้องดำเนินการทันที มีคณะกรรมการว่าด้วยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม (CESCR) ทำหน้าที่ติดตาม
-
-## มาตราสำคัญ
-- มาตรา 6-7: สิทธิในการทำงานและสภาพการทำงานที่เป็นธรรม ปลอดภัย
-- มาตรา 8: สิทธิในการรวมตัวเป็นสหภาพแรงงานและสิทธิในการนัดหยุดงาน
-- มาตรา 9: สิทธิในการประกันสังคม
-- มาตรา 11: สิทธิในมาตรฐานการครองชีพที่เพียงพอ (อาหาร ที่อยู่อาศัย น้ำ)
-- มาตรา 12: สิทธิด้านสุขภาพกายและใจตามมาตรฐานสูงสุดที่เป็นไปได้
-- มาตรา 13-14: สิทธิทางการศึกษา
-- มาตรา 15: สิทธิในการมีส่วนร่วมทางวัฒนธรรมและได้รับประโยชน์จากความก้าวหน้าทางวิทยาศาสตร์
-
-## พันธกรณีของไทย
-ไทยต้องรายงานความคืบหน้าตามวาระต่อคณะกรรมการ CESCR และรับข้อสังเกตสรุป กสม. ใช้กรอบนี้ติดตามประเด็นสิทธิแรงงาน ที่ดิน/สิ่งแวดล้อม สุขภาพ และการศึกษาอย่างต่อเนื่อง
-
-## ความเชื่อมโยงกับกรณีตรวจสอบของ กสม.
-อ้างอิงบ่อยในกรณีสิทธิแรงงาน ที่ดินและทรัพยากรธรรมชาติ/สิทธิชุมชน สิทธิสุขภาพ และสิทธิทางการศึกษา
-
-## คำสำคัญ
-#ICESCR #สิทธิแรงงาน #สิทธิการศึกษา #สิทธิสุขภาพ #สิทธิชุมชน
-
-## ลิงก์เอกสารฉบับเต็ม
-https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-economic-social-and-cultural-rights
-
-## ประเด็นสิทธิที่เกี่ยวข้อง
-- [[สิทธิแรงงาน|สิทธิแรงงาน]]
-- [[สิทธิการศึกษา|สิทธิการศึกษา]]
-- [[สิทธิสุขภาพสาธารณสุข|สิทธิสุขภาพและสาธารณสุข]]
-- [[ที่ดินทรัพยากรธรรมชาติสิทธิชุมชน|ที่ดิน ทรัพยากรธรรมชาติ และสิทธิชุมชน]]
+## หน้าอ้างอิง 1
 
 
-## หมายเหตุความถูกต้อง
-ปีที่เป็นภาคี/วันที่ระบุ AI ตรวจสอบเบื้องต้นแล้วบางส่วนจากแหล่งข้อมูลสนธิสัญญาสหประชาชาติ แต่ยังไม่ได้ตรวจทานครบทุกจุดกับฐานข้อมูล OHCHR โดยตรง โปรดตรวจสอบกับต้นฉบับที่ลิงก์ด้านบนก่อนอ้างอิงในรายงานทางการ
+
+## หน้าอ้างอิง 2
+
+
+
+## หน้าอ้างอิง 3
+
+2
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+คํานํา
+  กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+(International Covenant on Economic, Social and Cultural Rights – ICESCR) 
+ไดรับการรับรองจากที่ประชุมสมัชชาสหประชาชาติ สมัยที่ ๒๑ เมื่อวันที่ ๑๖ ธันวาคม ๒๕๐๙
+โดยตอมา กติกาฯ ไดมีผลใชบังคับตั้งแตวันที่ ๓ มกราคม ๒๕๑๙
+ ประเทศไทยไดเขาเปนภาคีกติกา ICESCR โดยมีผลใชบังคับกับไทยตั้งแตวันที่ 
+๕ ธันวาคม ๒๕๔๒ โดยไทยไดจัดทํารายงานการปฏิบัติตามพันธกรณีภายใตกติกา 
+ICESCR ฉบับแรกเสนอตอคณะกรรมการประจํากติกาฯ เพื่อทบทวนแนวปฏิบัติของไทย
+ในการปกปองคุมครองสิทธิที่ไดรับการรับรองไวในกติกาฯ โดยไดนําเสนอรายงาน
+การปฏิบัติตามพันธกรณีดวยวาจาเปนครั้งแรก ระหวางวันที่ ๔ – ๕ มิถุนายน ๒๕๕๘ 
+ณ นครเจนีวา สมาพันธรัฐสวิส ซึ่งเปนโอกาสในการตอบขอซักถามและแลกเปลี่ยน
+ขอคิดเห็นกับคณะกรรมการฯ ที่เปนประโยชนสําหรับการพัฒนาการสงเสริมสิทธิ
+ทางเศรษฐกิจ สังคม และวัฒนธรรมในประเทศไทยอยางตอเนื่องตอไป 
+ กติกา ICESCR เปนหนึ่งในสนธิสัญญาหลักดานสิทธิมนุษยชนระหวางประเทศ
+ภายใตสหประชาชาติ (core international human rights treaties) ที่ใหการปกปอง
+และคุมครองสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรมของบุคคลทุกคนโดยไมเลือกปฏิบัติ 
+รัฐภาคีมีพันธกรณีภายใตกติกาฯ ที่ไมจํากัดเพียงแคการนําเสนอรายงานประเทศเทานั้น 
+แตที่สําคัญยิ่งกวา รัฐภาคีจะตองดําเนินการเพื่อใหเกิดการรับรองสิทธิในดานตาง ๆ 
+ตามที่ปรากฏในกติกาฯ ในทางปฏิบัติอยางแทจริง ทั้งนี้ สิทธิทางเศรษฐกิจ สังคม 
+และวัฒนธรรม ภายใตกติกา ICESCR มีสาระครอบคลุมสิทธิในดานตางๆ อยางกวางขวาง
+อาทิ สิทธิแรงงาน สิทธิในที่ดินและความเปนอยูอยางเพียงพอ สิทธิในการเขาถึงบริการ
+สุขภาพ สิทธิในการไดรับการศึกษา สิทธิในการมีสวนรวมทางวัฒนธรรม อีกทั้งยังครอบคลุม
+บุคคลทุกคนจากกลุมตาง ๆ ที่หลากหลาย อาทิ เด็ก สตรี ผูพิการ ผูสูงอายุ 
+ผูมีความหลากหลายทางเพศ ผูโยกยายถิ่นฐาน กลุมชาติพันธุ 
+
+## หน้าอ้างอิง 4
+
+3
+International Covenant on Economic, Social and Cultural Rights
+ คณะผูจัดพิมพเห็นวา การปกปองและคุมครองสิทธิทางเศรษฐกิจ สังคม 
+และวัฒนธรรม มีความสอดคลองและเชื่อมโยงกันอยางชัดเจนกับการสงเสริมและบรรลุ
+เปาหมายการพัฒนาที่ยั่งยืนของประเทศ นอกจากนี้ การสรางความตระหนักรูยังเปน
+กลไกที่สําคัญยิ่งที่จะชวยใหเกิดการปกปองคุมครองสิทธิมนุษยชนที่มีประสิทธิภาพและ
+เปนรูปธรรม คณะผูจัดพิมพจึงไดจัดพิมพกติกา ICESCR นี้ขึ้นเพื่อเผยแพรความรู 
+และสรางความเขาใจเกี่ยวกับกติกา ICESCR โดยมุงหวังที่จะสรางความตระหนักรูใหแก
+หนวยงานราชการ เจาหนาที่รัฐ และประชาชนทั่วไป คณะผูจัดพิมพหวังเปนอยางยิ่งวา
+หนังสือกติกา ICESCR ฉบับนี้จะนําไปสูความสนใจในวงกวางตอหลักการภายใตกติกา 
+ICESCR และเปนประโยชนตอบุคคลตาง ๆ ตอไป เพราะทายที่สุดแลว การสงเสริมสิทธิ
+มนุษยชนที่มีประสิทธิภาพที่สุดเริ่มตนจากตัวเราทุกคน
+**************
+กรมองคการระหวางประเทศ
+กระทรวงการตางประเทศ
+กันยายน ๒๕๕๘
+
+## หน้าอ้างอิง 5
+
+4
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+กติการะหวางประเทศวาดวย
+สิทธิทางเศรษฐกิจ  สังคม  และวัฒนธรรม
+อารัมภบท 
+ รัฐภาคีแหงกติกาฉบับนี้ 
+ พิจารณาวา ตามหลักการซึ่งไดประกาศไวในกฎบัตรสหประชาชาติ การรับรอง
+ศักดิ์ศรีที่มีมาแตกําเนิดและสิทธิเทาเทียมกันและไมอาจเพิกถอนไดของมวลมนุษยชาตินั้น
+เปนรากฐานของเสรีภาพ ความยุติธรรมและสันติภาพในโลก 
+ รับรองวา สิทธิเหลานี้มาจากศักดิ์ศรีแตกําเนิดของมนุษย 
+ รับรองวา ตามปฏิญญาสากลวาดวยสิทธิมนุษยชน อุดมการณที่วาเสรีชนจะ
+ตองปลอดจากความกลัวและความขาดแคลนนั้น จะสามารถสัมฤทธิ์ผลไดก็ตอเมื่อมี
+การสรางสภาวะซึ่งทุกคนจะไดรับสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม รวมทั้งสิทธิพลเมือง
+และสิทธิทางการเมืองของตนเทานั้น 
+ พิจารณาถึงพันธกรณีแหงรัฐภายใตกฎบัตรสหประชาชาติในการสงเสริม
+การเคารพและการยอมรับโดยสากลในสิทธิและเสรีภาพมนุษยชน 
+ ตระหนักวา ปจเจกบุคคลซึ่งมีหนาที่ตอปจเจกบุคคลอื่น และตอประชาคม
+ของตนมีความรับผิดชอบที่จะตองพยายามสงเสริมและยอมรับสิทธิที่รับรองไวในกติกานี้ 
+ ตกลงกันในขอตอไปนี้ 
+
+## หน้าอ้างอิง 6
+
+5
+International Covenant on Economic, Social and Cultural Rights
+International Covenant on 
+Economic, Social and Cultural Rights 
+(ICESCR)
+Preamble 
+ The States Parties to the present Covenant, 
+ Considering that, in accordance with the principles proclaimed in 
+the Charter of the United Nations, recognition of the inherent dignity and of 
+the equal and inalienable rights of all members of the human family is the 
+foundation of freedom, justice and peace in the world, 
+ Recognizing that these rights derive from the inherent dignity of the 
+human person,
+ Recognizing that, in accordance with the Universal Declaration of 
+Human Rights, the ideal of free human beings enjoying freedom from fear 
+and want can only be achieved if conditions are created whereby everyone 
+may enjoy his economic, social and cultural rights, as well as his civil and 
+political rights,
+ Considering the obligation of States under the Charter of the United 
+Nations to promote universal respect for, and observance of, human rights 
+and freedoms, 
+ Realizing that the individual, having duties to other individuals and 
+to the community to which he belongs, is under a responsibility to strive 
+for the promotion and observance of the rights recognized in the present 
+Covenant, 
+ Agree upon the following articles: 
+
+## หน้าอ้างอิง 7
+
+6
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ภาค ๑
+ขอ ๑
+ ๑.  ประชาชาติทั้งปวงมีสิทธิกําหนดเจตจํานงของตนเอง โดยสิทธินั้น ประชาชาติ
+เหลานั้นจะกําหนดสถานะทางการเมืองของตนโดยเสรีและพัฒนาเศรษฐกิจ สังคม และ
+วัฒนธรรมของตนอยางเสรี
+ ๒. เพื่อจุดมุงหมายของตน ประชาชาติทั้งปวงอาจจัดการโภคทรัพยและ
+ทรัพยากรธรรมชาติของตนไดอยางเสรี โดยไมกระทบตอพันธกรณีใด ๆ  อันเกิดจาก
+ความรวมมือทางเศรษฐกิจระหวางประเทศซึ่งตั้งอยูบนพื้นฐานของหลักการ
+แหงผลประโยชนรวมกันและกฎหมายระหวางประเทศ ประชาชาติจะไมถูกลิดรอนวิถีทาง
+ยังชีพของตนไมวาในกรณีใด
+ ๓. รัฐภาคีแหงกติกานี้ รวมทั้งรัฐที่รับผิดชอบในการบริหารดินแดน
+ที่ไมไดปกครองตนเองและดินแดนในภาวะทรัสตี จะตองสงเสริมใหสิทธิในการกําหนด
+เจตจํานงของตนเองมีผลจริงจัง และจะตองเคารพสิทธินั้นตามบทบัญญัติแหงกฎบัตร
+สหประชาชาติ 
+ภาค ๒
+ขอ ๒
+ ๑. รัฐภาคีแตละรัฐแหงกติกานี้รับที่จะดําเนินการโดยเอกเทศและโดย
+ความรวมมือและความชวยเหลือระหวางประเทศ โดยเฉพาะอยางยิ่งทางเศรษฐกิจและ
+วิชาการ โดยใชประโยชนสูงสุดจากทรัพยากรที่มีอยู เพื่อใหสัมฤทธิ์ผลในการทําใหสิทธิ
+ซึ่งรับรองไวในกติกานี้กลายเปนความจริงอยางบริบูรณโดยลําดับดวยวิธีทั้งปวง
+ที่เหมาะสม โดยเฉพาะอยางยิ่งรวมทั้งการกําหนดมาตรการทางกฎหมายดวย
+
+## หน้าอ้างอิง 8
+
+7
+International Covenant on Economic, Social and Cultural Rights
+PART I
+Article 1
+ 1.  All peoples have the right of self-determination. By virtue of that
+right they freely determine their political status and freely pursue their 
+economic, social and cultural development. 
+ 2.  All peoples may, for their own ends, freely dispose of their natural
+wealth and resources without prejudice to any obligations arising out of 
+international economic co-operation, based upon the principle of mutual 
+beneﬁt, and international law. In no case may a people be deprived of its 
+own means of subsistence. 
+ 3.  The States Parties to the present Covenant, including those having
+responsibility for the administration of Non-Self-Governing and Trust 
+Territories, shall promote the realization of the right of self-determination, 
+and shall respect that right, in conformity with the provisions of the Charter 
+of the United Nations. 
+PART II
+Article 2
+ 
+ 1. Each State Party to the present Covenant undertakes to take 
+steps, individually and through international assistance and co-operation, 
+especially economic and technical, to the maximum of its available 
+resources, with a view to achieving progressively the full realization of the 
+rights recognized in the present Covenant by all appropriate means, including
+particularly the adoption of legislative measures. 
+
+## หน้าอ้างอิง 9
+
+8
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ ๒. รัฐภาคีแหงกติกานี้รับที่จะประกันวาสิทธิทั้งหลายที่ระบุไวในกติกานี้
+จะใชไดโดยปราศจากการเลือกปฏิบัติใด ๆ ในเรื่องเชื้อชาติ สีผิว เพศ ภาษา ศาสนา 
+ความคิดเห็นทางการเมืองหรือความคิดเห็นอื่นใด ชาติหรือสังคมดั้งเดิม ทรัพยสิน กําเนิด
+หรือสถานะอื่น
+ ๓. ประเทศกําลังพัฒนา โดยคํานึงถึงตามควรตอสิทธิมนุษยชนและเศรษฐกิจ
+แหงชาติตน อาจกําหนดขอบเขตในการประกันสิทธิทางเศรษฐกิจของตนตามที่รับรองใน
+กติกานี้แกผูที่ไมใชคนชาติของตน 
+ขอ ๓
+ รัฐภาคีแหงกติกานี้รับที่จะประกันสิทธิอันเทาเทียมกันของบุรุษและสตรีในการที่
+จะอุปโภคสิทธิทางเศรษฐกิจ สังคมและวัฒนธรรมทั้งปวง ดังที่ไดระบุไวในกติกานี้ 
+ขอ ๔
+ รัฐภาคีแหงกติกานี้รับรองวา ในการอุปโภคสิทธิเหลานั้นซึ่งรัฐใหตามกติกานี้ 
+รัฐอาจจํากัดสิทธิเชนวาไดเฉพาะโดยขอจํากัดเชนที่กําหนดโดยกฎหมายเทาที่อาจ
+สอดคลองกับลักษณะของสิทธิเหลานี้ และเพียงเพื่อความมุงประสงคในการสงเสริม
+สวัสดิการทั่วไปในสังคมประชาธิปไตย 
+
+## หน้าอ้างอิง 10
+
+9
+International Covenant on Economic, Social and Cultural Rights
+ 2. The States Parties to the present Covenant undertake to 
+guarantee that the rights enunciated in the present Covenant will be 
+exercised without discrimination of any kind as to race, colour, sex, language, 
+religion, political or other opinion, national or social origin, property, birth or 
+other status. 
+ 3.  Developing countries, with due regard to human rights and their 
+national economy, may determine to what extent they would guarantee
+the economic rights recognized in the present Covenant to non-nationals. 
+Article 3
+ The States Parties to the present Covenant undertake to ensure the 
+equal right of men and women to the enjoyment of all economic, social and 
+cultural rights set forth in the present Covenant. 
+Article 4
+ The States Parties to the present Covenant recognize that, in the 
+enjoyment of those rights provided by the State in conformity with the 
+present Covenant, the State may subject such rights only to such limitations 
+as are determined by law only in so far as this may be compatible with the 
+nature of these rights and solely for the purpose of promoting the general 
+welfare in a democratic society. 
+
+## หน้าอ้างอิง 11
+
+10
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ขอ ๕
+ ๑. ไมมีขอความใดในกติกานี้ที่อาจตีความไปในทางที่จะใหรัฐใด กลุมชน
+หรือบุคคลใดเขาไปเกี่ยวของกับกิจกรรมหรือกระทําการใดอันมีจุดมุงหมายในการทําลาย
+สิทธิหรือเสรีภาพตามที่รับรองไวในกติกานี้ หรือเปนการจํากัดสิทธินั้นยิ่งไปกวาที่ไดบัญญัติ
+ไวในกติกานี้
+ ๒. หามการจํากัดหรือลิดรอนสิทธิมนุษยชนขั้นพื้นฐานที่ไดรับการรับรอง
+หรือที่มีอยูในประเทศใด โดยอาศัยอํานาจของกฎหมาย อนุสัญญา ขอบังคับ หรือ
+จารีตประเพณี โดยอางวากติกานี้ไมรับรองสิทธิเชนวานั้น หรือรับรองสิทธินั้นในขอบเขต
+ที่ดอยกวา 
+ภาค ๓
+ขอ ๖
+ ๑. รัฐภาคีแหงกติกานี้รับรองสิทธิในการทํางาน ซึ่งรวมทั้งสิทธิของทุกคน
+ในโอกาสที่จะหาเลี้ยงชีพโดยงานซึ่งตนเลือกหรือรับอยางเสรี และจะดําเนินขั้นตอน
+ที่เหมาะสมในการปกปองสิทธินี้ 
+ ๒. ขั้นตอนซึ่งรัฐภาคีแหงกติกานี้จะตองดําเนินเพื่อใหบรรลุผลในการทําให
+สิทธินี้เปนจริงอยางบริบูรณ จะตองรวมถึงการใหคําแนะนําทางเทคนิคและวิชาชีพและ
+โครงการฝกอบรม นโยบายและเทคนิคที่จะทําใหบรรลุผลในการพัฒนาทางเศรษฐกิจ 
+สังคม และวัฒนธรรมอยางสมํ่าเสมอ และการจางงานอยางบริบูรณและเปนประโยชน
+ภายใตเงื่อนไขทั้งหลายที่เปนการปกปองเสรีภาพขั้นพื้นฐานทางการเมืองและ
+ทางเศรษฐกิจของปจเจกบุคคล 
+
+## หน้าอ้างอิง 12
+
+11
+International Covenant on Economic, Social and Cultural Rights
+Article 5
+ 1. Nothing in the present Covenant may be interpreted as implying
+for any State, group or person any right to engage in any activity or to 
+perform any act aimed at the destruction of any of the rights or freedoms 
+recognized herein, or at their limitation to a greater extent than is provided 
+for in the present Covenant. 
+ 2. No restriction upon or derogation from any of the fundamental
+human rights recognized or existing in any country in virtue of law, 
+conventions, regulations or custom shall be admitted on the pretext
+that the present Covenant does not recognize such rights or that it 
+recognizes them to a lesser extent. 
+PART III
+Article 6
+ 1. The States Parties to the present Covenant recognize the right 
+to work, which includes the right of everyone to the opportunity to gain his 
+living by work which he freely chooses or accepts, and will take appropriate
+steps to safeguard this right. 
+ 2. The steps to be taken by a State Party to the present 
+Covenant to achieve the full realization of this right shall include technical 
+and vocational guidance and training programmes, policies and techniques 
+to achieve steady economic, social and cultural development and full 
+and productive employment under conditions safeguarding fundamental 
+political and economic freedoms to the individual. 
+
+## หน้าอ้างอิง 13
+
+12
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ขอ ๗
+ รัฐภาคีแหงกติกานี้รับรองสิทธิของทุกคนที่จะมีสภาพการทํางานที่ยุติธรรมและ
+นาพึงพอใจ ซึ่งประกันโดยเฉพาะอยางยิ่งในเรื่อง 
+ (ก) คาตอบแทนขั้นตํ่าที่ใหแกผูทํางานทั้งปวง ประกอบดวย
+    (๑) คาจางที่เปนธรรมและคาตอบแทนที่เทาเทียมกันสําหรับงาน
+ที่มีคุณคาเทากัน โดยปราศจากความแตกตางในเรื่องใด โดยเฉพาะอยางยิ่งสตรีจะไดรับ
+การประกันสภาพการทํางานที่ไมดอยกวาบุรุษ โดยไดรับคาจางที่เทาเทียมกันสําหรับงาน
+ที่เทาเทียมกัน 
+     (๒) ความเปนอยูที่เหมาะสมสําหรับตนและครอบครัวตามบทบัญญัติ
+แหงกติกานี้
+ (ข) สภาพการทํางานที่ปลอดภัยและถูกสุขลักษณะ
+ (ค) โอกาสเทาเทียมกันสําหรับทุกคนที่จะไดรับการสงเสริมใหมีความกาวหนา
+ในการทํางานของตนในระดับที่สูงขึ้นตามที่เหมาะสม      โดยไมขึ้นอยูกับขอพิจารณาใด นอกจาก
+อาวุโสและความสามารถ 
+ (ง) การพักผอน เวลาวางและขอจํากัดที่สมเหตุสมผลในเรื่องเวลาทํางานและ
+วันหยุดเปนครั้งคราวโดยไดรับคาตอบแทน ตลอดจนคาตอบแทนสําหรับวันหยุดทางการดวย 
+
+## หน้าอ้างอิง 14
+
+13
+International Covenant on Economic, Social and Cultural Rights
+Article 7
+ The States Parties to the present Covenant recognize the right of 
+everyone to the enjoyment of just and favourable conditions of work which 
+ensure, in particular: 
+ (a) Remuneration which provides all workers, as a minimum, with: 
+     (i) Fair wages and equal remuneration for work of equal value 
+without distinction of any kind, in particular women being guaranteed conditions
+of work not inferior to those enjoyed by men, with equal pay for equal work; 
+   (ii) A decent living for themselves and their families in 
+accordance with the provisions of the present Covenant; 
+ (b) Safe and healthy working conditions; 
+ (c)   Equal opportunity for everyone to be promoted in his employment
+to an appropriate higher level, subject to no considerations other than those 
+of seniority and competence; 
+ (d) Rest, leisure and reasonable limitation of working hours and 
+periodic holidays with pay, as well as remuneration for public holidays. 
+
+## หน้าอ้างอิง 15
+
+14
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ขอ ๘
+ ๑. รัฐภาคีแหงกติกานี้รับที่จะประกัน
+    (ก) สิทธิของทุกคนที่จะกอตั้งสหภาพแรงงานและเขารวมสหภาพแรงงาน
+ตามที่ตนเลือก เพื่อสงเสริมและคุมครองประโยชนทางเศรษฐกิจและสังคมของตน ทั้งนี้ 
+โดยขึ้นอยูกับหลักเกณฑขององคการที่เกี่ยวของเทานั้น หามจํากัดการใชสิทธินี้ นอกจาก
+ที่ไดกําหนดโดยกฎหมายและที่จําเปนในสังคมประชาธิปไตย เพื่อประโยชนของความมั่นคง
+แหงชาติ หรือความสงบเรียบรอยของสวนรวม หรือการคุมครองสิทธิและเสรีภาพของผูอื่น 
+      (ข) สิทธิของสหภาพแรงงานที่จะจัดตั้งสหพันธหรือสมาพันธแหงชาติ และสิทธิ
+ของสมาพันธแหงชาติที่จะกอตั้งหรือเขารวมกับองคการสหภาพแรงงานระหวางประเทศ 
+         (ค)     สิทธิของสหภาพแรงงานที่จะดําเนินงานอยางเสรีโดยไมขึ้นอยูกับการจํากัดใด
+นอกจากที่ไดกําหนดโดยกฎหมายและซึ่งจําเปนในสังคมประชาธิปไตย เพื่อประโยชนของ
+ความมั่นคงแหงชาติหรือความสงบเรียบรอยของสวนรวมหรือการคุมครองสิทธิและเสรีภาพ
+ของบุคคลอื่น 
+       (ง)   สิทธิที่จะนัดหยุดงาน หากใชสิทธิโดยสอดคลองกับกฎหมายของประเทศนั้น
+ ๒. ความในขอนี้ไมหามการกําหนดขอจํากัดอันชอบดวยกฎหมายในการใชสิทธิ
+เหลานี้โดยทหารหรือตํารวจ หรือฝายบริหารของรัฐ 
+ ๓. ไมมีขอความใดในขอนี้ที่ใหอํานาจรัฐภาคีแหงอนุสัญญาวาดวยเสรีภาพ
+ในการสมาคมและการคุมครองสิทธิในการรวมตัวกัน ค.ศ. ๑๙๔๘ ขององคการแรงงาน
+ระหวางประเทศใหใชมาตรการทางนิติบัญญัติหรือใชกฎหมายในลักษณะซึ่งจะทําให
+เสื่อมเสียตอหลักประกันที่ใหไวในอนุสัญญานั้น 
+
+## หน้าอ้างอิง 16
+
+15
+International Covenant on Economic, Social and Cultural Rights
+Article 8
+ 1. The States Parties to the present Covenant undertake to ensure: 
+     (a) The right of everyone to form trade unions and join the trade 
+union of his choice, subject only to the rules of the organization concerned, 
+for the promotion and protection of his economic and social interests. No 
+restrictions may be placed on the exercise of this right other than those 
+prescribed by law and which are necessary in a democratic society in the 
+interests of national security or public order or for the protection of the rights 
+and freedoms of others; 
+    (b) The right of trade unions to establish national federations or
+confederations and the right of the latter to form or join international 
+trade-union organizations; 
+      (c)  The right of trade unions to function freely subject to no limitations 
+other than those prescribed by law and which are necessary in a democratic
+society in the interests of national security or public order or for the 
+protection of the rights and freedoms of others; 
+      (d)  The right to strike, provided that it is exercised in conformity with
+the laws of the particular country. 
+ 2. This article shall not prevent the imposition of lawful restrictions 
+on the exercise of these rights by members of the armed forces or of the 
+police or of the administration of the State. 
+ 3.  Nothing in this article shall authorize States Parties to the International
+Labour Organisation Convention of 1948 concerning Freedom of Association 
+and Protection of the Right to Organize to take legislative measures which 
+would prejudice, or apply the law in such a manner as would prejudice, the 
+guarantees provided for in that Convention. 
+
+## หน้าอ้างอิง 17
+
+16
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ขอ ๙
+ รัฐภาคีแหงกติกาฉบับนี้รับรองสิทธิของทุกคนในอันที่จะมีสวัสดิการสังคม รวมทั้ง
+การประกันสังคม 
+ขอ ๑๐
+ รัฐภาคีแหงกติกานี้รับรองวา 
+ ๑. ครอบครัว ซึ่งเปนหนวยรวมของสังคมที่เปนพื้นฐานและเปนธรรมชาติควร
+ไดรับการคุมครองและชวยเหลืออยางกวางขวางที่สุดเทาที่จะทําได โดยเฉพาะในการจัดตั้ง
+และในขณะที่ตองรับผิดชอบตอการดูแลและการศึกษาของเด็กที่ยังพึ่งตนเองไมได 
+การสมรสตองกระทําโดยความยินยอมอยางเสรีของผูที่เจตนาจะสมรส 
+ ๒. มารดาควรไดรับการคุมครองพิเศษระหวางชวงระยะเวลาตามควรกอนหรือ
+หลังการใหกําเนิดบุตร ในระหวางชวงระยะเวลาเชนวา มารดาซึ่งทํางานควรไดรับอนุญาต
+ใหลาโดยไดรับคาจาง หรือลาโดยมีสิทธิประโยชนดานสวัสดิการสังคมอยางเพียงพอ 
+ ๓.  ควรมีมาตรการคุมครองและชวยเหลือพิเศษแกเด็กและผูเยาวทั้งปวง โดยไมมี
+การเลือกปฏิบัติเนื่องจากชาติกําเนิดหรือเงื่อนไขอื่น ๆ เด็กและผูเยาวควรไดรับการคุมครอง
+จากการแสวงหาประโยชนทางเศรษฐกิจและสังคม การวาจางเด็กใหทํางานซึ่งเปนภัย
+ตอจิตใจหรือสุขภาพหรือเปนอันตรายตอชีวิตหรืออาจจะขัดขวางพัฒนาการตามปกติ
+ของเด็กควรไดรับการลงโทษตามกฎหมาย รัฐควรกําหนดอายุขั้นตํ่าซึ่งหามไมใหมีการจาง
+แรงงานเด็กและกําหนดใหมีโทษตามกฎหมายดวย 
+
+## หน้าอ้างอิง 18
+
+17
+International Covenant on Economic, Social and Cultural Rights
+Article 9
+ The States Parties to the present Covenant recognize the right of 
+everyone to social security, including social insurance.  
+Article 10
+ The States Parties to the present Covenant recognize that: 
+ 1.  The widest possible protection and assistance should be accorded 
+to the family, which is the natural and fundamental group unit of society, 
+particularly for its establishment and while it is responsible for the care and 
+education of dependent children. Marriage must be entered into with the 
+free consent of the intending spouses. 
+ 2. Special protection should be accorded to mothers during a 
+reasonable period before and after childbirth. During such period working
+mothers should be accorded paid leave or leave with adequate social 
+security beneﬁts. 
+ 3. Special measures of protection and assistance should be taken 
+on behalf of all children and young persons without any discrimination for 
+reasons of parentage or other conditions. Children and young persons should 
+be protected from economic and social exploitation. Their employment in 
+work harmful to their morals or health or dangerous to life or likely to hamper 
+their normal development should be punishable by law. States should also 
+set age limits below which the paid employment of child labour should be 
+prohibited and punishable by law. 
+
+## หน้าอ้างอิง 19
+
+18
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ขอ ๑๑
+ ๑. รัฐภาคีแหงกติกานี้รับรองสิทธิของทุกคนในมาตรฐานการครองชีพที่เพียงพอ
+สําหรับตนเองและครอบครัว ซึ่งรวมถึงอาหาร เครื่องนุงหม และที่อยูอาศัยที่เพียงพอ และ
+สภาพการครองชีพที่ดีขึ้นอยางตอเนื่อง รัฐภาคีจะดําเนินขั้นตอนที่เหมาะสมเพื่อประกัน
+การทําใหสิทธินี้เปนจริง โดยรับรองความสําคัญอยางแทจริงของความรวมมือระหวาง
+ประเทศบนพื้นฐานของความยินยอมโดยเสรี
+ ๒. รัฐภาคีแหงกติกานี้ รับรองสิทธิขั้นพื้นฐานของทุกคนที่จะปลอดจาก
+ความหิวโหย โดยจะตองดําเนินมาตรการโดยเอกเทศและโดยความรวมมือระหวางประเทศ 
+รวมทั้งโครงการเฉพาะซึ่งจําเปน
+    (ก) ในการปรับปรุงวิธีการผลิต เก็บรักษาและการแบงสรรอาหาร 
+โดยใชความรูอยางเต็มที่ทางเทคนิคและทางวิทยาศาสตร โดยการเผยแพรความรู
+เกี่ยวกับหลักโภชนาการ และโดยการพัฒนาหรือการปฏิรูประบบเกษตรกรรมในทางที่จะ
+ทําใหสามารถบรรลุผลการพัฒนา และการใชทรัพยากรธรรมชาติอยางมีประสิทธิภาพสูงสุด 
+    (ข) ในการประกันการแบงสรรอยางเทาเทียมของอุปทานอาหารโลก
+ตามสัดสวนความตองการ โดยคํานึงถึงทั้งปญหาของประเทศที่นําเขาอาหารและประเทศ
+สงออกอาหาร 
+ขอ ๑๒
+ ๑. รัฐภาคีแหงกติกานี้รับรองสิทธิของทุกคนที่จะมีสุขภาพกายและสุขภาพจิต
+ตามมาตรฐานสูงสุดเทาที่เปนได
+ ๒.  ขั้นตอนในการดําเนินการโดยรัฐภาคีแหงกติกานี้ เพื่อบรรลุผลในการทําให
+สิทธินี้เปนจริงอยางสมบูรณจะตองรวมถึงสิ่งตาง ๆ ที่จําเปนเพื่อ
+
+## หน้าอ้างอิง 20
+
+19
+International Covenant on Economic, Social and Cultural Rights
+Article 11
+  1. The States Parties to the present Covenant recognize the right of 
+everyone to an adequate standard of living for himself and his family, including 
+adequate food, clothing and housing, and to the continuous improvement of 
+living conditions. The States Parties will take appropriate steps to ensure the 
+realization of this right, recognizing to this effect the essential importance of 
+international cooperation based on free consent. 
+ 2. The States Parties to the present Covenant, recognizing the 
+fundamental right of everyone to be free from hunger, shall take, individually
+and through international co-operation, the measures, including speciﬁc 
+programmes, which are needed: 
+      (a) To improve methods of production, conservation and distribution
+of food by making full use of technical and scientiﬁc knowledge, by 
+disseminating knowledge of the principles of nutrition and by developing or 
+reforming agrarian systems in such a way as to achieve the most efﬁcient 
+development and utilization of natural resources; 
+     (b)  Taking into account the problems of both food-importing and 
+food-exporting countries, to ensure an equitable distribution of world food 
+supplies in relation to need. 
+Article 12
+  1. The States Parties to the present Covenant recognize the right of 
+everyone to the enjoyment of the highest attainable standard of physical 
+and mental health. 
+ 2. The steps to be taken by the States Parties to the present Covenant 
+to achieve the full realization of this right shall include those necessary for: 
+
+## หน้าอ้างอิง 21
+
+20
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+      (ก) การหาหนทางลดอัตราการตายของทารกกอนคลอดและของเด็กแรกเกิด
+และการพัฒนาที่มีประโยชนตอสุขภาพของเด็ก 
+      (ข)  การปรับปรุงในทุกดานของสุขลักษณะทางสิ่งแวดลอมและอุตสาหกรรม 
+    (ค) การปองกัน รักษาและควบคุมโรคระบาด โรคประจําถิ่น โรคจาก
+การประกอบอาชีพและโรคอื่น ๆ
+     (ง) การสรางสภาวะที่ประกันบริการทางแพทย และการใหการดูแลรักษา
+พยาบาลแกทุกคนในกรณีเจ็บปวย 
+ขอ ๑๓
+ ๑. รัฐภาคีแหงกติกานี้รับรองสิทธิของทุกคนในการศึกษา รัฐภาคีเห็นพองกัน
+วาการศึกษาจะตองมุงใหเกิดการพัฒนาบุคลิกภาพของมนุษยและความสํานึกในศักดิ์ศรี
+ของตนอยางบริบูรณ และจะตองเพิ่มพูนการเคารพในสิทธิมนุษยชนและเสรีภาพขั้นพื้นฐาน
+รัฐภาคีเห็นพองกันอีกวา การศึกษาจะตองทําใหทุกคนสามารถมีสวนรวมในสังคมอยางมี
+ประสิทธิภาพ จะตองสงเสริมความเขาใจ ความอดกลั้นและมิตรภาพระหวางชาติ และ
+กลุมเชื้อชาติ ชนกลุมนอยหรือกลุมศาสนาทั้งปวง และสานตอไปถึงกิจกรรมของ
+สหประชาชาติในการธํารงไวซึ่งสันติภาพ 
+ ๒.  รัฐภาคีแหงกติกานี้รับรองวา เพื่อที่จะทําใหสิทธินี้เปนจริงโดยบริบูรณ
+    (ก) การศึกษาขั้นประถมจะตองเปนการศึกษาภาคบังคับและจัดให
+ทุกคนแบบใหเปลา
+    (ข) จะตองจัดการศึกษาขั้นมัธยมในรูปแบบตาง ๆ รวมทั้งการศึกษา
+มัธยมทางเทคนิคศึกษาและอาชีวศึกษาใหมีขึ้นโดยทั่วไป และใหทุกคนมีสิทธิไดรับโดย
+วิธีการที่เหมาะสมทุกทาง และโดยเฉพาะอยางยิ่งโดยการนําการศึกษาแบบใหเปลามาใช
+อยางคอยเปนคอยไป
+
+## หน้าอ้างอิง 22
+
+21
+International Covenant on Economic, Social and Cultural Rights
+     (a)     The provision for the reduction of the stillbirth-rate and of infant
+mortality and for the healthy development of the child; 
+       (b)    The improvement of all aspects of environmental and industrial
+hygiene; 
+     (c)   The prevention, treatment and control of epidemic, endemic, 
+occupational and other diseases;
+     (d)  The creation of conditions which would assure to all medical 
+service and medical attention in the event of sickness. 
+Article 13
+ 1. The States Parties to the present Covenant recognize the right of 
+everyone to education. They agree that education shall be directed to the 
+full development of the human personality and the sense of its dignity, and 
+shall strengthen the respect for human rights and fundamental freedoms. 
+They further agree that education shall enable all persons to participate 
+effectively in a free society, promote understanding, tolerance and friendship 
+among all nations and all racial, ethnic or religious groups, and further the 
+activities of the United Nations for the maintenance of peace. 
+ 2. The States Parties to the present Covenant recognize that, with a 
+view to achieving the full realization of this right: 
+      (a)   Primary education shall be compulsory and available free to all; 
+    (b) Secondary education in its different forms, including 
+technical and vocational secondary education, shall be made generally 
+available and accessible to all by every appropriate means, and in particular 
+by the progressive introduction of free education; 
+
+## หน้าอ้างอิง 23
+
+22
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+    (ค) ทุกคนจะตองสามารถไดรับการศึกษาขั้นอุดมศึกษาอยางเทาเทียมกัน
+บนพื้นฐานของความสามารถ โดยวิธีการที่เหมาะสมทุกทาง และโดยเฉพาะอยางยิ่ง
+โดยการนําการศึกษาแบบใหเปลามาใชอยางคอยเปนคอยไป 
+    (ง)  การศึกษาขั้นพื้นฐานจะตองไดรับการสนับสนุนหรือสงเสริมใหมากที่สุด
+เทาที่จะทําไดสําหรับผูที่ไมไดรับหรือเรียนไมครบตามชวงระยะเวลาทั้งหมดของ
+การศึกษาขั้นประถม 
+    (จ) จะตองดําเนินการพัฒนาระบบโรงเรียนทุกระดับอยางแข็งขัน 
+ใหมีระบบทุนการศึกษาที่เพียงพอ และปรับปรุงสภาพของวัสดุประกอบการสอนของครู
+อยางตอเนื่อง
+ ๓. รัฐภาคีทั้งหลายแหงกติกานี้รับที่จะเคารพเสรีภาพของบิดามารดาและ
+ผูปกครองตามกฎหมายในกรณีที่มี ในการเลือกโรงเรียนสําหรับเด็กของตน นอกจาก
+ที่จัดตั้งโดยเจาหนาที่รัฐ เชนที่เปนไปตามมาตรฐานการศึกษาขั้นตํ่าที่รัฐกําหนดไวหรือให
+ความเห็นชอบเพื่อประกันใหการศึกษาทางศาสนาและศีลธรรมของเด็กเปนไปโดยสอดคลอง
+กับความเชื่อถือของตน 
+ ๔. ไมมีสวนใดของขอนี้จะแปลไปในทางกาวกายเสรีภาพของปจเจกชน และ
+องคกรในการจัดตั้งและดําเนินการสถาบันการศึกษา ทั้งนี้ ขึ้นอยูกับการปฏิบัติตามหลักการ
+ที่ระบุไวในวรรค ๑ ของขอนี้และขอกําหนดที่วา การศึกษาในสถาบันเชนวาจะตองสอดคลอง
+กับมาตรฐานขั้นตํ่าตามที่รัฐไดกําหนดไว 
+
+## หน้าอ้างอิง 24
+
+23
+International Covenant on Economic, Social and Cultural Rights
+     (c) Higher education shall be made equally accessible to all, on 
+the basis of capacity, by every appropriate means, and in particular by the 
+progressive introduction of free education; 
+    (d)  Fundamental education shall be encouraged or intensiﬁed 
+as far as possible for those persons who have not received or completed the 
+whole period of their primary education; 
+      (e) The development of a system of schools at all levels shall be 
+actively pursued, an adequate fellowship system shall be established, and 
+the material conditions of teaching staff shall be continuously improved. 
+ 3. The States Parties to the present Covenant undertake to have 
+respect for the liberty of parents and, when applicable, legal guardians to 
+choose for their children schools, other than those established by the public 
+authorities, which conform to such minimum educational standards as may 
+be laid down or approved by the State and to ensure the religious and moral 
+education of their children in conformity with their own convictions. 
+ 4. No part of this article shall be construed so as to interfere with 
+the liberty of individuals and bodies to establish and direct educational 
+institutions, subject always to the observance of the principles set forth in 
+paragraph I of this article and to the requirement that the education given in 
+such institutions shall conform to such minimum standards as may be laid 
+down by the State. 
+
+## หน้าอ้างอิง 25
+
+24
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ขอ ๑๔
+ รัฐภาคีแตละรัฐแหงกติกานี้ ซึ่งในเวลาเขาเปนภาคียังไมสามารถจัดใหมีการประถม
+ศึกษาภาคบังคับแบบใหเปลาในเขตเมืองและเขตอื่น ๆ ภายใตเขตอํานาจของตนรับที่จะ
+หาทางและจัดทําแผนปฏิบัติการโดยละเอียดเพื่อทําใหเกิดความคืบหนาในการปฏิบัติตาม
+กติกาฉบับนี้ภายในเวลา ๒ ป และกําหนดไวในแผนภายในระยะเวลาที่สมเหตุสมผล 
+ซึ่งหลักการในการจัดการศึกษาภาคบังคับแบบใหเปลาสําหรับทุกคน 
+ขอ ๑๕
+ ๑. รัฐภาคีแหงกติกานี้รับรองสิทธิของทุกคน
+     (ก)  ที่จะมีสวนรวมทางวัฒนธรรม 
+    (ข) ที่จะอุปโภคสิทธิประโยชนแหงความกาวหนาและการประยุกตใช
+ทางวิทยาศาสตร 
+    (ค) ที่จะไดสิทธิประโยชนจากการคุมครองผลประโยชนทางดานศีลธรรมและ
+ทางวัตถุในประโยชนอันเกิดจากการผลิตทางวิทยาศาสตร วรรณกรรม หรือศิลปกรรมซึ่ง
+ตนเปนผูสรางสรรค
+ ๒. ขั้นตอนซึ่งรัฐภาคีแหงกติกานี้จะดําเนินเพื่อทําใหสิทธินี้เปนจริงอยางบริบูรณ
+ใหรวมถึงสิ่งทั้งหลายที่จําเปนเพื่อการอนุรักษ การพัฒนา และการเผยแพรความรู
+ทางวิทยาศาสตร และทางวัฒนธรรม 
+ ๓.  รัฐภาคีแหงกติกานี้รับที่จะเคารพเสรีภาพที่จําเปนสําหรับการวิจัยวิทยาศาสตร 
+และกิจกรรมสรางสรรค
+ ๔. รัฐภาคีแหงกติกานี้รับรองสิทธิประโยชนที่ไดมาจากการสนับสนุนและ
+การพัฒนาการติดตอระหวางประเทศและความรวมมือดานวิทยาศาสตรและวัฒนธรรม 
+
+## หน้าอ้างอิง 26
+
+25
+International Covenant on Economic, Social and Cultural Rights
+Article 14
+ Each State Party to the present Covenant which, at the time of 
+becoming a Party, has not been able to secure in its metropolitan territory or 
+other territories under its jurisdiction compulsory primary education, free of 
+charge, undertakes, within two years, to work out and adopt a detailed plan 
+of action for the progressive implementation, within a reasonable number 
+of years, to be ﬁxed in the plan, of the principle of compulsory education 
+free of charge for all.
+Article 15
+ 1. The States Parties to the present Covenant recognize the right of 
+everyone: 
+     (a)  To take part in cultural life; 
+   (b) To enjoy the beneﬁts of scientiﬁc progress and its 
+applications; 
+    (c) To beneﬁt from the protection of the moral and material 
+interests resulting from any scientiﬁc, literary or artistic production of which 
+he is the author. 
+ 2. The steps to be taken by the States Parties to the present Covenant 
+to achieve the full realization of this right shall include those necessary for 
+the conservation, the development and the diffusion of science and culture. 
+ 3. The States Parties to the present Covenant undertake to respect 
+the freedom indispensable for scientiﬁc research and creative activity. 
+ 4. The States Parties to the present Covenant recognize the beneﬁts 
+to be derived from the encouragement and development of international 
+contacts and co-operation in the scientiﬁc and cultural ﬁelds. 
+
+## หน้าอ้างอิง 27
+
+26
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ภาค ๔
+ขอ ๑๖
+ ๑. รัฐภาคีแหงกติกานี้รับที่จะเสนอรายงานโดยสอดคลองกับภาคนี้แหงกติกา
+ในเรื่องมาตรการตาง ๆ ซึ่งรัฐนั้น ๆ ไดนํามาใช และในเรื่องความกาวหนาของการดําเนินการ
+เพื่อใหมีการยอมรับสิทธิที่ไดรับการรับรองไว ณ ที่นี้
+ ๒.  (ก) ใหเสนอรายงานทั้งปวงตอเลขาธิการสหประชาชาติซึ่งจะสงสําเนาตอไป
+ใหคณะมนตรีเศรษฐกิจและสังคม เพื่อการพิจารณาตามบทบัญญัติของกติกานี้ 
+        (ข) เลขาธิการสหประชาชาติจะตองสงสําเนารายงาน หรือสวนใดที่เกี่ยวของ
+ของรายงานซึ่งไดรับจากรัฐภาคีแหงกติกานี้ซึ่งเปนสมาชิกแหงทบวงการชํานัญพิเศษตาง ๆ
+ไปยังทบวงการชํานัญพิเศษนั้น ๆ เทาที่รายงาน หรือสวนใดของรายงานเกี่ยวของกับเรื่อง
+ที่อยูในความรับผิดชอบของทบวงการดังกลาวตามตราสารกอตั้งของตน 
+ขอ ๑๗
+ ๑.  รัฐภาคีแหงกติกานี้จะสงรายงานเปนชวงระยะตามแผนงาน ซึ่งจะกําหนดโดย
+คณะมนตรีเศรษฐกิจและสังคมภายในเวลาหนึ่งปนับจากวันที่กติกานี้มีผลบังคับใช ภายหลัง
+จากการปรึกษาหารือกับรัฐภาคีและทบวงการชํานัญพิเศษที่เกี่ยวของ 
+ ๒. รายงานอาจแสดงปจจัยและอุปสรรคซึ่งกระทบระดับของการปฏิบัติตาม
+พันธกรณีภายใตกติกานี้ 
+
+## หน้าอ้างอิง 28
+
+27
+International Covenant on Economic, Social and Cultural Rights
+PART IV
+Article 16
+ 1. The States Parties to the present Covenant undertake to submit 
+in conformity with this part of the Covenant reports on the measures which 
+they have adopted and the progress made in achieving the observance of 
+the rights recognized herein. 
+ 2.  (a) All reports shall be submitted to the Secretary-General of the 
+United Nations, who shall transmit copies to the Economic and Social Council 
+for consideration in accordance with the provisions of the present Covenant; 
+      (b) The Secretary-General of the United Nations shall also transmit
+to the specialized agencies copies of the reports, or any relevant parts 
+therefrom, from States Parties to the present Covenant which are also 
+members of these specialized agencies in so far as these reports, or parts 
+therefrom, relate to any matters which fall within the responsibilities of the 
+said agencies in accordance with their constitutional instruments. 
+Article 17
+ 1. The States Parties to the present Covenant shall furnish their 
+reports in stages, in accordance with a programme to be established by 
+the Economic and Social Council within one year of the entry into force 
+of the present Covenant after consultation with the States Parties and the 
+specialized agencies concerned. 
+ 2. Reports may indicate factors and difﬁculties affecting the degree 
+of fulﬁllment of obligations under the present Covenant. 
+
+## หน้าอ้างอิง 29
+
+28
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ ๓.  ในกรณีที่รัฐภาคีใดแหงกติกานี้  ไดสงขอสนเทศที่เกี่ยวของไปยังสหประชาชาติ
+หรือทบวงการชํานัญพิเศษใดแลว รัฐภาคีไมจําเปนตองใหขอสนเทศนั้นอีก เพียงแตอางให
+ถูกตองถึงขอสนเทศที่สงไปแลวก็พอ 
+ขอ ๑๘
+ ตามความรับผิดชอบภายใตกฎบัตรสหประชาชาติในเรื่องสิทธิมนุษยชน
+และเสรีภาพขั้นพื้นฐาน คณะมนตรีเศรษฐกิจและสังคมอาจจัดทําขอตกลงกับทบวง
+การชํานัญพิเศษในการรายงานความกาวหนาของการดําเนินการเพื่อใหบรรลุผล
+ในการปฏิบัติตามบทบัญญัติแหงกติกานี้ ซึ่งอยูภายในขอบเขตแหงกิจกรรมของตน 
+รายงานเหลานี้อาจรวมรายละเอียดของคําวินิจฉัย และขอเสนอแนะเกี่ยวกับการปฏิบัติตาม
+บทบัญญัติแหงกติกาเชนวาซึ่งรับรองโดยองคกรซึ่งมีอํานาจของตน 
+ขอ ๑๙
+ คณะมนตรีเศรษฐกิจและสังคมอาจสงรายงานเกี่ยวกับสิทธิมนุษยชน ซึ่งรัฐเสนอ
+ตามขอ ๑๖ และ ๑๗ และรายงานเกี่ยวกับสิทธิมนุษยชนที่เสนอโดยทบวงการชํานัญพิเศษ
+ตามขอ ๑๘ ไปยังคณะกรรมาธิการสิทธิมนุษยชนเพื่อศึกษาและใหขอเสนอแนะทั่วไป หรือ
+เพื่อทราบตามความเหมาะสม
+
+## หน้าอ้างอิง 30
+
+29
+International Covenant on Economic, Social and Cultural Rights
+ 3. Where relevant information has previously been furnished to the 
+United Nations or to any specialized agency by any State Party to the present 
+Covenant, it will not be necessary to reproduce that information, but a precise 
+reference to the information so furnished will sufﬁce. 
+Article 18
+ Pursuant to its responsibilities under the Charter of the United 
+Nations in the ﬁeld of human rights and fundamental freedoms, the Economic 
+and Social Council may make arrangements with the specialized agencies 
+in respect of their reporting to it on the progress made in achieving the 
+observance of the provisions of the present Covenant falling within the scope 
+of their activities. These reports may include particulars of decisions and 
+recommendations on such implementation adopted by their competent 
+organs. 
+Article 19
+ The Economic and Social Council may transmit to the Commission 
+on Human Rights for study and general recommendation or, as appropriate, 
+for information the reports concerning human rights submitted by States 
+in accordance with articles 16 and 17, and those concerning human rights 
+submitted by the specialized agencies in accordance with article 18. 
+
+## หน้าอ้างอิง 31
+
+30
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ขอ ๒๐
+ รัฐภาคีแหงกติกานี้และทบวงการชํานัญพิเศษที่เกี่ยวของอาจเสนอความคิดเห็น
+ไปยังคณะมนตรีเศรษฐกิจและสังคมเกี่ยวกับขอเสนอแนะทั่วไปภายใตขอ ๑๙ หรือ
+การอางถึงขอเสนอแนะทั่วไปเชนวาในรายงานใดของคณะกรรมาธิการสิทธิมนุษยชน 
+หรือเอกสารใดที่อางถึงในรายงานนั้น 
+ขอ ๒๑
+ คณะมนตรีเศรษฐกิจและสังคมอาจเสนอรายงานเปนครั้งคราวไปยังสมัชชาใหญ
+พรอมกับขอเสนอแนะในลักษณะทั่วไป รวมทั้งสรุปขอสนเทศซึ่งไดรับจากรัฐภาคี
+แหงกติกานี้ และทบวงการชํานัญพิเศษที่เกี่ยวกับมาตรการซึ่งไดใช และความคืบหนา
+ซึ่งไดกระทําไปเพื่อบรรลุผลในการยอมรับโดยทั่วไปซึ่งสิทธิที่รับรองในกติกานี้ 
+ขอ ๒๒
+ คณะมนตรีเศรษฐกิจและสังคมอาจแจงองคกรอื่นของสหประชาชาติ 
+องคกรยอยและทบวงการชํานัญพิเศษของสหประชาชาติที่เกี่ยวของกับการให
+ความชวยเหลือทางวิชาการทราบถึงเรื่องใดที่เกิดขึ้นจากรายงานที่อางถึงในภาคนี้ของกติกา 
+ซึ่งอาจชวยเหลือหนวยงานเชนวาในการวินิจฉัย ภายในขอบเขตอํานาจของตนเกี่ยวกับ
+ความเหมาะสมของมาตรการระหวางประเทศซึ่งอาจมีสวนชวยใหการอนุวัติการตามกติกานี้
+มีความคืบหนาและมีประสิทธิผล 
+
+## หน้าอ้างอิง 32
+
+31
+International Covenant on Economic, Social and Cultural Rights
+Article 20
+ The States Parties to the present Covenant and the specialized 
+agencies concerned may submit comments to the Economic and Social 
+Council on any general recommendation under article 19 or reference to 
+such general recommendation in any report of the Commission on Human 
+Rights or any documentation referred to therein. 
+Article 21
+ The Economic and Social Council may submit from time to time to 
+the General Assembly reports with recommendations of a general nature 
+and a summary of the information received from the States Parties to the 
+present Covenant and the specialized agencies on the measures taken and 
+the progress made in achieving general observance of the rights recognized 
+in the present Covenant. 
+Article 22
+ The Economic and Social Council may bring to the attention of other 
+organs of the United Nations, their subsidiary organs and specialized agencies 
+concerned with furnishing technical assistance any matters arising out of the 
+reports referred to in this part of the present Covenant which may assist such 
+bodies in deciding, each within its ﬁeld of competence, on the advisability 
+of international measures likely to contribute to the effective progressive 
+implementation of the present Covenant. 
+
+## หน้าอ้างอิง 33
+
+32
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ขอ ๒๓
+ รัฐภาคีแหงกติกานี้เห็นพองกันวาการดําเนินการระหวางประเทศเพื่อใหบรรลุผล
+ซึ่งสิทธิที่รับรองไวในกติกานี้ รวมถึงวิธีการ เชน การทําอนุสัญญา การรับรองขอเสนอแนะ 
+การใหความชวยเหลือทางวิชาการและการจัดประชุมภูมิภาค และการประชุมทางวิชาการ
+เพื่อความมุงประสงคในการปรึกษาหารือและการศึกษาซึ่งจัดโดยรวมกับรัฐบาลที่เกี่ยวของ
+ขอ ๒๔
+ ไมมีบทบัญญัติใดในกติกานี้ที่ตีความไปในทางเสื่อมเสียตอบทบัญญัติของกฎบัตร
+สหประชาชาติ และธรรมนูญของทบวงการชํานัญพิเศษซึ่งกําหนดความรับผิดชอบของ
+องคกรตาง ๆ ของสหประชาชาติและของทบวงการชํานัญพิเศษในเรื่องที่เกี่ยวกับกติกานี้ 
+ขอ ๒๕
+ ไมมีบทบัญญัติใดในกติกานี้ที่จะตีความไปในทางเสื่อมเสียตอสิทธิที่มีมา
+แตกําเนิดของประชาชาติทั้งปวงในอันที่จะอุปโภคและใชประโยชนจากโภคทรัพยและ
+ทรัพยากรธรรมชาติของตนอยางเต็มที่และโดยเสรี 
+ 
+
+## หน้าอ้างอิง 34
+
+33
+International Covenant on Economic, Social and Cultural Rights
+Article 23
+ The States Parties to the present Covenant agree that international 
+action for the achievement of the rights recognized in the present Covenant 
+includes such methods as the conclusion of conventions, the adoption of 
+recommendations, the furnishing of technical assistance and the holding of 
+regional meetings and technical meetings for the purpose of consultation 
+and study organized in conjunction with the Governments concerned. 
+Article 24
+ Nothing in the present Covenant shall be interpreted as impairing 
+the provisions of the Charter of the United Nations and of the constitutions 
+of the specialized agencies which deﬁne the respective responsibilities of the 
+various organs of the United Nations and of the specialized agencies in regard 
+to the matters dealt with in the present Covenant. 
+Article 25
+ Nothing in the present Covenant shall be interpreted as impairing 
+the inherent right of all peoples to enjoy and utilize fully and freely their 
+natural wealth and resources. 
+
+## หน้าอ้างอิง 35
+
+34
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ภาค ๕
+ขอ ๒๖
+ ๑.  กติกาฉบับนี้เปดใหมีการลงนามโดยรัฐสมาชิกของสหประชาชาติ หรือสมาชิก
+ทบวงการชํานัญพิเศษใดของสหประชาชาติ รัฐภาคีแหงธรรมนูญศาลยุติธรรมระหวาง
+ประเทศและรัฐอื่นใด ซึ่งสมัชชาสหประชาชาติไดเชิญใหเขาเปนภาคีแหงกติกาฉบับนี้ 
+ ๒. กติกานี้ตองไดรับการสัตยาบัน ใหมอบสัตยาบันสารแกเลขาธิการ
+สหประชาชาติ 
+ ๓. กติกาฉบับนี้จะตองเปดใหภาคยานุวัติโดยรัฐใดซึ่งกลาวถึงในวรรค ๑ 
+ของขอนี้ 
+ ๔. การภาคยานุวัติจะมีผลเมื่อมีการมอบภาคยานุวัติสารแกเลขาธิการ
+สหประชาชาติ 
+ ๕.  เลขาธิการสหประชาชาติจะตองแจงใหรัฐทั้งปวงซึ่งไดลงนามหรือภาคยานุวัติ
+กติกานี้แลวทราบถึงการมอบสัตยาบันสาร หรือภาคยานุวัติสารแตละฉบับ 
+ขอ ๒๗
+ ๑. กติกานี้จะมีผลบังคับใชเมื่อครบกําหนดสามเดือนหลังจากวันที่ไดมีการมอบ
+สัตยาบันสารหรือภาคยานุวัติสารฉบับที่สามสิบหาแกเลขาธิการสหประชาชาติ 
+ ๒. สําหรับแตละรัฐที่ใหสัตยาบันหรือภาคยานุวัติกติกานี้ภายหลังจากที่มีการมอบ
+สัตยาบันสารหรือภาคยานุวัติสารฉบับที่สามสิบหาแลว กติกานี้จะมีผลบังคับใชกับรัฐนั้น
+เมื่อครบกําหนดสามเดือนหลังจากวันที่รัฐนั้นไดมอบสัตยาบันสารหรือภาคยานุวัติสาร
+ของตน
+
+## หน้าอ้างอิง 36
+
+35
+International Covenant on Economic, Social and Cultural Rights
+PART V
+Article 26
+ 1. The present Covenant is open for signature by any State Member 
+of the United Nations or member of any of its specialized agencies, by any 
+State Party to the Statute of the International Court of Justice, and by any 
+other State which has been invited by the General Assembly of the United 
+Nations to become a party to the present Covenant. 
+ 2. The present Covenant is subject to ratiﬁcation. Instruments of 
+ratiﬁcation shall be deposited with the Secretary-General of the United Nations.
+  3. The present Covenant shall be open to accession by any State 
+referred to in paragraph 1 of this article. 
+ 4. Accession shall be effected by the deposit of an instrument of 
+accession with the Secretary-General of the United Nations. 
+ 5. The Secretary-General of the United Nations shall inform all States 
+which have signed the present Covenant or acceded to it of the deposit of 
+each instrument of ratiﬁcation or accession. 
+Article 27
+ 1. The present Covenant shall enter into force three months after 
+the date of the deposit with the Secretary-General of the United Nations of 
+the thirty-ﬁfth instrument of ratiﬁcation or instrument of accession. 
+ 2. For each State ratifying the present Covenant or acceding to it 
+after the deposit of the thirty-ﬁfth instrument of ratiﬁcation or instrument of 
+accession, the present Covenant shall enter into force three months after 
+the date of the deposit of its own instrument of ratiﬁcation or instrument of 
+accession. 
+
+## หน้าอ้างอิง 37
+
+36
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ ขอ ๒๘
+ บทบัญญัติของกติกานี้จะครอบคลุมทุกสวนของรัฐที่เปนสหรัฐ โดยปราศจาก
+ขอจํากัดหรือขอยกเวน 
+ขอ ๒๙
+ ๑. รัฐภาคีใดแหงกติกานี้อาจเสนอขอแกไขและยื่นตอเลขาธิการสหประชาชาติ 
+จากนั้นเลขาธิการสหประชาชาติจะตองสงขอแกไขที่เสนอมานั้นแกรัฐภาคีแหงกติกานี้
+พรอมกับคํารองขอใหรัฐภาคีแจงใหตนทราบวารัฐภาคีเหลานั้นเห็นควรใหมีการประชุม
+ของรัฐภาคีทั้งหลายเพื่อมุงประสงคในการพิจารณาและลงคะแนนเสียงขอเสนอนั้น
+หรือไม ในกรณีที่มีรัฐภาคีจํานวนอยางนอยที่สุดหนึ่งในสามเห็นดวยกับการจัดประชุม
+ดังกลาว เลขาธิการฯ จะตองจัดประชุมภายใตการสนับสนุนของสหประชาชาติ ขอแกไขใด
+ที่ไดรับการรับรองโดยรัฐภาคีสวนใหญซึ่งเขารวมประชุมและลงคะแนนเสียงในการประชุม 
+ใหนําเสนอตอสมัชชาสหประชาชาติเพื่อใหความเห็นชอบ 
+ ๒. ขอแกไขจะมีผลบังคับใชเมื่อไดรับความเห็นชอบจากสมัชชาสหประชาชาติ 
+และไดรับการยอมรับโดยเสียงสวนใหญสองในสามของรัฐภาคีแหงกติกานี้ตามกระบวนการ
+ทางรัฐธรรมนูญของรัฐนั้น ๆ 
+ ๓. เมื่อขอแกไขมีผลบังคับใช ยอมมีผลผูกพันรัฐภาคีซึ่งไดยอมรับขอแกไขแลว
+สวนรัฐภาคีอื่นยังคงผูกพันตามบทบัญญัติในกติกาฉบับนี้ และขอแกไขกอน ๆ ซึ่งตน
+ไดยอมรับ
+
+## หน้าอ้างอิง 38
+
+37
+International Covenant on Economic, Social and Cultural Rights
+Article 28
+ The provisions of the present Covenant shall extend to all parts of 
+federal States without any limitations or exceptions. 
+Article 29
+ 1.  Any State Party to the present Covenant may propose an amendment
+and ﬁle it with the Secretary General of the United Nations. The Secretary-General
+shall thereupon communicate any proposed amendments to the States 
+Parties to the present Covenant with a request that they notify him 
+whether they favour a conference of States Parties for the purpose of 
+considering and voting upon the proposals. In the event that at least one 
+third of the States Parties favours such a conference, the Secretary-General 
+shall convene the conference under the auspices of the United Nations. Any 
+amendment adopted by a majority of the States Parties present and voting 
+at the conference shall be submitted to the General Assembly of the United 
+Nations for approval. 
+ 2. Amendments shall come into force when they have been approved 
+by the General Assembly of the United Nations and accepted by a two-thirds 
+majority of the States Parties to the present Covenant in accordance with 
+their respective constitutional processes. 
+ 3. When amendments come into force they shall be binding on those 
+States Parties which have accepted them, other States Parties still being bound 
+by the provisions of the present Covenant and any earlier amendment which 
+they have accepted. 
+
+## หน้าอ้างอิง 39
+
+38
+กติการะหวางประเทศวาดวยสิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม
+ขอ ๓๐
+ นอกเหนือจากการแจงตามขอ ๒๖ วรรค ๕ แลว เลขาธิการสหประชาชาติจะตอง
+แจงไปยังบรรดารัฐทั้งปวงที่กลาวถึงในวรรค ๑ ของขอเดียวกันในเรื่องตอไปนี้ 
+ (ก)  การลงนาม การใหสัตยาบันและการภาคยานุวัติตามขอ ๒๖ 
+ (ข) วันที่กติกาฉบับนี้มีผลบังคับใชตามขอ ๒๗ และวันที่ขอแกไข
+มีผลบังคับใชตามขอ ๒๙ 
+ขอ ๓๑
+ ๑.     กติกาฉบับนี้ซึ่งทําเปนภาษาจีน อังกฤษ ฝรั่งเศส รัสเซีย และสเปน มีความถูกตอง
+เทาเทียมกัน ใหเก็บรักษาไว ณ หอเอกสารของสหประชาชาติ 
+ ๒.  เลขาธิการสหประชาชาติจะตองสงสําเนาของกติกาฉบับนี้ ซึ่งไดรับ
+การรับรองแลวไปใหรัฐทั้งปวงตามที่กลาวถึงในขอ ๒๖
+**************
+ 
+
+## หน้าอ้างอิง 40
+
+39
+International Covenant on Economic, Social and Cultural Rights
+Article 30
+ Irrespective of the notiﬁcations made under article 26, paragraph 5, 
+the Secretary-General of the United Nations shall inform all States referred 
+to in paragraph I of the same article of the following particulars: 
+ (a) Signatures, ratiﬁcations and accessions under article 26; 
+ (b) The date of the entry into force of the present Covenant under 
+article 27 and the date of the entry into force of any amendments under 
+article 29. 
+Article 31
+ 1. The present Covenant, of which the Chinese, English, French, 
+Russian and Spanish texts are equally authentic, shall be deposited in the 
+archives of the United Nations. 
+ 2.  The Secretary-General of the United Nations shall transmit certiﬁed
+copies of the present Covenant to all States referred to in article 26.
+**************
+
+## หน้าอ้างอิง 41
+
+กรมองคการระหวางประเทศ
+กระทรวงการตางประเทศ
+www.mfa.go.th/humanrights

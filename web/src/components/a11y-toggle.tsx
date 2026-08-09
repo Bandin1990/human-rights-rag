@@ -49,7 +49,7 @@ export function A11yToggle() {
                   color: "var(--ink, #0f172a)", fontSize: "13px", fontWeight: 500
                 }}
               >
-                โหมดปกติ (สว่าง)
+                โหมดปกติ
               </button>
               <button
                 onClick={() => setThemeContrast("high")}
@@ -61,17 +61,6 @@ export function A11yToggle() {
                 }}
               >
                 ความเปรียบต่างสูง (High Contrast)
-              </button>
-              <button
-                onClick={() => setThemeContrast("dark")}
-                style={{
-                  padding: "10px", borderRadius: "8px", cursor: "pointer", textAlign: "left",
-                  border: themeContrast === "dark" ? "2px solid var(--teal, #0ea5e9)" : "1px solid var(--line, #e2e8f0)",
-                  background: themeContrast === "dark" ? "#1e293b" : "#334155",
-                  color: "#fff", fontSize: "13px", fontWeight: 500
-                }}
-              >
-                โหมดมืด (Dark Mode)
               </button>
             </div>
           </div>
