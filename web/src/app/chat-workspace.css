@@ -939,6 +939,9 @@ nav a:hover, nav a.active { color: #f3f4f6 !important; }
 nav a.active:after { background: #fb923c !important; }
 .menu { color: #e5e7eb; }
 footer { background: #14161b !important; }
+.footer-brand { display: flex; align-items: center; gap: 16px; }
+.footer-brand a { color: #9ca3af; font-size: 14px; text-decoration: none; }
+.footer-brand a:hover { color: #f3f4f6; }
 
 /* Help/manual page (/help) - reuses the same ink/gold "formal document"
    palette as the topic graph and stats pages rather than the chat's dark-

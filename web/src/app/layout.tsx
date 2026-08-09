@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   description: "คลังความรู้ ระบบจัดการเรื่องร้องเรียน และการจัดทำรายงานตรวจสอบที่เชื่อมโยง RAG",
 };
 
+import Link from "next/link";
 import { A11yProvider } from "@/components/a11y-provider";
 import { A11yToggle } from "@/components/a11y-toggle";
 
@@ -53,7 +54,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <footer>
             <div className="container">
-              <b>Human Rights Knowledge & Case Workspace</b>
+              {/* "Human Rights Knowledge & Case Workspace" (English, referencing
+                  the dormant complaint-management subsystem) didn't match the
+                  "ค้นหาสิทธิ" / "HUMAN RIGHTS KNOWLEDGE" branding used
+                  everywhere else in the app - see header.tsx. */}
+              <div className="footer-brand">
+                <b>ค้นหาสิทธิ</b>
+                <Link href="/help">วิธีใช้งาน</Link>
+              </div>
               <span>AI ช่วยค้นและจัดทำร่างเท่านั้น · การวินิจฉัยและอนุมัติเป็นอำนาจของผู้รับผิดชอบ</span>
             </div>
           </footer>
