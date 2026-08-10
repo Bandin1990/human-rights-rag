@@ -8,13 +8,29 @@
  */
 import * as fs from "fs";
 import * as path from "path";
-import type { GraphData, NhrcDocument, SearchQuery, Statistics } from "./types";
+import type { Facet, GraphData, NhrcDocument, SearchQuery, Statistics } from "./types";
 
 // Re-exported so existing server-side imports from "@/lib/nhrc/repository"
 // keep working unchanged. Client components must import from "./types"
 // directly - importing this file pulls in `fs`/`path` and breaks the build.
-export type { GraphData, NhrcDocument, SearchQuery, Statistics };
+export type { Facet, GraphData, NhrcDocument, SearchQuery, Statistics };
 export { DOCUMENT_CATEGORIES } from "./types";
+
+// Counts how many of the given docs have each distinct value of `pick`,
+// descending by count - used by search()'s facets. Docs with no value for
+// this dimension (undefined) are excluded rather than counted as a fake
+// "ไม่ระบุ" bucket, since most categories don't use sub_type/result at all.
+function countBy(docs: NhrcDocument[], pick: (doc: NhrcDocument) => string | undefined): Facet[] {
+  const counts = new Map<string, number>();
+  for (const doc of docs) {
+    const value = pick(doc);
+    if (!value) continue;
+    counts.set(value, (counts.get(value) || 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .map(([value, count]) => ({ value, count }))
+    .sort((a, b) => b.count - a.count);
+}
 
 class NhrcRepository {
   private documents: NhrcDocument[] = [];
@@ -109,6 +125,27 @@ class NhrcRepository {
       );
     }
 
+    // Facets describe the sub_type/result filter chips for whatever category/
+    // area/year/query is currently selected (see nhrc-workspace.tsx's browse
+    // mode) - computed from `results` *before* the subType/result filters
+    // below are applied, each against the set that ignores only its own
+    // dimension, so switching one facet's selection doesn't hide the other
+    // facet's other options. Empty when a category has no sub_type/result at
+    // all (e.g. งานวิจัย) - the UI simply doesn't render a filter group then.
+    const preSubTypeFilter = query.result ? results.filter((doc) => doc.result === query.result) : results;
+    const preResultFilter = query.subType ? results.filter((doc) => doc.sub_type === query.subType) : results;
+    const facets = {
+      subType: countBy(preSubTypeFilter, (doc) => doc.sub_type),
+      result: countBy(preResultFilter, (doc) => doc.result),
+    };
+
+    if (query.subType) {
+      results = results.filter((doc) => doc.sub_type === query.subType);
+    }
+    if (query.result) {
+      results = results.filter((doc) => doc.result === query.result);
+    }
+
     results.sort((a, b) => {
       if (a.document_type === "case_note" && b.document_type !== "case_note") return -1;
       if (a.document_type !== "case_note" && b.document_type === "case_note") return 1;
@@ -122,6 +159,7 @@ class NhrcRepository {
     return {
       data: results.slice(offset, offset + limit),
       pagination: { total, limit, offset, hasMore: offset + limit < total },
+      facets,
     };
   }
 

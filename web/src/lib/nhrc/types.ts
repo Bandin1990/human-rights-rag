@@ -38,6 +38,25 @@ export interface NhrcDocument {
   // "02 ประเด็นสิทธิ" (see obsidian_parser.py's case_topic_index). Powers the
   // topic-map graph's "show cases for this topic" filter.
   topic_ids?: string[];
+  // Coarse document-kind within a category (e.g. "พระราชบัญญัติ" for a Thai
+  // law, "สนธิสัญญา" for an international instrument, "รายงานตรวจสอบ" for a
+  // case note) - see obsidian_parser.py's _normalize_law_type/
+  // _normalize_instrument_type. Undefined for categories with no sub-typing
+  // (e.g. งานวิจัย). Powers the auto-shown filter chips in browse mode.
+  sub_type?: string;
+  // Case notes only - coarse investigation-outcome bucket parsed from the
+  // note's "ผลการพิจารณา" line (see obsidian_parser.py's
+  // _extract_case_result). A compound/nuanced real result is bucketed by its
+  // first-listed outcome only - the exact original wording is always still
+  // in the excerpt/full text.
+  result?: string;
+}
+
+// One facet value + how many currently-matching documents have it - see
+// repository.ts's search()/countBy.
+export interface Facet {
+  value: string;
+  count: number;
 }
 
 export interface SearchQuery {
@@ -47,6 +66,8 @@ export interface SearchQuery {
   docType?: "case_note" | "topic" | "project" | "general" | "situation_report" | "all";
   category?: string;
   topicId?: string;
+  subType?: string;
+  result?: string;
   limit?: number;
   offset?: number;
 }

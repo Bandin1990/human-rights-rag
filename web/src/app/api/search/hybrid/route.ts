@@ -14,6 +14,8 @@ function buildQuery(searchParams: URLSearchParams): SearchQuery {
     docType: (searchParams.get("type") || "all") as SearchQuery["docType"],
     category: searchParams.get("category") || undefined,
     topicId: searchParams.get("topic") || undefined,
+    subType: searchParams.get("subType") || undefined,
+    result: searchParams.get("result") || undefined,
     limit: searchParams.get("limit") ? parseInt(searchParams.get("limit")!) : 20,
     offset: searchParams.get("offset") ? parseInt(searchParams.get("offset")!) : 0,
   };
@@ -29,6 +31,7 @@ export async function GET(request: NextRequest) {
       success: true,
       data: results.data,
       pagination: results.pagination,
+      facets: results.facets,
       stats: repo.getStats(),
     });
   } catch (error) {
@@ -48,6 +51,7 @@ export async function POST(request: NextRequest) {
       success: true,
       data: results.data,
       pagination: results.pagination,
+      facets: results.facets,
       stats: repo.getStats(),
     });
   } catch (error) {
