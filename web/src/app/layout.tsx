@@ -62,7 +62,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <b>ค้นหาสิทธิ</b>
                 <Link href="/help">วิธีใช้งาน</Link>
               </div>
-              <span>AI ช่วยค้นและจัดทำร่างเท่านั้น · การวินิจฉัยและอนุมัติเป็นอำนาจของผู้รับผิดชอบ</span>
+              <span>
+                ช่องทางติดต่อผู้ดูแลระบบ:{" "}
+                <a href="mailto:bandit.nhrc@gmail.com">bandit.nhrc@gmail.com</a>
+              </span>
             </div>
           </footer>
           <A11yToggle />

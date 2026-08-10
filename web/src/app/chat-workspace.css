@@ -38,12 +38,64 @@
   padding: 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   color: #fb923c;
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: -0.025em;
 }
+.cw-logo > span { display: flex; align-items: center; gap: 10px; }
+
+/* Desktop-only collapse toggles for the sidebar/references panel (see
+   sidebarCollapsed/referencesCollapsed in nhrc-workspace.tsx) - hidden under
+   900px, same breakpoint as everything else that switches to the mobile
+   drawer chrome (see that media query further down). */
+.cw-sidebar-toggle,
+.cw-ref-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #2d303b;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.cw-sidebar-toggle:hover,
+.cw-ref-toggle:hover { background-color: #252830; color: #f3f4f6; }
+
+.cw-sidebar.is-collapsed {
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+  border: none;
+}
+
+/* Rail button that reopens a collapsed panel - fixed to the edge of the
+   viewport (not the panel, which has width 0 while collapsed) so it stays
+   reachable regardless of scroll position. */
+.cw-panel-expand {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 8px;
+  background-color: #252830;
+  border: 1px solid #374151;
+  color: #d1d5db;
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+.cw-panel-expand:hover { background-color: #313543; color: #f3f4f6; border-color: #fb923c; }
+.cw-panel-expand--left { left: 0; border-left: none; border-radius: 0 8px 8px 0; }
+.cw-panel-expand--right { right: 0; border-right: none; border-radius: 8px 0 0 8px; }
 
 .cw-new-chat {
   padding: 0 16px;
@@ -221,6 +273,55 @@
   padding-left: 0;
 }
 
+/* Live search-status line, shown before the first answer token arrives (see
+   nhrc-workspace.tsx's runAsk / api/ask-nhrc/route.ts's "status" events) -
+   a fourcorners.law-style progress indicator that reflects genuine
+   server-side stages (searching -> found N docs -> writing answer), not a
+   fixed timed animation. */
+.cw-status-bubble {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+.cw-status-dots {
+  display: inline-flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.cw-status-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #fb923c;
+  animation: cw-status-bounce 1.1s ease-in-out infinite;
+}
+.cw-status-dots span:nth-child(2) { animation-delay: 0.15s; }
+.cw-status-dots span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes cw-status-bounce {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* Answer bubble while it's still streaming in (see cw-typing-caret below) -
+   same base look as a finished .cw-bubble, just with a blinking caret
+   appended so a partially-arrived answer doesn't read as "done". */
+.cw-bubble-streaming { position: relative; }
+.cw-typing-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  background-color: #fb923c;
+  vertical-align: text-bottom;
+  animation: cw-caret-blink 0.9s step-end infinite;
+}
+@keyframes cw-caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
 /* Structured AI answer (see components/markdown-lite.tsx) - renders our
    constrained "## heading / **bold** / - bullet / > quote / [n] citation"
    subset as real block elements instead of one flat pre-wrapped paragraph. */
@@ -357,6 +458,13 @@
 @media (max-width: 900px) {
   .cw-main { width: 100%; }
 
+  /* Mobile already has its own open/close chrome (topbar hamburger/"เอกสาร
+     อ้างอิง N" button + the drawer's own X) - the desktop collapse toggles
+     and rail buttons would just be redundant, confusing extra controls. */
+  .cw-sidebar-toggle,
+  .cw-ref-toggle,
+  .cw-panel-expand { display: none !important; }
+
   .cw-mobile-topbar {
     display: flex;
     align-items: center;
@@ -441,6 +549,9 @@
   border-bottom: 1px solid #2d303b;
   font-weight: 600;
   color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .cw-ref-content {
   flex: 1;
@@ -587,6 +698,50 @@
   font-size: 0.85rem;
 }
 .cw-case-list-head b { color: #f3f4f6; font-size: 1.05rem; }
+
+/* Category sub-filters (see nhrc-workspace.tsx's facets state) - a group per
+   dimension (sub_type/result), each a row of pill toggles with live counts,
+   loosely modeled on fourcorners.law's case-outcome filter list. */
+.cw-facet-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  background-color: #1a1d24;
+  border: 1px solid #374151;
+  border-radius: 12px;
+}
+.cw-facet-group-title {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.cw-facet-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.cw-facet-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  background-color: #252830;
+  color: #d1d5db;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+}
+.cw-facet-chip:hover { border-color: #fb923c; color: #f3f4f6; }
+.cw-facet-chip.active {
+  background-color: rgba(249, 115, 22, 0.15);
+  border-color: #fb923c;
+  color: #fb923c;
+}
+.cw-facet-chip span {
+  font-size: 0.72rem;
+  color: inherit;
+  opacity: 0.75;
+}
 .cw-case-card {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -657,6 +812,32 @@
 }
 .cw-detail-section > div:only-child { grid-column: 1 / -1; }
 .cw-detail-section h2 { font-size: 1.05rem; margin: 0 0 8px; color: #f3f4f6; }
+
+/* SectionBody (case/[id]/page.tsx) renders each paragraph/list item as its
+   own real block instead of one flat <p> with every line break collapsed
+   away - see that component's comment for why. Multiple <p> need spacing
+   between them since .cw-detail-section p below still zeroes margin by
+   default (kept for the single-paragraph case, e.g. a situation report's
+   plain summary, where no extra gap is wanted). */
+.cw-detail-section p + p,
+.cw-detail-section p + ul,
+.cw-detail-section p + ol,
+.cw-detail-section ul + p,
+.cw-detail-section ol + p { margin-top: 12px; }
+.cw-detail-section ul,
+.cw-detail-section ol {
+  margin: 0;
+  padding-left: 1.3em;
+  color: #9ca3af;
+  line-height: 1.75;
+  font-size: 0.92rem;
+}
+.cw-detail-section ul { list-style: none; }
+.cw-detail-section ul li { position: relative; padding-left: 0.1em; }
+.cw-detail-section ul li:before { content: "–"; position: absolute; left: -1.1em; color: #fb923c; }
+.cw-detail-section ol { list-style: decimal; }
+.cw-detail-section ol li::marker { color: #fb923c; font-weight: 700; }
+.cw-detail-section li + li { margin-top: 6px; }
 .cw-detail-section p { color: #9ca3af; line-height: 1.75; margin: 0; font-size: 0.92rem; }
 .cw-detail-related { padding: 20px; margin-bottom: 20px; }
 .cw-detail-related b { display: block; margin-bottom: 12px; color: #e5e7eb; font-size: 0.95rem; }
@@ -1100,6 +1281,12 @@ body.theme-high-contrast .cw-cite-ref,
 body.theme-high-contrast .cw-ref-badge,
 body.theme-high-contrast .cw-ref-summary-title,
 body.theme-high-contrast .cw-ref-open-link:hover { color: #0000ee !important; }
+body.theme-high-contrast .cw-sidebar-toggle,
+body.theme-high-contrast .cw-ref-toggle,
+body.theme-high-contrast .cw-panel-expand { background-color: #ffffff !important; color: #000000 !important; border: 1px solid #000000 !important; }
+body.theme-high-contrast .cw-sidebar-toggle:hover,
+body.theme-high-contrast .cw-ref-toggle:hover,
+body.theme-high-contrast .cw-panel-expand:hover { background-color: #f0f0f0 !important; border-color: #0000ee !important; color: #0000ee !important; }
 body.theme-high-contrast .cw-nav-link,
 body.theme-high-contrast .cw-nav-title,
 body.theme-high-contrast .cw-history-item,
@@ -1117,7 +1304,10 @@ body.theme-high-contrast .cw-ref-open-link,
 body.theme-high-contrast .cw-answer-list,
 body.theme-high-contrast .cw-answer-h4,
 body.theme-high-contrast .cw-mobile-topbar-title,
+body.theme-high-contrast .cw-status-bubble,
 body.theme-high-contrast .cw-drawer-close { color: #000000 !important; }
+body.theme-high-contrast .cw-status-dots span,
+body.theme-high-contrast .cw-typing-caret { background-color: #000000 !important; }
 body.theme-high-contrast .cw-nav-link:hover,
 body.theme-high-contrast .cw-nav-link.active,
 body.theme-high-contrast .cw-suggestion-btn:hover,
@@ -1126,7 +1316,12 @@ body.theme-high-contrast .cw-new-chat-btn,
 body.theme-high-contrast .cw-suggestion-btn,
 body.theme-high-contrast .cw-input,
 body.theme-high-contrast .cw-select,
+body.theme-high-contrast .cw-facet-panel,
+body.theme-high-contrast .cw-facet-chip,
 body.theme-high-contrast .cw-ref-card { background-color: #ffffff !important; color: #000000 !important; border: 1px solid #000000 !important; }
+body.theme-high-contrast .cw-facet-group-title { color: #000000 !important; }
+body.theme-high-contrast .cw-facet-chip.active,
+body.theme-high-contrast .cw-facet-chip:hover { background-color: #f0f0f0 !important; border-color: #0000ee !important; color: #0000ee !important; }
 body.theme-high-contrast .cw-message-row.user .cw-bubble { background-color: #0000ee !important; color: #ffffff !important; }
 body.theme-high-contrast .cw-message-row.ai .cw-bubble,
 body.theme-high-contrast .cw-answer-p,

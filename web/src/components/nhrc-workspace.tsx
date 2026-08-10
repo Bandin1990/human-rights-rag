@@ -1,17 +1,35 @@
 "use client";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ExternalLink, FileText, Menu, Plus, Scale, Send, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink, FileText, Menu, Plus, Scale, Send, X } from "lucide-react";
 import { NhrcCaseCard } from "@/components/nhrc-case-card";
 import { MarkdownLite } from "@/components/markdown-lite";
-import { DOCUMENT_CATEGORIES, NhrcDocument } from "@/lib/nhrc/types";
+import { DOCUMENT_CATEGORIES, Facet, NhrcDocument } from "@/lib/nhrc/types";
 
+// Per-category label for the sub_type facet group - purely cosmetic (falls
+// back to a generic label below for any category not listed here, so a new
+// category with sub_type data still gets a working, if generic, filter
+// without a code change). Whether the group renders at all is decided by
+// whether the API actually returned any facets.subType values, not by this
+// map - see the "ประเภทเอกสาร" facet UI markup further down.
+const SUB_TYPE_FACET_LABELS: Record<string, string> = {
+  "รายงานตรวจสอบ/ข้อเสนอแนะ กสม.": "ประเภทเอกสาร",
+  "กฎหมายไทย": "ประเภทกฎหมาย",
+  "กฎหมายสิทธิมนุษยชนระหว่างประเทศและเอกสารตีความ": "ประเภทตราสาร",
+};
+function subTypeFacetLabel(category: string): string {
+  return SUB_TYPE_FACET_LABELS[category] || "ประเภทย่อย";
+}
+
+// "E" (เพิ่มเติมจากแท็กซอนอมีเดิม) intentionally left out - no longer a real
+// category in the Obsidian vault. One legacy topic note is still tagged with
+// area_code "E" server-side (obsidian_parser.py's AREA_MAPPING) so it isn't
+// broken by this, it's just not offered as a filter choice here anymore.
 const AREAS = [
   { code: "A", name: "สิทธิพลเมืองและสิทธิทางการเมือง" },
   { code: "B", name: "สิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม" },
   { code: "C", name: "สิทธิของกลุ่มบุคคล" },
   { code: "D", name: "สถานการณ์เชิงพื้นที่-เฉพาะ" },
-  { code: "E", name: "เพิ่มเติมจากแท็กซอนอมีเดิม" },
 ];
 
 const YEARS = Array.from({ length: 7 }, (_, i) => 2563 + i).reverse();
@@ -82,6 +100,16 @@ export function NhrcWorkspace({
   const [results, setResults] = useState<NhrcDocument[]>(initial.data);
   const [total, setTotal] = useState(initial.pagination.total);
   const [loadingList, setLoadingList] = useState(false);
+  // Sub-filters within a selected document category (e.g. "ประเภทกฎหมาย" for
+  // กฎหมายไทย, "ผลการตรวจสอบ" for case notes) - see the facet chip UI further
+  // down and repository.ts's search(). Empty string = no filter on that
+  // dimension. facets holds whatever distinct values + counts the current
+  // category/area/year selection actually has, from the API response -
+  // there's no fixed/hardcoded list, so a category with no sub-typing (e.g.
+  // งานวิจัย) just renders no chips at all.
+  const [subTypeFilter, setSubTypeFilter] = useState("");
+  const [resultFilter, setResultFilter] = useState("");
+  const [facets, setFacets] = useState<{ subType: Facet[]; result: Facet[] }>({ subType: [], result: [] });
 
   const [mode, setMode] = useState<"welcome" | "browse" | "chat">("welcome");
   const [useAI, setUseAI] = useState(true);
@@ -89,6 +117,13 @@ export function NhrcWorkspace({
   const [chatHistory, setChatHistory] = useState<ChatTurn[]>([]);
   const [activeCitations, setActiveCitations] = useState<AskCitation[]>([]);
   const [asking, setAsking] = useState(false);
+  // Live progress while `asking` is true - set from the "status" events on
+  // the streamed response (see runAsk / api/ask-nhrc/route.ts) so this
+  // reflects what the server is actually doing right now, not a canned
+  // timed animation. streamingText accumulates "delta" events so the answer
+  // renders as it's generated instead of appearing all at once at the end.
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [streamingText, setStreamingText] = useState("");
   const [recentQuestions, setRecentQuestions] = useState<string[]>([]);
   const [highlightedCite, setHighlightedCite] = useState<number | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
@@ -110,6 +145,16 @@ export function NhrcWorkspace({
   // entirely (CSS keeps both panels always visible there).
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [referencesOpen, setReferencesOpen] = useState(false);
+
+  // Desktop-only collapse toggles (see the .cw-sidebar-toggle/.cw-ref-toggle
+  // buttons + their matching "collapsed" rail buttons further down) - a
+  // separate concern from sidebarOpen/referencesOpen above, which are the
+  // mobile drawer open/close state. On desktop both panels normally stay
+  // permanently visible; this lets the user reclaim the width for the chat
+  // itself when they don't need the filters/references right now. Hidden
+  // under 900px via CSS - mobile already has its own open/close mechanism.
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [referencesCollapsed, setReferencesCollapsed] = useState(false);
 
   // Clicking a "[n]" citation marker inside an AI answer (see markdown-lite.tsx)
   // scrolls the matching source card into view in the references panel and
@@ -144,6 +189,8 @@ export function NhrcWorkspace({
     }
     if (area) params.set("area", area);
     if (year) params.set("year", String(year));
+    if (subTypeFilter) params.set("subType", subTypeFilter);
+    if (resultFilter) params.set("result", resultFilter);
     params.set("limit", "30");
 
     fetch(`/api/search/hybrid?${params}`, { signal: controller.signal })
@@ -151,6 +198,7 @@ export function NhrcWorkspace({
       .then((d) => {
         setResults(d.data);
         setTotal(d.pagination.total);
+        setFacets(d.facets || { subType: [], result: [] });
       })
       .catch((e) => {
         if (e.name !== "AbortError") setResults([]);
@@ -158,7 +206,7 @@ export function NhrcWorkspace({
       .finally(() => setLoadingList(false));
 
     return () => controller.abort();
-  }, [area, category, year, mode]);
+  }, [area, category, year, mode, subTypeFilter, resultFilter]);
 
   const runAsk = async (q: string) => {
     setQuestion("");
@@ -166,20 +214,64 @@ export function NhrcWorkspace({
     setChatHistory((prev) => [...prev, { role: "user", text: q }]);
     setRecentQuestions((prev) => [q, ...prev.filter((s) => s !== q)].slice(0, 5));
     setAsking(true);
+    setStatusMessage("กำลังเริ่มค้นหา...");
+    setStreamingText("");
 
+    let answerText = "";
     try {
       const res = await fetch("/api/ask-nhrc", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: q, useAI, areaCode: area || undefined, category: category || undefined }),
       });
-      const data = await res.json();
-      setChatHistory((prev) => [...prev, { role: "ai", text: data.answer || data.error || "ไม่สามารถตอบคำถามนี้ได้" }]);
-      setActiveCitations(data.citations || []);
+      if (!res.body) throw new Error("Response has no body to stream");
+
+      // The route emits newline-delimited JSON events (not SSE) - read the
+      // raw bytes and split on "\n" ourselves, buffering any partial line
+      // that landed at a chunk boundary until the rest of it arrives.
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        let newlineIndex;
+        while ((newlineIndex = buffer.indexOf("\n")) >= 0) {
+          const line = buffer.slice(0, newlineIndex);
+          buffer = buffer.slice(newlineIndex + 1);
+          if (!line.trim()) continue;
+          let event: { type: string; message?: string; text?: string; citations?: AskCitation[] };
+          try {
+            event = JSON.parse(line);
+          } catch {
+            continue;
+          }
+          if (event.type === "status" && event.message) {
+            setStatusMessage(event.message);
+          } else if (event.type === "citations") {
+            setActiveCitations(event.citations || []);
+          } else if (event.type === "delta" && event.text) {
+            answerText += event.text;
+            setStreamingText(answerText);
+          } else if (event.type === "error" && event.message) {
+            answerText = event.message;
+            setStreamingText(answerText);
+          }
+        }
+      }
+
+      setChatHistory((prev) => [...prev, { role: "ai", text: answerText || "ไม่สามารถตอบคำถามนี้ได้" }]);
     } catch {
-      setChatHistory((prev) => [...prev, { role: "ai", text: "ขออภัย ไม่สามารถประมวลผลคำถามได้ในขณะนี้" }]);
+      setChatHistory((prev) => [
+        ...prev,
+        { role: "ai", text: answerText || "ขออภัย ไม่สามารถประมวลผลคำถามได้ในขณะนี้" },
+      ]);
     } finally {
       setAsking(false);
+      setStatusMessage(null);
+      setStreamingText("");
     }
   };
 
@@ -195,6 +287,8 @@ export function NhrcWorkspace({
     setArea("");
     setCategory("");
     setYear(0);
+    setSubTypeFilter("");
+    setResultFilter("");
     setChatHistory([]);
     setActiveCitations([]);
     setSidebarOpen(false);
@@ -208,19 +302,37 @@ export function NhrcWorkspace({
   const selectCategory = (label: string) => {
     setMode("browse");
     setCategory(label);
+    // Sub-filters belong to whichever category was previously selected (a
+    // "ผลการตรวจสอบ" value or a "ประเภทกฎหมาย" value has no meaning outside
+    // its own category) - clear both whenever the category itself changes.
+    setSubTypeFilter("");
+    setResultFilter("");
     setSidebarOpen(false);
   };
 
   return (
     <div className="cw-container">
       {/* Sidebar - fixed 280px column on desktop, off-canvas drawer under
-          900px (see chat-workspace.css's .cw-sidebar media query) */}
-      <div className={`cw-sidebar ${sidebarOpen ? "is-open" : ""}`}>
+          900px (see chat-workspace.css's .cw-sidebar media query). Desktop
+          also gets a collapse toggle (.cw-sidebar-toggle here + the
+          .cw-panel-expand rail button below) so the menu can be tucked away
+          for more chat width - see sidebarCollapsed. */}
+      <div className={`cw-sidebar ${sidebarOpen ? "is-open" : ""} ${sidebarCollapsed ? "is-collapsed" : ""}`}>
         <button className="cw-drawer-close" aria-label="ปิดเมนู" onClick={() => setSidebarOpen(false)}>
           <X size={18} />
         </button>
         <div className="cw-logo">
-          <Scale size={24} /> ค้นหาสิทธิ
+          <span>
+            <Scale size={24} /> ค้นหาสิทธิ
+          </span>
+          <button
+            className="cw-sidebar-toggle"
+            aria-label="ซ่อนเมนู"
+            title="ซ่อนเมนู"
+            onClick={() => setSidebarCollapsed(true)}
+          >
+            <ChevronLeft size={16} />
+          </button>
         </div>
 
         <div className="cw-new-chat">
@@ -312,6 +424,20 @@ export function NhrcWorkspace({
         <div className="cw-footer">© 2026 ค้นหาสิทธิ</div>
       </div>
 
+      {/* Desktop-only "bring the menu back" rail button - shown in place of
+          the sidebar once it's collapsed (see .cw-sidebar-toggle above).
+          Hidden under 900px via CSS, same as the toggle button itself. */}
+      {sidebarCollapsed && (
+        <button
+          className="cw-panel-expand cw-panel-expand--left"
+          aria-label="แสดงเมนู"
+          title="แสดงเมนู"
+          onClick={() => setSidebarCollapsed(false)}
+        >
+          <ChevronRight size={16} />
+        </button>
+      )}
+
       {/* Main */}
       <div className="cw-main">
         {/* Mobile-only toolbar (hidden on desktop via CSS) - the sidebar and
@@ -361,6 +487,66 @@ export function NhrcWorkspace({
                   {year ? ` · พ.ศ. ${year}` : ""}
                 </span>
               </div>
+
+              {/* Sub-filters for the currently selected category - entirely
+                  data-driven (see repository.ts's search()/countBy): a group
+                  only renders when the API actually returned facet values for
+                  it, so a category with no sub_type/result data (e.g.
+                  งานวิจัย) shows neither, and a brand-new document kind added
+                  to the vault later shows up as a new chip automatically. */}
+              {(facets.subType.length > 0 || facets.result.length > 0) && (
+                <div className="cw-facet-panel">
+                  {facets.subType.length > 0 && (
+                    <div className="cw-facet-group">
+                      <div className="cw-facet-group-title">{subTypeFacetLabel(category)}</div>
+                      <div className="cw-facet-chips">
+                        <button
+                          className={`cw-facet-chip ${!subTypeFilter ? "active" : ""}`}
+                          onClick={() => setSubTypeFilter("")}
+                        >
+                          ทั้งหมด
+                          <span>{facets.subType.reduce((sum, f) => sum + f.count, 0)}</span>
+                        </button>
+                        {facets.subType.map((f) => (
+                          <button
+                            key={f.value}
+                            className={`cw-facet-chip ${subTypeFilter === f.value ? "active" : ""}`}
+                            onClick={() => setSubTypeFilter(subTypeFilter === f.value ? "" : f.value)}
+                          >
+                            {f.value}
+                            <span>{f.count}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {facets.result.length > 0 && (
+                    <div className="cw-facet-group">
+                      <div className="cw-facet-group-title">ผลการตรวจสอบ</div>
+                      <div className="cw-facet-chips">
+                        <button
+                          className={`cw-facet-chip ${!resultFilter ? "active" : ""}`}
+                          onClick={() => setResultFilter("")}
+                        >
+                          ทั้งหมด
+                          <span>{facets.result.reduce((sum, f) => sum + f.count, 0)}</span>
+                        </button>
+                        {facets.result.map((f) => (
+                          <button
+                            key={f.value}
+                            className={`cw-facet-chip ${resultFilter === f.value ? "active" : ""}`}
+                            onClick={() => setResultFilter(resultFilter === f.value ? "" : f.value)}
+                          >
+                            {f.value}
+                            <span>{f.count}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
               {results.map((doc) => (
                 <NhrcCaseCard key={doc.document_id} doc={doc} />
               ))}
@@ -393,9 +579,25 @@ export function NhrcWorkspace({
                   <div className="cw-avatar">
                     <Scale size={18} />
                   </div>
-                  <div className="cw-bubble" style={{ opacity: 0.6 }}>
-                    กำลังค้นและวิเคราะห์...
-                  </div>
+                  {streamingText ? (
+                    // First tokens have arrived - switch from the status
+                    // line to the answer growing in place, with a blinking
+                    // caret (.cw-typing-caret, chat-workspace.css) so it
+                    // reads as "still being written" rather than finished.
+                    <div className="cw-bubble cw-bubble-streaming">
+                      <MarkdownLite text={streamingText} onCiteClick={scrollToCitation} />
+                      <span className="cw-typing-caret" aria-hidden="true" />
+                    </div>
+                  ) : (
+                    <div className="cw-bubble cw-status-bubble">
+                      <span className="cw-status-dots" aria-hidden="true">
+                        <span />
+                        <span />
+                        <span />
+                      </span>
+                      {statusMessage || "กำลังค้นและวิเคราะห์..."}
+                    </div>
+                  )}
                 </div>
               )}
               <div ref={chatEndRef} />
@@ -428,9 +630,13 @@ export function NhrcWorkspace({
       </div>
 
       {/* References - fixed 420px column on desktop, off-canvas drawer
-          under 900px */}
+          under 900px. referencesCollapsed reuses the existing "hidden"
+          class (already does a width/transform/opacity transition for the
+          no-citations case) so an explicit user collapse looks identical -
+          on mobile ".hidden" is a no-op anyway (position is driven by
+          "is-open" there instead, see chat-workspace.css's media query). */}
       <div
-        className={`cw-references ${activeCitations.length === 0 ? "hidden" : ""} ${
+        className={`cw-references ${activeCitations.length === 0 || referencesCollapsed ? "hidden" : ""} ${
           referencesOpen ? "is-open" : ""
         }`}
       >
@@ -442,7 +648,17 @@ export function NhrcWorkspace({
             these citations regularly include research, Thai law,
             international instruments, and general comments alongside case
             notes, not just cases. */}
-        <div className="cw-ref-header">เอกสารอ้างอิง</div>
+        <div className="cw-ref-header">
+          เอกสารอ้างอิง
+          <button
+            className="cw-ref-toggle"
+            aria-label="ซ่อนเอกสารอ้างอิง"
+            title="ซ่อนเอกสารอ้างอิง"
+            onClick={() => setReferencesCollapsed(true)}
+          >
+            <ChevronRight size={16} />
+          </button>
+        </div>
         <div className="cw-ref-content">
           {activeCitations.map((c, idx) => {
             return (
@@ -477,6 +693,21 @@ export function NhrcWorkspace({
           })}
         </div>
       </div>
+
+      {/* Desktop-only "bring references back" rail button - mirrors
+          .cw-panel-expand--left above. Only worth showing when there's
+          actually something to bring back. */}
+      {referencesCollapsed && activeCitations.length > 0 && (
+        <button
+          className="cw-panel-expand cw-panel-expand--right"
+          aria-label="แสดงเอกสารอ้างอิง"
+          title="แสดงเอกสารอ้างอิง"
+          onClick={() => setReferencesCollapsed(false)}
+        >
+          <ChevronLeft size={16} />
+          <FileText size={14} /> {activeCitations.length}
+        </button>
+      )}
 
       {/* Shared backdrop for whichever drawer is open (mobile only - see
           chat-workspace.css, hidden entirely on desktop where both panels
