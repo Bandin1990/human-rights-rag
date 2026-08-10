@@ -81,6 +81,69 @@ class ObsidianParser:
         "10": "คำพิพากษาศาลต่างประเทศ",
     }
 
+    # "law_type" (docs/vault-templates/06-กฎหมายไทย.md) is already a short,
+    # controlled value in practice ("พระราชบัญญัติ", "รัฐธรรมนูญ (กฎหมายสูงสุด)")
+    # - the only cleanup needed is dropping a trailing descriptive parenthetical
+    # so "รัฐธรรมนูญ (กฎหมายสูงสุด)" and a future plain "รัฐธรรมนูญ" land in the
+    # same filter bucket. See _normalize_law_type.
+    LAW_TYPE_PAREN_SUFFIX = re.compile(r'\s*\([^)]*\)\s*$')
+
+    # "instrument_type" (docs/vault-templates/07-...) is NOT a short controlled
+    # value in practice - most files (the ~190 treaty-body General Comments/
+    # Recommendations) carry a full descriptive sentence naming the specific
+    # committee, e.g. "ข้อเสนอแนะทั่วไป (General Recommendation) ของคณะกรรมการ
+    # CEDAW — ตีความ CEDAW". Used raw, that's ~15 near-duplicate filter chips
+    # instead of the handful of genuine instrument *kinds* the user actually
+    # wants to filter by (ปฏิญญา / สนธิสัญญา / พิธีสาร / ความเห็นทั่วไป). Bucket
+    # by prefix/keyword instead - see _normalize_instrument_type. Order matters
+    # for the prefix list (checked first, in order); the keyword list is
+    # substring matching, order only matters between entries that could both
+    # match the same string (none currently do).
+    INSTRUMENT_TYPE_PREFIX_BUCKETS = [
+        ("สนธิสัญญา", "สนธิสัญญา"),
+        ("ปฏิญญา", "ปฏิญญา"),
+    ]
+    INSTRUMENT_TYPE_KEYWORD_BUCKETS = [
+        ("พิธีสาร", "พิธีสาร"),
+        ("ความเห็นทั่วไป", "ความเห็นทั่วไป/ข้อเสนอแนะทั่วไป"),
+        ("ข้อเสนอแนะทั่วไป", "ความเห็นทั่วไป/ข้อเสนอแนะทั่วไป"),
+    ]
+
+    # "ผลการพิจารณา" (case_note only) is free text written by hand into the
+    # note's bold metadata line (see _parse_case_note's docstring example) -
+    # there is no controlled vocabulary at all, and real values range from
+    # clean single words to compound multi-issue outcomes with parenthetical
+    # qualifiers ("ละเมิดสิทธิมนุษยชน (เฉพาะประเด็นกระบวนการ EIA)", "ยุติเรื่อง /
+    # ไม่ละเมิด"). _extract_case_result buckets by whichever of these known
+    # outcome words the text *starts with* (a compound result is reported
+    # first-outcome-first in every sample checked) - this is a coarse filter
+    # grouping only, not a re-judgment of the case; the exact original
+    # wording is always still visible in the excerpt/full text.
+    CASE_RESULT_LINE = re.compile(r'\*\*ผลการพิจารณา:\*\*\s*([^\n]+)')
+    CASE_RESULT_PREFIX_BUCKETS = [
+        ("ไม่อาจรับฟังได้ว่าละเมิด", "ไม่อาจรับฟังได้ว่าละเมิด"),
+        ("ไม่ละเมิด", "ไม่ละเมิดสิทธิมนุษยชน"),
+        ("ยุติเรื่อง", "ยุติเรื่อง"),
+        ("ละเมิด", "ละเมิดสิทธิมนุษยชน"),
+    ]
+
+    # Last-resort sub_type fallback for a "07 กฎหมายสิทธิมนุษยชนระหว่างประเทศ"
+    # file with no instrument_type frontmatter at all - e.g. the full official
+    # treaty-text translations under "คำแปลภาษาไทย_ฉบับร่าง/" (only a plain
+    # "title:"/source_file, no instrument_type). Matched against the doc's
+    # resolved title (keyword substring, first match wins - order matters:
+    # "พิธีสาร" must come before "อนุสัญญา" since an optional protocol's title
+    # conventionally names its parent convention too, e.g. "พิธีสารเลือกรับของ
+    # อนุสัญญาว่าด้วยสิทธิคนพิการ", and should bucket as พิธีสาร not สนธิสัญญา).
+    TITLE_SUB_TYPE_KEYWORD_BUCKETS = [
+        ("พิธีสาร", "พิธีสาร"),
+        ("กติการะหว่างประเทศ", "สนธิสัญญา"),
+        ("อนุสัญญา", "สนธิสัญญา"),
+        ("ปฏิญญา", "ปฏิญญา"),
+        ("ความเห็นทั่วไป", "ความเห็นทั่วไป/ข้อเสนอแนะทั่วไป"),
+        ("ข้อเสนอแนะทั่วไป", "ความเห็นทั่วไป/ข้อเสนอแนะทั่วไป"),
+    ]
+
     # Extra Thai stopwords beyond pythainlp's corpus (filler/structural words
     # that show up constantly in NHRC case notes but carry no search signal)
     EXTRA_STOPWORDS = {
@@ -357,6 +420,18 @@ class ObsidianParser:
             "area_code": area_code,
             "area_name": area_name,
             "topic_ids": self.case_topic_index.get(case_id, []),
+            # Every case note parsed by this function is an individual
+            # investigation record ("บันทึกกรณีตรวจสอบ") - a frontmatter
+            # override lets a future differently-typed file under the same
+            # folder (e.g. a "ข้อเสนอแนะ" note) claim a different sub_type
+            # without a code change. Powers the "ประเภทเอกสาร" filter chips
+            # in the web UI (auto-shown only when more than one value exists).
+            "sub_type": frontmatter.get("sub_type") or "รายงานตรวจสอบ",
+            # Coarse outcome bucket for the "ผลการตรวจสอบ" filter - see
+            # _extract_case_result. None when the note has no recognizable
+            # "ผลการพิจารณา" line (shouldn't happen for a real case note, but
+            # don't fail parsing over a missing/malformed one).
+            "result": self._extract_case_result(content),
 
             # Temporal
             "year": year_gregorian,
@@ -402,6 +477,49 @@ class ObsidianParser:
         pattern = re.compile(rf'##\s*{re.escape(heading)}\s*\n(.*?)(?=\n##\s|\Z)', re.DOTALL)
         match = pattern.search(content)
         return match.group(1).strip() if match else None
+
+    def _normalize_law_type(self, raw: Optional[str]) -> Optional[str]:
+        """"รัฐธรรมนูญ (กฎหมายสูงสุด)" -> "รัฐธรรมนูญ" - see LAW_TYPE_PAREN_SUFFIX."""
+        if not raw:
+            return None
+        cleaned = self.LAW_TYPE_PAREN_SUFFIX.sub('', raw).strip()
+        return cleaned or None
+
+    def _normalize_instrument_type(self, raw: Optional[str]) -> Optional[str]:
+        """Bucket a raw instrument_type sentence into a filter-friendly kind
+        (ปฏิญญา / สนธิสัญญา / พิธีสาร / ความเห็นทั่วไป...) - see
+        INSTRUMENT_TYPE_PREFIX_BUCKETS/INSTRUMENT_TYPE_KEYWORD_BUCKETS."""
+        if not raw:
+            return None
+        for prefix, bucket in self.INSTRUMENT_TYPE_PREFIX_BUCKETS:
+            if raw.startswith(prefix):
+                return bucket
+        for keyword, bucket in self.INSTRUMENT_TYPE_KEYWORD_BUCKETS:
+            if keyword in raw:
+                return bucket
+        return "อื่นๆ"
+
+    def _infer_sub_type_from_title(self, title: str) -> Optional[str]:
+        """See TITLE_SUB_TYPE_KEYWORD_BUCKETS - fallback only, used when a
+        document has no law_type/instrument_type/sub_type frontmatter."""
+        for keyword, bucket in self.TITLE_SUB_TYPE_KEYWORD_BUCKETS:
+            if keyword in title:
+                return bucket
+        return None
+
+    def _extract_case_result(self, content: str) -> Optional[str]:
+        """Bucket a case note's "**ผลการพิจารณา:** ..." line into a coarse
+        outcome filter value - see CASE_RESULT_PREFIX_BUCKETS."""
+        match = self.CASE_RESULT_LINE.search(content)
+        if not match:
+            return None
+        raw = match.group(1).strip().rstrip(',').strip()
+        if not raw:
+            return None
+        for prefix, bucket in self.CASE_RESULT_PREFIX_BUCKETS:
+            if raw.startswith(prefix):
+                return bucket
+        return "อื่นๆ"
 
     # "รายงานผลการประเมินสถานการณ์-YYYY.md" -> YYYY
     SITUATION_REPORT_YEAR_PATTERN = re.compile(r'(\d{4})\s*$')
@@ -591,6 +709,26 @@ class ObsidianParser:
         if not summary:
             summary = content.strip()[:500] if content else ""
 
+        # Coarse document-kind filter value, auto-derived from whichever
+        # category-specific frontmatter field the template for this folder
+        # defines (docs/vault-templates/06-กฎหมายไทย.md's "law_type",
+        # 07-...'s "instrument_type") - or a plain "sub_type" field for any
+        # category added later that doesn't need its own normalizer. None
+        # (no filter chip shown) when a file has none of these, e.g. งานวิจัย
+        # docs, which aren't sub-typed.
+        # Title-keyword fallback is scoped to the "07" folder only - applied
+        # unscoped, "อนุสัญญา"/"ปฏิญญา" as loose substrings false-positive on
+        # research report titles that merely *reference* an instrument by
+        # name (e.g. "การจัดทำตัวชี้วัดสิทธิมนุษยชนเบื้องต้นตามปฏิญญาสากลว่าด้วย
+        # สิทธิมนุษยชน" is a งานวิจัย doc, not a declaration).
+        in_instrument_folder = relative_path.parts[0][:2] == "07"
+        sub_type = (
+            self._normalize_law_type(frontmatter.get("law_type"))
+            or self._normalize_instrument_type(frontmatter.get("instrument_type"))
+            or frontmatter.get("sub_type")
+            or (self._infer_sub_type_from_title(title) if in_instrument_folder else None)
+        )
+
         return {
             # Core identifiers
             "document_id": f"doc_{filename_stem.replace(' ', '_')}",
@@ -602,6 +740,7 @@ class ObsidianParser:
             "document_type": "general",
             "area_code": None,
             "area_name": None,
+            "sub_type": sub_type,
 
             # Temporal
             "year": None,
