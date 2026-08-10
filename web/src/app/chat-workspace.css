@@ -423,6 +423,24 @@
   color: #6b7280;
 }
 
+/* Global accessibility toggle (a11y-toggle.tsx, rendered on every page from
+   layout.tsx) - fixed to the bottom-right corner. On narrow viewports
+   that's the exact same corner .cw-send-btn occupies inside the composer
+   above, so the two sat stacked directly on top of each other on the
+   homepage (worse still with the on-screen keyboard open, since the
+   composer is then pinned just above it) - move the toggle above the
+   composer + its disclaimer line there instead. Desktop is unaffected;
+   there's no fixed bottom-right control to collide with elsewhere. */
+.cw-a11y-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+}
+@media (max-width: 600px) {
+  .cw-a11y-fab { bottom: 140px; }
+}
+
 /* Reference Panel */
 .cw-references {
   width: 420px;

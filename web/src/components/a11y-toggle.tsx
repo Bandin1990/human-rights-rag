@@ -9,7 +9,7 @@ export function A11yToggle() {
   const { fontSizeScale, themeContrast, setFontSizeScale, setThemeContrast } = useA11y();
 
   return (
-    <div style={{ position: "fixed", bottom: "24px", right: "24px", zIndex: 9999 }}>
+    <div className="cw-a11y-fab">
       {open ? (
         <div style={{ background: "var(--paper, #fff)", border: "1px solid var(--line, #e2e8f0)", borderRadius: "16px", padding: "20px", boxShadow: "0 10px 25px rgba(0,0,0,0.1)", width: "300px", marginBottom: "16px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px", borderBottom: "1px solid var(--line, #e2e8f0)", paddingBottom: "12px" }}>
