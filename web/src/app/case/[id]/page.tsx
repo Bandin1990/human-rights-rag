@@ -71,12 +71,114 @@ function splitSections(content: string): { heading: string; content: string }[] 
 }
 
 // Strip the light markdown case notes are written in ([[wikilinks]], **bold**)
-// down to plain text - this page renders sections as plain <p>, not markdown.
+// down to plain text - this page renders sections with SectionBody below,
+// not a markdown renderer.
 function cleanMarkdown(text: string): string {
   return text
     .replace(/\[\[([^\|\]]+)\|([^\]]+)\]\]/g, "$2")
     .replace(/\[\[([^\]]+)\]\]/g, "$1")
     .replace(/\*\*([^*]+)\*\*/g, "$1");
+}
+
+// A handful of older case notes have list items glued onto each other with
+// no line break at all in the source .md - e.g. (verbatim from a real vault
+// file) "...และใช้เป็นเงื่อนไขในการจ้างงาน2. โรงพยาบาลเปิดเผยผลตรวจ...ชัดแจ้ง3. มีการ
+// ปล่อยข้อมูล..." - one unbroken run of 3 "numbered list items" with no
+// separator between them at all. Rendered as-is this reads as a single wall
+// of text with a stray digit in the middle of a sentence.
+//
+// Repaired by walking forward from a line's own opening marker ("1. "/"- ")
+// and inserting a newline in front of the *next expected* marker only when
+// it's glued directly onto the previous character (no space, no newline) -
+// this is deliberately narrow: a real prose reference like "...ตามมาตรา 5.
+// กำหนดว่า..." elsewhere in the text is never mistaken for a list
+// continuation, because the scan only fires on a line that already starts
+// with "1. " (numbered) or "- " (bulleted), and only for the specific next
+// number/dash glued flush against the preceding character - not any
+// digit+period or dash anywhere in the text.
+function fixGluedListItems(text: string): string {
+  return text
+    .split("\n")
+    .map((line) => {
+      const leadingWs = line.match(/^\s*/)?.[0] ?? "";
+      const body = line.slice(leadingWs.length);
+
+      const numbered = body.match(/^(\d+)\.\s/);
+      if (numbered) {
+        let expected = parseInt(numbered[1], 10) + 1;
+        let result = body;
+        for (;;) {
+          const marker = `${expected}. `;
+          const idx = result.indexOf(marker);
+          if (idx <= 0) break; // not found, or found at position 0 (nothing to be "glued" to)
+          if (/\s/.test(result[idx - 1])) break; // already separated by whitespace - not glued
+          result = `${result.slice(0, idx)}\n${result.slice(idx)}`;
+          expected += 1;
+        }
+        return leadingWs + result;
+      }
+
+      if (/^-\s/.test(body)) {
+        return leadingWs + body.replace(/(\S)-(\s)/g, (_m, prev: string, sp: string) => `${prev}\n-${sp}`);
+      }
+
+      return line;
+    })
+    .join("\n");
+}
+
+// Renders a section's cleaned text as real paragraphs/lists instead of one
+// flat <p> - the raw content already uses blank lines between paragraphs
+// and "- "/"1. " line prefixes for lists (see docs/vault-templates/), but
+// stuffing that whole multi-line string into a single <p> with the
+// browser's default `white-space: normal` collapses every line break into
+// a single space, so a perfectly well-structured source (blank-line
+// paragraphs, real bullet lists) still rendered as one undifferentiated
+// wall of text. Groups consecutive bullet/numbered lines into one real
+// <ul>/<ol> and gives every other line its own <p>.
+function SectionBody({ text }: { text: string }) {
+  const lines = fixGluedListItems(text)
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean);
+
+  type Block = { type: "p"; text: string } | { type: "ul" | "ol"; items: string[] };
+  const blocks: Block[] = [];
+  for (const line of lines) {
+    const bullet = line.match(/^-\s+(.*)/);
+    const numbered = line.match(/^\d+\.\s+(.*)/);
+    const marker = bullet ? "ul" : numbered ? "ol" : null;
+    const itemText = bullet?.[1] ?? numbered?.[1];
+    const last = blocks[blocks.length - 1];
+    if (marker && itemText !== undefined) {
+      if (last && last.type === marker) last.items.push(itemText);
+      else blocks.push({ type: marker, items: [itemText] });
+    } else {
+      blocks.push({ type: "p", text: line });
+    }
+  }
+
+  return (
+    <>
+      {blocks.map((b, i) =>
+        b.type === "p" ? (
+          <p key={i}>{b.text}</p>
+        ) : b.type === "ul" ? (
+          <ul key={i}>
+            {b.items.map((it, j) => (
+              <li key={j}>{it}</li>
+            ))}
+          </ul>
+        ) : (
+          <ol key={i}>
+            {b.items.map((it, j) => (
+              <li key={j}>{it}</li>
+            ))}
+          </ol>
+        )
+      )}
+    </>
+  );
 }
 
 // Non-case ("general") docs open with a single bold metadata line, e.g.
@@ -306,7 +408,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
                     <span className="cw-detail-section-num">{String(i + 1).padStart(2, "0")}</span>
                     <div>
                       <h2>{s.heading}</h2>
-                      <p>{s.content}</p>
+                      <SectionBody text={s.content} />
                     </div>
                   </section>
                 ))}
@@ -321,7 +423,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
                     <span className="cw-detail-section-num">{String(i + 1).padStart(2, "0")}</span>
                     <div>
                       <h2>{s.heading}</h2>
-                      <p>{s.content}</p>
+                      <SectionBody text={s.content} />
                     </div>
                   </section>
                 ))}
