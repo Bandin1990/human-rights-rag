@@ -15,6 +15,50 @@ const RESULT_LIMIT = 10; // total evidence items sent to the LLM/shown as citati
 const PER_CATEGORY_CAP = 3; // max items from any single category, when browsing "all"
 const MIN_SIMILARITY_FLOOR = 0.55; // below this, a doc isn't worth citing even to "fill" a category
 
+// A previous turn, as sent by nhrc-workspace.tsx's chatHistory. Re-capped and
+// re-truncated here too - never trust the client's own limits for something
+// that feeds directly into an LLM call's cost.
+interface ChatTurn {
+  role: "user" | "ai";
+  text: string;
+}
+const MAX_HISTORY_TURNS = 6; // last 3 exchanges
+const MAX_HISTORY_TURN_CHARS = 1500; // a full ~6144-token answer would otherwise dominate the next turn's input cost
+
+// Every question used to be answered as if it were the first one ever asked
+// - the chat UI shows prior turns on screen, but the API only ever saw the
+// latest `question` string, so an obvious follow-up ("ข้อ 2 ที่พูดถึงมี
+// รายละเอียดอะไรเพิ่ม") retrieved and answered on completely unrelated
+// evidence with no way to know what "ข้อ 2" even referred to. Two fixes,
+// both needing `history`:
+//   1. Retrieval: prepend the immediately preceding user question to the
+//      new one before embedding/searching (buildSearchText below) - a short
+//      follow-up alone often carries almost no topical signal on its own.
+//   2. Synthesis: pass prior turns as real conversation messages to Claude
+//      (buildConversationMessages below) so it can actually resolve "ข้อ 2"
+//      against what *it* said last turn, not just the fresh evidence list.
+function sanitizeHistory(raw: unknown): ChatTurn[] {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .filter(
+      (t): t is ChatTurn =>
+        !!t && (t.role === "user" || t.role === "ai") && typeof t.text === "string"
+    )
+    .slice(-MAX_HISTORY_TURNS)
+    .map((t) => ({ role: t.role, text: t.text.slice(0, MAX_HISTORY_TURN_CHARS) }));
+}
+
+function buildSearchText(question: string, history: ChatTurn[]): string {
+  const priorUserTurn = [...history].reverse().find((t) => t.role === "user");
+  return priorUserTurn ? `${priorUserTurn.text} ${question}` : question;
+}
+
+function buildConversationMessages(
+  history: ChatTurn[]
+): { role: "user" | "assistant"; content: string }[] {
+  return history.map((t) => ({ role: t.role === "ai" ? "assistant" : "user", content: t.text }));
+}
+
 // A question can be substantively about something a Thai law or
 // international instrument covers without echoing that document's own
 // wording closely enough to clear MIN_SIMILARITY_FLOOR or win its slot
@@ -201,7 +245,10 @@ const SYSTEM_PROMPT =
   "4. ตามด้วยคำอธิบาย/ตีความสั้น 2-4 ประโยค ใส่ [n] กำกับทุกข้อความสำคัญ\n" +
   "5. ถ้ามีเงื่อนไขหรือข้อควรพิจารณาหลายข้อ ให้ใช้ bullet list ('- ')\n" +
   "6. ปิดท้ายด้วยหัวข้อ '## สรุปแนวทาง' รวมข้อเสนอแนะเชิงปฏิบัติสั้น ๆ จากหลักฐานทั้งหมด\n\n" +
-  "ห้ามใช้ตาราง ห้ามใช้ตัวเอียง ห้ามอ้างอิงหมายเลขหลักฐานที่ไม่ได้ให้มา";
+  "ห้ามใช้ตาราง ห้ามใช้ตัวเอียง ห้ามอ้างอิงหมายเลขหลักฐานที่ไม่ได้ให้มา\n\n" +
+  "หากมีบทสนทนาก่อนหน้าแนบมาด้วย ให้ใช้บทสนทนานั้นทำความเข้าใจว่าคำถามใหม่นี้อ้างอิงถึงอะไร " +
+  "(เช่น \"ข้อ 2 ที่พูดถึง\" หมายถึงหัวข้อที่สองในคำตอบก่อนหน้าของคุณเอง) แต่หมายเลขหลักฐาน [n] ในคำตอบใหม่นี้ " +
+  "ต้องอ้างอิงเฉพาะหลักฐานชุดใหม่ที่แนบมาในข้อความล่าสุดเท่านั้น ห้ามใช้เลขอ้างอิงจากคำตอบก่อนหน้า";
 
 // Every event on the stream is one line of JSON (newline-delimited, not SSE -
 // this is a same-origin POST body, not a GET EventSource) so the client can
@@ -242,11 +289,13 @@ export async function POST(req: Request) {
         const useAI = body.useAI !== false; // default on
         const areaCode = typeof body.areaCode === "string" ? body.areaCode : undefined;
         const category = typeof body.category === "string" ? body.category : undefined;
+        const history = sanitizeHistory(body.history);
 
         send({ type: "status", message: "กำลังค้นหาเอกสารที่เกี่ยวข้องในคลังความรู้..." });
 
         const repo = getNhrcRepository();
-        const matches = await findRelevantDocuments(repo, question, RESULT_LIMIT, { areaCode, category });
+        const searchText = buildSearchText(question, history);
+        const matches = await findRelevantDocuments(repo, searchText, RESULT_LIMIT, { areaCode, category });
 
         if (matches.length === 0) {
           send({
@@ -321,7 +370,17 @@ export async function POST(req: Request) {
             model,
             max_tokens: 6144,
             system: SYSTEM_PROMPT,
+            // Prior turns (see sanitizeHistory/buildConversationMessages) go
+            // in first as real conversation history - this is what lets a
+            // follow-up like "ข้อ 2 ที่พูดถึงมีรายละเอียดอะไรเพิ่ม" resolve
+            // against Claude's own previous answer instead of being answered
+            // as if it were the first question ever asked. The evidence
+            // list below is still fresh for *this* turn only, and citation
+            // numbers still restart at [1] each turn (see SYSTEM_PROMPT) -
+            // history gives Claude memory of what it already said, not a
+            // second bag of citable sources.
             messages: [
+              ...buildConversationMessages(history),
               {
                 role: "user",
                 content: `คำถาม: ${question}\n\nหลักฐานที่ค้นคืน (จากทุกหมวดในคลังความรู้):\n${evidenceBlock}\n\nเรียบเรียงคำตอบภาษาไทยตามโครงสร้างที่กำหนด ตรวจสอบย้อนกลับได้ทุกจุด และบอกชัดเมื่อหลักฐานไม่เพียงพอ`,

@@ -209,6 +209,13 @@ export function NhrcWorkspace({
   }, [area, category, year, mode, subTypeFilter, resultFilter]);
 
   const runAsk = async (q: string) => {
+    // Snapshot before appending the new question below - this is what makes
+    // it a *previous*-turns history rather than including the question
+    // that's about to be asked. Last 3 exchanges (6 turns) is plenty for
+    // "อธิบายเพิ่ม"/"ข้อ 2 ที่พูดถึง"-style follow-ups to resolve against,
+    // without letting the request body (and Claude's token cost) grow
+    // unbounded over a long session - see ask-nhrc/route.ts's own re-cap.
+    const priorHistory = chatHistory.slice(-6);
     setQuestion("");
     setMode("chat");
     setChatHistory((prev) => [...prev, { role: "user", text: q }]);
@@ -222,7 +229,13 @@ export function NhrcWorkspace({
       const res = await fetch("/api/ask-nhrc", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: q, useAI, areaCode: area || undefined, category: category || undefined }),
+        body: JSON.stringify({
+          question: q,
+          useAI,
+          areaCode: area || undefined,
+          category: category || undefined,
+          history: priorHistory,
+        }),
       });
       if (!res.body) throw new Error("Response has no body to stream");
 
