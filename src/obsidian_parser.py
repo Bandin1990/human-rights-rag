@@ -37,8 +37,24 @@ class ObsidianParser:
     # Buddhist year to Gregorian offset
     BUDDHIST_OFFSET = 543
 
-    # Frontmatter tag values that are category markers, not real keywords
-    GENERIC_TAGS = {"กรณีตรวจสอบ", "ประเด็นสิทธิ", "โปรเจกต์"}
+    # Frontmatter tag values that are category markers, not real keywords -
+    # every note in a "06.../07.../..." folder carries its own folder's
+    # entry here as its first `tags` value (see docs/vault-templates/*.md),
+    # so left unfiltered it becomes a universal, zero-information keyword
+    # shared by every document in the category. That's harmless for search
+    # (matching "งานวิจัย" the word is fine), but it wrecks
+    # getRelatedDocuments()'s keyword-overlap ranking for "related
+    # documents": every document_type="general" doc in a category always
+    # "matches" every other one on this alone, drowning out the one real
+    # topic-specific tag that follows it. "อื่นๆ-ยังไม่จัดหมวด" is each
+    # template's placeholder second tag, filtered proactively in case an
+    # unedited template ever slips through.
+    GENERIC_TAGS = {
+        "กรณีตรวจสอบ", "ประเด็นสิทธิ", "โปรเจกต์",
+        "งานวิจัย", "กฎหมายไทย", "กฎหมายสิทธิมนุษยชนระหว่างประเทศ",
+        "ตราสารระหว่างประเทศ", "คลังความรู้", "คำพิพากษาศาลไทย",
+        "คำพิพากษาศาลต่างประเทศ", "อื่นๆ-ยังไม่จัดหมวด",
+    }
 
     # Every topic note in "02 ประเด็นสิทธิ" shares the exact same breadcrumb/
     # heading template ("> ... กลุ่ม: B. สิทธิทางเศรษฐกิจ สังคม และวัฒนธรรม",
@@ -478,6 +494,44 @@ class ObsidianParser:
         match = pattern.search(content)
         return match.group(1).strip() if match else None
 
+    # [[topic note name]] or [[topic note name|display text]] - used to pull
+    # display text (or the raw link target, when unaliased) out of a
+    # wikilink list.
+    WIKILINK = re.compile(r'\[\[([^\]|]+)(?:\|([^\]]+))?\]\]')
+
+    def _extract_topic_tags(self, content: str, frontmatter: Dict) -> List[str]:
+        """
+        Curated, human-picked topic tags for a document - a much stronger
+        relatedness signal than the free-text keywords _extract_keywords
+        tokenizes from the title/body, since those are dominated by generic
+        words ("กฎหมาย", "สิทธิ", "พ.ศ") that collide across unrelated
+        documents in the same category. Two sources, both optional and
+        template-specific (docs/vault-templates/*.md):
+          - frontmatter `areas` (04 งานวิจัย, 08 คลังความรู้)
+          - "## ประเด็นสิทธิที่เกี่ยวข้อง" wikilink list in the body
+            (06 กฎหมายไทย, 07 กฎหมายสิทธิมนุษยชนระหว่างประเทศ, 09/10 คำพิพากษา)
+        Returns [] for documents using neither convention - callers should
+        fall back to plain keyword overlap in that case.
+        """
+        tags: List[str] = []
+        seen = set()
+
+        def add(value: str):
+            v = value.strip()
+            if v and v not in seen:
+                seen.add(v)
+                tags.append(v)
+
+        for area in (frontmatter.get("areas") or []):
+            add(area)
+
+        section = self._extract_section(content, "ประเด็นสิทธิที่เกี่ยวข้อง")
+        if section:
+            for target, alias in self.WIKILINK.findall(section):
+                add(alias or target)
+
+        return tags
+
     def _normalize_law_type(self, raw: Optional[str]) -> Optional[str]:
         """"รัฐธรรมนูญ (กฎหมายสูงสุด)" -> "รัฐธรรมนูญ" - see LAW_TYPE_PAREN_SUFFIX."""
         if not raw:
@@ -700,6 +754,7 @@ class ObsidianParser:
 
         seed_tags = [t for t in (frontmatter.get("tags") or []) if t not in self.GENERIC_TAGS]
         keywords = self._extract_keywords(title, content, seed_tags=seed_tags)
+        topic_tags = self._extract_topic_tags(content, frontmatter)
 
         # Research notes all carry a "## สาระสำคัญ" (key findings) section -
         # a proper hand-written abstract, unlike the raw "# title / **bold
@@ -751,6 +806,7 @@ class ObsidianParser:
             "title": title,
             "summary": summary,
             "keywords": keywords,
+            "topic_tags": topic_tags,
             "content": content,
 
             # Embedding info
@@ -760,7 +816,7 @@ class ObsidianParser:
 
             # Relations
             "related_cases": [],
-            "related_topics": keywords[:3]
+            "related_topics": topic_tags[:3] if topic_tags else keywords[:3]
         }
 
     def _extract_keywords(

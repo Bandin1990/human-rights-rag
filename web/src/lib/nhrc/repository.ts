@@ -342,23 +342,41 @@ class NhrcRepository {
     const source = this.getCaseById(documentId);
     if (!source) return [];
 
+    // Curated topic_tags (see types.ts) are a deliberate, human-picked
+    // relatedness signal - when the source doc has any, require an actual
+    // topic overlap instead of falling back to `keywords`, which also holds
+    // generic tokenized words ("กฎหมาย", "สิทธิ", "พ.ศ") that collide across
+    // unrelated documents in the same category and used to make "related
+    // documents" (worst for งานวิจัย) mostly noise. Docs/categories with no
+    // topic_tags at all (undefined or []) keep the old keyword-overlap
+    // behavior unchanged.
+    const sourceTopics = new Set(source.topic_tags ?? []);
+    const sourceKeywords = new Set(source.keywords);
+
     const related = this.documents.filter((doc) => {
       if (doc.document_id === source.document_id) return false;
       if (doc.document_type !== docType) return false;
       if (category && doc.category !== category) return false;
       const areaMatch = !!source.area_code && doc.area_code === source.area_code;
-      const keywordMatch = source.keywords.some((kw) => doc.keywords.includes(kw));
       const yearMatch = !!(source.year && doc.year && Math.abs(source.year - doc.year) <= 2);
+      if (sourceTopics.size > 0) {
+        const topicMatch = (doc.topic_tags ?? []).some((t) => sourceTopics.has(t));
+        return topicMatch || areaMatch || yearMatch;
+      }
+      const keywordMatch = source.keywords.some((kw) => doc.keywords.includes(kw));
       return areaMatch || keywordMatch || yearMatch;
     });
 
     related.sort((a, b) => {
-      let scoreA = source.area_code && a.area_code === source.area_code ? 3 : 0;
-      let scoreB = source.area_code && b.area_code === source.area_code ? 3 : 0;
-      const sourceKeywords = new Set(source.keywords);
-      scoreA += a.keywords.filter((kw) => sourceKeywords.has(kw)).length;
-      scoreB += b.keywords.filter((kw) => sourceKeywords.has(kw)).length;
-      return scoreB - scoreA;
+      const score = (doc: NhrcDocument) => {
+        let s = source.area_code && doc.area_code === source.area_code ? 3 : 0;
+        // Each shared curated topic tag outweighs any number of shared
+        // generic keywords - it's the signal we actually trust.
+        s += (doc.topic_tags ?? []).filter((t) => sourceTopics.has(t)).length * 5;
+        s += doc.keywords.filter((kw) => sourceKeywords.has(kw)).length;
+        return s;
+      };
+      return score(b) - score(a);
     });
 
     return related.slice(0, limit);

@@ -50,6 +50,15 @@ export interface NhrcDocument {
   // first-listed outcome only - the exact original wording is always still
   // in the excerpt/full text.
   result?: string;
+  // Curated topic tags (frontmatter `areas`, or wikilinks under a
+  // "## ประเด็นสิทธิที่เกี่ยวข้อง" body section) - see obsidian_parser.py's
+  // _extract_topic_tags. Undefined for document_type other than "general",
+  // and for "general" docs from a category with neither convention (falls
+  // back to plain `keywords` overlap in that case). Deliberately kept
+  // separate from `keywords`, which also holds generic tokenized words that
+  // collide across unrelated documents and would otherwise dominate
+  // getRelatedDocuments()'s relatedness ranking.
+  topic_tags?: string[];
 }
 
 // One facet value + how many currently-matching documents have it - see
