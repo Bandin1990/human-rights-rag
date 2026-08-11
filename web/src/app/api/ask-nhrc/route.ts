@@ -7,13 +7,30 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { getNhrcRepository, NhrcDocument } from "@/lib/nhrc/repository";
-import { semanticSearch } from "@/lib/nhrc/semantic-search";
+import { semanticSearch, SemanticMatch } from "@/lib/nhrc/semantic-search";
+import { searchThaiStatutes, chaseStatuteCrossReferences } from "@/lib/nhrc/openthai-legal";
 
 export const runtime = "nodejs";
 
 const RESULT_LIMIT = 10; // total evidence items sent to the LLM/shown as citations
 const PER_CATEGORY_CAP = 3; // max items from any single category, when browsing "all"
 const MIN_SIMILARITY_FLOOR = 0.55; // below this, a doc isn't worth citing even to "fill" a category
+
+// The NHRC vault only covers 5 Thai laws (the ones directly relevant to
+// กสม.'s own mandate) - a question about anything else in Thai law
+// (inheritance, contracts, family law, ...) has zero vault coverage no
+// matter how good retrieval/reasoning is. OpenThai 2.0 Legal's 6,300-section
+// statute corpus (see openthai-legal.ts) fills that gap - additive evidence,
+// clearly labeled as a distinct source, never replacing the vault's own
+// human-rights-specific documents.
+//
+// NOTE: IAPP_API_KEY is free only until 24 Aug 2026 (per openthai-legal.ts) -
+// after that this either needs a paid plan or silently stops contributing
+// (searchThaiStatutes returns null on any failure, so Ask NHRC keeps working
+// with vault-only evidence either way).
+const STATUTE_CATEGORY_LABEL = "กฎหมายไทยทั่วไป (ฐานข้อมูลกฎหมาย)";
+const STATUTE_MATCH_THRESHOLD = 0.5;
+const STATUTE_LIMIT = 3;
 
 // A previous turn, as sent by nhrc-workspace.tsx's chatHistory. Re-capped and
 // re-truncated here too - never trust the client's own limits for something
@@ -59,6 +76,46 @@ function buildConversationMessages(
   return history.map((t) => ({ role: t.role === "ai" ? "assistant" : "user", content: t.text }));
 }
 
+// A single embedding pass over the whole question can miss half of a
+// multi-concept question - e.g. "ใครมีสิทธิรับมรดก" (with the facts given)
+// really asks about two separate legal concepts (ลำดับทายาทโดยธรรม, and the
+// rule that cuts off lower-ranked heirs), and a corpus section that explains
+// one clearly may not be a close-enough neighbor for the *combined* question
+// text to surface it. Breaking the question into its component concepts
+// first and searching each separately (then merging in
+// findRelevantDocuments) catches sections a single-shot search would miss.
+// Cheap and fast (small output, cheap model) - never blocks retrieval if it
+// fails, since the caller always still has the plain searchText itself.
+async function decomposeQuestion(searchText: string): Promise<string[]> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) return [];
+  try {
+    const client = new Anthropic({ apiKey });
+    const model = process.env.ANTHROPIC_MODEL || "claude-haiku-4-5";
+    const response = await client.messages.create({
+      model,
+      max_tokens: 300,
+      system:
+        "แตกคำถามเป็นประเด็นค้นหาย่อยที่ชัดเจน 1-4 ข้อ สำหรับค้นเอกสารกฎหมาย/สิทธิมนุษยชนแยกทีละประเด็น " +
+        'ตอบเป็น JSON array ของ string ล้วนๆ เท่านั้น ไม่มีข้อความอื่น เช่น ["ลำดับทายาทโดยธรรมมีใครบ้าง", "หลักการตัดสิทธิทายาทลำดับถัดไป"] ' +
+        "ถ้าคำถามเป็นประเด็นเดียวชัดเจนอยู่แล้ว ไม่จำเป็นต้องแตก ให้ตอบ array ว่าง []",
+      messages: [{ role: "user", content: searchText }],
+    });
+    const text = response.content
+      .filter((block): block is Anthropic.TextBlock => block.type === "text")
+      .map((block) => block.text)
+      .join("");
+    const match = text.match(/\[[\s\S]*\]/);
+    if (!match) return [];
+    const parsed = JSON.parse(match[0]);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((s): s is string => typeof s === "string" && s.trim().length > 0).slice(0, 4);
+  } catch (error) {
+    console.error("Question decomposition failed; continuing with single-query search", error);
+    return [];
+  }
+}
+
 // A question can be substantively about something a Thai law or
 // international instrument covers without echoing that document's own
 // wording closely enough to clear MIN_SIMILARITY_FLOOR or win its slot
@@ -96,13 +153,35 @@ interface ScoredDoc {
   chunkText: string | undefined;
 }
 
+// Runs one semantic search per query (decomposeQuestion's sub-questions
+// alongside the plain anchored question - see the POST handler) in
+// parallel, then keeps only the best-scoring occurrence of each document
+// across all of them. A section that's a mediocre match for the whole
+// question but a strong match for one of its component concepts would
+// otherwise never surface at all.
+async function mergedSemanticSearch(queries: string[]): Promise<SemanticMatch[] | null> {
+  const resultSets = await Promise.all(queries.map((q) => semanticSearch(q, 60)));
+  const best = new Map<string, SemanticMatch>();
+  for (const results of resultSets) {
+    if (!results) continue;
+    for (const m of results) {
+      const existing = best.get(m.documentId);
+      if (!existing || m.similarity > existing.similarity) {
+        best.set(m.documentId, m);
+      }
+    }
+  }
+  if (best.size === 0) return null;
+  return Array.from(best.values()).sort((a, b) => b.similarity - a.similarity);
+}
+
 async function findRelevantDocuments(
   repo: ReturnType<typeof getNhrcRepository>,
-  question: string,
+  queries: string[],
   limit: number,
   scope: { areaCode?: string; category?: string }
 ): Promise<{ doc: NhrcDocument; chunkText?: string }[]> {
-  const semanticMatches = await semanticSearch(question, 60);
+  const semanticMatches = await mergedSemanticSearch(queries);
   if (semanticMatches && semanticMatches.length > 0) {
     const scored = semanticMatches
       .map((m) => ({ doc: repo.getCaseById(m.documentId), similarity: m.similarity, chunkText: m.chunkText }))
@@ -111,7 +190,8 @@ async function findRelevantDocuments(
         if (scope.areaCode && s.doc.area_code !== scope.areaCode) return false;
         if (scope.category && s.doc.category !== scope.category) return false;
         return true;
-      });
+      })
+      .sort((a, b) => b.similarity - a.similarity);
 
     if (scored.length > 0) {
       // Caller already pinned a category (left-nav filter) - no need to
@@ -160,7 +240,10 @@ async function findRelevantDocuments(
       }
     }
   }
-  return repo.findRelevantCases(question, limit, scope).map((doc) => ({ doc }));
+  // Keyword fallback doesn't know about multiple queries - the plain
+  // anchored question (queries[0], see the POST handler) is the best single
+  // string to substring-match against.
+  return repo.findRelevantCases(queries[0] || "", limit, scope).map((doc) => ({ doc }));
 }
 
 interface CitationInfo {
@@ -171,6 +254,12 @@ interface CitationInfo {
   area_name?: string;
   year_buddhist?: number;
   excerpt: string;
+  // "statute" = OpenThai 2.0 Legal (see openthai-legal.ts's
+  // searchThaiStatutes), not an NHRC vault document - case_id isn't a real
+  // /case/[id] page for these, so the frontend shouldn't render a "view
+  // details" link for them (see nhrc-workspace.tsx's reference panel).
+  // Defaults to "nhrc" for anything not explicitly marked otherwise.
+  source?: "nhrc" | "statute";
 }
 
 const DISCLAIMER =
@@ -235,17 +324,26 @@ const SYSTEM_PROMPT =
   "คุณเป็นผู้ช่วยค้นคว้าและวิเคราะห์ของสำนักงานคณะกรรมการสิทธิมนุษยชนแห่งชาติ (กสม.) " +
   "วิเคราะห์ได้เฉพาะจากหลักฐานที่ส่งให้เท่านั้น ห้ามสร้างข้อเท็จจริง เลขคดี มาตรา หรือแนววินิจฉัยที่ไม่มีในหลักฐาน " +
   'ห้ามลงข้อยุติว่ามีหรือไม่มีการละเมิดสิทธิมนุษยชนแทนคณะกรรมการสิทธิมนุษยชนแห่งชาติ ใช้ถ้อยคำว่า "มีเหตุให้พิจารณา", ' +
-  '"อาจเกี่ยวข้อง" หรือ "หลักฐานยังไม่เพียงพอ"\n\n' +
+  '"อาจเกี่ยวข้อง" หรือ "หลักฐานยังไม่เพียงพอ" ' +
+  `หลักฐานที่ระบุหมวด "${STATUTE_CATEGORY_LABEL}" คือตัวบทกฎหมายไทยจริงจากฐานข้อมูลกฎหมาย (ไม่ใช่กรณีของ กสม.) ` +
+  "อ้างอิงและยกข้อความได้โดยตรงเช่นเดียวกับหลักฐานหมวดอื่น\n\n" +
   "จัดรูปแบบคำตอบเป็น Markdown ที่มีโครงสร้างชัดเจนตามนี้เสมอ:\n" +
-  "1. เปิดด้วยย่อหน้าสั้น 1-2 ประโยค สรุปภาพรวมสิ่งที่พบ ห้ามขึ้นต้นบรรทัดนี้ด้วยเครื่องหมาย # ใด ๆ (ไม่ใช่หัวข้อ)\n" +
+  "0. ก่อนตอบ ให้ทวนข้อเท็จจริง/บทบาทของบุคคลในคำถามในใจให้ถูกต้องก่อนเสมอ โดยเฉพาะคำถามที่ระบุความสัมพันธ์หลายคน " +
+  "(เช่น ใครคือเจ้ามรดก/ผู้ตาย ใครคือทายาทที่ยังมีชีวิต) - ห้ามเดาหรือสลับบทบาทบุคคล ต้องอิงตามที่ระบุในคำถามตรงตัวเท่านั้น\n" +
+  "1. เปิดด้วยย่อหน้าสั้น 1-2 ประโยค สรุปภาพรวมสิ่งที่พบ (ระบุข้อเท็จจริง/บทบาทสำคัญที่ยึดตามข้อ 0 ด้วยถ้าจำเป็นเพื่อความชัดเจน) " +
+  "ห้ามขึ้นต้นบรรทัดนี้ด้วยเครื่องหมาย # ใด ๆ (ไม่ใช่หัวข้อ) " +
+  "ถ้าคำถามมีคำตอบตรงไปตรงมาข้อเดียวชัดเจน ให้ปิดท้ายย่อหน้านี้ด้วยคำตอบสั้นกระชับ 1 บรรทัด (ตัวหนา)\n" +
   "2. แบ่งเนื้อหาเป็นหัวข้อย่อยด้วย '## ' ทีละประเด็น/แหล่งอ้างอิง เรียงจากเกี่ยวข้องมากไปน้อย " +
-  "ถ้าหลักฐานมีมากกว่าหนึ่งหมวด (เช่น กรณีตรวจสอบจริงของ กสม., ตราสาร/ความเห็นทั่วไประหว่างประเทศ, กฎหมายไทย, งานวิจัย) " +
+  "ถ้าหลักฐานมีมากกว่าหนึ่งหมวด (เช่น กรณีตรวจสอบจริงของ กสม., ตราสาร/ความเห็นทั่วไประหว่างประเทศ, กฎหมายไทย, งานวิจัย, กฎหมายไทยทั่วไป) " +
   "ให้ครอบคลุมหลายหมวดในคำตอบเดียว ห้ามพูดถึงหมวดเดียวแล้วละเลยหมวดอื่นที่มีหลักฐานให้\n" +
   "3. ใต้แต่ละหัวข้อ ให้ขึ้นบรรทัด '**แหล่งที่มา:** [n] ชื่อเอกสาร' ตามหมายเลขหลักฐานที่ให้มาเท่านั้น ห้ามอ้างเลขที่ไม่มี\n" +
   "4. ตามด้วยคำอธิบาย/ตีความสั้น 2-4 ประโยค ใส่ [n] กำกับทุกข้อความสำคัญ\n" +
   "5. ถ้ามีเงื่อนไขหรือข้อควรพิจารณาหลายข้อ ให้ใช้ bullet list ('- ')\n" +
   "6. ปิดท้ายด้วยหัวข้อ '## สรุปแนวทาง' รวมข้อเสนอแนะเชิงปฏิบัติสั้น ๆ จากหลักฐานทั้งหมด\n\n" +
-  "ห้ามใช้ตาราง ห้ามใช้ตัวเอียง ห้ามอ้างอิงหมายเลขหลักฐานที่ไม่ได้ให้มา\n\n" +
+  "ห้ามใช้ตัวเอียง ห้ามอ้างอิงหมายเลขหลักฐานที่ไม่ได้ให้มา\n\n" +
+  "ใช้ตาราง Markdown ได้ (แถวหัวตาราง, แถวคั่น '|---|---|', แถวข้อมูล) เฉพาะเมื่อจำเป็นต้องเปรียบเทียบหลายรายการ " +
+  "หรือสื่อสารข้อมูลที่มีโครงสร้างชัดเจน (เช่น เปรียบเทียบกฎหมายหลายฉบับ, สรุปเงื่อนไข/คุณสมบัติหลายข้อ, ลำดับเวลา) " +
+  "ห้ามใช้ตารางถ้าเนื้อหาเป็นการอธิบายเชิงเหตุผลต่อเนื่องที่ไม่ได้เปรียบเทียบข้อมูลหลายรายการ\n\n" +
   "หากมีบทสนทนาก่อนหน้าแนบมาด้วย ให้ใช้บทสนทนานั้นทำความเข้าใจว่าคำถามใหม่นี้อ้างอิงถึงอะไร " +
   "(เช่น \"ข้อ 2 ที่พูดถึง\" หมายถึงหัวข้อที่สองในคำตอบก่อนหน้าของคุณเอง) แต่หมายเลขหลักฐาน [n] ในคำตอบใหม่นี้ " +
   "ต้องอ้างอิงเฉพาะหลักฐานชุดใหม่ที่แนบมาในข้อความล่าสุดเท่านั้น ห้ามใช้เลขอ้างอิงจากคำตอบก่อนหน้า";
@@ -291,13 +389,41 @@ export async function POST(req: Request) {
         const category = typeof body.category === "string" ? body.category : undefined;
         const history = sanitizeHistory(body.history);
 
-        send({ type: "status", message: "กำลังค้นหาเอกสารที่เกี่ยวข้องในคลังความรู้..." });
+        send({ type: "status", message: "กำลังวิเคราะห์คำถาม..." });
 
         const repo = getNhrcRepository();
         const searchText = buildSearchText(question, history);
-        const matches = await findRelevantDocuments(repo, searchText, RESULT_LIMIT, { areaCode, category });
+        // Break the question into its component legal/rights concepts (if
+        // it has more than one) so retrieval below can search each
+        // separately instead of just the combined question text - see
+        // decomposeQuestion's comment. Falls back to [] (single-query
+        // search) on any failure, so this never blocks the rest of the flow.
+        const subQueries = await decomposeQuestion(searchText);
+        const queries = Array.from(new Set([searchText, ...subQueries]));
 
-        if (matches.length === 0) {
+        send({ type: "status", message: "กำลังค้นหาเอกสารที่เกี่ยวข้องในคลังความรู้..." });
+
+        // Vault search (NHRC's own case/research/law corpus) and the
+        // general Thai statute lookup (see STATUTE_CATEGORY_LABEL's comment)
+        // are independent sources - run in parallel rather than serializing
+        // an extra ~1-2s wait for the statute call after the vault search.
+        const [matches, statuteResults] = await Promise.all([
+          findRelevantDocuments(repo, queries, RESULT_LIMIT, { areaCode, category }),
+          searchThaiStatutes(searchText, 8),
+        ]);
+        const topStatuteMatches = (statuteResults || [])
+          .filter((s) => s.score >= STATUTE_MATCH_THRESHOLD)
+          .sort((a, b) => b.score - a.score)
+          .slice(0, STATUTE_LIMIT);
+        // Follow any section this initial set cross-references but doesn't
+        // itself include (see chaseStatuteCrossReferences's comment) -
+        // these bypass STATUTE_MATCH_THRESHOLD since their relevance comes
+        // from being explicitly cited by an already-relevant section, not
+        // from raw similarity to the question's wording.
+        const chasedStatuteMatches = await chaseStatuteCrossReferences(topStatuteMatches);
+        const statuteMatches = [...topStatuteMatches, ...chasedStatuteMatches];
+
+        if (matches.length === 0 && statuteMatches.length === 0) {
           send({
             type: "citations",
             citations: [],
@@ -308,9 +434,10 @@ export async function POST(req: Request) {
           return finish();
         }
 
-        send({ type: "status", message: `พบเอกสารที่เกี่ยวข้อง ${matches.length} รายการ กำลังวิเคราะห์หลักฐาน...` });
+        const totalCount = matches.length + statuteMatches.length;
+        send({ type: "status", message: `พบเอกสารที่เกี่ยวข้อง ${totalCount} รายการ กำลังวิเคราะห์หลักฐาน...` });
 
-        const citations: CitationInfo[] = matches.map(({ doc, chunkText }) => ({
+        const vaultCitations: CitationInfo[] = matches.map(({ doc, chunkText }) => ({
           case_id: doc.case_id || doc.document_id,
           title: doc.title,
           category: doc.category,
@@ -322,7 +449,16 @@ export async function POST(req: Request) {
           // to the old top-of-file behaviour when there's no chunk (keyword
           // search fallback path).
           excerpt: buildExcerpt(chunkText || repo.loadContent(doc.document_id) || doc.summary || ""),
+          source: "nhrc",
         }));
+        const statuteCitations: CitationInfo[] = statuteMatches.map((s) => ({
+          case_id: `openthai:${s.law}:${s.section}`,
+          title: `${s.law} มาตรา ${s.section}`,
+          category: STATUTE_CATEGORY_LABEL,
+          excerpt: buildExcerpt(s.text),
+          source: "statute",
+        }));
+        const citations: CitationInfo[] = [...vaultCitations, ...statuteCitations];
 
         send({ type: "citations", citations, disclaimer: DISCLAIMER });
 

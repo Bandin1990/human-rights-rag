@@ -4,11 +4,28 @@ import React from "react";
 /**
  * Minimal, dependency-free renderer for the constrained Markdown subset our
  * own prompts produce (see api/ask-nhrc/route.ts's system prompt): "## "
- * headings, "- " bullets, "> " blockquotes, "**bold**", and "[n]" citation
- * markers. Not a general Markdown parser - just enough structure to render
- * the fourcorners.law-style "summary -> per-source sections -> citations"
- * answer format instead of one flat paragraph of plain text.
+ * headings, "- " bullets, "> " blockquotes, "**bold**", "[n]" citation
+ * markers, and (only when the model decides a comparison calls for one) a
+ * standard pipe table. Not a general Markdown parser - just enough
+ * structure to render the fourcorners.law-style "summary -> per-source
+ * sections -> citations" answer format instead of one flat paragraph of
+ * plain text.
  */
+
+// "| a | b |" or "a | b" (bare form is also common model output) - a table
+// row needs at least one "|" to distinguish it from ordinary prose that
+// happens to contain a lone pipe character.
+const TABLE_ROW = /\|/;
+// The separator row Markdown tables require right after the header, e.g.
+// "|---|:--:|---|" - only cell content made of dashes/colons/spaces.
+const TABLE_SEPARATOR = /^\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)*\|?$/;
+
+function splitTableRow(line: string): string[] {
+  let trimmed = line.trim();
+  if (trimmed.startsWith("|")) trimmed = trimmed.slice(1);
+  if (trimmed.endsWith("|")) trimmed = trimmed.slice(0, -1);
+  return trimmed.split("|").map((cell) => cell.trim());
+}
 
 function renderInline(text: string, onCiteClick?: (n: number) => void, keyPrefix = ""): React.ReactNode[] {
   const nodes: React.ReactNode[] = [];
@@ -79,11 +96,50 @@ export function MarkdownLite({ text, onCiteClick }: { text: string; onCiteClick?
     );
   };
 
-  for (const raw of lines) {
-    const line = raw.trim();
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
     if (!line) {
       flushPara();
       flushList();
+      continue;
+    }
+    // A table is a header row immediately followed by a valid separator row
+    // ("|---|---|") - checking the separator, not just "line has a pipe", is
+    // what tells a real table apart from prose that happens to contain one.
+    if (TABLE_ROW.test(line) && i + 1 < lines.length && TABLE_SEPARATOR.test(lines[i + 1].trim())) {
+      flushPara();
+      flushList();
+      const headerCells = splitTableRow(line);
+      const bodyRows: string[][] = [];
+      let j = i + 2;
+      while (j < lines.length && TABLE_ROW.test(lines[j].trim()) && lines[j].trim() !== "") {
+        bodyRows.push(splitTableRow(lines[j]));
+        j++;
+      }
+      const tableKey = key++;
+      blocks.push(
+        <div key={`tbl-wrap-${tableKey}`} className="cw-answer-table-wrap">
+          <table className="cw-answer-table">
+            <thead>
+              <tr>
+                {headerCells.map((cell, ci) => (
+                  <th key={ci}>{renderInline(cell, onCiteClick, `th${tableKey}-${ci}`)}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {bodyRows.map((row, ri) => (
+                <tr key={ri}>
+                  {row.map((cell, ci) => (
+                    <td key={ci}>{renderInline(cell, onCiteClick, `td${tableKey}-${ri}-${ci}`)}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+      i = j - 1; // outer loop's i++ then lands on the first line after the table
       continue;
     }
     const headingMatch = line.match(/^(#{1,6})\s+(.*)$/);

@@ -20,8 +20,25 @@
   font-family: var(--font-inter), var(--font-bai), sans-serif;
   overflow: hidden;
 }
+/* 100vh on mobile Safari/Chrome is the *largest* possible viewport - it
+   ignores the on-screen keyboard entirely, so this fixed-height container
+   never shrinks when the keyboard opens. Since .cw-input-area (the message
+   box) sits at the bottom of the flex column inside it, that pinned-height
+   bottom edge ends up underneath the keyboard instead of above it. 100dvh
+   is the dynamic viewport height - browsers that support it (iOS Safari
+   15.4+, Chrome/Android current) recompute it live as the keyboard opens
+   and closes, so the container - and the input pinned to its bottom -
+   actually shrinks to sit above the keyboard. Kept as a second declaration
+   (not a replacement) so browsers without dvh support keep the 100vh value
+   instead of failing to parse the property at all. */
+@supports (height: 100dvh) {
+  .cw-container { height: calc(100dvh - 76px); }
+}
 @media (max-width: 600px) {
   .cw-container { top: 65px; height: calc(100vh - 65px); }
+  @supports (height: 100dvh) {
+    .cw-container { height: calc(100dvh - 65px); }
+  }
 }
 
 /* Sidebar */
@@ -358,6 +375,36 @@
   font-size: 0.9rem;
   border-radius: 0 8px 8px 0;
 }
+/* Wrapper scrolls horizontally on its own (mobile-safe) instead of the
+   table forcing the whole chat column wider - see markdown-lite.tsx's
+   table block. Only shown when the model actually emits one (comparisons/
+   structured data), see api/ask-nhrc/route.ts's system prompt. */
+.cw-answer-table-wrap {
+  margin: 0 0 12px;
+  overflow-x: auto;
+  border: 1px solid #2d303b;
+  border-radius: 8px;
+}
+.cw-answer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.cw-answer-table th,
+.cw-answer-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #2d303b;
+  white-space: pre-wrap;
+}
+.cw-answer-table th {
+  background-color: #252830;
+  color: #f3f4f6;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.cw-answer-table td { color: #d1d5db; }
+.cw-answer-table tr:last-child td { border-bottom: none; }
 .cw-cite-ref {
   cursor: pointer;
   color: #fb923c;
@@ -1345,6 +1392,11 @@ body.theme-high-contrast .cw-message-row.ai .cw-bubble,
 body.theme-high-contrast .cw-answer-p,
 body.theme-high-contrast .cw-answer-h3 { color: #000000 !important; }
 body.theme-high-contrast .cw-answer-quote { background-color: #f0f0f0 !important; border-left-color: #0000ee !important; color: #000000 !important; }
+body.theme-high-contrast .cw-answer-table-wrap { border-color: #000000 !important; }
+body.theme-high-contrast .cw-answer-table th,
+body.theme-high-contrast .cw-answer-table td { border-bottom-color: #000000 !important; }
+body.theme-high-contrast .cw-answer-table th { background-color: #f0f0f0 !important; color: #000000 !important; }
+body.theme-high-contrast .cw-answer-table td { color: #000000 !important; }
 body.theme-high-contrast .cw-send-btn,
 body.theme-high-contrast .cw-mobile-ref-btn { background-color: #0000ee !important; border-color: #0000ee !important; color: #ffffff !important; }
 body.theme-high-contrast .cw-drawer-backdrop { background: rgba(0, 0, 0, 0.7) !important; }

@@ -73,10 +73,16 @@ interface SearchResult {
 interface AskCitation {
   case_id: string;
   title: string;
+  category?: string;
   area_code?: string;
   area_name?: string;
   year_buddhist?: number;
   excerpt: string;
+  // "statute" (see api/ask-nhrc/route.ts) = a Thai law section from the
+  // OpenThai 2.0 Legal database, not an NHRC vault document - there's no
+  // /case/[id] page for it, so the reference card below skips the "view
+  // details" link for these instead of linking to a page that 404s.
+  source?: "nhrc" | "statute";
 }
 
 interface ChatTurn {
@@ -674,6 +680,7 @@ export function NhrcWorkspace({
         </div>
         <div className="cw-ref-content">
           {activeCitations.map((c, idx) => {
+            const isStatute = c.source === "statute";
             return (
               <div
                 key={c.case_id}
@@ -684,22 +691,27 @@ export function NhrcWorkspace({
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <span className="cw-ref-badge">{idx + 1}</span>
                     <span className="cw-ref-title">
-                      [{c.case_id}] {c.title}
+                      {isStatute ? c.title : `[${c.case_id}] ${c.title}`}
                     </span>
                   </div>
-                  <button
-                    className="cw-ref-open-link"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      router.push(`/case/${c.case_id}`);
-                    }}
-                  >
-                    <ExternalLink size={12} /> ดูรายละเอียด
-                  </button>
+                  {/* Statute citations (OpenThai 2.0 Legal) have no
+                      /case/[id] page in our own vault - showing this button
+                      for them would link to a 404 instead of anything real. */}
+                  {!isStatute && (
+                    <button
+                      className="cw-ref-open-link"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        router.push(`/case/${c.case_id}`);
+                      }}
+                    >
+                      <ExternalLink size={12} /> ดูรายละเอียด
+                    </button>
+                  )}
                 </div>
                 <div className="cw-ref-excerpt">{c.excerpt}</div>
                 <div className="cw-ref-meta">
-                  {c.area_name || "ไม่ระบุประเด็น"} · พ.ศ. {c.year_buddhist || "-"}
+                  {isStatute ? c.category : `${c.area_name || "ไม่ระบุประเด็น"} · พ.ศ. ${c.year_buddhist || "-"}`}
                 </div>
               </div>
             );
