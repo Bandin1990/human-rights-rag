@@ -5,14 +5,28 @@
    it was still there underneath. That made the top nav (ค้นเอกสาร/สถิติ
    กสม./แผนที่ประเด็นสิทธิ) invisible on the homepage specifically, while
    working fine on every other page that doesn't render this container.
-   Now sits below the header instead of covering it - see the matching
-   .header-inner height (76px, 65px under 600px) in globals.css. */
+   Now sits below the header instead of covering it.
+
+   --site-header-h is set by header.tsx via ResizeObserver to the header's
+   actual rendered height (76px/65px are fallbacks only, for the brief
+   window before that JS runs, or if ResizeObserver is unavailable) - this
+   used to be a second hardcoded "76px, 65px under 600px" copy of
+   globals.css's .header-inner height that had to be kept in sync by hand.
+   On a real device where the header renders taller than either of those
+   two guesses (OS-level "larger text" accessibility scaling, a webfont
+   metric quirk, ...) the header and this container's assumed offset would
+   silently drift apart, and .cw-container would start underneath the real
+   header instead of below it - reported live as the top nav covering the
+   "ค้นหาสิทธิ" heading on a phone this project's headless test browser
+   couldn't reproduce (measured header height matched the hardcoded value
+   exactly there). Tracking the real height removes the drift entirely,
+   on any device. */
 .cw-container {
   position: fixed;
-  top: 76px;
+  top: var(--site-header-h, 76px);
   left: 0;
   width: 100vw;
-  height: calc(100vh - 76px);
+  height: calc(100vh - var(--site-header-h, 76px));
   z-index: 10;
   display: flex;
   background-color: #1e2128;
@@ -32,12 +46,12 @@
    (not a replacement) so browsers without dvh support keep the 100vh value
    instead of failing to parse the property at all. */
 @supports (height: 100dvh) {
-  .cw-container { height: calc(100dvh - 76px); }
+  .cw-container { height: calc(100dvh - var(--site-header-h, 76px)); }
 }
 @media (max-width: 600px) {
-  .cw-container { top: 65px; height: calc(100vh - 65px); }
+  .cw-container { top: var(--site-header-h, 65px); height: calc(100vh - var(--site-header-h, 65px)); }
   @supports (height: 100dvh) {
-    .cw-container { height: calc(100dvh - 65px); }
+    .cw-container { height: calc(100dvh - var(--site-header-h, 65px)); }
   }
 }
 

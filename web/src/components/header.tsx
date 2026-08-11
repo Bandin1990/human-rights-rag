@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BookOpen, Menu, X } from "@/components/icons";
 
 const links = [
@@ -15,8 +15,35 @@ const links = [
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  // chat-workspace.css's .cw-container (the fixed-position chat home page)
+  // used to hardcode this header's height as a second, separately-maintained
+  // "76px / 65px under 600px" number, duplicating globals.css's own
+  // .header-inner height - the two only ever matched by coincidence. Any
+  // real-device difference the CSS breakpoint doesn't account for (OS-level
+  // "larger text" accessibility settings scaling the brand text, a browser
+  // that renders the Bai Jamjuree webfont metrics slightly differently,
+  // etc.) makes the header taller than the hardcoded value without a
+  // matching update on the other side, so .cw-container starts underneath
+  // the real header instead of below it - the exact "menu covers the
+  // heading" bug reported on a real phone that this headless browser
+  // couldn't reproduce with default font scaling. Measuring the header's
+  // actual rendered height and publishing it as a CSS variable lets
+  // .cw-container track it exactly, on every device, with no number to keep
+  // in sync by hand.
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    const setVar = () => document.documentElement.style.setProperty("--site-header-h", `${el.offsetHeight}px`);
+    setVar();
+    const observer = new ResizeObserver(setVar);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className="site-header" ref={headerRef}>
       <div className="container header-inner">
         <div className="brand-group">
           <Link href="/" className="brand" onClick={() => setOpen(false)}>
